@@ -28,7 +28,7 @@ på den $i$:te raden och den $j$:te kolumnen ändras från att vara vatten till 
 \section*{Utdata}
 Skriv först ut ett heltal: Sveriges totala landmassa.
 
-Skriv sedan ut $U$ tal: Sveriges totala landmassa efter varje gång Vidar ändrar bilden.
+Skriv sedan ut $U$ heltal: Sveriges totala landmassa efter varje gång Vidar ändrar bilden.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -46,5 +46,27 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   $6$    & $19$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
-\section*{Förklaring av exempelfall}
-TODO
+\section*{Förklaring av exempelfall 1}
+Till en början går det att nå 8 landrutor från Stockholm. Eftersom Stockholm också räknas som land är Sveriges landmassa 9. Efter första uppdateringen ser rutnätet ut såhär:
+
+\noindent
+\begin{verbatim}
+  .#...#
+  .###..
+  .#S##.
+  ..##..
+  ......
+\end{verbatim}
+
+\noindent
+Eftersom man nu kan nå en ny bit land blir svaret 10. Efter de kommande två uppdateringarna kan man inte nå det nya landet, så svaret förändras inte.
+Efter den sista uppdateringen kan man nå det nyligen skapade landet och kartan ser ut såhär:
+
+\noindent
+\begin{verbatim}
+  .#...#
+  .###..
+  .#S##.
+  ..###.
+  ....##
+\end{verbatim}
