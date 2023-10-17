@@ -14,6 +14,7 @@ void run() {
 	for (int i = 0; i < r; i++)
 	{
 		rows.push_back(Line());
+		assert(rows.back().size()==c);
 		for (int j = 0; j < c; j++) numStockholm += rows[i][j]=='S';
 	}
 	assert(numStockholm==1);

@@ -1,5 +1,5 @@
 \problemname{Sverigekartan}
-Vidar vill veta hur stort Sverige är. Efter mycket slit har han lyckats skjuta upp en sattelit som kan ta ett flertal lågupplösta bilder av Sverige åt honom.
+Vidar vill veta hur stort Sverige är. Efter mycket slit har han lyckats skjuta upp en satellit som kan ta ett flertal lågupplösta bilder av Sverige åt honom.
 Satellitens kamera är tyvärr väldigt dålig. Varje ruta i bilden kommer antingen bestå av ``\texttt{\#}'', vilket innebär att rutan innehåller land, eller
 ``\texttt{.}'' om den innehåller vatten.
 
@@ -7,7 +7,7 @@ Vidar är en enorm badkruka och anser därför att Sveriges landmassa endast är
 Mer exakt är det antalet rutor man kan nå från Stockholm genom att röra sig uppåt, höger, neråt eller vänster utan att någonsin befinna sig på en ruta som innehåller vatten.
 Notera att rutan som innehåller Stockholm, \textbf{\texttt{S}}, också räknas som land.
 
-Vidar vill nu ha din hjälp att skriva ett program som beräknar Sveriges landmassa givet en satellitbild där han markerat vart Stockholm ligger med ett \textbf{\texttt{S}}.
+Vidar vill nu ha din hjälp att skriva ett program som beräknar Sveriges storleken av landmassa givet en satellitbild där han markerat var Stockholm ligger med ett \textbf{\texttt{S}}.
 Därefter kommer han att vänta på att satelliten tar bilder från nya vinklar. Genom att kolla på de nya bilderna kommer han ibland fram till att en ruta som
 innan var vatten egentligen är land. När han matar in denna förändring i ditt program ska du då direkt svara med vad den nya landmassan är.
 
@@ -38,7 +38,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & Gruppen består av ett enda testfall, det som finns på vår affisch (\url{https://www.progolymp.se/2024/affisch.pdf}). \\ \hline
+  $1$    & $20$       & $Q=0$ och gruppen består av ett enda testfall, det som finns på vår affisch (\url{https://www.progolymp.se/2024/affisch.pdf}). \\ \hline
   $2$    & $13$       & $R=1, Q=0$ \\ \hline
   $3$    & $9$        & $R=1$ \\ \hline
   $4$    & $26$       & $Q=0$ \\ \hline
@@ -59,8 +59,8 @@ Till en början går det att nå 8 landrutor från Stockholm. Eftersom Stockholm
 \end{verbatim}
 
 \noindent
-Eftersom man nu kan nå en ny bit land blir svaret 10. Efter de kommande två uppdateringarna kan man inte nå det nya landet, så svaret förändras inte.
-Efter den sista uppdateringen kan man nå det nyligen skapade landet och kartan ser ut såhär:
+Eftersom man nu kan nå en ny ruta land blir svaret 10. Efter de kommande två uppdateringarna kan man inte nå det nya landet, så svaret förändras inte.
+Efter den sista uppdateringen kan man nå allt det nyligen skapade landet och svaret blir därmed 13. Kartan ser ut såhär:
 
 \noindent
 \begin{verbatim}

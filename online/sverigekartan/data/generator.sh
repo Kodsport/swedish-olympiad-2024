@@ -56,6 +56,11 @@ tc g4-6 gen_uniform r=500 c=500 q=0 density=0.6
 tc g4-7 gen_uniform r=500 c=500 q=0 density=0.7
 tc g4-8 gen_uniform r=500 c=500 q=0 density=1
 tc g4-9 gen_snake r=500 c=500
+tc_manual ../manual_tests/manual_5.in
+tc_manual ../manual_tests/manual_6.in
+tc_manual ../manual_tests/manual_7.in
+tc_manual ../manual_tests/manual_8.in
+
 
 group group5 13
 limits maxr=10 maxc=10
@@ -71,6 +76,11 @@ tc g5-7 gen_uniform r=10 c=10 q=100000 density=0.7
 tc g5-8 gen_uniform r=10 c=10 q=0 density=1
 tc g5-9 gen_snake r=10 c=10
 tc g5-10 gen_snake r=10 c=10 mode=update
+tc manual_5
+tc manual_6
+tc manual_7
+tc manual_8
+
 
 group group6 19
 include_group group3
