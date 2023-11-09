@@ -1,0 +1,61 @@
+#!/bin/bash
+. ../../testdata_tools/gen.sh
+
+use_solution joshuasqrt_mersenne.cpp
+
+compile gen_rand.py
+compile gen_hard.py
+compile gen_differentlen.py
+compile gen_samelen.py
+
+# Generate answers to sample cases
+samplegroup
+limits maxn=10 maxm=10
+sample 1
+
+group group1 20
+limits maxn=20 maxm=5
+tc 1
+tc g1-1 gen_rand n=20 m=5 alphabet_size=20
+tc g1-2 gen_rand n=20 m=5 alphabet_size=10
+tc g1-3 gen_rand n=20 m=5 alphabet_size=5
+tc g1-4 gen_rand n=20 m=5 alphabet_size=2
+tc g1-5 gen_rand n=20 m=5 alphabet_size=1
+
+group group2 20
+limits maxn=100 maxm=100
+include_group group1
+tc g2-1 gen_rand n=100 m=100 alphabet_size=20
+tc g2-2 gen_rand n=100 m=100 alphabet_size=10
+tc g2-3 gen_rand n=100 m=100 alphabet_size=5
+tc g2-4 gen_rand n=100 m=100 alphabet_size=2
+tc g2-5 gen_rand n=100 m=100 alphabet_size=1
+
+
+group group3 20
+limits maxn=10000 maxm=1000
+include_group group2
+tc g3-1 gen_rand n=10000 m=1000 maxlen=200 alphabet_size=20
+tc g3-2 gen_rand n=10000 m=1000 maxlen=200 alphabet_size=10
+tc g3-3 gen_rand n=10000 m=1000 maxlen=200 alphabet_size=5
+tc g3-4 gen_rand n=10000 m=1000 maxlen=200 alphabet_size=2
+tc g3-5 gen_rand n=10000 m=1000 maxlen=200 alphabet_size=1
+tc g3-6 gen_rand n=10000 m=1000 maxlen=10 alphabet_size=5
+tc g3-7 gen_hard n=10000 m=1000 maxlen=996
+tc g3-8 gen_hard n=10000 m=1000 maxlen=500
+tc g3-9 gen_hard n=10000 m=200 maxlen=4996
+
+
+group group4 40
+include_group group3
+tc g4-1 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=20
+tc g4-2 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=10
+tc g4-3 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=5
+tc g4-4 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=2
+tc g4-6 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=5
+tc g4-7 gen_hard n=100000 m=100000 maxlen=6
+tc g4-8 gen_differentlen n=100000 b=0
+tc g4-9 gen_differentlen n=100000 b=1
+tc g4-10 gen_samelen
+
+#tc_manual ../manual_tests/manual_1.in
