@@ -1,34 +1,39 @@
-\problemname{Map of Sweden}
-Vidar wants to know how large Sweden is. After a lot of effort, he has managed to launch a satellite into the atmosphere that can take several low-resolution
-images of Sweden for him. Unfortunately, the satellite's camera is very poor. Each square in the image will either consist of ``\texttt{\#}'',
-which means the square contains land, or ``\texttt{.}'' if it contains water.
+\problemname{Kiki Boba}
 
-Vidar is a huge scaredy-cat when it comes to swimming, so in his opinion, Sweden's landmass is only the number of land squares that can be
-reached from Stockholm without ever swimming. More precisely, it is the number of squares that can be reached from Stockholm by moving upward,
-rightward, downward, or leftward without ever walking over a square that contains water. Note that the square containing Stockholm,
-\textbf{\texttt{S}}, also counts as land.
+``\texttt{Kiki}'' and ``\texttt{boba}'' form a fascinating sound-symbolic connection, where people spontaneously associate sharp sounds like ``\texttt{kiki}'' 
+with jagged shapes and softer sounds like ``\texttt{boba}'' with rounder shapes. 
+This reveals an underlying link between sounds and visual properties, 
+providing insight into how our brains intuitively create meaning and associations.
 
-Vidar now wants your help to write a program that calculates Sweden's landmass given a satellite image where he has marked the location of
-Stockholm with an \textbf{\texttt{S}}. Then, he will wait for the satellite to take pictures from new angles. By looking at the new images,
-he sometimes realizes that a square that used to be water is actually land. When he enters this change into your program, you should
-immediately print new landmass.
+Fergus has long held a keen interest in phonetics, and based on this sound-symbolic connection, he has developed a theory! 
+He believes that all words can be categorized into 4 categories. In other words, each word is either a word corresponding to the 
+figure on the left, like ``\texttt{kiki}'', or a word corresponding to the figure on the right, like ``\texttt{boba}'', or a word 
+that is a combination of both, or a word that is none of the mentioned alternatives.
+
+\begin{figure}[h]
+  \centering
+\includegraphics[width=0.3\textwidth]{kikiboba.png}
+  \caption{Figure to the left is commonly associated with "kiki". Figure to the right is commonly associated with "boba".}
+  \label{fig:kikiboba}
+\end{figure}
+
+A word consists of a certain number of consontants and a certain number of vowels. Fergus determines that a word belongs to a category according to the following rules:
+If there are more ``\texttt{b}'' than ``\texttt{k}'' in the word, then the word is a ``\texttt{boba}'' word.
+If there are more ``\texttt{k}'' than ``\texttt{b}'' in the word, then the word is a ``\texttt{kiki}'' word.
+If the word contains an equal number of ``\texttt{b}'' and ``\texttt{k}'', then Fergus calls it a ``\texttt{boki}'' word.
+These rules hold with one exception:
+If there are no ``\texttt{b}'' and ``\texttt{k}'' in the word, the word is neither close to a ``\texttt{boba}'' word nor a ``\texttt{kiki}'' word. In this case, Fergus refers to the word as a ``\texttt{none}'' word.
+
+Help Fergus write a program that, given a word, can categorize the word according to Fergus' rules.
 
 \section*{Input}
-The first line of the input contains an integer $R$ ($1 \le R \le 500$), the number of rows in Vidar's image.
+The first line of the input contains an integer $N$ ($1 \le N \le 100$), the number of characters in the word your program should categorize.
 
-The next line contains an integer $C$ ($1 \le C \le 500$), the number of columns in Vidar's image.
-
-The next line contains an integer $U$ ($0 \le U \le 100,000$), the number of times Vidar changes a square from being water to land.
-
-Then follow $R$ lines, each containing $C$ letters, describing the satellite image Vidar is working with. Each letter is either
-``\texttt{\#}'', ``\texttt{.}'' or ``\textbf{\texttt{S}}''. Exactly one square will contain the letter \textbf{\texttt{S}}.
-
-If $U$ is not 0, $U$ lines will follow. Each one will contain two integers $i, j$ ($1 \le i \le R$, $1 \le j \le C$),
-which means the square in the $i$-th row and $j$-th column is changed from water to land.
+The next line contains a word $S$ with $N$ characters consisting of characters ``\texttt{a}''-``\texttt{z}''.
 
 \section*{Output}
-First, print an integer: Sweden's total landmass.
-Then print $U$ integers: Sweden's total landmass after each time Vidar changes the image.
+Write a word/category, either ``\texttt{boba}'', ``\texttt{kiki}'', ``\texttt{boki}'' or ``\texttt{none}'', according to Fergus' rules stated above.
+There is always one category that fits each word.
 
 \section*{Points}
 Your solution will be tested on several test case groups.
@@ -38,35 +43,13 @@ To get the points for a group, it must pass all the test cases in the group.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
-  $1$    & $20$       & $U=0$ and the subtask consist of a single testcase, the one on our poster (\url{https://www.progolymp.se/2024/affisch.pdf}). \\ \hline
-  $2$    & $13$       & $R=1, U=0$ \\ \hline
-  $3$    & $9$        & $R=1$ \\ \hline
-  $4$    & $26$       & $U=0$ \\ \hline
-  $5$    & $13$       & $R,C \le 10$ \\ \hline
-  $6$    & $19$       & No additional constraints. \\ \hline
+  $1$    & $20$       & $N = 1$ \\ \hline
+  $2$    & $50$       & The word has atleast 1 of either ``\texttt{k}'' or ``\texttt{b}'', but never both at the same time. \\ \hline
+  $3$    & $30$       & No additional constraints. \\ \hline
 \end{tabular}
 
 \section*{Explanation of sample 1}
-At first, it's possible to reach 8 land squares from Stockholm. Since Stockholm is also counted as land, Sweden's landmass is 9. After the first update, the grid looks like this:
+The word contains 2 ``\texttt{b}'', while there are none of ``\texttt{k}''. In other words there are more of ``\texttt{b}'' than ``\texttt{k}'', which means that the answer is ``\texttt{boba}''.
 
-\noindent
-\begin{verbatim}
-  .#...#
-  .###..
-  .#S##.
-  ..##..
-  ......
-\end{verbatim}
-
-\noindent
-Since you can now reach a new piece of land, the answer becomes 10. After the next two updates, you can't reach the new land, so the answer does not change.
-After the final update, you can reach the newly created land, and the map looks like this:
-
-\noindent
-\begin{verbatim}
-  .#...#
-  .###..
-  .#S##.
-  ..###.
-  ....##
-\end{verbatim}
+\section*{Explanation of sample 3}
+The word contains 1 ``\texttt{b}'' and 1 ``\texttt{k}''. There are an equal number of ``\texttt{b}'' and ``\texttt{k}'', which means the answer is ``\texttt{boki}''.

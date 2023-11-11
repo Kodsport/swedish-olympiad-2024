@@ -26,7 +26,7 @@ Ifall det finns inga ``\texttt{b}'' och ``\texttt{k}'' i ordet, så är ordet va
 Hjälp Fergus skriva ett program som givet ett ord kan kateorisera ordet enligt Fergus regler.
 
 \section*{Indata}
-Den första raden i indatan innehåller heltalet $N$ ($1 \le N \le 100$), antal bokstäver i ordet som programmet ska kategorisera.
+Den första raden i indatan innehåller heltalet $N$ ($1 \le N \le 100$), antal bokstäver i ordet som ditt program ska kategorisera.
 
 Nästa raden innehåller ett ord $S$ med $N$ bokstäver bestående av bokstäver ``\texttt{a}''-``\texttt{z}''.
 
@@ -43,13 +43,13 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & $N = 1$ \hline
-  $2$    & $50$       & Ordet har antingen inga ``\texttt{k}'', eller inga ``\texttt{k}'', men den har åtminstone 1 ``\texttt{k}'' eller ``\texttt{b}''.\hline
-  $2$    & $30$       & Inga ytterligare begränsningar. \\ \hline
+  $1$    & $20$       & $N = 1$ \\ \hline
+  $2$    & $50$       & Ordet har åtminstone 1 av ``\texttt{k}'' eller ``\texttt{b}'', men aldrig båda samtidigt. \\ \hline
+  $3$    & $30$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
 \section*{Förklaring av exempelfall 1}
-Ordet innehåller 2 st ``\texttt{b}'', medan det finns inga ``\texttt{k}''. Det finns alltså fler ``\texttt{b}'' än ``\texttt{k}'', och ordet svaret är därför ``\texttt{boba}''.
+Ordet innehåller 2 st ``\texttt{b}'', medan det finns inga ``\texttt{k}''. Det finns alltså fler ``\texttt{b}'' än ``\texttt{k}'', och svaret är därför ``\texttt{boba}''.
 
 \section*{Förklaring av exempelfall 3}
 Ordet innehåller 1 st ``\texttt{b}'' och 1 st ``\texttt{k}''. Det finns lika många ``\texttt{b}'' som ``\texttt{k}'', och därför är svaret ``\texttt{boki}''.
