@@ -1,0 +1,39 @@
+\problemname{Miniräknaren}
+% Statement is kind of todo
+Nyligen har det gått runt rykten på skolan att skolans miniräknare kan trimmas med en hemlig kod. 
+Det sägs att om du kan få miniräknaren att visa den hemliga kålnami-koden på displayen och sedan
+trycka på \texttt{=} tecknet, så kommer miniräknaren att låsa upp den förbjudna kvadratrotsfunktionen.
+Detta kompliceras ytterligare av att du måste skriva in den på ett särskilt sett: du börjar med att
+miniräknaren visar $0$. Sedan får du utföra följande operationer:
+\begin{itemize}
+  \item Gångra talet som visas med siffran $m$
+  \item Addera en valfri siffra $k$ till talet, där $k$ uppfyller $0 \leq k \leq m-1$
+\end{itemize}
+
+För att göra det intressant funkar det bara om du gör detta med så få operationer som möjligt. Din kompis
+har precis hittat kålnami-koden och siffran $m$, nu är det bara att hitta minsta antalet operationer
+som krävs.
+
+\section*{Indata}
+Den första raden innehåller heltalet $n$ ($1 \le n \le 10^9$), innehållet av kolnami-koden.
+
+Nästa rad innehåller siffran $m$ ($2 \leq m \leq 9$), som beskrivits ovan.
+
+\section*{Utdata}
+Skriv ut ett heltal: minsta antalet operationer som krävs för att få miniräknaren att visa
+kålnami-koden i sina siffer-display.
+
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $20$       & $n \leq 10, m=3$. \\ \hline
+  $2$    & $20$       & $m=2$ \\ \hline
+  $3$    & $40$       & $n \leq 10^5$ \\ \hline
+  $4$    & $20$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
