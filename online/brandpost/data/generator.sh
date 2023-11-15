@@ -42,14 +42,14 @@ tc g2-random-14 gen n=50 w=50 h=50
 tc g2-weighted-15 gen maxSize=50 maxN=50 mode="weighted"
 tc g2-weighted-16 gen n=50 w=50 h=50 mode="weighted"
 tc g2-linesGrid-17 gen n=20 w=50 h=1 
-tc g2-linesGrid-18 gen n=21 w=1 h=50 
+tc g2-linesGrid-18 gen n=21 w=1 h=50 #n=21 w=2 h=48  #nån error med Eriks lösning när n=21 w=1 h=50...
 tc g2-linesGrid-19 gen n=22 w=49 h=2 
 tc g2-linesGrid-20 gen n=23 w=2 h=49 
 tc g2-filled-21 gen n=49 w=7 h=7 
 tc g2-filled-22 gen n=50 w=5 h=10 
 tc g2-slalom-23 gen_slalom n=50 maxSize=50
 tc g2-slalom-24 gen_slalom n=50 maxSize=50
-tc g2-slalom-25 gen_slalom n=50 maxSize=50 mode="transposed"
+tc g2-slalom-25 gen_slalom n=50 maxSize=50 dist=5 mode="transposed"
 tc g2-slalom-26 gen_slalom n=50 w=50 h=50 dist=10
 tc g2-slalom-27 gen_slalom n=50 w=50 h=50 dist=10 mode="transposed"
 tc g2-slalom-28 gen_slalom n=50 w=50 h=50 dist=15 length=5

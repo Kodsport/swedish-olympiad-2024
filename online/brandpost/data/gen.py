@@ -24,7 +24,7 @@ w = int(cmdlinearg("w", random.randint(1,maxGridSize)))
 h = int(cmdlinearg("h", random.randint(1,maxGridSize)))
 
 if n>w*h:
-    n = w*h - w*random(0,1)
+    n = w*h - w*random.randint(0,1)
 
 mode = cmdlinearg("mode", "")
 

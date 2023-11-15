@@ -50,7 +50,7 @@ vvll delta;
 void visualize_water();
 
 int main() {
-    cin.tie(NULL)->sync_with_stdio(false);
+    //cin.tie(NULL)->sync_with_stdio(false);
 
     cin >> w >> h >> n;
     dp.resize(h);
