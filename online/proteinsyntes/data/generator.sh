@@ -48,19 +48,20 @@ tc g3-8 gen_hard n=100000 m=100 maxlen=5000
 tc g3-9 gen_hard n=100000 m=20 maxlen=49960
 tc_manual powtwokiller
 
-group group4 40
-limits maxn=10000
-tc g4-1 gen_rand n=10000 m=100000 maxlen=10 alphabet_size=20
-tc g4-2 gen_rand n=10000 m=100000 maxlen=10 alphabet_size=5
-tc g4-3 gen_hard n=10000 m=100000 maxlen=6
-tc g4-4 gen_differentlen n=10000 b=0
-tc g4-5 gen_differentlen n=10000 b=1
-tc g4-6 gen_samelen n=10000
-tc g4-7 gen_aaaaa n=10000 m=1000000
-tc g4-8 gen_aabb n=10000 m=1000000
+group group4 25
+limits maxn=30000
+tc g4-1 gen_rand n=30000 m=100000 maxlen=10 alphabet_size=20
+tc g4-2 gen_rand n=30000 m=100000 maxlen=10 alphabet_size=5
+tc g4-3 gen_hard n=30000 m=100000 maxlen=6
+tc g4-4 gen_hard n=30000 m=4 maxlen=249995
+tc g4-5 gen_differentlen n=30000 b=0
+tc g4-6 gen_differentlen n=30000 b=1
+tc g4-7 gen_samelen n=30000
+tc g4-8 gen_aaaaa n=30000 m=1000000
+tc g4-9 gen_aabb n=30000 m=1000000
 tc powtwokiller
 
-group group5 10
+group group5 25
 include_group group3
 include_group group4
 tc g5-1 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=20
@@ -69,10 +70,11 @@ tc g5-3 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=5
 tc g5-4 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=2
 tc g5-6 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=5
 tc g5-7 gen_hard n=100000 m=100000 maxlen=6
-tc g5-8 gen_differentlen n=100000 b=0
-tc g5-9 gen_differentlen n=100000 b=1
-tc g5-10 gen_samelen n=100000
-tc g5-11 gen_aaaaa n=100000 m=1000000
-tc g5-12 gen_aabb n=100000 m=1000000
+tc g5-8 gen_hard n=100000 m=4 maxlen=249995
+tc g5-9 gen_differentlen n=100000 b=0
+tc g5-10 gen_differentlen n=100000 b=1
+tc g5-11 gen_samelen n=100000
+tc g5-12 gen_aaaaa n=100000 m=1000000
+tc g5-13 gen_aabb n=100000 m=1000000
 
 #tc_manual ../manual_tests/manual_1.in
