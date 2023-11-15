@@ -1,0 +1,55 @@
+\problemname{Brandpost}
+
+Brandmannen Robert har jobbat som brandman i över 20 år och älskar sitt jobb. 
+Efter en lång promenad i metropolen M (tidigare känt som Stockholm) fick Robert ett samtal på sin telefon från hans hydrofoba chef som beordrade honom att komma in till brandstationen nu på engång.
+Robert anlände nyss till det mest syd-västra fyrvägskorsningen i metropolen M och bestämmer sig för att bege sig direkt till brandstationen, 
+men tydligen har flera av brandposterna i metropolen M börjat läcka vatten och svämmar över gatorna! Åh nej! 
+Detta är särskilt allvarligt eftersom Roberts hydrofoba chef på brandstationen är stenhård med att inte ha vatten nära sig, 
+så att dyka upp dyngsur till jobbet efter att ha stött på flera av de läckande brandposterna kommer få
+Robert att bli avskedad. Robert vill åtminstone arbeta som brandman i 20 år till, 
+så hjälp Robert att minimera hur blöt han blir!
+
+Metropolen M består av ett $W \times H$ rutnät av fyrvägskorsningar,
+där varje fyrvägskorsning går att nå från de fyra intilliggande korsningarna i varje
+väderstreck: norr, öster, söder och väster. Robert anlände nyss till fyrvägskorsningen längst
+syd-väst i rutnätet, vid ruta $(1,1)$. Robert vill nå brandstationen längst nord-öst i rutnätet,
+vid ruta $(W,H)$. Det tar exakt 1 minut att springa från en fyrvägskorsning till en annan
+intilliggande korsning.
+
+Vidare har $N$ fyrvägskorsningar en läckande brandpost i sig, som kan befinna sig på alla rutor i rutnätet, inklusive där Robert börjar ifrån $(1,1)$, och vid brandstationen $(W,H)$. 
+Robert anländer till ruta $(1,1)$ vid tidspunkt 0, och varje läckande brandpost har läckt en enhet vatten till korsningen
+den sitter vid. Men för varje minut $t$ som passerar kommer varje läckande brandpost
+att läcka en extra enhet vatten till alla korsningar inom Manhattan-avstånd $t$ från den
+läckande brandposten. Låt oss kalla antalet enheter vatten som finns vid en viss ruta för $v_t$ vid tidpunkt $t$. 
+När Robert anländer till en fyrvägskorsning vid tidpunkt $t$ kommer Roberts kläder bli våta av all vatten 
+som finns vid den korsningen från läckande brandposter, alltså $v_t$ enheter vatten.
+
+Vad är det lägsta antalet enheter vatten som Roberts kläder totalt kan bli blöt av på
+väg till brandstationen?
+
+\section*{Indata}
+Den första raden i indatan innehåller tre heltal, $W$, $H$ ($1 \le W,H \le 2000$) och $N$ ($1 \le N \le min(5000,W \times H)$), 
+där $W$ och $H$ är bredden respektive höjden på rutnätet, och $N$ är antalet läckande brandpost som finns i rutnätet.
+
+Därefter följer $N$ rader, där varje rad består av två heltal $x_i$ ($1 \le x_i \le W$) och $y_i$ ($1 \le y_i \le H$), 
+och $(x_i,y_i)$ är koordinaterna för den $i$:te läckande brandposten i rutnätet. 
+Det är garanterat att alla brandposter har olika kordinater, alltså att $(x_i,y_i) \neq (x_j,y_j)$ för alla index $1 \le i < j \le n$.
+
+\section*{Utdata}
+Skriv ut ett heltal, det minimala antalet enheter vatten som dina kläder totalt kan ha
+blivit våta av på väg till brandstationen.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $10$       & $W,H \le 10$, $N=1$ och den enda brandposten finns vid $(1,1)$ \\ \hline
+  $2$    & $15$       & $W,H,N \le 50$ \\ \hline
+  $3$    & $17$       & $W,H \le 100$, $N\le 200$\\ \hline
+  $4$    & $27$       & $W,H \le 100$ \\ \hline
+  $5$    & $31$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
