@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10**5)
 
 #Den här koden är O(t^n)
 #Funkar bäst med stora p_i värden, och låga t värden.
@@ -17,7 +17,7 @@ for _ in range(n):
 
 goal = int(input())
 
-memo={}
+memo = {}
 
 def dp(pickles, bought):
     if (pickles, ".".join(map(str,bought))) in memo:
