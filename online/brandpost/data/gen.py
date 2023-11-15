@@ -23,20 +23,24 @@ n = int(cmdlinearg('n', random.randint(1,maxN)))
 w = int(cmdlinearg("w", random.randint(1,maxGridSize)))
 h = int(cmdlinearg("h", random.randint(1,maxGridSize)))
 
+if n>w*h:
+    n = w*h - w*random(0,1)
+
 mode = cmdlinearg("mode", "")
 
 
 
 
 hydrants = []
-used = [[0]*w for _ in range(h)]
+used = [[0]*(w+1) for _ in range(h+1)]
+pool=[]
 
 if mode == "leftPath": #Placera hydrants längs pathen på vänster sida
     pool = set()
     for i in range(1,w+1):
-        pool.append((i,h))
+        pool.add((i,h))
     for j in range(1,h):
-        pool.append((1,j))
+        pool.add((1,j))
 
     if len(pool)<n:
         n=len(pool)
@@ -48,9 +52,9 @@ if mode == "leftPath": #Placera hydrants längs pathen på vänster sida
 elif mode == "rightPath": #Placera hydrants längs pathen på högersida sida
     pool = set()
     for i in range(1,w+1):
-        pool.append((i,1))
+        pool.add((i,1))
     for j in range(1,h):
-        pool.append((w,j))
+        pool.add((w,j))
 
     if len(pool)<n:
         n=len(pool)

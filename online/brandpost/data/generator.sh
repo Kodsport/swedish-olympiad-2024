@@ -1,7 +1,7 @@
 #!/bin/bash
 . ../../testdata_tools/gen.sh
 
-use_solution harry.py
+use_solution erik_hydrants.cpp
 
 compile gen.py
 compile gen_slalom.py
@@ -89,9 +89,71 @@ tc g3-slalom-26 gen_slalom n=200 w=100 h=100 dist=30 length=20
 tc g3-slalom-27 gen_slalom n=200 w=100 h=100 dist=31 length=21 mode="transposed"
 tc g3-slalom-28 gen_slalom n=200 w=100 h=50 dist=30 length=50 
 tc g3-slalom-29 gen_slalom n=200 w=100 h=60 dist=29 length=60 mode="transposed" 
+tc g3-leftPath-30 gen maxSize=100 n=199 mode="leftPath"
+tc g3-rightPath-31 gen maxSize=100 n=199 mode="rightPath"
 
 group group4 27
-
+limits maxSize=100
+include_group group3
+tc g4-leftPath-01 gen maxSize=100 n=250 mode="leftPath"
+tc g4-rightPath-02 gen maxSize=100 n=250 mode="rightPath"
+tc g4-onlyEdges-03 gen maxSize=100 n=396 mode="edges"
+tc g4-onlyEdges-04 gen maxSize=100 n=420 mode="edges"
+tc g4-random-05 gen maxSize=100 n=1000
+tc g4-random-06 gen maxSize=100 
+tc g4-random-07 gen maxSize=100 n=5000
+tc g4-random-08 gen maxSize=100 n=5000
+tc g4-weighted-09 gen maxSize=100 n=1000 mode="weighted"
+tc g4-weighted-10 gen maxSize=100 n=2500 mode="weighted"
+tc g4-weighted-11 gen maxSize=100 mode="weighted"
+tc g4-weighted-12 gen maxSize=100 mode="weighted"
+tc g4-weighted-13 gen w=100 h=100 n=5000 mode="weighted"
+tc g4-filled-14 gen n=5000 w=50 h=100
+tc g4-filled-15 gen n=5000 w=100 h=50
+tc g4-slalom-16 gen_slalom n=5000 maxSize=100
+tc g4-slalom-17 gen_slalom n=5000 maxSize=100 mode="transposed"
+tc g4-slalom-18 gen_slalom n=5000 w=100 h=100 dist=12
+tc g4-slalom-19 gen_slalom n=5000 w=100 h=100 dist=13 mode="transposed"
+tc g4-slalom-20 gen_slalom n=5000 w=100 h=100 dist=30 length=20
+tc g4-slalom-21 gen_slalom n=5000 w=100 h=100 dist=31 length=21 mode="transposed"
+tc g4-slalom-22 gen_slalom n=5000 w=100 h=100 dist=30 length=100 
+tc g4-slalom-23 gen_slalom n=5000 w=100 h=60 dist=27 length=100 mode="transposed" 
 
 group group5 31
+include_group group4
+tc g5-leftPath-01 gen mode="leftPath"
+tc g5-leftPath-02 gen w=1000 h=1000 n=1500 mode="leftPath"
+tc g5-rightPath-03 gen mode="rightPath"
+tc g5-rightPath-04 gen w=1000 h=1000 n=1500 mode="rightPath"
+tc g5-onlyEdges-05 gen mode="edges"
+tc g5-onlyEdges-06 gen w=1000 h=1000 n=2000 mode="edges"
+tc g5-onlyEdges-07 gen w=1000 h=1000 n=5000 mode="edges"
+tc g5-random-08 gen n=1000
+tc g5-random-09 gen 
+tc g5-random-10 gen n=5000
+tc g5-random-11 gen w=1000 h=1000 
+tc g5-random-12 gen w=1000 h=1000 n=5000
+tc g5-random-13 gen w=1000 h=1000 n=5000
+tc g5-weighted-14 gen n=1000 mode="weighted"
+tc g5-weighted-15 gen n=2500 mode="weighted"
+tc g5-weighted-16 gen mode="weighted"
+tc g5-weighted-17 gen mode="weighted"
+tc g5-weighted-18 gen n=5000 mode="weighted"
+tc g5-weighted-19 gen w=1000 h=1000 n=5000 mode="weighted"
+tc g5-filled-20 gen n=5000 w=500 h=10
+tc g5-filled-21 gen n=5000 w=23 h=200
+tc g5-linesGrid-22 gen w=1000 h=1 
+tc g5-linesGrid-23 gen w=1 h=1000
+tc g5-linesGrid-24 gen w=1000 h=2 
+tc g5-linesGrid-25 gen w=2 h=1000
+tc g5-slalom-26 gen_slalom n=5000
+tc g5-slalom-27 gen_slalom n=5000 mode="transposed"
+tc g5-slalom-28 gen_slalom n=5000 w=1000 h=1000 dist=50
+tc g5-slalom-29 gen_slalom n=5000 w=1000 h=1000 dist=55 mode="transposed"
+tc g5-slalom-30 gen_slalom n=5000 w=1000 h=1000 dist=100 length=60
+tc g5-slalom-31 gen_slalom n=5000 w=1000 h=1000 dist=101 length=59 mode="transposed"
+tc g5-slalom-32 gen_slalom n=5000 w=1000 h=700 dist=220 length=700 
+tc g5-slalom-33 gen_slalom n=5000 w=1000 h=700 dist=170 length=700 mode="transposed" 
+
+
 
