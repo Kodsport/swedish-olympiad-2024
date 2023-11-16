@@ -94,22 +94,26 @@ while len(hydrants)<n:
             if used[cand[1]][cand[0]]:
                 continue
             hydrants.append(cand)
+            used[cand[1]][cand[0]]=1
         else:
             cand=(random.randint(1,w),random.randint(1,h))
             if used[cand[1]][cand[0]]:
                 continue
             hydrants.append(cand)
+            used[cand[1]][cand[0]]=1
     else:
         if len(pool):
             cand = pool.pop()
             if used[cand[1]][cand[0]]:
                 continue
             hydrants.append(cand)
+            used[cand[1]][cand[0]]=1
         else:
             cand=(random.randint(1,w),random.randint(1,h))
             if used[cand[1]][cand[0]]:
                 continue
             hydrants.append(cand)
+            used[cand[1]][cand[0]]=1
 
 print(w,h,n)
 random.shuffle(hydrants)

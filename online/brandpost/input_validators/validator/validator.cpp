@@ -6,21 +6,37 @@ using namespace std;
 
 
 void run() {
-	int n = Int(1, Arg("maxN", 100)); Endl();
-	string s = Line();
-	assert(s.size()==n);
-	int b = 0, k = 0;
-	for (int j = 0; j < n; j++){
-		assert(s[j]>='a'&&s[j]<='z');
-		if (s[j]=='b') b++;
-		if (s[j]=='k') k++;
+	int maxSize = Arg("maxSize", 2000);
+	int w = Int(1, maxSize); Space();
+	int h = Int(1, maxSize); Space();
+	int n = Int(1, Arg("maxN", 5000)); Endl();
+
+	int used[w+1][h+1];
+
+	for (int i = 0; i < w+1; i++){
+		for (int j = 0; j < h+1; j++){
+			used[i][j]=0;
+		}
 	}
 
-	string mode = Arg("mode", "");
-	if (mode=="bORk"){
-		assert(b+k!=0);
-		assert(b+k==max(b,k));
+	for (int i = 0; i < n; i++){
+		int x,y;
+		x = Int(1, w); Space();
+		y = Int(1, h); Endl();
+
+		if (used[x][y]==1){
+			die("Duplicate coordinates of brandpost used! Used:" + to_string(x) + " " + to_string(y));
+		}
+		used[x][y]=1;
 	}
+
+	string mode = Arg("mode","");
+
+	if (mode == "hydrantAtStart"){
+		assert(n==1);
+		assert(used[1][1]==1);
+	}
+	
 
 	Eof();
 }
