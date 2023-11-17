@@ -28,20 +28,28 @@ slalomLength = int(cmdlinearg("length", h//2)) #length of the slalom sticks
 
 mode = cmdlinearg("mode", "")
 
-hydrants = []
+hydrants = set()
 used = [[0]*w for _ in range(h)]
 
 bottom=0
+
+if slalomDist==0:
+    slalomDist=w//3
 for i in range(slalomDist,w+1,slalomDist):
     bottom=1-bottom
     if bottom:
         for j in range(1,slalomLength+1):
-            hydrants.append((i,j))
+            if j>h:
+                break
+            hydrants.add((i,j))
     else:
         for j in range(h,h-slalomLength-1,-1):
-            hydrants.append((i,j))
+            if j<1:
+                break
+            hydrants.add((i,j))
 
 
+hydrants=list(hydrants)
 
 random.shuffle(hydrants)
 

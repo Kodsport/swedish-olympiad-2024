@@ -27,6 +27,15 @@ som finns vid den korsningen från läckande brandposter, alltså $v_t$ enheter 
 Vad är det lägsta antalet enheter vatten som Roberts kläder totalt kan bli blöt av på
 väg till brandstationen?
 
+\begin{centering}
+  \begin{figure}[h]
+    \centering
+  \includegraphics[width=0.8\textwidth]{brandpostSample1.png}
+    \caption{Illustration av exempelfall 1, där det gröna är Roberts position, och de röda är brandposternas position. Det minsta antalet enheter vatten i detta fall är $0+0+2+2+4+6+8+8=30$.}
+    \label{fig:brandpost}
+  \end{figure}
+\end{centering}
+
 \section*{Indata}
 Den första raden i indatan innehåller tre heltal, $W$, $H$ ($1 \le W,H \le 2000$) och $N$ ($1 \le N \le min(5000,W \times H)$), 
 där $W$ och $H$ är bredden respektive höjden på rutnätet, och $N$ är antalet läckande brandpost som finns i rutnätet.
@@ -53,3 +62,4 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   $4$    & $27$       & $W,H \le 100$ \\ \hline
   $5$    & $31$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
+
