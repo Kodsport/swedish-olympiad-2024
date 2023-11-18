@@ -186,7 +186,7 @@ int32_t main()
     {
         cout << "ERRROR";
     }
-    cout << ans;
+    cout << ans << endl;
 
     quit;
 }
