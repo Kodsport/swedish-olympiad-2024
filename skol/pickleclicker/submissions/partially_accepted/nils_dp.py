@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 def dp(rem, rate):
     if rem >= t:
