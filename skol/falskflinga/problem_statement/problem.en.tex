@@ -23,6 +23,8 @@ According to Joshua, the image represents a snowflake if the following criteria 
 \item The set of black pixels is contiguous \emph{with diagonal steps}. 
 This means you can draw a curve from any black pixel to any other black pixel without the pen passing through a white pixel. 
   The pen can move up, down, left, right, \emph{and} diagonally.
+  \item There are no hooks in the snowflake. Let $\text{pixel}\text{up}$, $\text{pixel}\text{right}$, $\text{pixel}\text{down}$, and $\text{pixel}\text{left}$ be the adjacent pixels to a white pixel. A hook occurs if exactly two of these adjacent pixels are also white, and they are not on opposite sides of the pixel. Therefore, for example, if $\text{pixel}\text{up}$ and $\text{pixel}\text{right}$ are white while $\text{pixel}\text{down}$ and $\text{pixel}\text{left}$ are black, a hook is formed. However, if $\text{pixel}\text{up}$ and $\text{pixel}\text{down}$ are white, and $\text{pixel}\text{right}$ and $\text{pixel}\text{left}$ are black, a hook does not form.
+
 \end{itemize}
 
 Alexander has downloaded an image editing program where he can change the color of pixels, 

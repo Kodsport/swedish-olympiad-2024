@@ -28,6 +28,13 @@ Enligt Joshua föreställer bilden en snöflinga om följande kriterier är uppf
     du komma åt varje annan svart pixel utan att lyfta pennan och utan
     att rita på vita pixlar.
     Pennan får gå upp, ned, vänster, höger, \emph{och} diagonalt.
+  \item Det finns inga krokar i snöflingan. 
+  Låt $\text{pixel}_\text{upp}$, $\text{pixel}_\text{höger}$, $\text{pixel}_\text{ner}$, och $\text{pixel}_\text{vänster}$ vara de angränsande 
+  pixlarna till en vit pixel. En krok uppstår om precis två av dessa angränsande pixlar också är vita, och de inte är på motsatta sidor av pixeln.
+  Alltså, om till exempel $\text{pixel}_\text{upp}$ och $\text{pixel}_\text{höger}$ är vita medan $\text{pixel}_\text{ner}$ 
+  och $\text{pixel}_\text{vänster}$ är svarta uppstår en krok, men om $\text{pixel}_\text{upp}$ och $\text{pixel}_\text{ner}$ är vita
+  och $\text{pixel}_\text{höger}$ och $\text{pixel}_\text{vänster}$ är svarta uppstår inte en krok.
+      
 \end{itemize}
 Alexander har laddat ner ett bildredigerarprogram där han kan ändra färgen på pixlar, både från svart till vitt och från vitt till svart. 
 Eftersom han inte är så duktig på bildredigering räknar Alexander med att det tar honom en sekund för varje pixel han behöver ändra.
