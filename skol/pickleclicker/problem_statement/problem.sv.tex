@@ -1,27 +1,39 @@
-\problemname{Pickle clicker}
-För ungefär ett halvår sedan släpptes succéspelet Pickle clicker. Rasmus har bestämt sig för att
-ta saker och ting till nästa nivå: han tänker speedrunna spelet. Spelets valuta är självklart pickles. Målet
-är att köpa megapicklen så fort som möjligt, som kostar $t$ pickles. I spelet finns $n$ sorters byggnader som vardera
-producerar $p_i$ pickles per sekund och kostar $c_i$ pickles att bygga. I börjar äger du en byggnad
-byggnad av typ 1. Varje sekund sker följande: varje byggnad du äger producerar $p_i$ pickles.
-Sedan har du alternativet att bygga en byggnad som du har råd med. Om du väljer att bygga en byggnad av sort $i$
-kommer den att producera $p_i$ picklers varje kommande runda, men också kosta $c_i$ pickles. Det finns heller ingen gräns på hur många
-byggnader av varje sort du kan bygga, endast att du bara kan bygga en byggnad per sekund.
+\problemname{Pickle Clicker}
+För ungefär ett halvår sedan släpptes succéspelet \emph{Pickle Clicker}. 
+Efter att ha lagt otaliga timmar på spelet har Rasmus bestämt sig för att ta 
+saker och ting till nästa nivå: han tänker speedrunna spelet. 
 
-Hjälp rasmus bestämma hur han ska spela spelet så att han kan köpa megapicklen på så få sekunder som möjligt.
+
+Pickle Clicker går ut på att man samlar ihop så mycket som möjligt av valutan pickles. 
+Målet är att köpa Megapicklen så fort som möjligt, som kostar $t$ pickles. 
+I spelet finns även $n$ olika typer av byggnader. De olika typerna är numrerade från 
+$1$ till $n$, där den $i$:te typen producerar $p_i$ pickles per sekund och kostar 
+$c_i$ pickles att bygga.
+
+I börjar äger du en byggnad av typ $1$. Varje sekund sker följande: 
+\begin{enumerate}
+  \item Varje byggnad du äger producerar pickles. En byggnad av typ $i$ producerar $p_i$ pickles.
+  \item Därefter har du alternativet att köpa en byggnad eller köpa Megapickeln. En byggnad av typ $i$ kostar 
+  $c_i$ pickles att bygga, och du måste ha råd med den för att få köpa den. Du får maximalt köpa en byggnad 
+  per sekund, men det är tillåtet att ha flera byggnader av samma typ.
+\end{enumerate}
+
+
+Hjälp Rasmus bestämma hur han ska spela spelet så att han kan köpa Megapicklen på så få sekunder som möjligt.
+Se exemplet nedan för att få en tydligare bild av reglerna.
 
 \section*{Indata}
-Den första raden i indatan innehåller heltalet $n$ ($1 \le n \le 6$), antalet sorters byggnader.
+Den första raden innehåller heltalet $n$ ($1 \le n \le 6$), antalet typer av byggnader.
 
-De följande $n$ raderna innehåller heltalen $p_i,c_i$ ($1 \leq p_i,c_i \leq 10^5$), hur många pickles byggnader
-av typ i producerar per sekund och priset av den.
+Därefter följer $n$ rader. Den $i$:te av dessa rader innehåller heltalen $p_i, c_i$
+($1 \leq p_i,c_i \leq 10^5$).
+
 
 Till sist följer en rad med heltalet $t$ ($1 \le t \le 10^5$), priset av megapicklen.
 
 \section*{Utdata}
-Skriv ut ett heltal: antalet sekunder det tar för att få råd med megapicklen om man
+Skriv ut ett heltal, antalet sekunder det tar att köpa Megapicklen om man
 spelar optimalt.
-
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -41,7 +53,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.6\textwidth]{sample1.PNG}
+  \includegraphics[width=0.7\textwidth]{sample1.PNG}
     \\Bilden visar lösningen till exempelfall 1. Den första raden beskriver vilka byggnader
     vi äger i början av motsvarande sekund. Den andra raden är hur många pickles vi har 
     efter att byggnaderna har producerat. Den sista raden indikerar om vi köper något 
