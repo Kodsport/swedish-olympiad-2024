@@ -1,0 +1,363 @@
+\documentclass[a4paper,12pt,oneside]{amsbook}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp,hyperref}
+%\usepackage{euler}
+%\usepackage{garamond}
+
+\usepackage{newcent}
+%\fontfamily{fxm}\selectfont
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Detta paket skoter grafiken
+\usepackage[dvips]{graphicx}
+%\usepackage[pdftex]{graphicx}
+\usepackage{tabularx}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[swedish]{babel}
+% For bortkommentering
+\usepackage{verbatim}
+% For att slippa indentering av Sections och SubSections
+\usepackage{indentfirst}
+\usepackage{hyperref}
+
+% Har stalls paragrafindentering och avstand mellan stycken och rader mm
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\baselineskip}{12pt}
+% Har definieras sidan
+\setlength{\voffset}{-20mm}
+\setlength{\hoffset}{-5.5mm}
+
+\setlength{\topmargin}{0mm}
+\setlength{\headheight}{10mm}
+\setlength{\headsep}{8mm}
+\setlength{\footskip}{8mm}
+
+\setlength{\evensidemargin}{0mm}
+\setlength{\oddsidemargin}{0mm}
+
+\setlength{\marginparsep}{0mm}
+\setlength{\marginparwidth}{0mm}
+
+\setlength{\textwidth}{170mm}
+\setlength{\textheight}{240mm}
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+\setlength{\headwidth}{170mm}
+% Huvud och Fot
+%\fancypagestyle{}{
+\fancyhf{}\fancyhead[c]{\small{\textit{Svar och rättningsanvisningar
+      till Programmeringsolympiadens skolkval 2023}}}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newenvironment{lista}
+{\begin{itemize}
+\setlength{\parindent}{0pt}
+\setlength{\itemsep}{6pt}}
+{\end{itemize}}
+% Uppgifter
+\newcounter{probnr}
+\newenvironment{tal}{%
+\begin{list}
+%{\textbf{\arabic{section}.\arabic{probnr}}} {\usecounter{probnr}
+{\textbf{\arabic{probnr}}} {\usecounter{probnr}
+\setlength{\leftmargin}{0mm}
+\setlength{\rightmargin}{0mm}
+\setlength{\labelwidth}{-1mm}
+\setlength{\labelsep}{1mm}}
+\setlength{\itemsep}{6pt}
+}{\end{list}}
+% Definition av avsnitt: FAKTA, EXEMPEL, PASTAENDE
+\newtheorem{fakta}{Fakta}
+\newtheorem{exempel}{Exempel}
+\newtheorem{problem}{Problem}
+%
+\newtheoremstyle{test}% NAME
+{20pt}      % ABOVESPACE
+{10pt}      % BELOWSPACE
+{\sffamily} % BODYFONT
+{0pt}       % INDENT
+{\scshape}  % HEADFONT
+{}          % HEADPUNCT
+{\newline}  % HEADSPACE
+{}          % CUSTOM-HEAD-SPEC
+
+\theoremstyle{test}
+\newtheorem{program}{Program}
+\newcommand{\sv}[1]{\textsc{#1}}            % Sma versaler
+\newcommand{\fe}[1]{\textbf{#1}}            % FET
+\newcommand{\ku}[1]{\textit{#1}}            % KURSIV
+\newcommand{\cu}[1]{\texttt{#1}}            % Courier
+\newcommand{\sk}[1]{\texttt{#1}}            % Courier
+\newcommand{\rubrik}[1]{\begin{center}\sf\huge{#1}\normalsize\rm\end{center}}
+\begin{document}
+%\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.eps}
+
+
+\specialsection*{Svar och rättningsanvisningar}
+\thispagestyle{fancy}
+\lhead{}
+\begin{itemize}
+%\setlength\itemsep{0.2cm}
+\item Läs igenom \textit{tävlingsreglerna}.
+\item Programmen tas i tur och ordning in i editorn och kompileras.
+Uppstår kompileringsfel betraktas programmet som felaktigt och lösningen
+ges $0$ poäng.
+\item Programmet körs med givna indata enligt nedan. Alternativt, om eleven förberett programmet för det, kan de bifogade indatafilerna användas istället.
+\item Varje testfall
+  med korrekt svar ger 1 poäng.
+\item
+Totalt kan man
+  alltså få 5 poäng för varje uppgift.
+\item Om exekveringstiden för ett testexempel, kört på en modern dator,
+\textit{överskrider 3 sekunder} betraktas körningen av testexemplet som felaktigt.
+\item Det kan vara viktigt att programmet körs i en miljö liknande den som
+programmet utvecklats i, samma version av kompilator eller
+interpretator.
+\item Vid problem i samband med rättningen är det viktigt att det sunda
+förnuftet får råda!
+\item Ett förslag till rättningsprocedur kan vara att låta eleven
+sitta vid datorn.
+\end{itemize}
+
+\vspace{2cm}
+
+\subsection*{Uppgift 1 -- Reduplikation}
+~\\
+{\tt 
+\begin{tabular}{||l||c|c||c||}\hline\hline
+& \multicolumn{2}{c||}{\fe{Indata}} & \multicolumn{1}{c||}{\fe{Utdata}} \\ 
+& Strängen & Repetitioner &  \\ \hline \hline
+\fe{Test 1} & hej &1&hej\\ \hline
+\fe{Test 2} & lol &4&lollollollol \\ \hline
+\fe{Test 3} & naj &5&najnajnajnajnaj \\ \hline
+\fe{Test 4} & hej &3&hejhejhej \\ \hline
+\fe{Test 5} & ha &8&hahahahahahahaha\\ \hline\hline
+\end{tabular}
+}
+\vspace{1cm}
+
+
+\subsection*{Uppgift 2 -- Tre i rad}
+~\\
+{\tt 
+\begin{tabular}{||l||l||c||}\hline\hline
+& {\fe{Indata}} & \fe{Utdata} \\ \hline \hline
+\fe{Test 1} & 13 & 1\\ \hline
+\fe{Test 2} & 69 & 3 \\ \hline
+\fe{Test 3} & 992 & 9 \\ \hline
+\fe{Test 4} & 91081 & 44\\ \hline
+\fe{Test 5} & 907038264 & 966\\ \hline\hline
+\end{tabular}
+}
+
+
+\newpage
+\subsection*{Uppgift 5 -- Pickle clicker}
+~\\
+{\tt 
+\begin{tabular}{||l||c|c||c|c||c|c||c|c||c|c||}\hline\hline
+& \multicolumn{2}{c||}{\fe{Test 1}} & \multicolumn{2}{c||}{\fe{Test 2}}& \multicolumn{2}{c||}{\fe{Test 3}} & \multicolumn{2}{c||}{\fe{Test 4}} & \multicolumn{2}{c||}{\fe{Test 5}} \\\hline\hline
+N & \multicolumn{2}{c||}{ 1 }& \multicolumn{2}{c||}{ 6} & \multicolumn{2}{c||}{ 5} & \multicolumn{2}{c||}{ 6}& \multicolumn{2}{c||}{ 6}\\ \hline
+T & \multicolumn{2}{c||}{ 12345 }& \multicolumn{2}{c||}{ 10} & \multicolumn{2}{c||}{ 997} & \multicolumn{2}{c||}{ 100000}& \multicolumn{2}{c||}{ 99999}\\ \hline
+& \fe{$p_i$} & \fe{$c_i$} & \fe{$p_i$} & \fe{$c_i$}& \fe{$p_i$} & \fe{$c_i$}& \fe{$p_i$} & \fe{$c_i$}& \fe{$p_i$} & \fe{$c_i$} \\ \hline
+Byggnad 1	&	2	&	690	&	1	&	2	&	1	&	  41	  &	1	&	4	    &	1	    &	10000	\\
+Byggnad 2	&	&	&	      8	&	8	&	100	&	1000	&	8	&	16	  &	5	    &	20000	\\
+Byggnad 3	&	&	&	      5	&	10&	2	&	  60	 &	256	&	1024&	100   &	80000\\
+Byggnad 4	&	&	&	      3	&	5	&	3	&	  70	 &	3	&	5	    &	25    &	40000\\
+Byggnad 5	&	&	&	      4	&	7	&	4	&	  90	 &	260	& 1200&	10000 &	99999	\\
+Byggnad 6	&	&	&	      3	&	4	& 	&		     &	16 &	64	&	6     &	22000 \\
+\hline\hline
+\fe{Utdata:} & \multicolumn{2}{c||}{ 1531 }& \multicolumn{2}{c||}{ 6} & \multicolumn{2}{c||}{ 157} & \multicolumn{2}{c||}{ 58}& \multicolumn{2}{c||}{ 28720} \\ \hline\hline
+\end{tabular}
+}
+\vspace{1cm}
+
+
+\subsection*{Uppgift 4 -- Dragkamp}
+~\\
+Observera att det finns flera möjliga lösningar. För att kontrollera om elevens program ger rätt svar på ett visst testfall, använd validatorn på följande adress:\\
+\url{https://progolymp.se/2023/dragval.html}\\
+{\tt 
+\begin{tabular}{||l||c|c|c|c||c||}\hline\hline
+& \multicolumn{4}{c||}{\fe{Indata}} & \fe{Utdata} \\ 
+& Ettor & Tvåor & Treor & Fyror & \\ \hline \hline
+\fe{Test 1} & 299 &297 &295 &293&Använd validator\\ \hline
+\fe{Test 2} & 1802 &1999 &1888 &1777&Använd validator\\ \hline
+\fe{Test 3} & 1234567 &2345678 &7654321 &0&Använd validator\\ \hline
+\fe{Test 4} & 4949494 &8383838 &6767676 &2525252&Använd validator\\ \hline
+\fe{Test 5} & 0 &7777777 &4444444 &3333333&Använd validator\\ \hline\hline
+\end{tabular}
+}
+\vspace{1cm}
+
+
+
+
+\subsection*{Uppgift 5 -- Sista moroten}
+
+~\\
+{\tt 
+\begin{tabular}{||l||c|c|c||c||}\hline\hline
+& \multicolumn{3}{c||}{\fe{Indata}} & \fe{Utdata} \\ 
+& N & M & K & \\ \hline \hline
+\fe{Test 1} & 2 &95 &58 &0.51734072\\ \hline
+\fe{Test 2} & 6 &5 &12 &0.91436800\\ \hline
+\fe{Test 3} & 50 &3 &24 &0.96216935\\ \hline
+\fe{Test 4} & 39 &40 &69 &0.36654063\\ \hline
+\fe{Test 5} & 15 &5000 &10000 &0.62533322\\ \hline\hline
+\end{tabular}
+}
+
+
+\textbf{NOT: 5 \emph{decimalers} noggrannhet krävs!}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+~\\
+{\tt 
+\begin{tabular}{||l||c|l||l||}\hline\hline
+& \multicolumn{2}{c||}{\fe{Indata}} & \fe{Utdata} \\ 
+& Antal ord & Mening & \\ \hline \hline
+\fe{Test 1} & 1 & aaaaa & aaaaa \\ \hline
+\fe{Test 2} & 3 & likadan som fore & erof mos nadakil \\ \hline
+\fe{Test 3} & 1 & abcdefghij & jihgfdcb\\ \hline
+\fe{Test 4} & 3 & roligt att ratta & attr tt tglor \\ \hline
+\fe{Test 5} & 2 & heeejj yrsel & lesr jjeeh \\ \hline\hline
+\end{tabular}
+}
+%$$
+
+
+\subsection*{Uppgift 3 -- Grönt kort}
+~\\
+{\tt 
+\begin{tabular}{||l||c|c||c||}\hline\hline
+& \multicolumn{2}{c||}{\fe{Indata}} & \fe{Utdata} \\ 
+& N & M & \\ \hline \hline
+\fe{Test 1} & 399999999 & 0 & 30 \\ \hline
+\fe{Test 2} & 2 & 123123123 & 615615640 \\ \hline
+\fe{Test 3} & 12 & 97 & 110 \\ \hline
+\fe{Test 4} & 43 & 86 & 40 \\ \hline
+\fe{Test 5} & 3 & 91919191 & 306397330  \\ \hline\hline
+\end{tabular}
+}
+%$$
+
+
+\subsection*{Uppgift 4 -- Den trötte målaren}
+~\\
+OBS! Eftersom det finns flera lösningar behöver du verifiera att
+elevens svar är korrekt genom att klistra in det på följande webbsida: \\
+\url{https://www.progolymp.se/2022/mala}
+~\\
+{\tt 
+\begin{tabular}{||l||c|l||l||}\hline\hline
+& \multicolumn{2}{c||}{\fe{Indata}} & \fe{Utdata} \\
+& $N$ & Rader & \\ \hline \hline
+\fe{Test 1} &4&VSVV & Flera möjliga \\
+&&VVVV&\\
+&&VSSS&\\
+&&VSVV&\\\hline
+\fe{Test 2} &4&SSSV & Flera möjliga \\
+&&VVVV&\\
+&&SVVV&\\
+&&SV.V&\\\hline
+\fe{Test 3} &7&VSVVVSV & Flera möjliga \\
+&&VS.SSSV&\\
+&&VSVSVSV&\\
+&&VSSSSSV&\\
+&&VSVSVSV&\\
+&&VSSSSSS&\\
+&&VS.SSSV&\\\hline
+\fe{Test 4} &6&SSVSS. & Flera möjliga \\
+&&SSVSSS&\\
+&&SSVSSV&\\
+&&VSVSVV&\\
+&&VVVSVV&\\
+&&VVVVVV&\\\hline
+\fe{Test 5} &8&VVVVVVSV & Flera möjliga \\
+&&SSSSSVSS&\\
+&&SSSSSVSV&\\
+&&VVVVSVSV&\\
+&&VVVVVVVV&\\
+&&SVVSSVSV&\\
+&&SVVVSVSV&\\
+&&SVSSSVSV&\\\hline\hline
+\end{tabular}
+}
+
+
+\subsection*{Uppgift 5 -- Korta vokaler}
+~\\
+{\tt 
+\begin{tabular}{||l||l||c||}\hline\hline
+& {\fe{Indata}} & \fe{Utdata} \\ \hline \hline
+\fe{Test 1} & aaaaaaaaaa & 1023\\ \hline
+\fe{Test 2} & algoritm & 143 \\ \hline
+\fe{Test 3} & jogurtkaka & 527\\ \hline
+\fe{Test 4} & skolkvaletprogrammeringsolympiaden & 413109887\\ \hline
+\fe{Test 5} & exempelmeningenidettatestfallharprecisfemtiotecken & 808841612031\\ \hline\hline
+\end{tabular}
+
+
+
+
+
+\subsection*{Uppgift 6 -- Bergskedja}
+
+
+~\\
+{\tt 
+\begin{tabular}{||l||c|c|l||l||}\hline\hline
+& \multicolumn{3}{c||}{\fe{Indata}} & \fe{Utdata} \\
+& $n$ & $m$ & Rader & \\ \hline \hline
+\fe{Test 1} & 1 & 8 & 11110201 & 5 8 \\ \hline
+\fe{Test 2} & 3 & 3 & 130 & 2 8 \\ 
+&&& 022& \\
+&&& 202& \\ \hline
+\fe{Test 3} & 4 & 4 & 1112 & 2 11 \\
+&&& 0340 & \\
+&&& 3012 & \\
+&&& 0312 & \\\hline
+\fe{Test 4} & 8 & 7 & 1310222 & 9 55\\
+&&& 1142022 & \\
+&&& 1403301 & \\
+&&& 1330242 & \\
+&&& 1112420 & \\
+&&& 1414213 & \\
+&&& 1240310 & \\
+&&& 1021122 & \\\hline
+\fe{Test 5} & 8 & 8 & 01111111 & 1 42\\
+&&& 13123322 & \\
+&&& 24243131 & \\
+&&& 03022041 & \\
+&&& 30430220 & \\
+&&& 04133242 & \\
+&&& 31101302 & \\
+&&& 03213030 & \\\hline\hline
+\end{tabular}
+}
+
+
+
+\end{document}
+
+
