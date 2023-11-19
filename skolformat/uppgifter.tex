@@ -62,16 +62,16 @@ med att lämna in den korrekta versionen av ditt program.
 
 Reduplikation är när man upprepar ett ord flera gånger, ofta för att förstärka eller ändra betydelsen.
 I vissa språk som indonesiska är reduplikation väldigt vanligt, och där har det många olika
-grammatiska funktioner. Men även i svenska används reduplikation ibland, till exempel är det vanligt
+grammatiska funktioner. Även i svenska används reduplikation ibland, till exempel är det vanligt
 att man säger \texttt{"hej hej"} istället för \texttt{"hej"}.
 
-Rama är en flitig användare av reduplikation när han chattar med sina kompisar. Men det tar lång tid
-att skriva samma ord upp till nio gånger. Därför brukar han skriva ordet en gång, åtföljt av en
+Rama är en flitig användare av reduplikation när han chattar med sina kompisar. Han skriver ibland samma ord
+upp till nio gånger, vilket tar lång tid. Därför brukar han istället skriva ordet en gång, åtföljt av en
 siffra som visar hur många gånger ordet ska upprepas.
 
 Skriv ett program som läser in ett ord som Rama tänker upprepa (som består av som mest 9 bokstäver)
 och hur många gånger det ska upprepas (som mest 9). 
-Programmet ska sedan skriva ut ordet fast upprepat rätt antal gånger.
+Programmet ska sedan skriva ut ordet upprepat rätt antal gånger.
 
 
 \fe{Poängsättning:} För testfall värda $1$ poäng (utav $5$ möjliga) gäller att antalet gånger ordet ska upprepas är $1$.
@@ -117,7 +117,7 @@ Några exempel på trevliga tripletter är $(4,5,6)$ och $(15,16,17)$.
 
 För att lära sig mer om trevliga tripletter vill Lenore hitta hur 
 många tal som kan skrivas som produkten av
-alla talen i en trevlig triplett. Hon kallar dessa tal "treiga tal". 
+alla talen i en trevlig triplett. Hon kallar dessa tal ``treiga tal''. 
 Några exempel på treiga tal är $24=2 \cdot 3 \cdot 4$
 och $336 = 6 \cdot 7 \cdot 8$. Lenore vill nu veta hur många treiga tal det 
 finns som är mindre än talet $N$.
@@ -147,7 +147,7 @@ Svar: 3
 
 \fe{Förklaring:} De treiga talen mindre än 75 är 6, 24 och 60.
 
-\vspace{1cm}
+\vspace{0.5cm}
 
 \fe{Körningsexempel 2}
 \begin{verbatim}
@@ -158,7 +158,7 @@ Svar: 1
 
 \fe{Förklaring:} Eftersom det treiga talet $24$ inte är mindre än $N$ räknar vi bara 6.
 
-\vspace{3cm}
+\vspace{0.5cm}
 
 \fe{Körningsexempel 3}
 \begin{verbatim}
@@ -173,8 +173,8 @@ Svar: 9
 \specialsection*{Uppgift 3 -- Meddelande}
 
 I staden som Paula bor i finns ett stort torg. Torget kan representeras av ett 
-rutnät med $n$ rader och $m$ kolumner. I vissa av rutorna finns det bokstäver 
-inristade. 
+rutnät med $n$ rader och $m$ kolumner. I vissa av rutorna finns en bokstav 
+inristad. 
 
 Enligt legenden så bildar dessa bokstäver ett meddelande om man 
 går på rutorna i en viss ordning. För att det ska bli rätt måste man börja 
@@ -234,18 +234,18 @@ Svar: snake
 \specialsection*{Uppgift 4 -- Klippa protein}
 
 Din kompis Björn har nyligen påbörjat ett stort kemiexperiment, med målet att skapa ett hemligt protein. 
-Alla protein kan beskrivas som strängar av bokstäver från \texttt{a}-\texttt{z}, exempelvis \texttt{bcaa} och \texttt{hejsan}.
-Han behöver skapa ett flertal så-kallade \textit{rena} proteiner. Dessa är protein som består av kopior av en och samma bokstav.
+Alla protein beskrivs med strängar av bokstäver från \texttt{a}-\texttt{z}, exempelvis \texttt{bcaa} och \texttt{hejsan}.
+Han behöver skapa ett flertal så kallade \textit{rena} proteiner. Dessa är proteiner som består av kopior av en och samma bokstav.
 För att göra detta har han mikroskopiska saxar som kallas CRISPR. Med hjälp av dessa kan han ta bort upp till $k$ bokstäver
 som ligger bredvid varandra. Med andra ord kan han välja ett intervall med upp till $k$ bokstäver att klippa bort.
 Om ett protein delas i två delas när det klipps kommer dessa delar sedan att sättas ihop där de klipptes av. 
 
-Eftersom han är väldigt lat vill han ha din hjälp att skriva ett program som beräknar minsta antalet gånger han behöver klippa ett visst protein för
+Eftersom han är väldigt lat vill han ha din hjälp att skriva ett program som beräknar det minsta antalet gånger han behöver klippa ett visst protein för
 att det ska bli rent. Notera att proteinet \textbf{inte} får bli en tom sträng, eftersom det isåfall inte längre kan användas för kemi.
 
 Programmet ska först läsa in Björns protein, som består av som mest $32$ bokstäver. Sedan ska det läsa in talet $k$ ($k \ge 1$).
 
-Programmet ska sedan skriva ut minsta antalet klippningar som krävs för att göra proteinet rent.
+Programmet ska sedan skriva ut det minsta antalet klippningar som krävs för att göra proteinet rent.
 
 \vspace{0.5cm}
 \fe{Poängsättning:}\\
@@ -287,7 +287,7 @@ Svar: 2
 \end{center}
 
 \newpage
-\specialsection*{Uppgift 5 -- Pickle clicker}
+\specialsection*{Uppgift 5 -- Pickle Clicker}
 
 För ungefär ett halvår sedan släpptes succéspelet \emph{Pickle Clicker}. 
 Efter att ha lagt otaliga timmar på spelet har Rasmus bestämt sig för att ta 
@@ -300,7 +300,7 @@ I spelet finns även $n$ olika typer av byggnader. De olika typerna är numrerad
 $1$ till $n$, där den $i$:te typen producerar $p_i$ pickles per sekund och kostar 
 $c_i$ pickles att bygga.
 
-I början äger du en byggnad av typ $1$. Varje sekund sker följande: 
+\textit{I början äger du en byggnad av typ $1$}. Varje sekund sker följande: 
 \begin{enumerate}
   \item Varje byggnad du äger producerar pickles. En byggnad av typ $i$ producerar $p_i$ pickles.
   \item Därefter har du alternativet att köpa en byggnad eller köpa Megapickeln. En byggnad av typ $i$ kostar 
@@ -315,9 +315,9 @@ Se exemplet nedan för att få en tydligare bild av reglerna.
 Programmet ska läsa in heltalen $n$ och $t$ ($1 \le n \leq 6, 1 \le t \le 10^5$): antalet byggnader och kostnaden av
 Megapickeln.
 
-Därefter ska programmet räsa in $n$ rader: $p_i$ och $c_i$, produktionshastigheten och kostnaden för vardera byggnar.
+Därefter ska programmet läsa in $n$ rader: $p_i$ och $c_i$, produktionshastigheten och kostnaden för vardera byggnad.
 
-Programmet ska skriva ut ett heltal: hur lång tid det tar att vinna pickle clicker om man spelar optimalt.
+Programmet ska skriva ut ett heltal: hur lång tid det tar att vinna Pickle Clicker om man spelar optimalt.
 
 \fe{Poängsättning:}\\
 De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöver de som redan nämnts:
@@ -357,8 +357,8 @@ Svar: 6179
 \newpage
 \specialsection*{Uppgift 6 -- Christians piano}
 Christian vill lära sig spela piano, men klarar bara av att spela med pekfingret.
-Just nu håller han på och över hårt för att lära sig ett stycke.
-Ett stycke beskrivs som en sekvens tangenter som ska tryckas i ordning. Exempelvis beskriver
+Just nu håller han på att öva hårt för att lära sig ett stycke.
+Ett stycke beskrivs av en sekvens tangenter som ska tryckas i ordning. Exempelvis beskriver
 stycket \texttt{abdaa} att han ska trycka på tangenterna
 \texttt{a}, \texttt{b}, \texttt{d}, \texttt{a}, \texttt{a} i ordning. 
 Du märker dock att han har svårt att röra pekfingret snabbt nog mellan tangenterna.
@@ -367,7 +367,7 @@ noll sekunder att trycka ner en tangent.
 För att hjälpa honom tänker du ändra om ordningen på pianots tangenter så att totala tiden
 det tar att spela stycket blir så litet som möjligt.
 
-Exempelvis, om stycket han försöker lära sig är \texttt{abdaa} och pianot har ordningen
+Till exempel, om stycket han försöker lära sig är \texttt{abdaa} och pianot har ordningen
 \texttt{abd} $\cdots$ (resten av pianot visas inte då detta inte påverkar svaret)
 kommer det totalt ta 4 sekunder att spela stycket.
 Avstånden när han spelar stycket blir följande:
@@ -380,15 +380,15 @@ Avstånden när han spelar stycket blir följande:
 Vilket innebär att det totalt tar fyra sekunder att spela stycket \texttt{abdaa} på ett piano
 med ordningen \texttt{abd} $\cdots$.
 
-Skriv ett program som läser in ett stycke och skriver ut totala tiden det tar för Christian att
+Skriv ett program som läser in ett stycke och skriver ut den totala tiden det tar för Christian att
 spela stycket på pianot med bästa möjliga ordning på tangenter. Det är garanterat att stycket
-består av som mest 32 bokstäver och innehåller som mest 15 unika sorters bokstäver.
-Alla bokstäver i stycket är valda från \texttt{a}-\texttt{z}.
+består av som mest 32 bokstäver och innehåller som mest 15 olika sorters bokstäver.
+Alla bokstäver i stycket är mellan \texttt{a}-\texttt{z}.
 
 \fe{Poängsättning:}\\
 De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöver de som redan nämnts:
 \begin{itemize}
-    \item[(1)] $\;\;\;\;$ Stycket innehåller som mest 8 unika bokstäver. 
+    \item[(1)] $\;\;\;\;$ Stycket innehåller som mest 8 olika sorters bokstäver. 
     \item[(2-5)] $\;\;\;\; $Inga särskilda begränsningar.
 \end{itemize}
 
