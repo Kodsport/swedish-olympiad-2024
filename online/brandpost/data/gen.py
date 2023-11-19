@@ -73,7 +73,7 @@ elif mode == "edges" or mode == "weighted": #Hydrants är längs kanterna av rut
         pool.add((1,j))
         pool.add((w,j))
     
-    if len(pool)<n:
+    if len(pool)<n and mode != "weighted":
         n=len(pool)
         if random.randint(0,1):
             n//=2
