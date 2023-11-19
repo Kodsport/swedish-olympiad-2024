@@ -5,8 +5,8 @@ use_solution joshua.cpp
 
 compile gen_rand.py
 
-#samplegroup
-#sample 1
+samplegroup
+sample 1
 
 group group1 20
 limits max_k=1
@@ -17,6 +17,7 @@ limits ab=1
 tc_manual ../manual/tc2.in
 
 group group3 20
+tc 1
 tc_manual ../manual/tc3.in
 
 group group4 20

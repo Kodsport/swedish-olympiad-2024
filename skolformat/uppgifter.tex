@@ -55,88 +55,115 @@ med att lämna in den korrekta versionen av ditt program.
 %\end{document}
 
 \newpage
-\specialsection*{Uppgift 1 -- Morötter}
+\specialsection*{Uppgift 1 -- Reduplikation}
 
-Tor och hans mor älskar morötter. Varje dag ställer de fram en skål med exakt $40$ morötter och äter sedan morötter oavbrutet tills skålen är tom. Om de båda är redo att ta en morot när det bara finns en kvar, så tar ingen av dem den sista.
+Reduplikation är när man upprepar ett ord flera gånger, ofta för att förstärka eller ändra betydelsen.
+I vissa språk som indonesiska är reduplikation väldigt vanligt, och där har det många olika
+grammatiska funktioner. Men även i svenska används reduplikation ibland, till exempel är det vanligt
+att man säger \texttt{"hej hej"} istället för \texttt{"hej"}.
 
-Skriv ett program som, givet antal sekunder det tar för Tor respektive hans mor att äta varje morot (heltal mellan 1 och 100), beräknar hur många morötter var och en får.
+Rama är en flitig användare av reduplikation när han chattar med sina kompisar. Men det tar lång tid
+att skriva samma ord upp till nio gånger. Därför brukar han skriva ordet en gång, åtföljt av en
+siffra som visar hur många gånger ordet ska upprepas.
 
-\fe{Poängsättning:} För testfall värda $2$ poäng (utav $5$ möjliga) gäller att Tor och mor aldrig är redo att äta en morot samtidigt, utöver den första moroten de båda äter.
+Skriv ett program som läser in ett ord som Rama tänker upprepa (som består av som mest 9 bokstäver)
+och hur många gånger det ska upprepas (som mest 9). 
+Programmet ska sedan skriva ut ordet fast upprepat rätt antal gånger.
 
-\vspace{1cm}
-\begin{center}
-  \includegraphics[width=17cm]{morot.pdf}
-\end{center}
-\ku{Tidsschema för morotsätningen i exempel 1 (överst) och exempel 2 (underst). Varje ruta motsvarar en sekund, och en morot i rutan betyder att personen börjar äta en morot då. I det andra exemplet kommer ingen att ta den sista moroten, vilket visas med ett kryss i den tidsrutan då båda två skulle vilja ta den sista.}
+
+\fe{Poängsättning:} För testfall värda $1$ poäng (utav $5$ möjliga) gäller att antalet gånger ordet ska upprepas är $1$.
 
 \vspace{1cm}
 \fe{Körningsexempel 1}
 \begin{verbatim}
-Tors tid ? 5
-Mors tid ? 3
+Ordet ? hej
+Antal upprepningar ? 3 
 
-Svar: Tor 15,   Mor 25
+Svar: hejhejhej
 \end{verbatim}
 
 \vspace{1cm}
 \fe{Körningsexempel 2}
 \begin{verbatim}
-Tors tid ? 2
-Mors tid ? 4
-
-Svar: Tor 26,   Mor 13
-\end{verbatim}
-
-\vspace{1cm}
-\fe{Körningsexempel 3}
-\begin{verbatim}
-Tors tid ? 19
-Mors tid ? 18
-
-Svar: Tor 19,   Mor 21
+Ordet ? ha
+Antal upprepningar ? 4 
+  
+Svar: hahahahaha
 \end{verbatim}
 
 
 
 \newpage
-\specialsection*{Uppgift 2 -- Sifferkryptot}
+\specialsection*{Uppgift 2 -- Tre i rad}
 
 
-\begin{center}
-  \includegraphics[width=12cm]{sifferkrypto.pdf} \\ ~\\
-  \ku{Exempel på missuppfattning som kan ske med Alice nya chiffer.}
-\end{center}
+%\begin{center}
+%  \includegraphics[width=12cm]{sifferkrypto.pdf} \\ ~\\
+%  \ku{Exempel på missuppfattning som kan ske med Alice nya chiffer.}
+%\end{center}
 
 \vspace{1cm}
-Alice har hittat på ett revolutionärt chiffer som ingen kommer kunna lösa! Så här går det till: man tar strängen som ska krypteras, och byter ut varje bokstav mot deras position i alfabetet ( 
-A blir 1, B blir 2, C blir 3 o.s.v upp till Ö som blir 29). När hon gjort detta upptäcker hon det stora problemet med chiffret: det går inte alltid att avkoda entydigt! 
 
-Skriv ett program som läser in ett krypterat meddelande (högst 15 siffror) och skriver ut hur många olika ursprungssträngar som skulle kunna ha gett upphov till detta meddelande. För givna indata finns alltid minst en möjlig ursprungssträng.
+Matematikern Lenore Oljer har gjort så mycket matte att hon har tröttnat på primtal. 
+Hon har nu börjat studera så kallade trevliga tripletter. 
+Det är väldigt lätt att skapa en trevlig triplett. 
+Börja med ett heltal $a$ som är
+större än noll och skapa sedan tripletten $(a,a+1,a+2)$. 
+Alla tripletter som skapats på detta sätt är trevliga. 
+Några exempel på trevliga tripletter är $(4,5,6)$ och $(15,16,17)$.
 
-\fe{Poängsättning:} För testfall värda $2$ poäng (utav $5$ möjliga) gäller att högst två ''krångelsiffror'' står i följd, där en krångelsiffra är 1 eller 2.\\
-%För testfall värda ytterligare $1$ poäng gäller att strängens längd är högst 10.\\
-%För de sista $2$ poängen är strängens längd högst 30.\\
+För att lära sig mer om trevliga tripletter vill Lenore hitta hur 
+många tal som kan skrivas som produkten av
+alla talen i en trevlig triplett. Hon kallar dessa tal "treiga tal". 
+Några exempel på treiga tal är $24=2 \cdot 3 \cdot 4$
+och $336 = 6 \cdot 7 \cdot 8$. Lenore vill nu veta hur många treiga tal det 
+finns som är mindre än talet $N$.
+
+Skriv ett program som läser in talet $N$ och skriver ut hur många tal mindre än
+$N$ är treiga.
+
+\fe{Poängsättning:}\\
+De fem testfallen som vardera ger $1$ poäng har följande begränsningar:
+\begin{enumerate}
+\item  $\;\;\;\;N \le 25 $    
+\item  $\;\;\;\;N \le 80 $ 
+\item  $\;\;\;\;N \le 1000 $   
+\item  $\;\;\;\;N \le 10^5 $   
+\item  $\;\;\;\;N \le 10^9 $   
+\end{enumerate}
 
 
 \vspace{1cm}
 
 \fe{Körningsexempel 1}
 \begin{verbatim}
-Kryptosträng ? 32312410
+N ? 75
 
-Svar: 6
+Svar: 3
 \end{verbatim}
 
-\fe{Förklaring:} Strängarna är CBCABDJ, CWLDJ, CWAXJ, CWABDJ, CBCAXJ, CBCLDJ.
+\fe{Förklaring:} De treiga talen är 6, 24 och 60.
 
 \vspace{1cm}
 
 \fe{Körningsexempel 2}
 \begin{verbatim}
-Kryptosträng ? 1121222919
+N ? 24
 
-Svar: 68
+Svar: 1
 \end{verbatim}
+
+\fe{Förklaring:} Eftersom det treiga talet $24$ inte är mindre än $N$ räknar vi bara 6.
+
+\vspace{3cm}
+
+\fe{Körningsexempel 3}
+\begin{verbatim}
+N ? 1234
+
+Svar: 9
+\end{verbatim}
+
 
 
 \newpage
@@ -178,9 +205,9 @@ Svar: 24
 \columnbreak
 \vspace{3cm}
 
-\begin{minipage}[c]{2\columnwidth+1\columnsep}
-    \centering\includegraphics[width=11cm]{orient.pdf}
-\end{minipage}
+%\begin{minipage}[c]{2\columnwidth+1\columnsep}
+%    \centering\includegraphics[width=11cm]{orient.pdf}
+%\end{minipage}
 \vspace{0.5cm}
 \;\\
 \fe{Körningsexempel 1}\\
@@ -218,88 +245,87 @@ Notera att kontrollerna måste tas i ordning. %, så även om område 4 besökts
 
 
 \newpage
-\specialsection*{Uppgift 4 -- Dragkamp}
+\specialsection*{Uppgift 4 -- Klippa protein}
 
-Under en idrottslektion vill läraren dela in alla elever i två lag för att tävla i dragkamp.
-För att göra dragkampen intressant bör lagen vara exakt lika stora, samt exakt lika starka.
-Läraren har på förhand uppskattat varje elevs styrka till ett tal mellan $1$ och $4$.
+Din kompis Björn har nyligen påbörjat ett stort kemiexperiment, med målet att skapa ett hemligt protein. 
+Alla protein kan beskrivas som strängar av bokstäver från \texttt{a}-\texttt{z}, exempelvis \texttt{bcaa} och \texttt{hejsan}.
+Han behöver skapa ett flertal så-kallade \textit{rena} proteiner. Dessa är protein som bara består av en enda bokstav.
+För att göra detta har han mikroskopiska saxar som kallas CRISPR. Med hjälp av dessa kan han ta bort upp till $k$ bokstäver
+som ligger bredvid varandra. Med andra ord kan du välja ett intervall med $k$ bokstäver att klippa bort.
+Om ett protein delas i två delas när det klipps kommer dessa delar sedan att sättas ihop där de klipptes av. 
 
-Givet hur många elever av varje styrketal som är med på lektionen, kan du berätta hur läraren ska dela upp lagen?
-Det är garanterat att elevernas styrkor är valda så att detta alltid är möjligt.
+Eftersom han är väldigt lat vill han ha din hjälp att skriva ett program som beräknar minsta antalet gånger han behöver klippa ett visst protein för
+att det ska bli rent. Notera att proteinet \textbf{inte} får bli en tom sträng, eftersom det isåfall inte längre kan användas för kemi.
 
-Programmet ska läsa in de fyra heltalen $s_1, s_2, s_3, s_4$ ($0 \le s_i \le 10\,000\,000$), där $s_i$ är antalet elever som har styrkan $i$. 
+Programmet ska först läsa in Björns protein, som består av som mest $32$ bokstäver. Sedan ska det läsa in talet $k$ ($k \ge 1$).
 
-Programmet ska skriva ut en rad med fyra heltal $a_1, a_2, a_3, a_4$, där $a_i$ är antalet elever med styrkan $i$ som ska vara med i det ena dragkampslaget.
+Programmet ska sedan skriva ut minsta antalet klippningar som krävs för att göra proteinet rent.
 
 \vspace{0.5cm}
 \fe{Poängsättning:}\\
 De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöver de som redan nämnts:
 \begin{itemize}
-    \item[(1)] $\;\;\;\;s_i \le 300$    
-    \item[(2)] $\;\;\;\;s_i \le 2000$ 
-    \item[(3)] $\;\;\;\;s_4=0$, d.v.s.\ ingen elev har styrka $4$.
-    \item[(4-5)] $\;\;\;\; $Inga särskilda begränsningar.
+    \item[(1)] $\;\;\;\;$ strängen består endast av bokstäverna \texttt{a} och \texttt{b}.    
+    \item[(2)] $\;\;\;\;k=1$ 
+    \item[(3-5)] $\;\;\;\; $Inga särskilda begränsningar.
 \end{itemize}
 
 \vspace{1cm}
 \fe{Körningsexempel 1}\\
 \begin{verbatim}
-Antal ettor ? 1
-Antal tvåor ? 1
-Antal treor ? 1
-Antal fyror ? 1
+Björns protein ? exempelfall
+k ? 4
 
-Svar: 1 0 0 1
+Svar: 3
 \end{verbatim}
 
 \fe{Förklaring:}
-Det ena laget har en elev med styrka $1$ och en med styrka $4$, medan det andra har en med styrka $2$ och en med styrka $3$.
-Båda lag har då samma styrka, nämligen $5$, och är lika stora, då de består av $2$ elever.
+Ett möjligt sätt är först klippa bort bokstäverna \texttt{pe}. Vi får då strängen \texttt{exemlfall}. \\
+Sedan kan vi klippa bort \texttt{fa} och får \texttt{exemlll}. \\
+Till sist klippa vi bort \texttt{exem} och får \texttt{lll}. 
 
-\fe{Körningsexempel 2}\\
-\begin{verbatim}
-Antal ettor ? 2
-Antal tvåor ? 4
-Antal treor ? 6
-Antal fyror ? 8
-
-Svar: 1 2 3 4
-\end{verbatim}
 
 
 \newpage
-\specialsection*{Uppgift 5 -- Sista moroten}
+\specialsection*{Uppgift 5 -- Pickle clicker}
 
-Det är frustrerande för Tor och hans mor att det ibland blir en morot kvar (se uppgift 1, \emph{Morötter}).
-Istället för att dela den föreslår Tor att slå tärning om vem som ska få moroten.
-Han tar fram $N$ stycken $M$-sidiga tärningar, vars sidor är numrerade från $1$ till $M$ och har exakt lika stor sannolikhet att rullas.
-Han låter nu sin mor välja $K$ stycken tal, och om talen på tärningarna summerar till ett av de talen vinner hon, annars vinner Tor.
-Mor vill nu ha din hjälp att skriva ett program för att avgöra hennes chans att vinna om hon väljer sina utfall optimalt.
+För ungefär ett halvår sedan släpptes succéspelet \emph{Pickle Clicker}. 
+Efter att ha lagt otaliga timmar på spelet har Rasmus bestämt sig för att ta 
+saker och ting till nästa nivå: han tänker speedrunna spelet. 
 
 
-%Katastrof! Joshua och Olle vill ha en kaka, men det finns bara en kvar i burken. Istället för att dela den på två föreslår Joshua att slå tärning om vem som ska få kakan.
-%Han tar fram $N$ stycken $M$-sidiga tärningar, vars sidor är numrerade från $1$ till $M$. Tack vare att Joshua lärt sig lite geometri har han bevisat att alla sidor är lika sannolika att rullas.
-%Han låter Olle välja $K$ stycken tal, och om talen på tärningarna summerar till ett av de talen vinner Olle, annars vinner Joshua.
-%Olle vill nu ha din hjälp att skriva ett program för att avgöra hans chans att vinna om han väljer sina utfall optimalt.
+Pickle Clicker går ut på att man samlar ihop så mycket som möjligt av valutan pickles. 
+Målet är att köpa Megapicklen så fort som möjligt, som kostar $t$ pickles. 
+I spelet finns även $n$ olika typer av byggnader. De olika typerna är numrerade från 
+$1$ till $n$, där den $i$:te typen producerar $p_i$ pickles per sekund och kostar 
+$c_i$ pickles att bygga.
+
+I början äger du en byggnad av typ $1$. Varje sekund sker följande: 
+\begin{enumerate}
+  \item Varje byggnad du äger producerar pickles. En byggnad av typ $i$ producerar $p_i$ pickles.
+  \item Därefter har du alternativet att köpa en byggnad eller köpa Megapickeln. En byggnad av typ $i$ kostar 
+  $c_i$ pickles att bygga, och du måste ha råd med den för att få köpa den. Du får maximalt köpa en byggnad 
+  per sekund, men det är tillåtet att ha flera byggnader av samma typ.
+\end{enumerate}
 
 
-%\section*{Indata}
-%Den första raden innehåller de tre heltalen $N, M, K$ ($1 \le N \le 20, 1 \le M, K \le 10000$), antalet tärningar, hur många sidor vardera tärning har och hur många utfall Olle får välja.
+Hjälp Rasmus bestämma hur han ska spela spelet så att han kan köpa Megapicklen på så få sekunder som möjligt.
+Se exemplet nedan för att få en tydligare bild av reglerna.
 
-Programmet ska läsa in de tre heltalen $N, M, K$ ($1 \le N, M$, $1 \le K < N \cdot M$): antalet tärningar, hur många sidor vardera tärning har och hur många utfall mor får välja.
+Programmet ska läsa in heltalen $n$ och $t$ ($1 \le n \leq 6, 1 \le t \le 10^5$): antalet byggnader och kostnaden av
+Megapicklen.
 
-Programmet ska skriva ut ett decimaltal -- den största sannolikheten mor kan ha att vinna om hon väljer sina utfall rätt. 
-Svaret kommer accepteras om det har ett absolut fel om högst $10^{-5}$.
+Programmet ska skriva ut ett heltal: hur långa tid det tar att vinna pickle clicker om man spelar optimalt.
 
 \fe{Poängsättning:}\\
 De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöver de som redan nämnts:
-\begin{enumerate}
-\item  $\;\;\;\;N=2, M \le 100 $    
-\item  $\;\;\;\;N \le 6,  M \le 6 $ 
-\item  $\;\;\;\;N \le 50, M \le 4 $   
-\item  $\;\;\;\;N \le 40, M \le 40 $   
-\item  $\;\;\;\;N \le 20, M \le 5000 $   
-\end{enumerate}
+\begin{itemize}
+    \item[(1)] $\;\;\;\;n=1$ 
+    \item[(2)] $\;\;\;\;t \le 10$ 
+    \item[(3)] $\;\;\;\;t \le 1000$
+    \item[(4-5)] $\;\;\;\; $Inga särskilda begränsningar.
+\end{itemize}
+
 
 \fe{Körningsexempel 1}
 \begin{verbatim}
