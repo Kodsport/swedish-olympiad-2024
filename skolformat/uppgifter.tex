@@ -7,7 +7,7 @@
 % ----------------------------------------------------
 
 \begin{center}
-\Huge{Programmeringsolympiaden 2023}
+\Huge{Programmeringsolympiaden 2024}
 \end{center}
 \vspace{-1.2cm} 
 \specialsection*{Tävlingsregler för skolkvalet}
@@ -15,7 +15,7 @@
 \item Tävlingen äger rum på av skolan bestämt datum under {\bf fyra
     timmar. Ingen förlängning ges för lunch eller raster.} Eleven ska i förväg komma överens med läraren om att använda egen dator eller en som skolan tillhandahåller. I vilket fall som helst måste eleven befinna sig i avtalad lokal på skolan. 
     %{\bf På grund av pandemin kan i undantagsfall tävling ske från annan plats godkänd av läraren, givet tillräcklig övervakning.}
-\item Tävlingen består av fem uppgifter som vardera ska lösas genom ett
+\item Tävlingen består av sex uppgifter som vardera ska lösas genom ett
   datorprogram i valfritt programmeringsspråk.
 \item {\bf Indata kan läsas in i programmet på valfritt sätt}, t.ex. genom att programmet för en dialog med användaren (som i körningsexemplena i uppgifterna), att de skrivs in i ett grafiskt gränssnitt eller att datafiler skickas till {\em standard input}. Kom bara överens med din lärare om hur programmet ska testas.
 \item Dina lösningar kommer att testköras med förpreparerade
@@ -45,7 +45,7 @@ tävling.
 filer får ske under tävlingen.  
 \item Hjälpmedel: Valfritt skriftligt material, material som finns installerat på datorn samt material som finns tillgängligt på internet.
 Det är \ku{inte} tillåtet att aktivt kommunicera på internet (t.ex. chatta eller ställa frågor till ett forum) utan endast att söka efter information.
-{\bf Det är heller inte tillåtet att använda generativ AI såsom ChatGPT eller Github Copilot. Detta gäller endast på skolkvalet och inte på onlinekvalet.}
+{\bf Det är heller inte tillåtet att använda generativ AI såsom ChatGPT eller Github Copilot. Förbudet på generativ AI gäller endast skolkvalet och inte onlinekvalet.}
 Räknedosa är tillåten.
 \item Tävlingsbidraget ska lämnas in i form av källkodsfiler (uppg1...uppg6 med passande filtillägg) som läggs på överenskommen plats. Ingen hänsyn tas till andra filer. Var noga 
 med att lämna in den korrekta versionen av ditt program.  
@@ -122,8 +122,8 @@ Några exempel på treiga tal är $24=2 \cdot 3 \cdot 4$
 och $336 = 6 \cdot 7 \cdot 8$. Lenore vill nu veta hur många treiga tal det 
 finns som är mindre än talet $N$.
 
-Skriv ett program som läser in talet $N$ och skriver ut hur många tal mindre än
-$N$ är treiga.
+Skriv ett program som läser in talet $N$ och skriver ut hur många tal som är mindre än
+$N$ och är treiga.
 
 \fe{Poängsättning:}\\
 De fem testfallen som vardera ger $1$ poäng har följande begränsningar:
@@ -145,7 +145,7 @@ N ? 75
 Svar: 3
 \end{verbatim}
 
-\fe{Förklaring:} De treiga talen är 6, 24 och 60.
+\fe{Förklaring:} De treiga talen mindre än 75 är 6, 24 och 60.
 
 \vspace{1cm}
 
@@ -184,8 +184,8 @@ det hemliga meddelandet.
 
 Paula har beslutat sig för att en gång för alla knäcka gåtan, och hitta meddelandet.
 
-Skriv ett program som först läser in antalet rader ($n$) och kolumner ($m$) rutnätet har. Läs sedan
-in $n$ rader, som innehller alla rutnätets rader.
+Skriv ett program som först läser in antalet rader ($n$) och kolumner ($m$) som rutnätet har. Läs sedan
+in $n$ rader, som innehåller alla rutnätets rader. För alla testfall håller det att $1 \leq n,m \leq 6$.
 
 Programmet ska sedan skriva ut det hemliga meddelandet som står på torget.
 
@@ -193,11 +193,12 @@ Programmet ska sedan skriva ut det hemliga meddelandet som står på torget.
 \fe{Poängsättning:}\\
 De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöver de som redan nämnts:
 \begin{itemize}
-    \item[(1)] $\;\;\;\;n=1$    
+    \item[(1)]   $\;\;\;\;$ $n=1$    
     \item[(2-3)] $\;\;\;\;$ Antalet bokstäver är $n+m-1$ 
     \item[(4-5)] $\;\;\;\;$ Inga särskilda begränsningar.
 \end{itemize}
 
+\vspace{1cm}
 \fe{Körningsexempel 1}\\
 \begin{verbatim}
 n ? 5
@@ -234,9 +235,9 @@ Svar: snake
 
 Din kompis Björn har nyligen påbörjat ett stort kemiexperiment, med målet att skapa ett hemligt protein. 
 Alla protein kan beskrivas som strängar av bokstäver från \texttt{a}-\texttt{z}, exempelvis \texttt{bcaa} och \texttt{hejsan}.
-Han behöver skapa ett flertal så-kallade \textit{rena} proteiner. Dessa är protein som bara består av en enda bokstav.
+Han behöver skapa ett flertal så-kallade \textit{rena} proteiner. Dessa är protein som består av kopior av en och samma bokstav.
 För att göra detta har han mikroskopiska saxar som kallas CRISPR. Med hjälp av dessa kan han ta bort upp till $k$ bokstäver
-som ligger bredvid varandra. Med andra ord kan du välja ett intervall med $k$ bokstäver att klippa bort.
+som ligger bredvid varandra. Med andra ord kan han välja ett intervall med upp till $k$ bokstäver att klippa bort.
 Om ett protein delas i två delas när det klipps kommer dessa delar sedan att sättas ihop där de klipptes av. 
 
 Eftersom han är väldigt lat vill han ha din hjälp att skriva ett program som beräknar minsta antalet gånger han behöver klippa ett visst protein för
@@ -256,7 +257,7 @@ De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöve
 \end{itemize}
 
 \vspace{1cm}
-\fe{Körningsexempel 1}\\
+\fe{Körningsexempel 1}
 \begin{verbatim}
 Björns protein ? exempelfall
 k ? 4
@@ -269,7 +270,21 @@ Ett möjligt sätt är först klippa bort bokstäverna \texttt{pe}. Vi får då 
 Sedan kan vi klippa bort \texttt{fa} och får \texttt{exemlll}. \\
 Till sist klippa vi bort \texttt{exem} och får \texttt{lll}. 
 
+\vspace{3cm}
 
+\fe{Körningsexempel 2}
+\begin{verbatim}
+Björns protein ? aabbabbba
+k ? 3
+
+Svar: 2
+\end{verbatim}
+
+
+\begin{center}
+  \includegraphics[width=12cm]{klippaprotein.png} \\ ~\\
+  \ku{Illustration av hur Björn kan klippa proteinet optimalt i körningsexempel 2.}
+\end{center}
 
 \newpage
 \specialsection*{Uppgift 5 -- Pickle clicker}
@@ -280,7 +295,7 @@ saker och ting till nästa nivå: han tänker speedrunna spelet.
 
 
 Pickle Clicker går ut på att man samlar ihop så mycket som möjligt av valutan pickles. 
-Målet i en speedrun är att köpa Megapicklen så fort som möjligt, som kostar $t$ pickles. 
+Målet i en speedrun är att köpa Megapickeln så fort som möjligt, som kostar $t$ pickles. 
 I spelet finns även $n$ olika typer av byggnader. De olika typerna är numrerade från 
 $1$ till $n$, där den $i$:te typen producerar $p_i$ pickles per sekund och kostar 
 $c_i$ pickles att bygga.
@@ -294,11 +309,13 @@ I början äger du en byggnad av typ $1$. Varje sekund sker följande:
 \end{enumerate}
 
 
-Hjälp Rasmus bestämma hur han ska spela spelet så att han kan köpa Megapicklen på så få sekunder som möjligt.
+Hjälp Rasmus bestämma hur han ska spela spelet så att han kan köpa Megapickeln på så få sekunder som möjligt.
 Se exemplet nedan för att få en tydligare bild av reglerna.
 
 Programmet ska läsa in heltalen $n$ och $t$ ($1 \le n \leq 6, 1 \le t \le 10^5$): antalet byggnader och kostnaden av
-Megapicklen.
+Megapickeln.
+
+Därefter ska programmet räsa in $n$ rader: $p_i$ och $c_i$, produktionshastigheten och kostnaden för vardera byggnar.
 
 Programmet ska skriva ut ett heltal: hur lång tid det tar att vinna pickle clicker om man spelar optimalt.
 
@@ -339,14 +356,14 @@ Svar: 6179
 
 \newpage
 \specialsection*{Uppgift 6 -- Christians piano}
-Christian vill lära sig spela piano, men klarar bara av att spela med pekfingret just nu.
+Christian vill lära sig spela piano, men klarar bara av att spela med pekfingret.
 Just nu håller han på och över hårt för att lära sig ett stycke.
 Ett stycke beskrivs som en sekvens tangenter som ska tryckas i ordning. Exempelvis beskriver
 stycket \texttt{abdaa} att han ska trycka på tangenterna
 \texttt{a}, \texttt{b}, \texttt{d}, \texttt{a}, \texttt{a} i ordning. 
 Du märker dock att han har svårt att röra pekfingret snabbt nog mellan tangenterna.
-Märkvärdigt nog tar det honom alltid exakt en sekund att flytta fingret en tanget, men
-noll sekunder att spela noten.
+Märkvärdigt nog tar det honom alltid exakt en sekund att flytta fingret en tangent åt sidan, men
+noll sekunder att trycka ner en tangent.
 För att hjälpa honom tänker du ändra om ordningen på pianots tangenter så att totala tiden
 det tar att spela stycket blir så litet som möjligt.
 
@@ -363,10 +380,10 @@ Avstånden när han spelar stycket blir följande:
 Vilket innebär att det totalt tar fyra sekunder att spela stycket \texttt{abdaa} på ett piano
 med ordningen \texttt{abd} $\cdots$.
 
-Skriv ett program som läser ett stycke och skriver ut totala tiden det tar för Christian att
+Skriv ett program som läser in ett stycke och skriver ut totala tiden det tar för Christian att
 spela stycket på pianot med bästa möjliga ordning på tangenter. Det är garanterat att stycket
 består av som mest 32 bokstäver och innehåller som mest 15 unika sorters bokstäver.
-Alla styckets bokstäver är valda från \texttt{a}-\texttt{z}.
+Alla bokstäver i stycket är valda från \texttt{a}-\texttt{z}.
 
 \fe{Poängsättning:}\\
 De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöver de som redan nämnts:
@@ -391,6 +408,6 @@ Svar: 7
 \end{verbatim}
 
 \fe{Förklaring:}
-En möjlig optimal ordning på pianots tangenter \texttt{adbc}.
+En möjlig optimal ordning på pianots tangenter är \texttt{adbc}.
 
 \end{document}
