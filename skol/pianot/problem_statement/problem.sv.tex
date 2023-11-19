@@ -1,0 +1,49 @@
+\problemname{Pianot}
+Christian vill lära sig spela piano, men klarar bara av att spela med pekfingret just nu.
+Just nu håller han på och över hårt för att lära sig ett stycke.
+Ett stycke beskrivs som en sekvens tangenter som ska tryckas i ordning. Exempelvis beskriver
+stycket \texttt{abdaa} att han ska trycka på tangenterna
+\texttt{a}, \texttt{b}, \texttt{d}, \texttt{a}, \texttt{a} i ordning. 
+Du märker dock att han har svårt att röra pekfingret snabbt nog mellan tangenterna.
+Märkvärdigt nog tar det honom alltid exakt en sekund att flytta fingret en tangent, men
+noll sekunder att spela noten.
+För att hjälpa honom tänker du ändra om ordningen på pianots tangenter så att totala tiden
+det tar att spela stycket blir så litet som möjligt.
+
+Exempelvis, om stycket han försöker lära sig är \texttt{abdaa} och pianot har ordningen
+\texttt{abd} \dots kommer han behöva flytta fingret totalt $6$ pianotangenters längd.
+Avstånden när han spelar stycket blir följande:
+\begin{itemize}
+  \item \texttt{a} till \texttt{b} tar en sekund.
+  \item \texttt{b} till \texttt{d} tar en sekund.
+  \item \texttt{d} till \texttt{a} tar två sekunder.
+  \item \texttt{a} till \texttt{a} tar noll sekunder.
+\end{itemize}
+Vilket innebär att det totalt tar fyra sekunder att spela stycket \texttt{abdaa} på ett piano
+med ordningen \texttt{abd} \dots.
+
+Skriv ett program som läser ett stycke och skriver ut totala tiden det tar för Christian att
+spela stycket på det bästa pianot.
+
+\section*{Indata}
+Den första raden innehåller en sträng som består av bokstäverna \texttt{a}-\texttt{z}, proteinet Björn vill göra \texttt{rent}.
+Låt antalet bokstäver i proteinet vara $n$. Då gäller alltid $1 \leq n \leq 32$.
+
+På nästa rad följer ett heltal $k$ ($1 \leq k \leq n$), antalet bokstäver Björn kan ta bort med en klippning. 
+
+\section*{Utdata}
+Skriv ut ett heltal: det minsta antalet klippningar Björn behöver göra för att proteinet ska bli \texttt{rent}.
+
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $20$       & $k = 1$ \\ \hline
+  $2$    & $20$       & Proteinet består endast av bokstäverna \texttt{a} och \texttt{b} \\ \hline
+  $3$    & $60$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
