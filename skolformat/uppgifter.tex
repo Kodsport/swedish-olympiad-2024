@@ -43,7 +43,10 @@ tävling.
 
 \item Deltagandet är individuellt vilket bland annat innebär att inget utbyte av idéer eller 
 filer får ske under tävlingen.  
-\item Hjälpmedel: Valfritt skriftligt material, material som finns installerat på datorn samt material som finns tillgängligt på internet. Det är \ku{inte} tillåtet att aktivt kommunicera på internet (t.ex. chatta eller ställa frågor till ett forum) utan endast att söka efter information. Räknedosa är tillåten.
+\item Hjälpmedel: Valfritt skriftligt material, material som finns installerat på datorn samt material som finns tillgängligt på internet.
+Det är \ku{inte} tillåtet att aktivt kommunicera på internet (t.ex. chatta eller ställa frågor till ett forum) utan endast att söka efter information.
+{\bf Det är heller inte tillåtet att använda generativ AI såsom ChatGPT eller Github Copilot. Detta gäller endast på skolkvalet och inte på onlinekvalet.}
+Räknedosa är tillåten.
 \item Tävlingsbidraget ska lämnas in i form av källkodsfiler (uppg1...uppg1 med passande filtillägg) som läggs på överenskommen plats. Ingen hänsyn tas till andra filer. Var noga 
 med att lämna in den korrekta versionen av ditt program.  
 \end{lista}
@@ -167,81 +170,63 @@ Svar: 9
 
 
 \newpage
-\specialsection*{Uppgift 3 -- Inomhusorientering}
+\specialsection*{Uppgift 3 -- Meddelande}
 
-En snabbt växande sport är \ku{inomhusorientering}, där de största tävlingarna lockar tusentals deltagare som springer runt på t.ex.\ ett Campus. Genom arrangörens noga uttänkta avspärrningar blir det en labyrintliknande utmaning att ta sig mellan kontrollerna. Ofta gäller det att optimera användandet av trappor, och det är det vi ska titta på i den här uppgiften. Givet en karta som indelats i $N$ \ku{områden} ska du beräkna det minimala antalet trapplöpningar som orienteraren behöver göra för att besöka de $N$ områdena i tur och ordning (för att ta en kontroll i varje).
+I staden som Paula bor i finns ett stort torg. Torget kan representeras av ett 
+rutnät med $n$ rader och $m$ kolumner. I vissa av rutorna finns det bokstäver 
+inristade. 
 
-Byggnaden innehåller ett antal lodräta trapphus betecknade med bokstäver. Varje område ligger på en viss våning och är kopplat till ett eller flera av trapphusen. Ett trapphus behöver inte vara kopplat till något område på varje våning. Exempelvis kan trappa A gå mellan våning 1 och våning 3 utan att vara kopplad till något område på våning 2, som i figuren nedan. Att förflytta sig en våning upp eller ner i en trappa tar en tidsenhet. Däremot bryr vi oss inte om tiden det tar att röra sig inom ett område.
+Enligt legenden så bildar dessa bokstäver ett meddelande om man 
+går på rutorna i en viss ordning. För att det ska bli rätt måste man börja 
+i det övre vänstra hörnet och sluta i det nedre högra hörnet, och man får bara gå steg åt höger 
+och nedåt. Om man lyckas besöka alla bokstavsrutorna på det här viset så bildas 
+det hemliga meddelandet.
 
-Programmet ska först läsa in antalet områden $N$, där $3\le N \le 15$. För varje område ska programmet läsa in den våning som området befinner sig på (ett heltal mellan 1 och 100) och en sträng som innehåller ett eller flera tecken, valda bland versalerna A--Z, och som anger vilket eller vilka trapphus området är kopplat till. Programmet ska skriva ut ett tal: den minimala tiden det tar att besöka de $N$ områdena i precis den ordning de angavs i indata, med starten i område $1$ och målet i område $N$. 
+Paula har beslutat sig för att en gång för alla knäcka gåtan, och hitta meddelandet.
 
-\fe{Poängsättning:} I testfall värda $1$ poäng (av $5$ möjliga) kommer alla strängar vara \cu{A}.\\
+Skriv ett program som först läser in antalet rader ($n$) och kolumner ($c$) rutnätet har. Läs sedan
+in $n$ rader, som innehller alla rutnätets rader.
 
-\begin{multicols*}{3}
+Programmet ska sedan skriva ut det hemliga meddelandet som står på torget.
 
-\fe{Körningsexempel 2}
-\begin{verbatim}
-N ? 8
-Omr 1, vån ? 1
-Omr 1, tr  ? AB
-Omr 2, vån ? 4
-Omr 2, tr  ? DE
-Omr 3, vån ? 1
-Omr 3, tr  ? CEF
-Omr 4, vån ? 3
-Omr 4, tr  ? AD
-Omr 5, vån ? 2
-Omr 5, tr  ? E
-Omr 6, vån ? 2
-Omr 6, tr  ? D
-Omr 7, vån ? 2
-Omr 7, tr  ? BC
-Omr 8, vån ? 3
-Omr 8, tr  ? F
-
-Svar: 24 
-\end{verbatim}
-\vfill
-\columnbreak
-\vspace{3cm}
-
-%\begin{minipage}[c]{2\columnwidth+1\columnsep}
-%    \centering\includegraphics[width=11cm]{orient.pdf}
-%\end{minipage}
 \vspace{0.5cm}
-\;\\
+\fe{Poängsättning:}\\
+De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöver de som redan nämnts:
+\begin{itemize}
+    \item[(1)] $\;\;\;\;n=1$    
+    \item[(2-3)] $\;\;\;\;$ Antalet bokstäver är $n+m-1$ 
+    \item[(4-5)] $\;\;\;\;$ Inga särskilda begränsningar.
+\end{itemize}
+
 \fe{Körningsexempel 1}\\
 \begin{verbatim}
-N ? 3
-Omr 1, vån ? 2
-Omr 1, tr  ? A
-Omr 2, vån ? 100
-Omr 2, tr  ? A
-Omr 3, vån ? 3
-Omr 3, tr  ? A
+n ? 5
+m ? 6
+Rad 1 ? pa....
+Rad 2 ? ......
+Rad 3 ?.u.l..
+Rad 4 ? .....a
+Rad 5 ? ......
 
-Svar: 195
+Svar: paula
 \end{verbatim}
-\columnbreak
-%\vspace{8cm}
-~\\
-~\\
-~\\
-~\\
-~\\
-~\\
-~\\
-~\\
-~\\
 
-\ku{Figuren ovan:} Genomskärning av byggnaden i exempel 2. De stora siffrorna visar våningsnummer, de små numreringen av områdena. En möjlig snabbaste väg genom hela banan är:\\
-%(1) AAD (2) EEE (3) CBAA (4) DEE (5) EEDD (6) DAAB (7) CFF (8)\\
-AAD -- EEE -- CBAA -- DEE -- EEDD -- DAAB -- CFF \\
-Notera att kontrollerna måste tas i ordning. %, så även om område 4 besökts redan på väg till område 2 så måste det besökas igen efter område 3.
-\end{multicols*}
+\begin{center}
+  \includegraphics[width=6cm]{meddelande.png} \\ ~\\
+  \ku{Illustration av rutnätet i körningsexempel 1.}
+\end{center}
 
 
-%På sin väg mellan två områden kan orienteraren naturligtvis behöva passera andra områden, men dessa måste ändå uppsökas på sin riktiga tid (eftersom orienteringskontroller alltid måste tas i en viss ordning).
+\fe{Körningsexempel 2}\\
+\begin{verbatim}
+n ? 3
+m ? 3
+Rad 1 ? sn.
+Rad 2 ? .a.
+Rad 3 ? .ke
+
+Svar: snake
+\end{verbatim}
 
 
 \newpage
@@ -295,7 +280,7 @@ saker och ting till nästa nivå: han tänker speedrunna spelet.
 
 
 Pickle Clicker går ut på att man samlar ihop så mycket som möjligt av valutan pickles. 
-Målet är att köpa Megapicklen så fort som möjligt, som kostar $t$ pickles. 
+Målet i en speedrun är att köpa Megapicklen så fort som möjligt, som kostar $t$ pickles. 
 I spelet finns även $n$ olika typer av byggnader. De olika typerna är numrerade från 
 $1$ till $n$, där den $i$:te typen producerar $p_i$ pickles per sekund och kostar 
 $c_i$ pickles att bygga.
@@ -315,7 +300,7 @@ Se exemplet nedan för att få en tydligare bild av reglerna.
 Programmet ska läsa in heltalen $n$ och $t$ ($1 \le n \leq 6, 1 \le t \le 10^5$): antalet byggnader och kostnaden av
 Megapicklen.
 
-Programmet ska skriva ut ett heltal: hur långa tid det tar att vinna pickle clicker om man spelar optimalt.
+Programmet ska skriva ut ett heltal: hur lång tid det tar att vinna pickle clicker om man spelar optimalt.
 
 \fe{Poängsättning:}\\
 De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöver de som redan nämnts:
@@ -329,29 +314,83 @@ De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöve
 
 \fe{Körningsexempel 1}
 \begin{verbatim}
-Antal tärningar N ? 2
-Antal sidor M ? 6 
-Antal utfall K ? 2
+Antal byggnader ? 2
+Kostnad av Megapickeln ? 100
+Produktionshastighet och pris för byggnad 1 ? 3 3
+Produktionshastighet och pris för byggnad 2 ? 50 10
 
-Svar: 0.30555556
+Svar: 5
+\end{verbatim}
+
+\begin{center}
+  \includegraphics[width=12cm]{pickleclicker.png} \\ ~\\
+  \ku{Illustration av vad man bör göra varje sekund för att lösa exempel 1 optimalt.}
+\end{center}
+
+\fe{Körningsexempel 2}
+\begin{verbatim}
+Antal byggnader ? 1
+Kostnad av Megapickeln ? 100000
+Produktionshastighet och pris för byggnad 1 ? 1 1000
+
+Svar: 6179
+\end{verbatim}
+
+
+\newpage
+\specialsection*{Uppgift 6 -- Christians piano}
+Christian vill lära sig spela piano, men klarar bara av att spela med pekfingret just nu.
+Just nu håller han på och över hårt för att lära sig ett stycke.
+Ett stycke beskrivs som en sekvens tangenter som ska tryckas i ordning. Exempelvis beskriver
+stycket \texttt{abdaa} att han ska trycka på tangenterna
+\texttt{a}, \texttt{b}, \texttt{d}, \texttt{a}, \texttt{a} i ordning. 
+Du märker dock att han har svårt att röra pekfingret snabbt nog mellan tangenterna.
+Märkvärdigt nog tar det honom alltid exakt en sekund att flytta fingret en tanget, men
+noll sekunder att spela noten.
+För att hjälpa honom tänker du ändra om ordningen på pianots tangenter så att totala tiden
+det tar att spela stycket blir så litet som möjligt.
+
+Exempelvis, om stycket han försöker lära sig är \texttt{abdaa} och pianot har ordningen
+\texttt{abd} $\cdots$ (resten av pianot visas inte då detta inte påverkar svaret)
+kommer det totalt ta 4 sekunder att spela stycket.
+Avstånden när han spelar stycket blir följande:
+\begin{itemize}
+  \item \texttt{a} till \texttt{b} tar en sekund.
+  \item \texttt{b} till \texttt{d} tar en sekund.
+  \item \texttt{d} till \texttt{a} tar två sekunder.
+  \item \texttt{a} till \texttt{a} tar noll sekunder.
+\end{itemize}
+Vilket innebär att det totalt tar fyra sekunder att spela stycket \texttt{abdaa} på ett piano
+med ordningen \texttt{abd} $\cdots$.
+
+Skriv ett program som läser ett stycke och skriver ut totala tiden det tar för Christian att
+spela stycket på pianot med bästa möjliga ordning på tangenter. Det är garanterat att stycket
+består av som mest 32 bokstäver och innehåller som mest 15 unika sorters bokstäver.
+Alla styckets bokstäver är valda från \texttt{a}-\texttt{z}.
+
+\fe{Poängsättning:}\\
+De fem testfallen som vardera ger $1$ poäng har följande begränsningar utöver de som redan nämnts:
+\begin{itemize}
+    \item[(1)] $\;\;\;\;$ Stycket innehåller som mest 8 unika bokstäver. 
+    \item[(2-5)] $\;\;\;\; $Inga särskilda begränsningar.
+\end{itemize}
+
+
+\fe{Körningsexempel 1}
+\begin{verbatim}
+Stycket ? abdaa
+
+Svar: 4
 \end{verbatim}
 
 \fe{Körningsexempel 2}
 \begin{verbatim}
-Antal tärningar N ? 3
-Antal sidor M ? 7
-Antal utfall K ? 4
+Stycket ? abdaadbc
 
-Svar: 0.41399417
+Svar: 7
 \end{verbatim}
 
-\fe{Körningsexempel 3}
-\begin{verbatim}
-Antal tärningar N ? 20
-Antal sidor M ? 2189
-Antal utfall K ? 2734
-
-Svar: 0.36902844
-\end{verbatim}
+\fe{Förklaring:}
+En möjlig optimal ordning på pianots tangenter \texttt{adbc}.
 
 \end{document}
