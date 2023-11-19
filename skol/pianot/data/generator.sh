@@ -5,14 +5,22 @@ use_solution joshua_dp.cpp
 
 compile gen_rand.py
 
-# Generate answers to sample cases
 samplegroup
 sample 1
 
 group group1 20
 tc 1
-for i in {1..2000}
-do
-tc g1-$i gen_rand n=$((RANDOM % 30 + 1)) alpha=$((RANDOM % 8 + 1))
+tc_manual ../manual/tc1.in
 
-done
+group group2 20
+tc_manual ../manual/tc2.in
+
+group group3 20
+tc 1
+tc_manual ../manual/tc3.in
+
+group group4 20
+tc_manual ../manual/tc4.in
+
+group group5 20
+tc_manual ../manual/tc5.in
