@@ -1,39 +1,59 @@
 \problemname{Fire Hydrant}
 
-``\texttt{Kiki}'' and ``\texttt{boba}'' form a fascinating sound-symbolic connection, where people spontaneously associate sharp sounds like ``\texttt{kiki}'' 
-with jagged shapes and softer sounds like ``\texttt{boba}'' with rounder shapes. 
-This reveals an underlying link between sounds and visual properties, 
-providing insight into how our brains intuitively create meaning and associations.
+Fireman Robert has been working as a firefighter for over 20 years and loves his job.
+After a long walk in the metropolis M (formerly known as Stockholm), Robert received
+a call on his phone from his hydrophobic boss, ordering him to come to the fire station immediately.
 
-Fergus has long held a keen interest in phonetics, and based on this sound-symbolic connection, he has developed a theory! 
-He believes that all words can be categorized into 4 categories. In other words, each word is either a word corresponding to the 
-figure on the left, like ``\texttt{kiki}'', or a word corresponding to the figure on the right, like ``\texttt{boba}'', or a word 
-that is a combination of both, or a word that is none of the mentioned alternatives.
+Robert has just arrived at the southwest intersection of the metropolis M and
+decides to head straight to the fire station. However, several fire hydrants in
+the metropolis M have started leaking water and flooding the streets. Oh no! This
+is particularly serious because Robert's hydrophobic boss at the fire station is strict
+about not having water nearby. Showing up soaking wet to work after encountering
+several leaking fire hydrants could get Robert fired. Robert wants to work as a
+firefighter for at least another 20 years, so please help Robert minimize how wet he gets!
 
-\begin{figure}[h]
-  \centering
-\includegraphics[width=0.3\textwidth]{kikiboba.png}
-  \caption{Figure to the left is commonly associated with "kiki". Figure to the right is commonly associated with "boba".}
-  \label{fig:kikiboba}
-\end{figure}
+Metropolis M consists of a grid of intersections with dimensions $W \times H$, where
+each intersection can be reached from the four adjacent intersections in each cardinal
+direction: north, east, south, and west. Robert has just arrived at the intersection
+located at $(1,1)$. He wants to reach the fire station at the northeast intersection,
+located at $(W,H)$. It takes exactly 1 minute to run from one intersection to another
+adjacent intersection.
 
-A word consists of a certain number of consontants and a certain number of vowels. Fergus determines that a word belongs to a category according to the following rules:
-If there are more ``\texttt{b}'' than ``\texttt{k}'' in the word, then the word is a ``\texttt{boba}'' word.
-If there are more ``\texttt{k}'' than ``\texttt{b}'' in the word, then the word is a ``\texttt{kiki}'' word.
-If the word contains an equal number of ``\texttt{b}'' and ``\texttt{k}'', then Fergus calls it a ``\texttt{boki}'' word.
-These rules hold with one exception:
-If there are no ``\texttt{b}'' and ``\texttt{k}'' in the word, the word is neither close to a ``\texttt{boba}'' word nor a ``\texttt{kiki}'' word. In this case, Fergus refers to the word as a ``\texttt{none}'' word.
+Furthermore, there are $N$ intersections with a leaking fire hydrant, which can be
+located at any intersection in the grid, including where Robert starts at $(1,1)$
+and at the fire station $(W,H)$. Robert arrives at intersection $(1,1)$ at time 0,
+and each leaking fire hydrant leaks one unit of water into the intersection it is at.
+But for each minute $t$ that passes, each leaking fire hydrant will leak an additional
+unit of water to all intersections within the Manhattan distance $t$ from that 
+eaking hydrant. Let's call the number of water units at a specific intersection $v_t$
+at time $t$. When Robert arrives at an intersection at time $t$, his clothes will get
+wet from all the water at that intersection due to leaking hydrants, i.e., $v_t$ water units.
 
-Help Fergus write a program that, given a word, can categorize the word according to Fergus' rules.
+What is the minimum number of water units that Robert's clothes can get wet from on his way to the fire station?
+
+
+\begin{centering}
+  \begin{figure}[h]
+    \centering
+  \includegraphics[width=0.8\textwidth]{brandpostSample1.png}
+    \caption{Illustration of sample 1, where the green square is Roberts position and the
+    red squares are the positions of the fire hydrants. The smallest total water units
+    Bob can have when arriving at the station is $0+0+2+2+4+6+8+8=30$.}
+    \label{fig:brandpost}
+  \end{figure}
+\end{centering}
 
 \section*{Input}
-The first line of the input contains an integer $N$ ($1 \le N \le 100$), the number of characters in the word your program should categorize.
+The first line of the input contains three integers $W,H,N$ ($1 \le W,H \le 2000$, $1 \le min(5000,W \cdot H)$), 
+where $W$ and $H$ are the width and height of the grid and $N$ is the number of leaking fire hydrants.
 
-The next line contains a word $S$ with $N$ characters consisting of characters ``\texttt{a}''-``\texttt{z}''.
+The following n rows each contain two integers $x_i$ and $y_i$ ($1 \le x_i \le W$, $1 \le y_i \le H$),
+where $(x_i,y_i)$ is the position of the $i$:th leaking fire hydrant. It is guaranteed that no two
+fire hydrants occupy the same position.
 
 \section*{Output}
-Write a word/category, either ``\texttt{boba}'', ``\texttt{kiki}'', ``\texttt{boki}'' or ``\texttt{none}'', according to Fergus' rules stated above.
-There is always one category that fits each word.
+Print an integer, the least number of water units Robert can have after he arrives
+at the station.
 
 \section*{Points}
 Your solution will be tested on several test case groups.
@@ -43,13 +63,9 @@ To get the points for a group, it must pass all the test cases in the group.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
-  $1$    & $20$       & $N = 1$ \\ \hline
-  $2$    & $50$       & The word has atleast 1 of either ``\texttt{k}'' or ``\texttt{b}'', but never both at the same time. \\ \hline
-  $3$    & $30$       & No additional constraints. \\ \hline
+  $1$    & $10$       & $W,H \le 10$, $N=1$ and the only fire hydrant is located at $(1,1)$ \\ \hline
+  $2$    & $15$       & $W,H,N \le 50$ \\ \hline
+  $3$    & $17$       & $W,H \le 100$, $N\le 200$\\ \hline
+  $4$    & $27$       & $W,H \le 200$ \\ \hline
+  $5$    & $31$       & No additional constraints. \\ \hline
 \end{tabular}
-
-\section*{Explanation of sample 1}
-The word contains 2 ``\texttt{b}'', while there are none of ``\texttt{k}''. In other words there are more of ``\texttt{b}'' than ``\texttt{k}'', which means that the answer is ``\texttt{boba}''.
-
-\section*{Explanation of sample 3}
-The word contains 1 ``\texttt{b}'' and 1 ``\texttt{k}''. There are an equal number of ``\texttt{b}'' and ``\texttt{k}'', which means the answer is ``\texttt{boki}''.
