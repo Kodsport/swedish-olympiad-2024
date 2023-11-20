@@ -25,7 +25,6 @@ mode = cmdlinearg("mode", "")
 alfabet="qwertyuiopasdfghjklzxcvbnm"
 
 if word:
-    print(len(word))
     print(word)
     exit()
 
@@ -75,5 +74,4 @@ else:
         word.append(alfabet[random.randint(0,len(alfabet)-1)])
 
 random.shuffle(word)
-print(n)
 print("".join(word))

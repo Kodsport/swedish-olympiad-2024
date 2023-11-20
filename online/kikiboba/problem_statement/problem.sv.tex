@@ -5,7 +5,7 @@ och mjukare ljud som ``\texttt{boba}'' med rundare former. Det här avslöjar en
 vår hjärna intuitivt skapar mening och associationer.
 
 Fergus har länge haft ett stort intresse inom fonetik, och har utifrån denna ljud-symboliska kopplingen utvecklat en teori!
-Han tror att alla ord går att dela in i 4 kategorier. Alltså, att varje ord är antingen 
+Han tror att alla ord går att dela in i 4 kategorier. Det vill säga att varje ord antingen är 
 ett ord som motsvarar figuren till vänster, som ``\texttt{kiki}'', ett ord som motsvarar figuren till höger, som ``\texttt{boba}'', 
 ett ord som är en blandning av båda, eller ett ord inte är något av alternativen innan.
 
@@ -16,19 +16,17 @@ ett ord som är en blandning av båda, eller ett ord inte är något av alternat
   \label{fig:kikiboba}
 \end{figure}
 
-Ett ord består av ett antal konsonanter och ett antal vokaler. Fergus bestämmer att ett ord tillhör en kategori enligt följande regler:
+Fergus bestämmer att ett ord tillhör en kategori enligt följande regler:
 Ifall det finns fler ``\texttt{b}'' än ``\texttt{k}'' i ordet, så är ordet ett ``\texttt{boba}''-ord.
 Ifall det finns fler ``\texttt{k}'' än ``\texttt{b}'' i ordet, så är ordet ett ``\texttt{kiki}''-ord. 
 Ifall ordet innehåller lika många ``\texttt{b}'' som ``\texttt{k}'', så kan kallar Fergus det ett ``\texttt{boki}''-ord.
 Dessa regler håller med ett undantag: 
-Ifall inte finns varken ``\texttt{b}'' eller ``\texttt{k}'' i ordet, så är ordet varken nära ett ``\texttt{boba}''-ord eller ``\texttt{kiki}''-ord, och då kallas ordet ett ``\texttt{none}''-ord.
+Ifall det varken finns ``\texttt{b}'' eller ``\texttt{k}'' i ordet, så är ordet varken nära ett ``\texttt{boba}''-ord eller ``\texttt{kiki}''-ord, och då kallas ordet ett ``\texttt{none}''-ord.
 
-Hjälp Fergus skriva ett program som givet ett ord kan kateorisera ordet enligt Fergus regler.
+Hjälp Fergus skriva ett program som givet ett ord kan kategorisera ordet enligt Fergus regler.
 
 \section*{Indata}
-Den första raden i indatan innehåller heltalet $N$ ($1 \le N \le 100$), antal bokstäver i ordet som ditt program ska kategorisera.
-
-Nästa raden innehåller ett ord $S$ med $N$ bokstäver som består av bokstäver ``\texttt{a}''-``\texttt{z}''.
+Den enda raden av indata innehåller ett som består av bokstäver ``\texttt{a}''-``\texttt{z}'', ordet Fergus vill kategorisera.
 
 
 \section*{Utdata}
@@ -43,7 +41,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & $N = 1$ \\ \hline
+  $1$    & $20$       & Ordet är endast en bokstav långt \\ \hline
   $2$    & $50$       & Ordet har åtminstone 1 av ``\texttt{k}'' eller ``\texttt{b}'', men aldrig båda samtidigt. \\ \hline
   $3$    & $30$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}

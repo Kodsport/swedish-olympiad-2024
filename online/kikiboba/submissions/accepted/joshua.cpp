@@ -137,7 +137,6 @@ int32_t main()
     cin.rdbuf(instream.rdbuf());
 #endif
 
-    dread(int,n);
     dread(string, s);
     int k = count(all(s), 'k');
     int b = count(all(s), 'b');

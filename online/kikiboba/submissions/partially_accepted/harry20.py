@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-n = int(input())
 s = input()
 
 if s[0]=="b": print("boba")

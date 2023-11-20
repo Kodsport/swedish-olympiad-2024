@@ -8,7 +8,7 @@ providing insight into how our brains intuitively create meaning and association
 Fergus has long held a keen interest in phonetics, and based on this sound-symbolic connection, he has developed a theory! 
 He believes that all words can be categorized into 4 categories. In other words, each word is either a word corresponding to the 
 figure on the left, like ``\texttt{kiki}'', or a word corresponding to the figure on the right, like ``\texttt{boba}'', or a word 
-that is a combination of both, or a word that is none of the mentioned alternatives.
+that is a combination of both, or a word that is none of the aforementioned alternatives.
 
 \begin{figure}[h]
   \centering
@@ -17,7 +17,7 @@ that is a combination of both, or a word that is none of the mentioned alternati
   \label{fig:kikiboba}
 \end{figure}
 
-A word consists of a certain number of consontants and a certain number of vowels. Fergus determines that a word belongs to a category according to the following rules:
+Fergus determines that a word belongs to a category according to the following rules:
 If there are more ``\texttt{b}'' than ``\texttt{k}'' in the word, then the word is a ``\texttt{boba}'' word.
 If there are more ``\texttt{k}'' than ``\texttt{b}'' in the word, then the word is a ``\texttt{kiki}'' word.
 If the word contains an equal number of ``\texttt{b}'' and ``\texttt{k}'', then Fergus calls it a ``\texttt{boki}'' word.
@@ -27,12 +27,10 @@ If there are no ``\texttt{b}'' and ``\texttt{k}'' in the word, the word is neith
 Help Fergus write a program that, given a word, can categorize the word according to Fergus' rules.
 
 \section*{Input}
-The first line of the input contains an integer $N$ ($1 \le N \le 100$), the number of characters in the word your program should categorize.
-
-The next line contains a word $S$ with $N$ characters consisting of characters ``\texttt{a}''-``\texttt{z}''.
+The only line of the input contains a string consisting of characters ``\texttt{a}''-``\texttt{z}'', the word that Fergus wants to categorize.
 
 \section*{Output}
-Write a word/category, either ``\texttt{boba}'', ``\texttt{kiki}'', ``\texttt{boki}'' or ``\texttt{none}'', according to Fergus' rules stated above.
+Print a category, either ``\texttt{boba}'', ``\texttt{kiki}'', ``\texttt{boki}'' or ``\texttt{none}'', according to Fergus' rules stated above.
 There is always one category that fits each word.
 
 \section*{Points}
@@ -43,7 +41,7 @@ To get the points for a group, it must pass all the test cases in the group.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
-  $1$    & $20$       & $N = 1$ \\ \hline
+  $1$    & $20$       & The word is only one character long \\ \hline
   $2$    & $50$       & The word has atleast 1 of either ``\texttt{k}'' or ``\texttt{b}'', but never both at the same time. \\ \hline
   $3$    & $30$       & No additional constraints. \\ \hline
 \end{tabular}
