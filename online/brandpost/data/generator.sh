@@ -119,7 +119,7 @@ tc g5-leftPath-02 gen w=2000 h=2000 n=1500 mode="leftPath"
 tc g5-rightPath-04 gen w=2000 h=2000 n=1500 mode="rightPath"
 tc g5-onlyEdges-06 gen w=2000 h=2000 n=2000 mode="edges"
 tc g5-onlyEdges-07 gen w=2000 h=2000 n=3980 mode="edges"
-tc g5-random-09 gen 
+tc g5-random-09 gen w=2000
 tc g5-random-11 gen w=2000 h=2000 n=4
 tc g5-random-12 gen w=2000 h=2000 n=5000
 tc g5-weighted-14 gen w=2000 h=2000 n=1000 mode="weighted"

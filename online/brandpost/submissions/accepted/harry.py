@@ -21,7 +21,7 @@ for _ in range(n):
 
 #Start (0,0) ---> Goal (w-1,h-1)
 
-INF = 10**9
+INF = 10**18
 
 BFS = [(0,0)]
 depth = [[-1]*w for _ in range(h)]
