@@ -1,0 +1,48 @@
+\problemname{Stad i ljus}
+För att göra staden mer trivsam har Lunds kommun bestämt sig för att sätta upp ljusstrimmor över gatorna.
+Kommunen föredrar att så många platser som möjligt får belysning.
+Det finns många platser som ljusstrimmor skulle kunna sättas upp och då kommunfullmäktige är upptagen
+har du blivit tillfrågad att lista ut vart ljusstrimmorna ska sättas upp.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.3\textwidth]{ljusstrimmor.jpg}
+    \\Ljusstrimmor
+  
+\end{figure}
+
+
+Gatorna i staden är olika breda, vilket betyder att ljusstrimmorna kommer behövas specialbeställas.
+Det går att specialbeställa ljusstrimmor i längder av hela meter, som då kostar x kr per meter.
+För att inte verka slössamma vill kommunen att den genomsnittliga konstnaden för varje ljusstrimma
+som beställdes högst för vara $y$ kr.
+
+Kommunen har nu gett dig en lista på hur långa ljusstrimmorna behöver vara för att kunna sättas upp
+på ett flertal ställen i staden. Kan du hjälpa de sätta upp så många som möjligt?
+
+\section*{Indata}
+Den första raden i indatan innehåller heltalet $n$ ($1 \leq n \leq 10^5$), antalet platser där ljusstrimmor skulle kunna sättas upp.
+Den andra raden innehåller heltalet  $x$ ($1 \leq x \leq 30$), priset på ljusstrimmor i kr/m.
+Den tredje raden innehåller heltalet $y$ ($1 \leq y \leq 1000$), det högsta genomsnittliga priset kommunen är villig att betala för ljusstrimmorna.
+
+Därefter följer en rad $n$ heltal $L_1, L_2, \dots, L_n$ ($1<=L_i<=20$), där $L_i$ betyder att ljusstrimman måste vara exakt $L_i$ meter för att belysa den $i$:e platsen.
+
+\section*{Utdata}
+Skriv ut ett heltal: det största antalet platser som kan belysas med hjälp av av ljusstrimmor inom kommunens budget.
+
+
+
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $20$       & $L_i=10$ för alla $i$ \\ \hline
+  $2$    & $20$       & $L_i=10$ eller $20$ för alla $i$ \\ \hline
+  $3$    & $20$       & $N \leq 500$ \\ \hline
+  $4$    & $40$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
+\section*{Förklaring av exempelfall 1}
+Det är möjligt att köpa de första 3 ljusstrimmorna.
+Den genomsnittliga konstnaden blir då $\frac{6+9+12}{3}=9$ kr, vilket vi precis klarar inom budgeten av som mest $9$ kr per ljusstrimma.
