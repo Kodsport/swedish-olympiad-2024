@@ -1,32 +1,35 @@
-\problemname{Protein synthesis}
-It is a well-known fact that Latbo is the laziest city in Sweden. Björn has dreamed
-of becoming the laziest person in town ever since he was a child. Yesterday, he made it all the way to the final of this year's
-laziness competition. He was fully prepared to win, but was utterly crushed when his opponent was
-too lazy to even show up.
+\problemname{Illuminated city}
+To make the city more pleasant, the municipality of Lund has decided to install light strips
+over the streets. The municipality prefers to have lighting in as many places as possible.
+There are many locations where light strips could be installed, and since the city council
+is busy, you have been asked to figure out where the light strips should be placed.
 
-This was the last straw for Björn. He has now decided to use his medical knowledge to develop a cure
-for laziness. To do this, he needs to synthesize the magical protein $T$. However, old habits die hard
-as he tries to synthesize it using as few other proteins as possible.
+\illustration{0.3}{ljusstrimmor}{Light strips in Lund, used with permission}
 
-Since he's too lazy to figure out how to do this himself, he now wants your help to find the best way to
-construct protein $T$. Protein $T$ can be represented as a string of length $N$. Björn knows how to
-produce $M$ types of proteins and wants to minimize the number of proteins he needs to manufacture.
-Once the correct set of proteins has been produced, it's easy to assemble them into protein $T$.
+The streets in Lund vary in width, which means that the light strips will need to be
+custom ordered. It is possible to custom order light strips in lengths of whole meters,
+which cost $x$ SEK per meter. To avoid appearing wasteful, the municipality wants the
+average cost for each light strip ordered to be at most $y$ SEK per light strip.
+
+The municipality has now provided you with a list of how long the light strips need to
+be in order to be installed in $n$ different locations in the city. Can you help them set up as many as possible?
+
 
 \section*{Input}
-The first line of the input contains the integer $N$ ($1 \le N \le 10^5$), the length of protein $T$.
+The first line of the input contains the integer $n$ ($1 \le n \le 10^5$), the number of spots
+where we might install a light strip.
 
-The next line contains a string of length $N$, representing protein $T$.
+The second line contains the integer $x$ ($1 \leq x \leq 30$), the cost in SEK of buying one whole metre of light strip.
 
-The next line contains $M$ ($1 \le M \le 10^6$), the number of proteins Björn can manufacture.
+The third line contains the integer $y$ ($1 \le y \le 1000$), the highest average price cost per light strip the
+municipality is willing to pay for.
 
-Afterwards, $M$ lines follow, each containing a string. This string represents a protein he can produce.
-It is guaranteed that the total length of the $M$ strings does not exceed $10^6$.
+Afterwards, there will be a line with $n$ integers $L_1, L_2, \dots, L_n$ ($1<=L_i<=20$), where $L_i$ means that the
+a light strip must be exactly $L_i$ meters to illuminate the $i$:th location.
 
-All strings in the input consist of letters \texttt{a}-\texttt{z}. It is guaranteed that Björn can synthesize $T$ by only using the $M$ proteins Björn can manufacture.
 
 \section*{Output}
-Print an integer: the minimum number of proteins Björn needs to produce to create protein $T$.
+Print an integer: the largest number of locations that can be illuminated by light strips within the municipalitys buget.
 
 \section*{Points}
 Your solution will be tested on several test case groups.
@@ -36,12 +39,12 @@ To get the points for a group, it must pass all the test cases in the group.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
-  $1$    & $10$       & $N \leq 20, M \leq 5$ \\ \hline
-  $2$    & $20$       & $N, M \leq 100$ \\ \hline
-  $3$    & $20$       & $M \leq 100$ \\ \hline
-  $4$    & $40$       & $N \leq 10,000$ \\ \hline
-  $5$    & $10$       & No additional constraints. \\ \hline
+  $1$    & $20$       & $L_i=10$ for all $i$ \\ \hline
+  $2$    & $20$       & $L_i=10$ or $20$ for all $i$ \\ \hline
+  $3$    & $20$       & $N \leq 500$ \\ \hline
+  $4$    & $40$       & No additional constraints. \\ \hline
 \end{tabular}
 
 \section*{Explanation of sample 1}
-By creating the protein \texttt{abc} twice, he can combine them to create protein $T$.
+It is possible to buy the first 3 light strips.
+The average cost will then be $\frac{6+9+12}{3}=9$ SEK, which barely fits within the buget of at most $9$ SEK per light strip on average.
