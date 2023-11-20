@@ -164,5 +164,5 @@ int32_t main()
     cout << recur("", t, dict, 0);
 
 
-    quit;
+    return 0;
 }

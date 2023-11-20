@@ -211,5 +211,5 @@ int32_t main()
     }
     cout << dp.back();
 
-    quit;
+    return 0;
 }

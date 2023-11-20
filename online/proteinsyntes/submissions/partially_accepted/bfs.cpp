@@ -170,5 +170,5 @@ int32_t main()
         }
     }
 
-    quit;
+    return 0;
 }
