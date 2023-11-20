@@ -16,25 +16,13 @@ L=[[0]*w for _ in range(h)]
 R=[[0]*w for _ in range(h)]
 
 """
-        self.rate = 0 #Number of hydrants that reach this cell
-        self.waterLevel = 0 #Current water level
-        self.U = 0 #Number of watersources above this cell that reach the top of this cell
-        self.D = 0 #Number of watersources under this cell that reach the bottom of this cell
-        self.L = 0 #Number of watersources to the left that reach the left wall of this cell
-        self.R = 0 #Number of watersources to the right that reach the right wall of this cell
+rate        #Number of hydrants that reach this cell
+waterLevel  #Current water level
+U           #Number of watersources above this cell that reach the top of this cell
+D           #Number of watersources under this cell that reach the bottom of this cell
+L           #Number of watersources to the left that reach the left wall of this cell
+R           #Number of watersources to the right that reach the right wall of this cell
 """
-
-def debug(array):
-    print("-"*15)
-    out=[]
-    for y in range(h):
-        out.append([])
-        for x in range(w):
-            out[-1].append(array[y][x])
-    
-    for row in out[::-1]:
-        print(row)
-
 
 hydrants = []
 for _ in range(n):
@@ -67,7 +55,6 @@ def simulateOneMinute(currTime, rate,waterLevel,U,D,L,R):
     def up(x,y,V):
         
         if 0<=x-1<w and 0<=y<h:
-            #print(x,y,V)
             R2[y][x-1] += V
 
         if 0<=x+1<w and 0<=y<h:
@@ -118,8 +105,6 @@ def simulateOneMinute(currTime, rate,waterLevel,U,D,L,R):
         for x in range(w):
             waterLevel[y][x]+= rate[y][x]
 
-
-
     U,U2=U2,U
     D,D2=D2,D
     L,L2=L2,L
@@ -146,7 +131,6 @@ for x,y in BFS:
 
     while currTime < depth[y][x]: #runs (W+H) times
         currTime, rate,waterLevel,U,D,L,R = simulateOneMinute(currTime, rate, waterLevel, U, D, L, R) #O(W*H)
-
 
     setWater[y][x] += waterLevel[y][x]
 

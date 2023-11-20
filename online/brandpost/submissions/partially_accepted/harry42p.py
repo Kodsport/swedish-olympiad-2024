@@ -36,9 +36,7 @@ def currWaterLevel(x,y):
 
 for x,y in BFS:
 
-    
     setWater[y][x] += currWaterLevel(x,y)
-    #print(currWaterLevel(x,y),x,y,x+y-2)
 
     for dx,dy in [(1,0),(0,1)]: #We can only move up or to the right
         if x+dx>=w or y+dy>=h:

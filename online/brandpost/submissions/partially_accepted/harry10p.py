@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-#This solution should not be correct, since it's assuming we should always go by the edges
+#This solution is not correct, since it's assuming we should always go by the edges
+#10p.
 
 w,h,n = map(int,input().split())
 
 waterLevel = [[0]*w for _ in range(h)]
-
 
 hydrants = []
 for _ in range(n):

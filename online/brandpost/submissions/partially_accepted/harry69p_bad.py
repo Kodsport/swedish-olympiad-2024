@@ -24,17 +24,6 @@ for y in range(h):
     for x in range(w):
         cells[y][x] = cell(x,y)
 
-def debug():
-    out=[]
-    for y in range(h):
-        out.append([])
-        for x in range(w):
-            out[-1].append(cells[y][x].waterLevel)
-    
-    for row in out[::-1]:
-        print(row)
-
-
 hydrants = []
 for _ in range(n):
     x,y = map(int,input().split())
@@ -43,8 +32,6 @@ for _ in range(n):
     hydrants.append((x,y))
     cells[y][x].rate=1
     cells[y][x].waterLevel=1
-
-
 
     if 0<=x-1<w and 0<=y<h:
         cells[y][x-1].R += 1
@@ -96,19 +83,17 @@ def simulateOneMinute(currTime, cells):
 
     for y in range(h):
         for x in range(w):
-            #if 0<=x-1<w and 0<=y<h:
-                cells2[y][x].rate += cells[y][x].R
-                right(x,y,cells[y][x].R)
-            #if 0<=x+1<w and 0<=y<h:
-                cells2[y][x].rate += cells[y][x].L
-                left(x,y,cells[y][x].L)
+            cells2[y][x].rate += cells[y][x].R
+            right(x,y,cells[y][x].R)
 
-            #if 0<=x<w and 0<=y-1<h:
-                cells2[y][x].rate += cells[y][x].U
-                up(x,y,cells[y][x].U)
-            #if 0<=x<w and 0<=y+1<h:
-                cells2[y][x].rate += cells[y][x].D
-                down(x,y,cells[y][x].D)
+            cells2[y][x].rate += cells[y][x].L
+            left(x,y,cells[y][x].L)
+
+            cells2[y][x].rate += cells[y][x].U
+            up(x,y,cells[y][x].U)
+
+            cells2[y][x].rate += cells[y][x].D
+            down(x,y,cells[y][x].D)
     
 
     for y in range(h):
@@ -129,18 +114,13 @@ setWater = [[10**9]*w for _ in range(h)]
 depth[0][0] = 0
 setWater[0][0] = 0
 
-
-
-
 currTime=0
 
 for x,y in BFS:
 
     while currTime < depth[y][x]: #runs (W+H) times
         currTime, cells = simulateOneMinute(currTime, cells) #O(W*H)
-    #print(cells[y][x],y,x, currTime)
-    #print(cells[2][3])
-    #debug()
+
     setWater[y][x] += cells[y][x].waterLevel
 
     for dx,dy in [(1,0),(0,1)]: #We can only move up or to the right
