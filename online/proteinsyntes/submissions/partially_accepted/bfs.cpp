@@ -157,7 +157,7 @@ int32_t main()
         if (s == t)
         {
             cout << d << endl;
-            quit;
+            return 0;
         }
 
         repe(o, dict)

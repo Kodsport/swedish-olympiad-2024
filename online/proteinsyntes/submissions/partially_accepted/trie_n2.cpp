@@ -133,7 +133,7 @@ struct Node
     bool isterminal;
     vector<Node*> children;
 
-    Node() : children(26,nullptr) {}
+    Node() : children(26, nullptr), isterminal(false) {}
 
     void insert(string& s, int i)
     {
@@ -142,18 +142,20 @@ struct Node
             isterminal = 1;
             return;
         }
-        if (children[s[i]-'a'] == nullptr) children[s[i]-'a'] = new Node();
-        children[s[i]-'a']->insert(s, i + 1);
+        if (children[s[i] - 'a'] == nullptr) children[s[i] - 'a'] = new Node();
+        children[s[i] - 'a']->insert(s, i + 1);
     }
 
-    bool contains(string& s, int i, int t)
+    void transition(vi& dp, string& s, int i, int j)
     {
-        if (i==t)
+        if (isterminal)
         {
-            return isterminal;
+            dp[i] = min(dp[i], dp[j] + 1);
         }
-        if (children[s[i]-'a'] == nullptr) return false;
-        return children[s[i]-'a']->contains(s, i + 1, t);
+        if (i == s.size()) return;
+        if (children[s[i] - 'a'] == nullptr) return;
+        
+        children[s[i] - 'a']->transition(dp, s, i + 1, j);
     }
 };
 
@@ -178,18 +180,12 @@ int32_t main()
 
     rep(i, m)
     {
-        root->insert(dict[i],0);
+        root->insert(dict[i], 0);
     }
 
     rep(i, n)
     {
-        rep(j, n+1)
-        {
-            if (i + j > t.size()) continue;
-            bool works = root->contains(t, i, i + j);
-
-            if (works) dp[i + j] = min(dp[i + j], dp[i] + 1);
-        }
+        root->transition(dp, t, i, i);
     }
     cout << dp.back() << endl;
 
