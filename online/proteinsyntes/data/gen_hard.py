@@ -17,6 +17,7 @@ random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 n = int(cmdlinearg('n'))
 m = int(cmdlinearg('m'))
 maxlen = int(cmdlinearg("maxlen"))
+perturb = int(cmdlinearg("perturb",10))
 
 import itertools
 import string
@@ -30,14 +31,19 @@ del all_strings[0]
 
 words = [["a"]] # Always ensure that constructing string of length n is possible
 i = 0
+totlen = 1
 while len(words)<m:
-    words.append("a"*(maxlen-random.randint(0,10))+all_strings[i])
-
+    
+    words.append("a"*(maxlen-random.randint(0,perturb))+all_strings[i])
+    totlen += len(words[-1])
+    if totlen > int(1e6):
+        del words[-1]
+        break
     i+=1
 
 
 print(n)
 print("a"*n)
-print(m)
+print(len(words))
 for w in words:
     print("".join(w))

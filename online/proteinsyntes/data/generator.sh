@@ -70,11 +70,12 @@ tc g5-3 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=5
 tc g5-4 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=2
 tc g5-6 gen_rand n=100000 m=100000 maxlen=10 alphabet_size=5
 tc g5-7 gen_hard n=100000 m=100000 maxlen=6
-tc g5-8 gen_hard n=100000 m=4 maxlen=249995
-tc g5-9 gen_differentlen n=100000 b=0
-tc g5-10 gen_differentlen n=100000 b=1
-tc g5-11 gen_samelen n=100000
-tc g5-12 gen_aaaaa n=100000 m=1000000
-tc g5-13 gen_aabb n=100000 m=1000000
+tc g5-8 gen_hard n=100000 m=1000000 maxlen=1 perturb=0
+tc g5-9 gen_hard n=100000 m=4 maxlen=249995
+tc g5-10 gen_differentlen n=100000 b=0
+tc g5-11 gen_differentlen n=100000 b=1
+tc g5-12 gen_samelen n=100000
+tc g5-13 gen_aaaaa n=100000 m=1000000
+tc g5-14 gen_aabb n=100000 m=1000000
 
 #tc_manual ../manual_tests/manual_1.in
