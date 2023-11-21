@@ -27,11 +27,11 @@ limits maxSize=50 maxN=50
 include_group group1
 tc 1
 tc g2-leftPath-01 gen n=1 maxSize=50 mode="leftPath"
-tc g2-leftPath-04 gen w=50 h=50 n=50 mode="leftPath"
-tc g2-rightPath-06 gen w=29 h=10 n=3 mode="rightPath"
-tc g2-rightPath-07 gen w=50 h=50 n=50 mode="rightPath"
-tc g2-onlyEdges-09 gen maxSize=50 maxN=10 mode="edges"
-tc g2-onlyEdges-10 gen n=50 w=50 h=50 mode="edges"
+tc g2-leftPath-02 gen w=50 h=50 n=50 mode="leftPath"
+tc g2-rightPath-03 gen w=29 h=10 n=3 mode="rightPath"
+tc g2-rightPath-04 gen w=50 h=50 n=50 mode="rightPath"
+tc g2-onlyEdges-05 gen maxSize=50 maxN=10 mode="edges"
+tc g2-onlyEdges-06 gen n=50 w=50 h=50 mode="edges"
 tc g2-random-13 gen n=23 w=50 h=50 
 tc g2-random-14 gen n=50 w=50 h=50 
 tc g2-weighted-15 gen maxSize=50 maxN=50 mode="weighted"
@@ -84,63 +84,40 @@ tc g3-planka-33 gen_bigPlanka maxN=200 maxSize=100 mode="transposed"
 tc g3-planka-34 gen_bigPlanka maxN=200 maxSize=100 width=8 height=60
 tc g3-planka-35 gen_bigPlanka maxN=200 maxSize=100 height=75 width=11 mode="transposed"
 
-group group4 27
-limits maxSize=200 
+group group4 27  #N=10000 w=150 h=150
+limits maxSize=150 
 include_group group3
-tc g4-leftPath-01 gen w=200 h=200 n=250 mode="leftPath"
-tc g4-rightPath-02 gen w=200 h=200 n=250 mode="rightPath"
-tc g4-onlyEdges-03 gen w=200 h=200 n=396 mode="edges"
-tc g4-random-04 gen w=200 h=200 maxSize=100 n=5000
-tc g4-random-05 gen w=200 h=200 maxSize=100 n=5000
-tc g4-weighted-06 gen w=200 h=100 n=400 mode="weighted"
-tc g4-weighted-07 gen w=200 h=200 n=5000 mode="weighted"
-tc g4-weighted-08 gen w=200 h=200 n=5000 mode="weighted"
-tc g4-weighted-13 gen w=200 h=200 n=5000 mode="weighted"
-tc g4-filled-14 gen n=5000 w=50 h=100
-tc g4-filled-15 gen n=5000 w=100 h=50
-tc g4-slalom-16 gen_slalom n=5000 maxSize=200
-tc g4-slalom-17 gen_slalom n=5000 maxSize=200 mode="transposed"
-tc g4-slalom-18 gen_slalom n=5000 w=200 h=200 dist=1
-tc g4-slalom-19 gen_slalom n=5000 w=200 h=200 dist=13 mode="transposed"
-tc g4-slalom-20 gen_slalom n=5000 w=200 h=200 dist=30 length=20
-tc g4-slalom-21 gen_slalom n=5000 w=200 h=200 dist=31 length=21 mode="transposed"
-tc g4-slalom-22 gen_slalom n=5000 w=200 h=200 dist=30 length=100 
-tc g4-slalom-23 gen_slalom n=5000 w=200 h=60 dist=27 length=100 mode="transposed" 
-tc g4-planka-24 gen_bigPlanka maxSize=200
-tc g4-planka-25 gen_bigPlanka maxSize=200 mode="transposed"
-tc g4-planka-26 gen_bigPlanka maxSize=200 width=5 height=69
-tc g4-planka-27 gen_bigPlanka maxSize=200 height=71 width=4 mode="transposed"
-tc g4-planka-28 gen_bigPlanka maxSize=200 width=1 height=125
+tc g4-leftPath-01 gen w=150 h=150 n=270 mode="leftPath"
+tc g4-rightPath-02 gen w=150 h=150 n=250 mode="rightPath"
+tc g4-onlyEdges-03 gen w=150 h=150 n=500 mode="edges"
+tc g4-random-04 gen w=150 h=150 maxSize=150 n=20000
+tc g4-weighted-05 gen w=150 h=150 n=20000 mode="weighted"
+tc g4-random-06 gen w=150 h=150 maxSize=150 n=20000
+tc g4-weighted-07 gen w=150 h=150 n=20000 mode="weighted"
+tc g4-filled-08 gen n=10000 w=100 h=100
+tc g4-slalom-11 gen_slalom n=20000 w=150 h=150 dist=30 length=99 
+tc g4-slalom-12 gen_slalom n=20000 w=150 h=70 dist=27 length=99 mode="transposed" 
+tc g4-planka-13 gen_bigPlanka maxSize=150 maxN=20000
+tc g4-planka-14 gen_bigPlanka maxSize=150 mode="transposed"
+tc g4-planka-15 gen_bigPlanka maxSize=150 width=5 height=69
+tc g4-planka-16 gen_bigPlanka maxSize=150 height=71 width=4 mode="transposed"
+tc g4-planka-17 gen_bigPlanka maxSize=150 width=1 height=99
 
 
-group group5 31
+group group5 31  #try N=10000 w=1000 h=1000
 include_group group4
-tc g5-leftPath-02 gen w=2000 h=2000 n=1500 mode="leftPath"
-tc g5-rightPath-04 gen w=2000 h=2000 n=1500 mode="rightPath"
-tc g5-onlyEdges-06 gen w=2000 h=2000 n=2000 mode="edges"
-tc g5-onlyEdges-07 gen w=2000 h=2000 n=3980 mode="edges"
-tc g5-random-09 gen w=2000
-tc g5-random-11 gen w=2000 h=2000 n=4
-tc g5-random-12 gen w=2000 h=2000 n=5000
-tc g5-weighted-14 gen w=2000 h=2000 n=1000 mode="weighted"
-tc g5-weighted-19 gen w=2000 h=2000 n=5000 mode="weighted"
-tc g5-filled-20 gen n=5000 w=500 h=10
-tc g5-filled-21 gen n=5000 w=23 h=200
-tc g5-linesGrid-22 gen w=2000 h=1 
-tc g5-linesGrid-23 gen w=1 h=2000
-tc g5-linesGrid-24 gen w=2000 h=2 
-tc g5-linesGrid-25 gen w=2 h=2000
-tc g5-slalom-26 gen_slalom n=5000
-tc g5-slalom-27 gen_slalom n=5000 mode="transposed"
-tc g5-slalom-28 gen_slalom n=5000 w=1500 h=2000 dist=2
-tc g5-slalom-29 gen_slalom n=5000 w=1500 h=2000 dist=3 mode="transposed"
-tc g5-slalom-30 gen_slalom n=5000 w=2000 h=2000 dist=100 length=60
-tc g5-slalom-31 gen_slalom n=5000 w=2000 h=2000 dist=101 length=59 mode="transposed"
-tc g5-slalom-32 gen_slalom n=5000 w=2000 h=700 dist=30 length=700 
-tc g5-slalom-33 gen_slalom n=5000 w=2000 h=700 dist=170 length=700 mode="transposed" 
-tc g5-planka-34 gen_bigPlanka 
-tc g5-planka-35 gen_bigPlanka mode="transposed"
-tc g5-planka-36 gen_bigPlanka width=8 height=100
-tc g5-planka-37 gen_bigPlanka height=200 width=10 mode="transposed"
+tc g5-leftPath-01 gen w=1000 h=1000 n=20000 mode="leftPath"
+tc g5-rightPath-02 gen w=1000 h=1000 n=20000 mode="rightPath"
+tc g5-onlyEdges-03 gen w=1000 h=1000 n=20000 mode="edges"
+tc g5-random-04 gen w=1000 h=1000 maxSize=1000 n=20000
+tc g5-weighted-05 gen w=1000 h=1000 n=20000 mode="weighted"
+tc g5-slalom-06 gen_slalom n=20000 w=1000 h=789 maxSize=1000
+tc g5-slalom-07 gen_slalom n=20000 w=1000 h=1000 dist=91 length=150
+tc g5-slalom-08 gen_slalom n=20000 w=1000 h=1000 dist=31 length=210 mode="transposed"
+tc g5-slalom-09 gen_slalom n=20000 w=1000 h=1000 dist=230 length=99 
+tc g5-planka-10 gen_bigPlanka maxSize=1000 maxN=20000
+tc g5-planka-11 gen_bigPlanka maxSize=1000 maxN=20000 mode="transposed"
+tc g5-planka-12 gen_bigPlanka maxSize=1000 maxN=20000 height=71 width=4 mode="transposed"
+tc g5-planka-13 gen_bigPlanka maxSize=1000 width=1 height=99
 
 

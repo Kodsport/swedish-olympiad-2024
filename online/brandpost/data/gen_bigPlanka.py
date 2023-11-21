@@ -18,11 +18,11 @@ random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 
 
 
-maxGridSize = int(cmdlinearg("maxSize", 2000))
+maxGridSize = int(cmdlinearg("maxSize", 1000))
 
 w=h=maxGridSize
 
-maxN = int(cmdlinearg("maxN",5000))
+maxN = int(cmdlinearg("maxN",20000))
 
 plankWidth = int(cmdlinearg("width", w//5)) #planka width
 plankLength = int(cmdlinearg("height", random.randint(3,4)*h//5)) #planka height

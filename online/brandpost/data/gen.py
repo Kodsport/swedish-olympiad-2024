@@ -17,8 +17,8 @@ random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 
 
 
-maxN = int(cmdlinearg("maxN", 5000))
-maxGridSize = int(cmdlinearg("maxSize", 2000))
+maxN = int(cmdlinearg("maxN", 20000))
+maxGridSize = int(cmdlinearg("maxSize", 1000))
 n = int(cmdlinearg('n', random.randint(1,maxN)))
 w = int(cmdlinearg("w", random.randint(1,maxGridSize)))
 h = int(cmdlinearg("h", random.randint(1,maxGridSize)))

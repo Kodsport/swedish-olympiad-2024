@@ -1,0 +1,65 @@
+\problemname{Segmentövervakning}
+
+Efter att ha lyckats erövra alla stadsstater i Kattago, vill det övermänskliga kattriket, Katen, och dess ledare, 
+Kattis, ha bättre kontroll över sina erövrade stadsstaterna, men specifikt gatorna.
+För att undivka kat(t)astrof, har Kattis bett företaget Purrfect Segments Inc. att producera olika kameror som 
+kan övervaka olika segment på en gata. 
+
+Företaget fick uppdraget av Kattis att designa och installera kameror på en gata i Katen som kan representeras som en tallinje. 
+Purrfect Segments Inc. har utvecklat sina kamerors paw-sition så att kamerorna kan specifikt övervaka ett segment $(a,b)$ till purr-fektion, 
+vilket innebär att kameran övervakar alla heltal $x$ på tallinjen sådana att $a<=x<=b$. 
+Trots företagets välutvecklade kameror, så har de ändå stött på flertal problem, bland annat att många hårdvaror i kamerorna behöver uppdateras regelbundet, 
+vilket innebär att installerade kameror kommer möjligtvis behöver tas ner efter ett antal dagar.
+
+Under $Q$ dagar, kommer företaget antingen installera en kamera med serienummer $i$ som övervakar ett segment $(a,b)$ på gatan, 
+eller ta bort en kamera med serienummer $i$ från gatan som innan var installerat på gatan. Alla kameror har ett unikt serienummer $1\le i \le 10^6$.
+
+Men under vissa dagar är det väldigt onödigt att aktivera alla installerade kameror, 
+och det är mer miljövänligt att endast aktivera ett fåtal kameror. 
+Som tur är har Purrfect Segments Inc. lyckats tänkt lite i förväg, och kan alltid garantera att man endast behöver aktivera 
+maximalt 2 kameror varje dag, så att så många heltal övervakas som möjligt. 
+Alltså för en specifik dag, kallar vi det minsta talet som övervakas av någon nuvarande installerad kamera för $x_{min}$, 
+och vi kallar det största talet som övervakas av någon nuvarande installerad kamera för $x_{max}$. 
+Då är det garanterat att alla tal mellan $x_{min}$ och $x_{max}$ (inklusive $x_{min}$ och $x_{max}$) kan bli övervakade genom att endast aktivera max 2 kameror.
+
+Från början finns det inga kameror som övervakar denna gata i Katen. För varje dag som går upp till den $Q:te$ dagen:
+Vad är serienummerna på kamerorna ska företaget aktivera?
+
+\begin{figure}[h]
+  \centering
+\includegraphics[width=0.25\textwidth]{kattIsWatching.png}
+  \caption{Figur till vänster associeras vanligtvis med "kiki". Figur till höger associeras vanligtvis med "boba".}
+  \label{fig:kikiboba}
+\end{figure}
+
+
+\section*{Indata}
+Den första raden i indatan innehåller heltalet $Q$ ($1 \le Q \le 10^5$), antal dagar i testfallet.
+
+De följande rader gäller
+
+Nästa raden innehåller ett ord $S$ med $N$ bokstäver som består av bokstäver ``\texttt{a}''-``\texttt{z}''.
+
+
+\section*{Utdata}
+Skriv ut ett ord, antingen ``\texttt{boba}'', ``\texttt{kiki}'', ``\texttt{boki}'' eller ``\texttt{none}'', enligt Fergus regler som nämns ovan.
+Det finns alltid endast en kategori som stämmer in för varje ord.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $20$       & $N = 1$ \\ \hline
+  $2$    & $50$       & Ordet har åtminstone 1 av ``\texttt{k}'' eller ``\texttt{b}'', men aldrig båda samtidigt. \\ \hline
+  $3$    & $30$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
+\section*{Förklaring av exempelfall 1}
+Ordet innehåller 2 st ``\texttt{b}'', medan det finns inga ``\texttt{k}''. Det finns alltså fler ``\texttt{b}'' än ``\texttt{k}'', och svaret är därför ``\texttt{boba}''.
+
+\section*{Förklaring av exempelfall 3}
+Ordet innehåller 1 st ``\texttt{b}'' och 1 st ``\texttt{k}''. Det finns lika många ``\texttt{b}'' som ``\texttt{k}'', och därför är svaret ``\texttt{boki}''.

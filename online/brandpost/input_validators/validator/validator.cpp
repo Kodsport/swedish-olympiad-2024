@@ -6,10 +6,10 @@ using namespace std;
 
 
 void run() {
-	int maxSize = Arg("maxSize", 2000);
+	int maxSize = Arg("maxSize", 1000);
 	int w = Int(1, maxSize); Space();
 	int h = Int(1, maxSize); Space();
-	int n = Int(1, Arg("maxN", 5000)); Endl();
+	int n = Int(1, Arg("maxN", 20000)); Endl();
 
 	int used[w+1][h+1];
 
