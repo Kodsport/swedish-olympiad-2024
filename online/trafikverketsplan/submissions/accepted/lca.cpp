@@ -185,7 +185,7 @@ int32_t main()
 {
     fast();
 #if 0 && _LOCAL
-    ifstream instream("C:\\users\\matis\\desktop\\comp_prog\\x64\\debug\\in.txt");
+    ifstream instream("C:\\users\\matis\\source\\repos\\comp_prog\\x64\\debug\\in.txt");
     cin.rdbuf(instream.rdbuf());
 #endif
 
@@ -195,10 +195,10 @@ int32_t main()
     {
         dread(int, a, b);
         a--; b--;
-        edges[a].emplace_back(b,1);
-        edges[b].emplace_back(a,0);
+        edges[a].emplace_back(b, 1);
+        edges[b].emplace_back(a, 0);
     }
-    dread(int,q)
+    dread(int, q);
 
     dfs(0, 0, 0, 0, edges);
 
@@ -215,5 +215,5 @@ int32_t main()
         else cout << "nej\n";
     }
 
-    quit;
+    return 0;
 }

@@ -19,12 +19,14 @@ void run() {
 	int n = Int(1, Arg("n", int(3e5)));
 	Endl();
 	UF uf(n);
+	vector<pair<int,int>> edgelist;
 	for (int i = 0; i < n - 1; i++) {
 		int a = Int(1, n);
 		Space();
 		int b = Int(1, n);
 		Endl();
 		a--; b--;
+		edgelist.emplace_back(a,b);
 		assert(uf.join(a, b));
 	}
 	int q = Int(1, Arg("q", int(1e5)));
@@ -41,4 +43,13 @@ void run() {
 
 	int isbinary = Arg("isbinary", 0);
 	// TODO: verify it is actually binary
+
+	int isline = Arg("line",0);
+	if (isline)
+	{
+		for (auto& e : edgelist)
+		{
+			assert(abs(e.first-e.second)==1);
+		}
+	}
 }

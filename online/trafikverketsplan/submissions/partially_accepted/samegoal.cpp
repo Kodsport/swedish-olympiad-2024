@@ -173,5 +173,5 @@ int32_t main()
         else cout << "nej\n";
     }
 
-    quit;
+    return 0;
 }

@@ -128,13 +128,6 @@ template<typename T> inline T randel(vector<T>& v) { return v[uniform_int_distri
 const ll mod = 1e9 + 7;
 vp2 dirs = { {0,1},{0,-1},{1,0},{-1,0} };
 
-bool anypath(int u, int t, vvi& edges)
-{
-    if (u == t) return 1;
-
-    repe(e, edges[u]) if (anypath(e, t, edges)) return 1;
-    return 0;
-}
 
 int32_t main()
 {
@@ -145,35 +138,61 @@ int32_t main()
 #endif
 
     dread(int, n);
-    vvi edges(n);
+    vi goesright(n);
+
     rep(i, n - 1)
     {
         dread(int, a, b);
         a--; b--;
-        edges[a].push_back(b);
+        bool r = 1;
+        if (a > b)
+        {
+            swap(a, b);
+            r = 0;
+        }
+        goesright[a] = r;
     }
-    dread(int,q);
-    
-    map<p2,int> queries;
+    vi furthestright(n);
+    int f = n - 1;
+    per(i, n)
+    {
+        if (!goesright[i]) f = i;
+        furthestright[i] = f;
+    }
+
+    vi furthestleft(n);
+    f = 0;
+    rep(i, n)
+    {
+        if (i&&goesright[i-1]) f = i;
+        furthestleft[i] = f;
+    }
+
+    dread(int, q);
+
 
     rep(i, q)
     {
         dread(int, a, b);
         a--; b--;
-        p2 query = p2(a,b);
-        if (!setcontains(queries, query))
+        if (a<=b)
         {
-            bool res = anypath(a,b,edges);
-            queries[query] = res;
-            queries[p2(b,a)] = !res;
+            if (furthestright[a] >= b)
+            {
+                cout << "ja\n";
+            }
+            else cout << "nej\n";
+        }
+        else
+        {
+            if (furthestleft[a] <= b)
+            {
+                cout << "ja\n";
+            }
+            else cout << "nej\n";
         }
         
-        if (queries[query])
-        {
-            cout << "ja\n";
-        }
-        else cout << "nej\n";
     }
 
-    quit;
+    return 0;
 }

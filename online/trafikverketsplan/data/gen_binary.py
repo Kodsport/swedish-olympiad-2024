@@ -35,8 +35,12 @@ def dfs(u,p, depth):
 dfs(1,-1,1)
 
 print(q)
-if querymode=="random":
-    for i in range(q):
-        print(randint(1,n), randint(1,n))
-else:
-    assert False, f"Unknwon mode {querymode}"
+cnt = 0
+# 10% random
+while cnt < q*0.1:
+    print(randint(1,n), randint(1,n))
+    cnt+=1
+# 90% leaves
+while cnt < q:
+    print(randint(n//2,n), randint(n//2,n))
+    cnt+=1
