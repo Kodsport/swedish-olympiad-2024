@@ -12,18 +12,21 @@ Trots företagets välutvecklade kameror, så har de ändå stött på flertal p
 vilket innebär att installerade kameror kommer möjligtvis behöver tas ner efter ett antal dagar.
 
 Under $Q$ dagar, kommer företaget antingen installera en kamera med serienummer $i$ som övervakar ett segment $(a,b)$ på gatan, 
-eller ta bort en kamera med serienummer $i$ från gatan som innan var installerat på gatan. Alla kameror har ett unikt serienummer $1\le i \le 10^6$.
+eller ta bort en specifik kamera från gatan som innan var installerat. 
 
 Men under vissa dagar är det väldigt onödigt att aktivera alla installerade kameror, 
 och det är mer miljövänligt att endast aktivera ett fåtal kameror. 
-Som tur är har Purrfect Segments Inc. lyckats tänkt lite i förväg, och kan alltid garantera att man endast behöver aktivera 
+
+Kattis vill inte %TODO ändra statement så att den passar in ändringen
+
+Som tur är har Purrfect Segments Inc. lyckats tänka lite i förväg, och kan alltid garantera att man endast behöver aktivera 
 maximalt 2 kameror varje dag, så att så många heltal övervakas som möjligt. 
 Alltså för en specifik dag, kallar vi det minsta talet som övervakas av någon nuvarande installerad kamera för $x_{min}$, 
 och vi kallar det största talet som övervakas av någon nuvarande installerad kamera för $x_{max}$. 
 Då är det garanterat att alla tal mellan $x_{min}$ och $x_{max}$ (inklusive $x_{min}$ och $x_{max}$) kan bli övervakade genom att endast aktivera max 2 kameror.
 
 Från början finns det inga kameror som övervakar denna gata i Katen. För varje dag som går upp till den $Q:te$ dagen:
-Vad är serienummerna på kamerorna ska företaget aktivera?
+Vilka kameror ska företaget aktivera för att maximera sträckan som är övervakad varje dag?
 
 \begin{figure}[h]
   \centering
@@ -34,16 +37,20 @@ Vad är serienummerna på kamerorna ska företaget aktivera?
 
 
 \section*{Indata}
-Den första raden i indatan innehåller heltalet $Q$ ($1 \le Q \le 10^5$), antal dagar i testfallet.
+Den första raden i indatan innehåller heltalet $Q$ ($1 \le Q \le 2 \cdot 10^5$), antal dagar i testfallet.
 
-De följande rader gäller
+De följande $Q$ rader börjar antingen med ``+'' ifall en kamera ska installeras, eller ``-'' ifall en kamera ska tas bort:
+\being{itemize}
+  \item ``+'': Raden följer med 3 heltal, där det första heltalet består av serienumret på kameran $s$ $(1\le s \le 10^6)$, 
+  och det andra och tredje heltalet, a och b $(0\le a \le b \le 10^9)$, är start respektive slut på det segment som kameran övervakar.
+  \item ``-'': Raden följer med 1 heltal, där heltalet är serienumret på kameran $s$ som ska tas bort från gatan. Det är garanterat att kameran som tas bort är installerad.
+\end{itemize}
 
-Nästa raden innehåller ett ord $S$ med $N$ bokstäver som består av bokstäver ``\texttt{a}''-``\texttt{z}''.
-
+Alla kameror har ett unikt serienummer. Det är även garanterat att för varje dag finns det alltid minst 1 kamera som är installerad på gatan.
 
 \section*{Utdata}
-Skriv ut ett ord, antingen ``\texttt{boba}'', ``\texttt{kiki}'', ``\texttt{boki}'' eller ``\texttt{none}'', enligt Fergus regler som nämns ovan.
-Det finns alltid endast en kategori som stämmer in för varje ord.
+Skriv ut $Q$ rader, där det $i$:te raden är svaret till den $i$:te dagen: 
+Det minsta antalet kameror som behöver aktiveras den dagen. Antingen 1, 2, eller -1 ifall det är omöjligt att uppfylla reglerna 
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -53,9 +60,10 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & $N = 1$ \\ \hline
-  $2$    & $50$       & Ordet har åtminstone 1 av ``\texttt{k}'' eller ``\texttt{b}'', men aldrig båda samtidigt. \\ \hline
-  $3$    & $30$       & Inga ytterligare begränsningar. \\ \hline
+  $1$    & $20$       & $Q \le 2$ \\ \hline
+  $2$    & $15$       & Svaret är antingen 1 eller ``impossible''. \\ \hline
+  $3$    & $30$       & $Q \le 1000$. \\ \hline
+  $4$    & $35$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
 \section*{Förklaring av exempelfall 1}
