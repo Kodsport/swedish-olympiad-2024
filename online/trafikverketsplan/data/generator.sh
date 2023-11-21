@@ -15,6 +15,9 @@ compile gen_hard.py
 
 samplegroup
 sample 1
+sample 2
+sample 3
+sample 4
 
 group group1 10 # O(NQ)
 include_group sample

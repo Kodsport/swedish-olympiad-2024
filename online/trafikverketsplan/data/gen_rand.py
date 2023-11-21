@@ -45,7 +45,7 @@ for i in range(n-1):
         a,b=randint(0,n-1),randint(0,n-1)
         if uf.find(a)==uf.find(b):continue
         uf.union(a,b)
-        print(a+1,b+1)
+        print(f"{a+1} {b+1}")
         break
 
 print(q)
