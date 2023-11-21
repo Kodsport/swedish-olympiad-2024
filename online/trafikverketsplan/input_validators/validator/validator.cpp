@@ -38,4 +38,7 @@ void run() {
 		Endl();
 		if (goal!=-1) assert(b==goal);
 	}
+
+	int isbinary = Arg("isbinary", 0);
+	// TODO: verify it is actually binary
 }

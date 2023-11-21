@@ -19,6 +19,8 @@ n = int(cmdlinearg('n'))
 q = int(cmdlinearg('q'))
 querymode = cmdlinearg("querymode")
 
+# Trees have logarithmic height
+
 # Stolen from https://github.com/cheran-senthil/PyRival/blob/master/pyrival/data_structures/DisjointSetUnion.py
 class UF:
     def __init__(self, n):
