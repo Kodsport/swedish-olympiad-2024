@@ -1,8 +1,10 @@
 \problemname{Trafikverkets plan}
+
+\noindent
 Under vinterhalvåret sker det på tok för många krockar i Lönnköping på grund av hala vägar. 
 Eftersom Lönnköpings kommun ville verka ännu effektivare än kattriket Katens erövring (se \textit{Segmentövervakning})
-har deras vägnätverk väldigt få vägar. Mellan de $N$ husen finns endast $N-1$ vägar.
-Varje väg går direkt mellan två hus. Om du befinner dig vid ett visst hus du åka till vilken
+har deras vägnätverk endast ett fåtal vägar. Mellan de $N$ husen finns endast $N-1$ vägar.
+Varje väg går direkt mellan två hus. Om du befinner dig vid ett visst hus kan du åka till vilken
 annan av vägarna den är kopplad till som helst. Nätverket är dessutom konstruerat så att
 man kan ta sig mellan varje par av hus genom att färdas längs med en eller flera vägar.
 Trafikverket har nu en briljant plan för att minska antalet krockar: de tänker enkelrikta
@@ -20,7 +22,7 @@ Den första raden i indatan innehåller heltalet $N$ ($1 \le N \le 3 \cdot 10^5$
 som finns i Lönnköping.
 
 De följande $N-1$ raderna innehåller vardera heltalen $a,b$ ($1 \leq a,b \leq N$, $a \neq b$),
-vilket betyder att vägen från hus $a$ till hus $b$ är riktad från $a$ till $b$. Det är garanterat
+vilket betyder att det finns en riktad väg från hus $a$ till hus $b$. Det är garanterat
 att om vägarna var oriktade hade man kunnat färdas mellan varje par av hus endast genom att använda
 vägarna.
 
