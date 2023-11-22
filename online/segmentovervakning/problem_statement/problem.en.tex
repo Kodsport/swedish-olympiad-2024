@@ -1,39 +1,55 @@
-\problemname{Kiki Boba}
+\problemname{Segmentmonitoring}
 
-``\texttt{Kiki}'' and ``\texttt{boba}'' form a fascinating sound-symbolic connection, where people spontaneously associate sharp sounds like ``\texttt{kiki}'' 
-with jagged shapes and softer sounds like ``\texttt{boba}'' with rounder shapes. 
-This reveals an underlying link between sounds and visual properties, 
-providing insight into how our brains intuitively create meaning and associations.
+After successfully conquering all city-states in Kattago, the super-feline kingdom of 
+Katen and its leader Kattis want better control over their conquered city-states, especially in Segby. 
+The state of Segby consists of a single long line, where there is a house at every integer. 
+Recently, rumors of rebellion are circulating, something that will not be tolerated. 
+Specifically, they have determined that all suspected houses are located between $x_{min}$ and $x_{max}$, 
+meaning the suspected houses are those standing on an integer $x$ such that $x_{min} \leq x \leq x_{max}$.
 
-Fergus has long held a keen interest in phonetics, and based on this sound-symbolic connection, he has developed a theory! 
-He believes that all words can be categorized into 4 categories. In other words, each word is either a word corresponding to the 
-figure on the left, like ``\texttt{kiki}'', or a word corresponding to the figure on the right, like ``\texttt{boba}'', or a word 
-that is a combination of both, or a word that is none of the mentioned alternatives.
+To avoid a cat-astrophe, Kattis has asked the company Purrfect Segments Inc. to produce various cameras 
+that can monitor the suspected segment and the entire street between $x_{min}$ and $x_{max}$ 
+(Kattis herself has realized the importance of surveillance after several attempts to attack a well-surveilled wall). 
+Purrfect Segments Inc. install their cameras at specific paw-sitions so that each camera can monitor a segment $[a, b]$ to purr-fection, 
+meaning the camera monitors all integers $x$ on the number line such that $a \leq x \leq b$. 
+The only problem is that the cameras are often vandalized, as they are very similar to speed cameras. 
+When a camera is vandalized, it can no longer monitor its segment. 
+To keep track of the suspected segment, they will constantly need to install new cameras.
 
-\begin{figure}[h]
-  \centering
-\includegraphics[width=0.3\textwidth]{kikiboba.png}
-  \caption{Figure to the left is commonly associated with "kiki". Figure to the right is commonly associated with "boba".}
-  \label{fig:kikiboba}
-\end{figure}
+They now seek your help for the next $Q$ days. Initially, there are no cameras monitoring the street at all. 
+Every morning, they will check if a camera has been vandalized. 
+If so, they will not install a camera that day to avoid detection by the rebels. 
+Fortunately, the rebels can vandalize at most $1$ camera per day. 
+To plan for the next day, every evening they want to know if they can monitor the suspected segment, and if so, how many cameras are needed. 
+Since they want to appear even more efficient than the municipality of Lund, they never want to activate more than two cameras in a day.
 
-A word consists of a certain number of consontants and a certain number of vowels. Fergus determines that a word belongs to a category according to the following rules:
-If there are more ``\texttt{b}'' than ``\texttt{k}'' in the word, then the word is a ``\texttt{boba}'' word.
-If there are more ``\texttt{k}'' than ``\texttt{b}'' in the word, then the word is a ``\texttt{kiki}'' word.
-If the word contains an equal number of ``\texttt{b}'' and ``\texttt{k}'', then Fergus calls it a ``\texttt{boki}'' word.
-These rules hold with one exception:
-If there are no ``\texttt{b}'' and ``\texttt{k}'' in the word, the word is neither close to a ``\texttt{boba}'' word nor a ``\texttt{kiki}'' word. In this case, Fergus refers to the word as a ``\texttt{none}'' word.
+For each of the next $Q$ days, can you calculate whether it is possible to use only 1 camera or 2?
 
-Help Fergus write a program that, given a word, can categorize the word according to Fergus' rules.
+
 
 \section*{Input}
-The first line of the input contains an integer $N$ ($1 \le N \le 100$), the number of characters in the word your program should categorize.
+The first line of the input contains the integers $x_{min}$ and $x_{max}$ ($1 \leq x_{min} < x_{max} \leq 10^9$), 
+indicating the segment where the suspected houses are located.
 
-The next line contains a word $S$ with $N$ characters consisting of characters ``\texttt{a}''-``\texttt{z}''.
+The second line contains the integer $Q$ ($1 \le Q \le 2 \cdot 10^5$), the number of days in the test case.
+
+The following $Q$ lines start either with ``+'' if a camera is to be installed or ``-'' if a camera has been vandalized:
+\begin{itemize}
+  \item ``+'': The line contains 3 integers, $s$, $a$, and $b$ ($1\le s \le 10^6$, $0\le a < b \le 10^9$), 
+  indicating that a camera with serial number $s$ has been installed to monitor the segment $[a,b]$.
+  \item ``-'': The line contains the integer $s$, the serial number of the vandalized camera $s$. 
+  It is guaranteed that the vandalized camera was installed.
+\end{itemize}
+
+All cameras have a unique serial number.
 
 \section*{Output}
-Write a word/category, either ``\texttt{boba}'', ``\texttt{kiki}'', ``\texttt{boki}'' or ``\texttt{none}'', according to Fergus' rules stated above.
-There is always one category that fits each word.
+Print $Q$ lines, where the $i$-th line is the answer for the $i$-th day:
+\begin{itemize}
+  \item If it can be monitored with $1$ camera, print $1$.
+  \item If it is not possible to monitor with $1$ camera but is possible with $2$, print $2$.
+  \item Otherwise, print $-1$.
+\end{itemize}
 
 \section*{Points}
 Your solution will be tested on several test case groups.
@@ -43,13 +59,37 @@ To get the points for a group, it must pass all the test cases in the group.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
-  $1$    & $20$       & $N = 1$ \\ \hline
-  $2$    & $50$       & The word has atleast 1 of either ``\texttt{k}'' or ``\texttt{b}'', but never both at the same time. \\ \hline
-  $3$    & $30$       & No additional constraints. \\ \hline
+  $1$    & $10$       & $Q \le 2$ \\ \hline
+  $2$    & $10$       & The answer is either 1 or -1. \\ \hline
+  $3$    & $20$       & $Q \le 100$ \\ \hline
+  $4$    & $25$       & $Q \le 1000$. \\ \hline
+  $5$    & $35$       & No additional constraints. \\ \hline
 \end{tabular}
 
 \section*{Explanation of sample 1}
-The word contains 2 ``\texttt{b}'', while there are none of ``\texttt{k}''. In other words there are more of ``\texttt{b}'' than ``\texttt{k}'', which means that the answer is ``\texttt{boba}''.
+On the first day, camera with serial number ``1'' was installed on the segment $[2,3]$.
+There is no way to monitor the entire segment $[2,6]$ by activating any cameras, so the answer for the first day is ``-1''.
+
+On the second day, camera with serial number ``2'' was installed on the segment $[4,6]$.
+There is still no way to monitor the entire segment, as it would be possible only if we activate cameras ``1'' and ``2'', leaving the segment between 3 and 4 unmonitored.
+Therefore, the answer for the second day is ``-1''.
+
+On the third day, camera with serial number ``2'' was vandalized.
+There is still no way to monitor the entire segment $[2,6]$, so the answer for the third day is ``-1''.
+
+On the fourth day, camera with serial number ``3'' was installed.
+By activating cameras ``1'' and ``3'' the segment $[2,7]$ is monitored, including the suspected segment $[2,6]$.
+Since there is no way to monitor $[2,6]$ by activating only 1 camera, the answer for the fourth day is ``2''.
+
 
 \section*{Explanation of sample 3}
-The word contains 1 ``\texttt{b}'' and 1 ``\texttt{k}''. There are an equal number of ``\texttt{b}'' and ``\texttt{k}'', which means the answer is ``\texttt{boki}''.
+On the first day, camera with serial number ``123'' was installed on the segment $[10,15]$.
+There is no way to monitor the entire segment $[10,20]$ by activating any cameras, so the answer for the first day is ``-1''.
+
+On the second day, camera with serial number ``234'' was installed.
+By activating cameras ``123'' and ``234,'' the entire secret segment $[10,20]$ is monitored.
+Therefore, the answer for the second day is ``2''.
+
+On the third day, camera with serial number ``345'' was installed.
+By activating only camera ``345,'' the entire secret segment $[10,20]$ is monitored.
+Therefore, the answer for the third day is ``1''.

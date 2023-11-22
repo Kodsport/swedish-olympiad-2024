@@ -57,7 +57,7 @@ elif mode=="harder":
     while cnt < q:
         id = ids[-1]
         del ids[-1]
-        print("+", id, randint(lo+1,(lo+hi)//4*3), randint(hi+1, int(1e6)))
+        print("+", id, randint(lo+1,(lo+hi)//4*3), randint(hi+1, int(1e9)))
         cnt+=1
         if cnt<q:
             print("-", id)
