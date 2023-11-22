@@ -10,12 +10,13 @@ compile gen_bigPlanka.py
 # Generate answers to sample cases
 samplegroup
 sample 1
+sample 2
 
 
 group group1 10
 limits maxN=1 mode="hydrantAtStart" maxSize=10
 tc g1-01 gen n=1 mode="hydrantAtStart" maxSize=10
-tc g1-02 gen n=1 mode="hydrantAtStart" w=1 h=1 
+tc g1-02 gen n=1 mode="hydrantAtStart" w=2 h=3 
 tc g1-03 gen n=1 mode="hydrantAtStart" w=9 h=1
 tc g1-04 gen n=1 mode="hydrantAtStart" w=10 h=10
 tc g1-05 gen n=1 mode="hydrantAtStart" w=2 h=2
@@ -26,6 +27,7 @@ group group2 15
 limits maxSize=50 maxN=50
 include_group group1
 tc 1
+tc 2
 tc g2-leftPath-01 gen n=1 maxSize=50 mode="leftPath"
 tc g2-leftPath-02 gen w=50 h=50 n=50 mode="leftPath"
 tc g2-rightPath-03 gen w=29 h=10 n=3 mode="rightPath"

@@ -22,7 +22,8 @@ maxGridSize = int(cmdlinearg("maxSize", 1000))
 n = int(cmdlinearg('n', random.randint(1,maxN)))
 w = int(cmdlinearg("w", random.randint(1,maxGridSize)))
 h = int(cmdlinearg("h", random.randint(1,maxGridSize)))
-
+if w==h==1:
+    h=2
 if n>w*h:
     n = w*h - w*random.randint(0,1)
 

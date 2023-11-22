@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 n = int(input())
 pattern = [[int(x) for x in input()] for i in range(n)]
 half = n//2
