@@ -157,7 +157,7 @@ bool anstwo()
         if (r1 >= r) leftmost = min(leftmost, l1);
 
     }
-    return rightmost+1>=leftmost;
+    return rightmost>=leftmost;
 }
 
 int32_t main()

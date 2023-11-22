@@ -165,7 +165,7 @@ int32_t main()
         while (rq.size() && removed[rq.top().second]) rq.pop();
 
         if (coversall.size()) cout << "1\n";
-        else if (lq.size()&&rq.size()&&lq.top().first + 1 >= (-rq.top().first)) cout << "2\n";
+        else if (lq.size()&&rq.size()&&lq.top().first >= (-rq.top().first)) cout << "2\n";
         else cout << "-1\n";
     }
 

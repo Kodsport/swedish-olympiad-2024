@@ -149,7 +149,7 @@ bool anstwo()
             p2 a = { l1,r1 };
             p2 b = { l2,r2 };
             if (a.first > b.first) swap(a, b);
-            if (a.first<=l&&b.second>=r&&a.second+1>=b.first)
+            if (a.first<=l&&b.second>=r&&a.second>=b.first)
             {
                 return 1;
             }

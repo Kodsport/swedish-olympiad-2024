@@ -45,7 +45,7 @@ void answer(){
         cout << "1\n";
     }
     else{
-        if(mi >= ma-1){
+        if(mi >= ma){
             cout << "2\n";
         }
         else{

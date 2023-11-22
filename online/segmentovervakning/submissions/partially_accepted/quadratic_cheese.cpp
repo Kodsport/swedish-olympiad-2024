@@ -172,7 +172,7 @@ bool anstwo()
     int rightmost = isleft[cachel].first;
     int leftmost = isright[cacher].first;
 
-    return rightmost + 1 >= leftmost;
+    return rightmost >= leftmost;
 }
 
 map<int, p2> inter;
