@@ -11,6 +11,8 @@ void run() {
 	int h = Int(1, maxSize); Space();
 	int n = Int(1, Arg("maxN", 20000)); Endl();
 
+	assert(!(w==1 && h==1));
+
 	int used[w+1][h+1];
 
 	for (int i = 0; i < w+1; i++){
