@@ -26,7 +26,7 @@ assert hi > lo
 print(lo,hi)
 print(q)
 
-id_hi=q*2#int(1e6)
+id_hi=10**6#int(1e6)
 ids = [i+1 for i in range(int(id_hi))]
 random.shuffle(ids)
 

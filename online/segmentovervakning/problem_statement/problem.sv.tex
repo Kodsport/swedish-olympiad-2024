@@ -8,23 +8,26 @@ att alla misstänkta hus ligger mellan $x_min$ och $x_max$, alltså är de misst
 de som står på ett heltal $x$ så att $x_min \leq x \leq x_max$.
 
 För att undivka kat(t)astrof har Kattis bett företaget Purrfect Segments Inc. att producera
-olika kameror som kan övervaka det misstänkta segmentet. Purrfect Segments Inc. har utvecklat
-sina kamerors paw-sition så att varje kamera kan övervaka ett segment $[a,b]$ till purr-fektion, 
+olika kameror som kan övervaka det misstänkta segmentet (Kattis har själv insett hur viktigt det är med övervakare 
+efter flera gånger ha försökt attackera en välövervakad mur). 
+Purrfect Segments Inc. har utvecklat sina kamerors paw-sitioner så att varje kamera kan övervaka ett segment $[a,b]$ till purr-fektion, 
 vilket innebär att kameran övervakar alla heltal $x$ på tallinjen sådana att $a<=x<=b$. 
 Enda problemet är att kamerorna ofta blir vandaliserade, då de är väldigt lika fartkameror.
 När en kamera vandaliserats kan den inte övervaka sitt segment längre. För att kunna hålla
 koll på det misstänkta segmentet kommer de alltså konstant att behöva installera nya kameror.
 
-De vill nu ha din hjälp de kommande $Q$ dagarna. Varje morgon kommer de kolla ifall en kamera
-blivit vandaliserad. Om så är fallet kommer de inte att installera en kamera den dagen för att
+De vill nu ha din hjälp de kommande $Q$ dagarna. Från början finns det inga kameror som övervakar gatan alls. 
+Varje morgon kommer de kolla ifall en kamera blivit vandaliserad. 
+Om så är fallet kommer de inte att installera en kamera den dagen för att
 inte bli upptäckta av upprorsmakarna. Som tur är orkar de som mest vandalisera max $1$ kamera
 per dag. För att kunna planera nästa dag vill de varje kväll få reda
 på om de kan övervaka det misstänkta segmentet, och i så fall hur många kameror som krävs.
 Eftersom de vill verka ännu effektivare än Lunds kommun vill de aldrig aktivera mer än två
-kameror under en dag. Det vill säga, om det går att övervaka segmentet med $1$ kamera, svara $1$.
-Om det inte går med $1$ kamera, men det går med $2$ kameror, skriv ut $2$. Annars ska du skriva ut $-1$. 
+kameror under en dag. 
 
-Från början finns det inga kameror som övervakar gatan alls. 
+För varje dag de kommande $Q$ dagarna, kan du beräkna ifall det är möjligt att endast använda 1 kamera, eller 2?
+
+
 
 %\begin{figure}[h]
 %  \centering
@@ -42,7 +45,7 @@ Den andra raden innehåller heltalet $Q$ ($1 \le Q \le 2 \cdot 10^5$), antal dag
 
 De följande $Q$ rader börjar antingen med ``+'' ifall en kamera ska installeras, eller ``-'' ifall en kamera vandaliserats:
 \begin{itemize}
-  \item ``+'': Raden innehåller med 3 heltal, $s, a$ och $b$ ($1\le s \le 10^6$, $0\le a < b \le 10^6$), 
+  \item ``+'': Raden innehåller med 3 heltal, $s$, $a$ och $b$ ($1\le s \le 10^6$, $0\le a < b \le 10^6$), 
   vilket innebär att en kamera med serienummer $s$ har installerats som kan övervaka segmentet $[a,b]$.
   \item ``-'': Raden innehåller heltalet $s$, serienumret på kameran $s$ som vandaliserats.
   Det är garanterat att kameran som vandaliserats var installerad.
