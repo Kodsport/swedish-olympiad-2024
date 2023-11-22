@@ -45,23 +45,21 @@ for _ in range(Q):
             break
         heapq.heappop(ends)
     
-    seg=[0]*(l+r-1)
+    seg=[0]*(r-l+1)
 
     if startReach!=-1:
-        for i in range(startReach):
-            if i+l<(l+r+1):
-                seg[i+l]=1
+        for i in range(min(len(seg),startReach-l+1)):
+            seg[i]=1
 
     if sum(seg)==len(seg):
         print(1)
         continue
     
     if endReach!=-1:
-        for i in range(endReach):
-            if 0<r-i<(l+r+1):
-                seg[r-1]=1
+        for i in range(min(len(seg),r-endReach+1)):
+            seg[-(i+1)]=1
     
-    if seg(seg)==len(seg):
+    if sum(seg)==len(seg) and startReach>=endReach:
         print(2)
     else:
         print(-1)

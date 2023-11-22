@@ -22,14 +22,14 @@ for _ in range(Q):
     
 
     bestStart = -1
-    bestEnd = -1
+    bestEnd = 10**9+2
 
     for id in cameras:
         a,b=cameras[id]
         if a<=l:
-            bestStart = b
+            bestStart = max(b,bestStart)
         elif b>=r:
-            bestEnd = a
+            bestEnd = min(bestEnd,a)
     
     if bestStart>=r or -1<bestEnd<l:
         print(1)

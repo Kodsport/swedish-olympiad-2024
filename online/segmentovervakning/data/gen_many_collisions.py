@@ -22,7 +22,7 @@ rem_prob = float(cmdlinearg("rem", 0.0))
 sub2 = cmdlinearg("sub2", "no")
 
 MAXX = 10**9
-id_hi=10**6
+id_hi= 10**6
 ids = [i+1 for i in range(int(id_hi))]
 random.shuffle(ids)
 
@@ -37,10 +37,11 @@ print(x_min, x_max)
 print(q)
 
 i = 0
-for _ in range(q):
+while i < q:
     if len(active) > 0 and random.random() < rem_prob:
         id = heapq.heappop(active)
         print("-", id)
+        q -= 1
     else:
         id = ids[i]
         r = random.randint(1, 3)
@@ -66,6 +67,8 @@ for _ in range(q):
                 hi = random.choice(X)
         if lo > hi:
             lo, hi = hi, lo
+        elif lo == hi:
+            continue
         heapq.heappush(active, id)
         print("+", id, lo, hi)
         i += 1

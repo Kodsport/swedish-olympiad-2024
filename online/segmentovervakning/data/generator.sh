@@ -23,6 +23,7 @@ tc_manual ../manual/m5.in
 tc_manual ../manual/m6.in
 tc_manual ../manual/m7.in
 tc_manual ../manual/m8.in
+tc_manual ../manual/longSeg1.in
 tc g1-1 gen_rand q=2 mode=random
 tc g1-2 gen_rand q=2 mode=random
 
@@ -35,6 +36,7 @@ tc m3
 tc m4
 tc m5
 tc m6
+tc_manual ../manual/longSeg2.in
 tc g2-1 gen_nevertwo q=200000 addweight=1
 tc g2-2 gen_nevertwo q=200000 addweight=10
 tc g2-3 gen_nevertwo q=200000 addweight=100
@@ -55,6 +57,8 @@ tc m5
 tc m6
 tc m7
 tc m8
+tc longSeg1
+tc longSeg2
 tc g3-1 gen_rand q=100 mode=random
 tc g3-2 gen_rand q=100 mode=random remratio=1000
 tc g3-3 gen_rand q=100 mode=harder

@@ -6,9 +6,11 @@ using namespace std;
 
 
 void run() {
-	int l = Int(1, int(1e6));
+	int maxSegment = Arg("maxSegSize", int(1e9));
+
+	int l = Int(1, maxSegment);
 	Space();
-	int r = Int(1, int(1e6));
+	int r = Int(1, maxSegment);
 	assert(r>l);
 	Endl();
 	
@@ -31,9 +33,9 @@ void run() {
 			active[id]=1;
 			cnt[id]++;
 			Space();
-			int lo = Int(1,int(1e6));
+			int lo = Int(1,maxSegment);
 			Space();
-			int hi = Int(1,int(1e6));
+			int hi = Int(1,maxSegment);
 			assert(hi>lo);
 		}
 		else

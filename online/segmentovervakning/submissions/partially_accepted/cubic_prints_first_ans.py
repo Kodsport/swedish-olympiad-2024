@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#@EXPECTED_GRADES@ AC TLE WA WA TLE
 
 l,r = map(int,input().split())
 
