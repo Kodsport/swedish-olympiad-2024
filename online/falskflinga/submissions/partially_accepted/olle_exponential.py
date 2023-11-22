@@ -127,6 +127,7 @@ for i in range(1<<m):
     
     p = get_solution(included)
     if (valid_solution(p)):
+        print(p)
         pixels_changed = 0
         for i in range(n):
             for j in range(n):
