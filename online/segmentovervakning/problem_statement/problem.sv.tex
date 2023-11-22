@@ -1,29 +1,23 @@
 \problemname{Segmentövervakning}
 
 Efter att ha lyckats erövra alla stadsstater i Kattago, vill det övermänskliga kattriket Katen
-och dess ledare Kattis ha bättre kontroll över sina erövrade stadsstater, särskilt i Segby.
-Staten Segby består av en enda lång linje, där det finns ett hus på varje heltal. Nyligen
+och dess ledare Kattis ha bättre kontroll över sina erövrade stadsstater, särskilt i staten Segby.
+Segby består av en enda lång linje. Nyligen
 viskas det om uppror, något som inte kommer tolereras. Mer specifikt har de kommit fram till
 att alla misstänkta hus ligger mellan $x_{min}$ och $x_{max}$, alltså är de misstänkta husen
-de som står på ett heltal $x$ så att $x_{min} \leq x \leq x_{max}$.
+punkter $x$ på tallinjen som uppfyller $x_{min} \leq x \leq x_{max}$.
 
-För att undivka kat(t)astrof har Kattis bett företaget Purrfect Segments Inc. att producera
-olika kameror som kan övervaka det misstänkta segmentet och hela gatan mellan $x_{min}$ och $x_{max}$ (Kattis har själv insett hur viktigt det är med övervakare 
+För att undivka kat(t)astrof har Kattis bett företaget Purrfect Segments Inc. att tillverka
+olika kameror som kan övervaka hela gatan mellan $x_{min}$ och $x_{max}$ (Kattis har själv insett hur viktigt det är med övervakare 
 efter flera försök av att attackera en välövervakad mur). 
-Purrfect Segments Inc. installerar sina kameror på specifika paw-sitioner så att varje kamera kan övervaka ett segment $[a,b]$ till purr-fektion, 
-vilket innebär att kameran övervakar alla heltal $x$ på tallinjen sådana att $a \leq x \leq b$. 
+Purrfect Segments Inc. installerar sina kameror på specifika paw-sitioner så att varje kamera kan övervaka ett segment $[a,b]$ till purr-fektion. 
+Detta innebär att kameran övervakar alla tal $x$ på tallinjen sådana att $a \leq x \leq b$. 
 Enda problemet är att kamerorna ofta blir vandaliserade, då de är väldigt lika fartkameror.
 När en kamera vandaliserats kan den inte övervaka sitt segment längre. För att kunna hålla
 koll på det misstänkta segmentet kommer de alltså konstant att behöva installera nya kameror.
 
-De vill nu ha din hjälp de kommande $Q$ dagarna. Från början finns det inga kameror som övervakar gatan alls. 
-Varje morgon kommer de kolla ifall en kamera blivit vandaliserad. 
-Om så är fallet kommer de inte att installera en kamera den dagen för att
-inte bli upptäckta av upprorsmakarna. Som tur är orkar de som mest vandalisera max $1$ kamera
-per dag. För att kunna planera nästa dag vill de varje kväll få reda
-på om de kan övervaka det misstänkta segmentet, och i så fall hur många kameror som krävs.
-Eftersom de vill verka ännu effektivare än Lunds kommun vill de aldrig aktivera mer än två
-kameror under en dag. 
+Purrfect Segments Inc. vill nu ha din hjälp de kommande $Q$ dagarna. Från början finns det inga kameror som övervakar gatan alls. 
+Varje morgon kommer antingen en kamera installeras, eller så kommer en vandaliseras.
 
 Du går givet vilka kameror som installeras och vandliseras de kommande $Q$ dagarna, 
 och din uppgift är att för varje dag räkna ut om det går att övervaka hela segmentet $[x_{min}, x_{max}]$ med 
@@ -42,11 +36,11 @@ endast en eller två kameror.
 Den första raden i indatan innehåller heltalen $x_{min}$ och $x_{max}$ ($1 \leq x_{min} < x_{max} \leq 10^9$),
 segmentet de misstänkta husen ligger på.
 
-Den andra raden innehåller heltalet $Q$ ($1 \le Q \le 2 \cdot 10^5$), antal dagar i testfallet.
+Den andra raden innehåller heltalet $Q$ ($1 \le Q \le 2 \cdot 10^5$), antalet dagar i testfallet.
 
-De följande $Q$ rader som börjar antingen med ``+'' ifall en kamera ska installeras, eller ``-'' ifall en kamera vandaliserats:
+De följande $Q$ raderna börjar antingen med ``+'' ifall en kamera ska installeras, eller ``-'' ifall en kamera vandaliserats:
 \begin{itemize}
-  \item ``+'': Raden innehåller med 3 heltal, $s$, $a$ och $b$ ($1\le s \le 10^6$, $0\le a < b \le 10^9$), 
+  \item ``+'': Raden innehåller $3$ heltal, $s$, $a$ och $b$ ($1\le s \le 10^6$, $0\le a < b \le 10^9$), 
   vilket innebär att en kamera med serienummer $s$ har installerats som kan övervaka segmentet $[a,b]$.
   \item ``-'': Raden innehåller heltalet $s$, serienumret på kameran $s$ som vandaliserats.
   Det är garanterat att kameran som vandaliserats var installerad.
@@ -55,9 +49,9 @@ De följande $Q$ rader som börjar antingen med ``+'' ifall en kamera ska instal
 Alla kameror har ett unikt serienummer. 
 
 \section*{Utdata}
-Skriv ut $Q$ rader, där det $i$:te raden är svaret till den $i$:te dagen:
+Skriv ut $Q$ rader, där den $i$:te raden är svaret till den $i$:te dagen.
 \begin{itemize}
-  \item Om det kan övervakas med $1$ kamera, skriv ut $1$.
+  \item Om segmentet kan övervakas med $1$ kamera, skriv ut $1$.
   \item Om det inte går att övervaka med $1$ kamera, men går med $2$, skriv ut $2$.
   \item Annars, skriv ut $-1$.
 \end{itemize}
@@ -71,7 +65,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
   $1$    & $10$       & $Q \le 2$ \\ \hline
-  $2$    & $10$       & Svaret är antingen 1 eller -1. \\ \hline
+  $2$    & $10$       & Svaret är antingen $1$ eller $-1$. \\ \hline
   $3$    & $20$       & $Q \le 100$ \\ \hline
   $4$    & $25$       & $Q \le 1000$. \\ \hline
   $5$    & $35$       & Inga ytterligare begränsningar. \\ \hline
@@ -82,7 +76,7 @@ Den första dagen har kameran med serienummer ``1'' installerats på segmentet $
 Det finns inget sätt att övervaka hela segmentet $[2,6]$ genom att aktivera några kameror, därför är svaret för den första dagen ``-1''.
 
 Den andra dagen har kameran med serienummer ``2'' installerats på segmentet $[4,6]$.
-Det finns fortfarande inget sätt att övervaka hela segmentet, eftersom det går ifall vi aktiverar kamera ``1'' och ``2'', så övervakar vi inte segmentet mellan 3 och 4. 
+Det finns fortfarande inget sätt att övervaka hela segmentet, eftersom ifall vi aktiverar kamera ``1'' och ``2'', så övervakar vi inte segmentet mellan $3$ och $4$. 
 Därför är svaret för den andra dagen ``-1''.
 
 Den tredje dagen vandaliserades kameran med serienummer ``2''.
@@ -90,7 +84,7 @@ Det finns fortfarande inget sätt att övervaka hela segmentet $[2,6]$, därför
 
 Den fjärde dagen installerades kameran med serienummer ``3''.
 Genom att aktivera kamera ``1'' och ``3'' så övervakas segmentet $[2,7]$, vilket inkluderar det misstänkta segmentet $[2,6]$.
-Eftersom det inte finns något sätt att övervaka $[2,6]$ genom att endast aktivera 1 kamera, så är svaret för den fjärde dagen ``2''.
+Eftersom det inte finns något sätt att övervaka $[2,6]$ genom att endast aktivera $1$ kamera, så är svaret för den fjärde dagen ``2''.
 
 \section*{Förklaring av exempelfall 3}
 Den första dagen har kameran med serienummer ``123'' installerats på segmentet $[10,15]$. 
