@@ -1,15 +1,15 @@
 \problemname{Brandpost}
-
+\noindent
 Brandmannen Robert har jobbat som brandman i över 20 år och älskar sitt jobb. 
-Efter en lång promenad i metropolen M (tidigare känt som Stockholm) fick Robert ett samtal på sin telefon från hans hydrofoba chef som beordrade honom att komma in till brandstationen nu på en gång.
-Robert anlände nyss till det mest syd-västra fyrvägskorsningen i metropolen M och bestämmer sig för att bege sig direkt till brandstationen, 
+Efter en lång promenad i metropolen M (tidigare känd som Stockholm) fick Robert ett samtal på sin telefon från hans hydrofoba chef som beordrade honom att komma in till brandstationen nu på en gång.
+Robert anlände nyss till den mest syd-västra fyrvägskorsningen i metropolen M och bestämmer sig för att bege sig direkt till brandstationen, 
 men tydligen har flera av brandposterna i metropolen M börjat läcka vatten och svämmar över gatorna! Åh nej! 
 Detta är särskilt allvarligt eftersom Roberts hydrofoba chef på brandstationen är stenhård med att inte ha vatten nära sig, 
-så att dyka upp dyngsur till jobbet efter att ha stött på flera av de läckande brandposterna kommer få
-Robert att bli avskedad. Robert vill åtminstone arbeta som brandman i 20 år till, 
+så att dyka upp dyngsur till jobbet efter att ha stött på flera av de läckande brandposterna kommer få Robert avskedad. 
+Robert vill åtminstone arbeta som brandman i 20 år till, 
 så hjälp Robert att minimera hur blöt han blir!
 
-Metropolen M består av ett $W \times H$ rutnät av fyrvägskorsningar,
+Metropolen M består av ett rutnät med storlek $W \times H$,
 där varje fyrvägskorsning är en ruta i rutnätet, och går att nå från de fyra intilliggande korsningarna i varje
 väderstreck: norr, öster, söder och väster. Robert anlände nyss till fyrvägskorsningen längst
 syd-väst i rutnätet, vid ruta $(1,1)$. Robert vill nå brandstationen längst nord-öst i rutnätet,
@@ -17,10 +17,10 @@ vid ruta $(W,H)$. Det tar exakt 1 minut att springa från en fyrvägskorsning ti
 intilliggande korsning.
 
 Vidare har $N$ fyrvägskorsningar en läckande brandpost i sig, som kan befinna sig på alla rutor i rutnätet, inklusive där Robert börjar ifrån $(1,1)$, och vid brandstationen $(W,H)$. 
-Robert anländer till ruta $(1,1)$ vid tidspunkt 0, och varje läckande brandpost har läckt en enhet vatten till korsningen
-den sitter vid. Men för varje minut $t$ som passerar kommer varje läckande brandpost
-att läcka en extra enhet vatten till alla korsningar inom Manhattan-avstånd $t$ från den
-läckande brandposten. Det innebär att alla rutor $(x,y)$ som uppfyller det följande olikheten vid tidspunkt $t$ kommer att öka med 
+Robert anländer till ruta $(1,1)$ vid minut 0, och varje läckande brandpost har läckt en enhet vatten till korsningen
+den sitter vid. För varje minut $t$ som passerar kommer varje läckande brandpost
+att läcka en extra enhet vatten till alla korsningar inom en viss avstånd från den
+läckande brandposten. Mer specifikt innebär det att alla rutor $(x,y)$ som uppfyller det följande olikheten vid minut $t$ kommer att öka med 
 en enhet vatten av brandposten som ligger vid $(x_b,y_b)$:
 $$
 |x-x_b|+|y-y_b|\le t.
@@ -60,7 +60,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $10$       & $W,H \le 10$, $N=1$ och den enda brandposten finns vid $(1,1)$ \\ \hline
+  $1$    & $10$       & $W,H \le 10$, $N=1$ och den enda brandposten finns vid $(1,1)$. \\ \hline
   $2$    & $15$       & $W,H,N \le 50$ \\ \hline
   $3$    & $17$       & $W,H \le 100$, $N\le 200$\\ \hline
   $4$    & $27$       & $W,H \le 150$ \\ \hline

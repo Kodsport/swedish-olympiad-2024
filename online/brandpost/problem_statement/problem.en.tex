@@ -1,41 +1,42 @@
 \problemname{Fire Hydrant}
+\noindent
+Firefighter Robert has been working as a firefighter for over 20 years and loves his job. 
+After a long walk in the metropolis M (formerly known as Stockholm), Robert received a 
+call on his phone from his hydrophobic chief, ordering him to come to the fire station 
+right away. Robert has just arrived at the most south-west four-way intersection in 
+metropolis M and decides to head straight to the fire station, but apparently, 
+several fire hydrants in metropolis M have started leaking water and flooding the streets! 
+Oh no! This is particularly serious because Robert's hydrophobic chief at the fire 
+station is extremely strict about not having water near him, so showing up soaking 
+wet to work after encountering several of the leaking fire hydrants will get Robert fired. 
+Robert wants to work as a firefighter for at least 20 more years, so help Robert 
+minimize how wet he gets!
 
-Fireman Robert has been working as a firefighter for over 20 years and loves his job.
-After a long walk in the metropolis M (formerly known as Stockholm), Robert received
-a call on his phone from his hydrophobic boss, ordering him to come to the fire station immediately.
-
-Robert has just arrived at the southwest intersection of the metropolis M and
-decides to head straight to the fire station. However, several fire hydrants in
-the metropolis M have started leaking water and flooding the streets. Oh no! This
-is particularly serious because Robert's hydrophobic boss at the fire station is strict
-about not having water nearby. Showing up soaking wet to work after encountering
-several leaking fire hydrants could get Robert fired. Robert wants to work as a
-firefighter for at least another 20 years, so please help Robert minimize how wet he gets!
-
-Metropolis M consists of a grid of intersections with dimensions $W \times H$, where
-each intersection is represented as a cell in the grid, and can be reached from the four adjacent intersections in each cardinal
-direction: north, east, south, and west. Robert has just arrived at the intersection
-located at $(1,1)$. He wants to reach the fire station at the northeast intersection,
-located at $(W,H)$. It takes exactly 1 minute to run from one intersection to another
+Metropolis M consists of a grid with dimensions $W \times H$, where each four-way 
+intersection is a square in the grid, and is reachable from the four adjacent 
+intersections in each cardinal direction: north, east, south, and west. 
+Robert has just arrived at the four-way intersection furthest southwest in the grid, 
+at position $(1,1)$. Robert wants to reach the fire station furthest northeast in the grid, 
+at position $(W,H)$. It takes exactly 1 minute to run from one four-way intersection to another 
 adjacent intersection.
 
-Furthermore, there are $N$ intersections with a leaking fire hydrant, which can be
-located at any intersection in the grid, including where Robert starts at $(1,1)$
-and at the fire station $(W,H)$. Robert arrives at intersection $(1,1)$ at time 0,
-and each leaking fire hydrant leaks one unit of water into the intersection it is at.
-But for each minute $t$ that passes, each leaking fire hydrant will leak an additional
-unit of water to all intersections within the Manhattan distance $t$ from that 
-eaking hydrant. Which means that all cells $(x,y)$ that fulfills the following inequality at time $t$ will increase the number of water units
-from the fire hydrant at $(x_b,y_b)$:
+Furthermore, there are $N$ four-way intersections with a leaking fire hydrant, 
+which can be located in any square on the grid, including where Robert starts from $(1,1)$ and 
+at the fire station $(W,H)$. Robert arrives at the square $(1,1)$ at minute 0, and each leaking 
+fire hydrant has leaked one unit of water to the intersection the fire hydrant is located at. 
+For each minute $t$ that passes, each leaking fire hydrant will leak an additional unit of water 
+to all intersections within a certain distance from it. Specifically, all squares $(x,y)$ that 
+satisfy the following inequality at minute $t$ will increase by one unit of water from the fire 
+hydrant located at $(x_b,y_b)$:
 $$
 |x-x_b|+|y-y_b|\le t.
 $$
 
-Let's call the number of water units at a specific intersection $v_t$
-at time $t$. When Robert arrives at an intersection at time $t$, his clothes will get
-wet from all the water at that intersection due to leaking hydrants, i.e., $v_t$ water units.
+Let's call the number of units of water at a particular square $v_t$ at time $t$. 
+When Robert arrives at a four-way intersection at time $t$, Robert's clothes will get wet 
+from all the water present at that intersection from leaking fire hydrants, which is $v_t$ units of water.
 
-What is the minimum number of water units that Robert has to pass through on his way to the fire station?
+What is the minimum total number of water units that Robert needs to go through on his way to the fire station?
 
 
 \begin{centering}
@@ -68,7 +69,7 @@ To get the points for a group, it must pass all the test cases in the group.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
-  $1$    & $10$       & $W,H \le 10$, $N=1$ and the only fire hydrant is located at $(1,1)$ \\ \hline
+  $1$    & $10$       & $W,H \le 10$, $N=1$ and the only fire hydrant is located at $(1,1)$. \\ \hline
   $2$    & $15$       & $W,H,N \le 50$ \\ \hline
   $3$    & $17$       & $W,H \le 100$, $N\le 200$\\ \hline
   $4$    & $27$       & $W,H \le 150$ \\ \hline
