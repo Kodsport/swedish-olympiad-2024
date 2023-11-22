@@ -1,27 +1,30 @@
 \problemname{Segmentövervakning}
-
+\noindent
 Efter att ha lyckats erövra alla stadsstater i Kattago, vill det övermänskliga kattriket Katen
 och dess ledare Kattis ha bättre kontroll över sina erövrade stadsstater, särskilt i staten Segby.
 Segby består av en enda lång linje. Nyligen
 viskas det om uppror, något som inte kommer tolereras. Mer specifikt har de kommit fram till
 att alla misstänkta hus ligger mellan $x_{min}$ och $x_{max}$, alltså är de misstänkta husen
-punkter $x$ på tallinjen som uppfyller $x_{min} \leq x \leq x_{max}$.
+punkter $x$ på tallinjen som uppfyller $x_{min} \le x \le x_{max}$.
 
 För att undivka kat(t)astrof har Kattis bett företaget Purrfect Segments Inc. att tillverka
 olika kameror som kan övervaka hela gatan mellan $x_{min}$ och $x_{max}$ (Kattis har själv insett hur viktigt det är med övervakare 
 efter flera försök av att attackera en välövervakad mur). 
-Purrfect Segments Inc. installerar sina kameror på specifika paw-sitioner så att varje kamera kan övervaka ett segment $[a,b]$ till purr-fektion. 
-Detta innebär att kameran övervakar alla tal $x$ på tallinjen sådana att $a \leq x \leq b$. 
+Purrfect Segments Inc. installerar sina kameror på specifika paw-sitioner så att varje kamera har ett unikt serienummer $s$, 
+där kameran $s$ kan övervaka ett segment $[a_s,b_s]$ till purr-fektion. 
+Detta innebär att kameran övervakar alla tal $x$ på tallinjen sådana att $a_s \le x \le b_s$. 
 Det enda problemet är att kamerorna ofta blir vandaliserade, då de är väldigt lika fartkameror.
 När en kamera vandaliserats kan den inte övervaka sitt segment längre. För att kunna hålla
 koll på det misstänkta segmentet kommer de alltså konstant att behöva installera nya kameror.
 
 Purrfect Segments Inc. vill nu ha din hjälp de kommande $Q$ dagarna. Från början finns det inga kameror som övervakar gatan alls. 
-Varje morgon kommer antingen en kamera installeras, eller så kommer en vandaliseras.
+Varje morgon kommer antingen en kamera installeras, eller så kommer en vandaliseras. 
+Eftersom de vill verka ännu effektivare än Lunds kommun (se \textit{Stad i ljus}) vill de aldrig aktivera fler än två
+kameror under en dag. 
 
-Du går givet vilka kameror som installeras och vandliseras de kommande $Q$ dagarna, 
-och din uppgift är att för varje dag räkna ut om det går att övervaka hela segmentet $[x_{min}, x_{max}]$ med 
-endast en eller två kameror.
+Du får givet vilka kameror som installeras och vandliseras de kommande $Q$ dagarna, 
+och din uppgift är att för varje dag räkna ut om det går att övervaka hela segmentet $[x_{min}, x_{max}]$ genom att endast aktivera en eller två kameror. 
+Notera att i början av varje dag är ingen kamera aktiverad. 
 
 
 %\begin{figure}[h]
@@ -46,7 +49,7 @@ De följande $Q$ raderna börjar antingen med ``+'' ifall en kamera ska installe
   Det är garanterat att kameran som vandaliserats var installerad.
 \end{itemize}
 
-Alla kameror har ett unikt serienummer. 
+Alla kameror har ett unikt serienummer, och är inte aktiverade när de blir installerade.
 
 \section*{Utdata}
 Skriv ut $Q$ rader, där den $i$:te raden är svaret till den $i$:te dagen.
