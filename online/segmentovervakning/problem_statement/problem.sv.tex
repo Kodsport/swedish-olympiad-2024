@@ -9,7 +9,7 @@ de som står på ett heltal $x$ så att $x_min \leq x \leq x_max$.
 
 För att undivka kat(t)astrof har Kattis bett företaget Purrfect Segments Inc. att producera
 olika kameror som kan övervaka det misstänkta segmentet (Kattis har själv insett hur viktigt det är med övervakare 
-efter flera gånger ha försökt attackera en välövervakad mur). 
+efter flera försök av att attackera en välövervakad mur). 
 Purrfect Segments Inc. har utvecklat sina kamerors paw-sitioner så att varje kamera kan övervaka ett segment $[a,b]$ till purr-fektion, 
 vilket innebär att kameran övervakar alla heltal $x$ på tallinjen sådana att $a<=x<=b$. 
 Enda problemet är att kamerorna ofta blir vandaliserade, då de är väldigt lika fartkameror.
@@ -43,7 +43,7 @@ segmentet de misstänkta husen ligger på.
 
 Den andra raden innehåller heltalet $Q$ ($1 \le Q \le 2 \cdot 10^5$), antal dagar i testfallet.
 
-De följande $Q$ rader börjar antingen med ``+'' ifall en kamera ska installeras, eller ``-'' ifall en kamera vandaliserats:
+De följande $Q$ rader som börjar antingen med ``+'' ifall en kamera ska installeras, eller ``-'' ifall en kamera vandaliserats:
 \begin{itemize}
   \item ``+'': Raden innehåller med 3 heltal, $s$, $a$ och $b$ ($1\le s \le 10^6$, $0\le a < b \le 10^6$), 
   vilket innebär att en kamera med serienummer $s$ har installerats som kan övervaka segmentet $[a,b]$.
@@ -70,10 +70,35 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
   $1$    & $10$       & $Q \le 2$ \\ \hline
-  $2$    & $10$       & Svaret är antingen 1 eller ``impossible''. \\ \hline
+  $2$    & $10$       & Svaret är antingen 1 eller -1. \\ \hline
   $3$    & $20$       & $Q \le 100$ \\ \hline
   $4$    & $25$       & $Q \le 1000$. \\ \hline
   $5$    & $35$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
 \section*{Förklaring av exempelfall 1}
+Den första dagen har kameran med serienummer ``1'' installerats på segmentet $[2,3]$. 
+Det finns inget sätt att övervaka hela segmentet $[2,6]$ genom att aktivera några kameror, därför är svaret för den första dagen ``-1''.
+
+Den andra dagen har kameran med serienummer ``2'' installerats på segmentet $[4,6]$.
+Det finns fortfarande inget sätt att övervaka hela segmentet, eftersom det går ifall vi aktiverar kamera ``1'' och ``2'', så övervakar vi inte segmentet mellan 3 och 4. 
+Därför är svaret för den andra dagen ``-1''.
+
+Den tredje dagen vandaliserades kameran med serienummer ``2''.
+Det finns fortfarande inget sätt att övervaka hela segmentet $[2,6]$, därför är svaret för den tredje dagen ``-1''.
+
+Den fjärde dagen installerades kameran med serienummer ``3''.
+Genom att aktivera kamera ``1'' och ``3'' så övervakas segmentet $[2,7]$, vilket inkluderar det misstänkta segmentet $[2,6]$.
+Eftersom det inte finns något sätt att övervaka $[2,6]$ genom att endast aktivera 1 kamera, så är svaret för den fjärde dagen ``2''.
+
+\section*{Förklaring av exempelfall 3}
+Den första dagen har kameran med serienummer ``123'' installerats på segmentet $[10,15]$. 
+Det finns inget sätt att övervaka hela segmentet $[10,20]$ genom att aktivera några kameror, därför är svaret för den första dagen ``-1''.
+
+Den andra dagen installerades kameran med serienummer ``234''.
+Genom att aktivera kamera ``123'' och ``234'' så övervakas hela det hemliga segmentet $[10,20]$.
+Därför är svaret för den andra dagen ``2''.
+
+Den andra dagen installerades kameran med serienummer ``345''.
+Genom att endast aktivera kamera ``345'' så övervakas hela det hemliga segmentet $[10,20]$.
+Därför är svaret för den tredje dagen ``1''.
