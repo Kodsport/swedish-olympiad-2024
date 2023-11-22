@@ -28,9 +28,10 @@ for _ in range(Q):
             if a<=l<r<=b:
                 best=1
                 break
-            elif min(a,c) <=l and max(b,d)>=r and (c<=b or a<=d):
+            elif min(a,c) <=l and max(b,d)>=r and (a<=c<=b<=d or c<=a<=d<=b):
                 if best==-1:
                     best=2
+
         if best==1:
             break
     print(best)
