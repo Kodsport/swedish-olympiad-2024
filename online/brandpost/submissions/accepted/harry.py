@@ -6,7 +6,7 @@
 
 
 w,h,n = map(int,input().split())
-waterLevel=[[0]*w for _ in range(h)]
+waterLevel = [[0]*w for _ in range(h)]
 delta = [[0]*w for _ in range(h)]
 
 
@@ -32,13 +32,13 @@ setWater[0][0] = 0
 
 
 def currWaterLevel(x,y):
-    currTime=x+y
+    currTime = x+y
     
-    water=0
+    water = 0
     for hx,hy in hydrants:
-        water+=max(0,currTime-(abs(x-hx)+abs(y-hy))+1)
-
+        water += max(0,currTime-(abs(x-hx)+abs(y-hy))+1)
     return water
+
 
 #Initierar värden för alla (0,y)
 for i in range(h):
@@ -61,10 +61,10 @@ for r in range(h): #O(h)
             delta[r][x+1]-=2
 
 
-    currDelta=delta[r][0]
+    currDelta = delta[r][0]
     for c in range(1,w):
         currDelta+=delta[r][c]
-        waterLevel[r][c]=waterLevel[r][c-1]+currDelta
+        waterLevel[r][c] = waterLevel[r][c-1]+currDelta
 
 for x,y in BFS:
 
