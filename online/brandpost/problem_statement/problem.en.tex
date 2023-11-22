@@ -13,7 +13,7 @@ several leaking fire hydrants could get Robert fired. Robert wants to work as a
 firefighter for at least another 20 years, so please help Robert minimize how wet he gets!
 
 Metropolis M consists of a grid of intersections with dimensions $W \times H$, where
-each intersection can be reached from the four adjacent intersections in each cardinal
+each intersection is represented as a cell in the grid, and can be reached from the four adjacent intersections in each cardinal
 direction: north, east, south, and west. Robert has just arrived at the intersection
 located at $(1,1)$. He wants to reach the fire station at the northeast intersection,
 located at $(W,H)$. It takes exactly 1 minute to run from one intersection to another
@@ -25,11 +25,17 @@ and at the fire station $(W,H)$. Robert arrives at intersection $(1,1)$ at time 
 and each leaking fire hydrant leaks one unit of water into the intersection it is at.
 But for each minute $t$ that passes, each leaking fire hydrant will leak an additional
 unit of water to all intersections within the Manhattan distance $t$ from that 
-eaking hydrant. Let's call the number of water units at a specific intersection $v_t$
+eaking hydrant. Which means that all cells $(x,y)$ that fulfills the following inequality at time $t$ will increase the number of water units
+from the fire hydrant at $(x_b,y_b)$:
+$$
+|x-x_b|+|y-y_b|\le t.
+$$
+
+Let's call the number of water units at a specific intersection $v_t$
 at time $t$. When Robert arrives at an intersection at time $t$, his clothes will get
 wet from all the water at that intersection due to leaking hydrants, i.e., $v_t$ water units.
 
-What is the minimum number of water units that Robert's clothes can get wet from on his way to the fire station?
+What is the minimum number of water units that Robert has to pass through on his way to the fire station?
 
 
 \begin{centering}
@@ -47,13 +53,12 @@ What is the minimum number of water units that Robert's clothes can get wet from
 The first line of the input contains three integers $W,H,N$ ($1 \le W,H \le 1000$, $1 \le min(20000,W \cdot H)$), 
 where $W$ and $H$ are the width and height of the grid and $N$ is the number of leaking fire hydrants.
 
-The following n rows each contain two integers $x_i$ and $y_i$ ($1 \le x_i \le W$, $1 \le y_i \le H$),
+The following $N$ rows each contain two integers $x_i$ and $y_i$ ($1 \le x_i \le W$, $1 \le y_i \le H$),
 where $(x_i,y_i)$ is the position of the $i$:th leaking fire hydrant. It is guaranteed that no two
-fire hydrants occupy the same position.
+fire hydrants occupy the same cell.
 
 \section*{Output}
-Print an integer, the minimum number of water units Robert can have on his clothes after he arrives
-at the station.
+Print an integer, the minimum number of water units Robert has to pass through on his way to the fire station.
 
 \section*{Points}
 Your solution will be tested on several test case groups.

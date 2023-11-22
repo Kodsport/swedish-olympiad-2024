@@ -10,7 +10,7 @@ Robert att bli avskedad. Robert vill åtminstone arbeta som brandman i 20 år ti
 så hjälp Robert att minimera hur blöt han blir!
 
 Metropolen M består av ett $W \times H$ rutnät av fyrvägskorsningar,
-där varje fyrvägskorsning går att nå från de fyra intilliggande korsningarna i varje
+där varje fyrvägskorsning är en ruta i rutnätet, och går att nå från de fyra intilliggande korsningarna i varje
 väderstreck: norr, öster, söder och väster. Robert anlände nyss till fyrvägskorsningen längst
 syd-väst i rutnätet, vid ruta $(1,1)$. Robert vill nå brandstationen längst nord-öst i rutnätet,
 vid ruta $(W,H)$. Det tar exakt 1 minut att springa från en fyrvägskorsning till en annan
@@ -20,12 +20,17 @@ Vidare har $N$ fyrvägskorsningar en läckande brandpost i sig, som kan befinna 
 Robert anländer till ruta $(1,1)$ vid tidspunkt 0, och varje läckande brandpost har läckt en enhet vatten till korsningen
 den sitter vid. Men för varje minut $t$ som passerar kommer varje läckande brandpost
 att läcka en extra enhet vatten till alla korsningar inom Manhattan-avstånd $t$ från den
-läckande brandposten. Låt oss kalla antalet enheter vatten som finns vid en viss ruta för $v_t$ vid tidpunkt $t$. 
+läckande brandposten. Det innebär att alla rutor $(x,y)$ som uppfyller det följande olikheten vid tidspunkt $t$ kommer att öka med 
+en enhet vatten av brandposten som ligger vid $(x_b,y_b)$:
+$$
+|x-x_b|+|y-y_b|\le t.
+$$
+
+Låt oss kalla antalet enheter vatten som finns vid en viss ruta för $v_t$ vid tidpunkt $t$. 
 När Robert anländer till en fyrvägskorsning vid tidpunkt $t$ kommer Roberts kläder bli våta av allt vatten 
 som finns vid den korsningen från läckande brandposter, alltså $v_t$ enheter vatten.
 
-Vad är det lägsta antalet enheter vatten som Roberts kläder totalt kan bli blöt av på
-väg till brandstationen?
+Vad är det minsta totala antalet vattenenheter som Robert behöver gå igenom på väg till brandstationen?
 
 \begin{centering}
   \begin{figure}[h]
@@ -45,8 +50,7 @@ och $(x_i,y_i)$ är koordinaterna för den $i$:te läckande brandposten i rutnä
 Det är garanterat att alla brandposter har olika koordinater, alltså att $(x_i,y_i) \neq (x_j,y_j)$ för alla index $1 \le i < j \le n$.
 
 \section*{Utdata}
-Skriv ut ett heltal, det minimala antalet enheter vatten som dina kläder totalt kan ha
-blivit våta av på väg till brandstationen.
+Skriv ut ett heltal, det minsta totala antalet vattenenheter som Robert behöver gå igenom på väg till brandstationen.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
