@@ -1,8 +1,10 @@
 \problemname{Trafikverkets plan}
 Under vinterhalvåret sker det på tok för många krockar i Lönnköping på grund av hala vägar. 
-Eftersom Lönnköpings kommun ville verka ännu effektivare än Lunds kommun (se \textit{Stad i ljus})
-består deras vägnätverk av $N-1$ vägar mellan de $N$ husen i staden. Självfallet kan man köra från
-varje hus till alla andra hus. Med andra ord är deras vägnätverk ett träd.
+Eftersom Lönnköpings kommun ville verka ännu effektivare än kattriket Katens erövring (se \textit{Segmentövervakning})
+har deras vägnätverk väldigt få vägar. Mellan de $N$ husen finns endast $N-1$ vägar.
+Varje väg går direkt mellan två hus. Om du befinner dig vid ett visst hus du åka till vilken
+annan av vägarna den är kopplad till som helst. Nätverket är dessutom konstruerat så att
+man kan ta sig mellan varje par av hus genom att färdas längs med en eller flera vägar.
 Trafikverket har nu en briljant plan för att minska antalet krockar: de tänker enkelrikta
 varje väg i vägnätverket, så att alla kan ta sig till jobbet på morgonen. På kvällen
 kommer de att vända på alla riktningar så att alla kan ta sig hem. 
@@ -19,7 +21,8 @@ som finns i Lönnköping.
 
 De följande $N-1$ raderna innehåller vardera heltalen $a,b$ ($1 \leq a,b \leq N$, $a \neq b$),
 vilket betyder att vägen från hus $a$ till hus $b$ är riktad från $a$ till $b$. Det är garanterat
-att om vägarna var oriktade hade de bildat ett träd.
+att om vägarna var oriktade hade man kunnat färdas mellan varje par av hus endast genom att använda
+vägarna.
 
 Därefter följer en rad som innehåller heltalet $Q$ ($1 \leq Q \leq 10^5$), antalet invånare i
 staden.
