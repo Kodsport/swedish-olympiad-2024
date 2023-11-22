@@ -42,7 +42,17 @@ void run() {
 	}
 
 	int isbinary = Arg("isbinary", 0);
-	// TODO: verify it is actually binary
+	if (isbinary)
+	{
+		for (auto e : edgelist)
+		{
+			if (e.first>e.second) swap(e.first,e.second);
+			e.first++;
+			e.second++;
+			assert(e.first==e.second/2);
+		}
+	}
+	
 
 	int isline = Arg("line",0);
 	if (isline)
