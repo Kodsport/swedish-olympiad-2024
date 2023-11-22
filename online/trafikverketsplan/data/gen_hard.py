@@ -57,7 +57,10 @@ while cnt<n//3*2:
 # Extra random edges into bottom star 10%
 for j in range(n//10):
     u = random.choice(star1)
-    edgelist.append((i+1, u))
+    if randint(1,100)==1:
+        edgelist.append((u, i+1))
+    else:
+        edgelist.append((i+1, u))
     star1.append(i+1)
     i+=1
     cnt+=1
