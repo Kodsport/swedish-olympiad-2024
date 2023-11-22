@@ -1,56 +1,62 @@
 \problemname{Segmentövervakning}
 
-Efter att ha lyckats erövra alla stadsstater i Kattago, vill det övermänskliga kattriket, Katen, och dess ledare, 
-Kattis, ha bättre kontroll över sina erövrade stadsstaterna, men specifikt gatorna.
-För att undivka kat(t)astrof, har Kattis bett företaget Purrfect Segments Inc. att producera olika kameror som 
-kan övervaka olika segment på en gata. 
+Efter att ha lyckats erövra alla stadsstater i Kattago, vill det övermänskliga kattriket Katen
+och dess ledare Kattis ha bättre kontroll över sina erövrade stadsstater, särskilt i Segby.
+Staten Segby består av en enda lång linje, där det finns ett hus på varje heltal. Nyligen
+viskas det om uppror, något som inte kommer tolereras. Mer specifikt har de kommit fram till
+att alla misstänkta hus ligger mellan $x_min$ och $x_max$, alltså är de misstänkta husen
+de som står på ett heltal $x$ så att $x_min \leq x \leq x_max$.
 
-Företaget fick uppdraget av Kattis att designa och installera kameror på en gata i Katen som kan representeras som en tallinje. 
-Purrfect Segments Inc. har utvecklat sina kamerors paw-sition så att kamerorna kan specifikt övervaka ett segment $(a,b)$ till purr-fektion, 
+För att undivka kat(t)astrof har Kattis bett företaget Purrfect Segments Inc. att producera
+olika kameror som kan övervaka det misstänkta segmentet. Purrfect Segments Inc. har utvecklat
+sina kamerors paw-sition så att varje kamera kan övervaka ett segment $[a,b]$ till purr-fektion, 
 vilket innebär att kameran övervakar alla heltal $x$ på tallinjen sådana att $a<=x<=b$. 
-Trots företagets välutvecklade kameror, så har de ändå stött på flertal problem, bland annat att många hårdvaror i kamerorna behöver uppdateras regelbundet, 
-vilket innebär att installerade kameror kommer möjligtvis behöver tas ner efter ett antal dagar.
+Enda problemet är att kamerorna ofta blir vandaliserade, då de är väldigt lika fartkameror.
+När en kamera vandaliserats kan den inte övervaka sitt segment längre. För att kunna hålla
+koll på det misstänkta segmentet kommer de alltså konstant att behöva installera nya kameror.
 
-Under $Q$ dagar, kommer företaget antingen installera en kamera med serienummer $i$ som övervakar ett segment $(a,b)$ på gatan, 
-eller ta bort en specifik kamera från gatan som innan var installerat. 
+De vill nu ha din hjälp de kommande $Q$ dagarna. Varje morgon kommer de kolla ifall en kamera
+blivit vandaliserad. Om så är fallet kommer de inte att installera en kamera den dagen för att
+inte bli upptäckta av upprorsmakarna. Som tur är orkar de som mest vandalisera max $1$ kamera
+per dag. För att kunna planera nästa dag vill de varje kväll få reda
+på om de kan övervaka det misstänkta segmentet, och i så fall hur många kameror som krävs.
+Eftersom de vill verka ännu effektivare än Lunds kommun vill de aldrig aktivera mer än två
+kameror under en dag. Det vill säga, om det går att övervaka segmentet med $1$ kamera, svara $1$.
+Om det inte går med $1$ kamera, men det går med $2$ kameror, skriv ut $2$. Annars ska du skriva ut $-1$. 
 
-Men under vissa dagar är det väldigt onödigt att aktivera alla installerade kameror, 
-och det är mer miljövänligt att endast aktivera ett fåtal kameror. 
+Från början finns det inga kameror som övervakar gatan alls. 
 
-Kattis vill inte %TODO ändra statement så att den passar in ändringen
-
-Som tur är har Purrfect Segments Inc. lyckats tänka lite i förväg, och kan alltid garantera att man endast behöver aktivera 
-maximalt 2 kameror varje dag, så att så många heltal övervakas som möjligt. 
-Alltså för en specifik dag, kallar vi det minsta talet som övervakas av någon nuvarande installerad kamera för $x_{min}$, 
-och vi kallar det största talet som övervakas av någon nuvarande installerad kamera för $x_{max}$. 
-Då är det garanterat att alla tal mellan $x_{min}$ och $x_{max}$ (inklusive $x_{min}$ och $x_{max}$) kan bli övervakade genom att endast aktivera max 2 kameror.
-
-Från början finns det inga kameror som övervakar denna gata i Katen. För varje dag som går upp till den $Q:te$ dagen:
-Vilka kameror ska företaget aktivera för att maximera sträckan som är övervakad varje dag?
-
-\begin{figure}[h]
-  \centering
-\includegraphics[width=0.25\textwidth]{kattIsWatching.png}
-  \caption{Figur till vänster associeras vanligtvis med "kiki". Figur till höger associeras vanligtvis med "boba".}
-  \label{fig:kikiboba}
-\end{figure}
+%\begin{figure}[h]
+%  \centering
+%\includegraphics[width=0.25\textwidth]{kattIsWatching.png}
+%  \caption{Figur till vänster associeras vanligtvis med "kiki". Figur till höger associeras vanligtvis med "boba".}
+%  \label{fig:kikiboba}
+%\end{figure}
 
 
 \section*{Indata}
-Den första raden i indatan innehåller heltalet $Q$ ($1 \le Q \le 2 \cdot 10^5$), antal dagar i testfallet.
+Den första raden i indatan innehåller heltalen $x_min$ och $x_max$ ($1 \leq x_min < x_max \leq 10^6$),
+segmentet de misstänkta husen ligger på.
 
-De följande $Q$ rader börjar antingen med ``+'' ifall en kamera ska installeras, eller ``-'' ifall en kamera ska tas bort:
-\being{itemize}
-  \item ``+'': Raden följer med 3 heltal, där det första heltalet består av serienumret på kameran $s$ $(1\le s \le 10^6)$, 
-  och det andra och tredje heltalet, a och b $(0\le a \le b \le 10^9)$, är start respektive slut på det segment som kameran övervakar.
-  \item ``-'': Raden följer med 1 heltal, där heltalet är serienumret på kameran $s$ som ska tas bort från gatan. Det är garanterat att kameran som tas bort är installerad.
+Den andra raden innehåller heltalet $Q$ ($1 \le Q \le 2 \cdot 10^5$), antal dagar i testfallet.
+
+De följande $Q$ rader börjar antingen med ``+'' ifall en kamera ska installeras, eller ``-'' ifall en kamera vandaliserats:
+\begin{itemize}
+  \item ``+'': Raden innehåller med 3 heltal, $s, a$ och $b$ ($1\le s \le 10^6$, $0\le a < b \le 10^6$), 
+  vilket innebär att en kamera med serienummer $s$ har installerats som kan övervaka segmentet $[a,b]$.
+  \item ``-'': Raden innehåller heltalet $s$, serienumret på kameran $s$ som vandaliserats.
+  Det är garanterat att kameran som vandaliserats var installerad.
 \end{itemize}
 
-Alla kameror har ett unikt serienummer. Det är även garanterat att för varje dag finns det alltid minst 1 kamera som är installerad på gatan.
+Alla kameror har ett unikt serienummer. 
 
 \section*{Utdata}
-Skriv ut $Q$ rader, där det $i$:te raden är svaret till den $i$:te dagen: 
-Det minsta antalet kameror som behöver aktiveras den dagen. Antingen 1, 2, eller -1 ifall det är omöjligt att uppfylla reglerna 
+Skriv ut $Q$ rader, där det $i$:te raden är svaret till den $i$:te dagen:
+\begin{itemize}
+  \item Om det kan övervakas med $1$ kamera, skriv ut $1$.
+  \item Om det inte går att övervaka med $1$ kamera, men går med $2$, skriv ut $2$.
+  \item Annars, skriv ut $-1$.
+\end{itemize}
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -60,14 +66,11 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & $Q \le 2$ \\ \hline
-  $2$    & $15$       & Svaret är antingen 1 eller ``impossible''. \\ \hline
-  $3$    & $30$       & $Q \le 1000$. \\ \hline
-  $4$    & $35$       & Inga ytterligare begränsningar. \\ \hline
+  $1$    & $10$       & $Q \le 2$ \\ \hline
+  $2$    & $10$       & Svaret är antingen 1 eller ``impossible''. \\ \hline
+  $3$    & $20$       & $Q \le 100$ \\ \hline
+  $4$    & $25$       & $Q \le 1000$. \\ \hline
+  $5$    & $35$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
 \section*{Förklaring av exempelfall 1}
-Ordet innehåller 2 st ``\texttt{b}'', medan det finns inga ``\texttt{k}''. Det finns alltså fler ``\texttt{b}'' än ``\texttt{k}'', och svaret är därför ``\texttt{boba}''.
-
-\section*{Förklaring av exempelfall 3}
-Ordet innehåller 1 st ``\texttt{b}'' och 1 st ``\texttt{k}''. Det finns lika många ``\texttt{b}'' som ``\texttt{k}'', och därför är svaret ``\texttt{boki}''.

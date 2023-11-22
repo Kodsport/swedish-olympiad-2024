@@ -6,21 +6,44 @@ using namespace std;
 
 
 void run() {
-	int n = Int(1, Arg("maxN", 100)); Endl();
-	string s = Line();
-	assert(s.size()==n);
-	int b = 0, k = 0;
-	for (int j = 0; j < n; j++){
-		assert(s[j]>='a'&&s[j]<='z');
-		if (s[j]=='b') b++;
-		if (s[j]=='k') k++;
+	int l = Int(1, int(1e6));
+	Space();
+	int r = Int(1, int(1e6));
+	assert(r>l);
+	Endl();
+	
+	int q = Int(1, Arg("maxq", int(2e5)));
+	Endl();
+	
+	vector<int> cnt(int(1e6));
+	vector<int> active(int(1e6));
+	int numactive = 0;
+	for (int i = 0; i < q; i++)
+	{
+		char t = Char();
+		Space();
+		int id = Int(1, int(1e6));
+
+		if (t=='+')
+		{
+			assert(cnt[id]==0);
+			assert(active[id]==0);
+			active[id]=1;
+			cnt[id]++;
+			Space();
+			int lo = Int(1,int(1e6));
+			Space();
+			int hi = Int(1,int(1e6));
+			assert(hi>lo);
+		}
+		else
+		{
+			assert(active[id]==1);
+			active[id]=0;
+		}
+		Endl();
 	}
 
-	string mode = Arg("mode", "");
-	if (mode=="bORk"){
-		assert(b+k!=0);
-		assert(b+k==max(b,k));
-	}
 
 	Eof();
 }
