@@ -6,7 +6,9 @@ using namespace std;
 
 
 void run() {
-	int N = Int();
+	int N = Int(1,15); Endl();
+	int n_is = Arg("n",-1);
+	if (n_is!=-1) assert(N==n_is);
 
 	for (int i = 0; i < N; i++) {
 		string s = Line();

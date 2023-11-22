@@ -158,7 +158,6 @@ def get_solution(vis):
 
 def print_solution(p):
     [print("".join([str(i) for i in row])) for row in p]
-    print()
 
 all_visited, _ = generate((0,0), set(), set())
 
