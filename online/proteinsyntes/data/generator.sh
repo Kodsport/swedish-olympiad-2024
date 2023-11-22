@@ -15,10 +15,12 @@ compile rev.py
 samplegroup
 limits maxn=10 maxm=10
 sample 1
+sample 2
 
 group group1 10
 limits maxn=20 maxm=5
 tc 1
+tc 2
 tc g1-1 gen_rand n=20 m=5 alphabet_size=20
 tc g1-2 gen_rand n=20 m=5 alphabet_size=10
 tc g1-3 gen_rand n=20 m=5 alphabet_size=5
