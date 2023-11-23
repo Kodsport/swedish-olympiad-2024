@@ -45,8 +45,8 @@ To get the points for a group, it must pass all the test cases in the group.
   \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
   $1$    & $10$       & $N, Q \leq 1000$ \\ \hline
   $2$    & $10$       & $W_i=1$ for all $i$. \\ \hline
-  $3$    & $10$       & $|a-b|=1$ for all pairs of $(a,b)$, that is to say that the tree is a line. \\ \hline
-  $4$    & $25$       & For all pairs $(a,b)$ it holds that $\lfloor\frac{max(a,b)}{2} \rfloor=min(a,b)$.
+  $3$    & $10$       & $|a-b|=1$ for all pairs of $(a,b)$ such that there exists a road between $a$ and $b$, that is to say that the tree is a line. \\ \hline
+  $4$    & $25$       & For all pairs $(a,b)$ such that there exists a road between $a$ and $b$, it holds that $\lfloor\frac{max(a,b)}{2} \rfloor=min(a,b)$.
   In other words, the tree is a full binary tree. \\ \hline
   $5$    & $15$       & $N \leq 50\,000$ \\ \hline
   $6$    & $30$       & No additional constraints. \\ \hline
