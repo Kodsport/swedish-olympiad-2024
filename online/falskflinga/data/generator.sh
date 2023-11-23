@@ -12,6 +12,7 @@ samplegroup
 sample 1
 sample 2
 
+
 group group1 20
 limits n=7
 tc 2
