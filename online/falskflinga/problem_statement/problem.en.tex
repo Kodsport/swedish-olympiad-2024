@@ -1,7 +1,14 @@
 \problemname{Fake Snowflake}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Introduction}
 
 \noindent
-Alexander is a climate denier and wants to prove to Joshua that the Earth is not getting warmer at all.
+Alexander is a climate change denier and wants to prove to Joshua that the Earth is not getting warmer at all.
 Alexander argues that it has already snowed several times in November,
 which suggests that the temperature is dropping. Joshua, who mostly stays indoors,
 hasn't noticed any snow.
@@ -64,7 +71,7 @@ According to Joshua, the image represents a snowflake if the following criteria 
     \begin{figure}[h]
         \centering
         \includegraphics[scale=0.1]{invalid_example.png}
-        \caption{A very inaccurate snowflake. Of the three circled pixels, one white pixel is not contiguous with the rest of the whites, one pixel forms a hook, and one black pixel is not contiguous with the rest of the blacks. Additionally, the image does not satisfy any of the two symmetry requirements.}
+        \caption{A very inaccurate snowflake. Of the three circled pixels, one white pixel is not contiguous with the rest of the white pixels, one pixel forms a hook, and one black pixel is not contiguous with the rest of the black pixels. Additionally, the image does not satisfy any of the two symmetry requirements.}
         \label{fig:enter-label}
     \end{figure}
 \end{centering}
@@ -80,9 +87,10 @@ He now wants to know how quickly he can finish if he changes as few pixels as po
 \section*{Input}
 
 The first line of the input contains the odd integer $N$ ($7 \le N \le 15$), the number of pixels on each side of the square image.
+Then there are $N$ lines of input, where the $i$-th line contains the $N$ numbers $p_{i,1}, p_{i,2}, ..., p_{i,N}$.
+If the pixel at position ($i, j$) in the image is white, then $p_{i, j} = 1$, otherwise $p_{i, j} = 0$.
+Position (1,1) corresponds to the pixel in the upper left corner.
 
-Then follow $N$ lines, where the $i$-th line contains the $N$ numbers $p_{i,1}, p_{i,2}, ..., p_{i,N}$.
-If the pixel at position $i, j$ in the image is white, then $p_{i, j} = 1$, otherwise $p_{i, j} = 0$.
 
 \section*{Output}
 
