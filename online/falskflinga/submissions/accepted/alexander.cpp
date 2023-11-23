@@ -103,14 +103,15 @@ int c = 0;
 void rec(vector<int>& layers, int cost) {
     if(layers.size() >= k) {
         for(int T = 0; T < 2; T++) {
-
             if(T == 1) {
                 if(n != 15) continue;
                 //if(layers[0] != 0b11111100 && layers[0] != 0b11111000) continue;
                 if(white_at(6, 1, layers)) continue;
                 if(!white_at(6, 2, layers)) continue;
 
+                cost -= layermask2cost[1][layers[1]];
                 layers[1] ^= 0b10;
+                cost += layermask2cost[1][layers[1]];
             }
 
             bool should_next = false;
