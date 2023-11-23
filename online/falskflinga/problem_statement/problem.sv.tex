@@ -23,12 +23,22 @@ Enligt Joshua föreställer bilden en snöflinga om följande kriterier är uppf
     Detta innebär att om du börjar med en penna på någon vit pixel, kan 
     du komma åt varje annan vit pixel utan att lyfta pennan och utan
     att rita på svarta pixlar.
-    Pennan får gå upp, ned, vänster och höger, men inte diagonalt.
+    Pennan får gå upp, ned, vänster och höger, \emph{men inte} diagonalt.
   \item Mängden svarta pixlar är sammanhängande \emph{med diagonala steg}.
     Detta innebär att om du börjar med en penna på någon svart pixel, kan 
     du komma åt varje annan svart pixel utan att lyfta pennan och utan
     att rita på vita pixlar.
     Pennan får gå upp, ned, vänster, höger, \emph{och} diagonalt.
+
+\begin{centering}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.2]{crook_example.png}
+        \caption{Två stycken $3\times 3$-bilder. De tre pixlarna till vänster utgör en krok, vilket inte är tillåtet. De tre pixlarna till höger utgör inte en krok.}
+        \label{fig:enter-label}
+    \end{figure}
+\end{centering}
+    
   \item Det finns inga krokar i snöflingan. 
   Låt $\text{pixel}_\text{upp}$, $\text{pixel}_\text{höger}$, $\text{pixel}_\text{ner}$, och $\text{pixel}_\text{vänster}$ vara de angränsande 
   pixlarna till en vit pixel. En krok uppstår om precis två av dessa angränsande pixlar också är vita, och de inte är på motsatta sidor av pixeln.
@@ -37,6 +47,26 @@ Enligt Joshua föreställer bilden en snöflinga om följande kriterier är uppf
   och $\text{pixel}_\text{höger}$ och $\text{pixel}_\text{vänster}$ är svarta uppstår inte en krok.
       
 \end{itemize}
+
+\begin{centering}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.1]{all_valid_examples.png}
+        \caption{Tre exempel på $9\times 9$-bilder som visar snöflingor.}
+        \label{fig:enter-label}
+    \end{figure}
+\end{centering}
+
+\begin{centering}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.1]{invalid_example.png}
+        \caption{En väldigt felaktig snöflinga. Av de tre inringade pixlarna finns en vit pixel ej sammanhängande med resten av de vita, en pixel som utgör en krok, och en svart pixel ej sammanhängande med resten av de svarta. Dessutom uppfyller bilden inte något av de två symmetrikraven.}
+        \label{fig:enter-label}
+    \end{figure}
+\end{centering}
+
+\noindent
 Alexander har laddat ner ett bildredigerarprogram där han kan ändra färgen på pixlar, både från svart till vitt och från vitt till svart. 
 Eftersom han inte är så duktig på bildredigering räknar Alexander med att det tar honom en minut för varje pixel han behöver ändra.
 Alexander är en väldigt upptagen man, och vill därför vara så tidseffektiv som möjligt.
@@ -65,3 +95,4 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   $2$    & $20$       & $N=11$ \\ \hline
   $3$    & $60$       & $N=15$ \\ \hline
 \end{tabular}
+\end{document}

@@ -1,4 +1,12 @@
 \problemname{Fake Snowflake}
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+
+\section*{Introduction}
+
 \noindent
 Alexander is a climate denier and wants to prove to Joshua that the Earth is not getting warmer at all.
 Alexander argues that it has already snowed several times in November,
@@ -25,7 +33,7 @@ According to Joshua, the image represents a snowflake if the following criteria 
     This means that if you start with a pen on any white pixel, you can
     access every other white pixel without lifting the pen and without
     drawing on black pixels.
-    The pen can go up, down, left and right, but not diagonally.
+    The pen can go up, down, left and right, \emph{but not} diagonally.
   \item The set of black pixels is contiguous \emph{with diagonal steps}.
     This means that if you start with a pen on any black pixel, you can
     access every other black pixel without lifting the pen and without
@@ -43,30 +51,59 @@ According to Joshua, the image represents a snowflake if the following criteria 
 
 \end{itemize}
 
-Alexander has downloaded an image editing software where he can change the color of pixels,
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{crook_example.png}
+    \caption{Two $3 \times 3$ images. The three pixels on the left form a hook, which is not allowed. The three pixels on the right do not form a hook.}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{centering}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.1]{all_valid_examples.png}
+        \caption{Three examples of $9 \times 9$ images depicting snowflakes.}
+        \label{fig:enter-label}
+    \end{figure}
+\end{centering}
+
+\begin{centering}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.1]{invalid_example.png}
+        \caption{A very inaccurate snowflake. Of the three circled pixels, one white pixel is not contiguous with the rest of the whites, one pixel forms a hook, and one black pixel is not contiguous with the rest of the blacks. Additionally, the image does not satisfy any of the two symmetry requirements.}
+        \label{fig:enter-label}
+    \end{figure}
+\end{centering}
+
+\noindent
+Alexander has downloaded an image editing program where he can change the color of pixels,
 both from black to white and from white to black.
-Since he is not very skilled at image editing, Alexander expects it to take him one minute
+Since he's not very skilled at image editing, Alexander expects it to take him one minute
 for each pixel he needs to change.
 Alexander is a very busy man and wants to be as time-efficient as possible.
 He now wants to know how quickly he can finish if he changes as few pixels as possible.
 
 \section*{Input}
-The first line of the input contains the odd integer $N$ ($7 \le N \le 15$), the number pixels on the side of the picture with the shape of a square.
+
+The first line of the input contains the odd integer $N$ ($7 \le N \le 15$), the number of pixels on each side of the square image.
 
 Then follow $N$ lines, where the $i$-th line contains the $N$ numbers $p_{i,1}, p_{i,2}, ..., p_{i,N}$.
 If the pixel at position $i, j$ in the image is white, then $p_{i, j} = 1$, otherwise $p_{i, j} = 0$.
 
 \section*{Output}
+
 Print an integer: the minimum number of minutes it takes for Alexander to make changes
-to his image so that Joshua will agree that the picture represents a snowflake.
+to his image for Joshua to agree that the image represents a snowflake.
 
 \section*{Scoring}
+
 Your solution will be tested on a set of test case groups.
 To score points for a group, you must pass all the test cases in that group.
 
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
-  \textbf{Group} & \textbf{Point value} & \textbf{Limits} \\ \hline
+  \textbf{Group} & \textbf{Points} & \textbf{Limits} \\ \hline
   $1$    & $20$       & $N=7$. \\ \hline
   $2$    & $20$       & $N=11$ \\ \hline
   $3$    & $60$       & $N=15$ \\ \hline
