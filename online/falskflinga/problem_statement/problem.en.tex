@@ -1,5 +1,5 @@
-\problemname{Fake snowflake}
-
+\problemname{Fake Snowflake}
+\noindent
 Alexander is a climate denier and wants to prove to Joshua that the Earth is not getting warmer at all.
 Alexander argues that it has already snowed several times in November,
 which suggests that the temperature is dropping. Joshua, who mostly stays indoors,
@@ -43,33 +43,30 @@ According to Joshua, the image represents a snowflake if the following criteria 
 
 \end{itemize}
 
-Alexander has downloaded an image editing program where he can change the color of pixels,
+Alexander has downloaded an image editing software where he can change the color of pixels,
 both from black to white and from white to black.
-Since he's not very skilled at image editing, Alexander expects it to take him one minute
+Since he is not very skilled at image editing, Alexander expects it to take him one minute
 for each pixel he needs to change.
 Alexander is a very busy man and wants to be as time-efficient as possible.
 He now wants to know how quickly he can finish if he changes as few pixels as possible.
 
 \section*{Input}
-
-The first line of the input contains the integer $N$ ($7 \le N \le 15$), the number of types of buildings.
+The first line of the input contains the odd integer $N$ ($7 \le N \le 15$), the number pixels on the side of the picture with the shape of a square.
 
 Then follow $N$ lines, where the $i$-th line contains the $N$ numbers $p_{i,1}, p_{i,2}, ..., p_{i,N}$.
 If the pixel at position $i, j$ in the image is white, then $p_{i, j} = 1$, otherwise $p_{i, j} = 0$.
 
 \section*{Output}
-
 Print an integer: the minimum number of minutes it takes for Alexander to make changes
-to his image for Joshua to agree that it represents a snowflake.
+to his image so that Joshua will agree that the picture represents a snowflake.
 
 \section*{Scoring}
-
 Your solution will be tested on a set of test case groups.
 To score points for a group, you must pass all the test cases in that group.
 
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
-  \textbf{Group} & \textbf{Points} & \textbf{Limits} \\ \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Limits} \\ \hline
   $1$    & $20$       & $N=7$. \\ \hline
   $2$    & $20$       & $N=11$ \\ \hline
   $3$    & $60$       & $N=15$ \\ \hline
