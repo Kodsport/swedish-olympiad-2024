@@ -15,8 +15,5 @@ def cmdlinearg(name, default=None):
 
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 n = int(cmdlinearg('n'))
-t = int(cmdlinearg("t"))
 
 print(n)
-[print(random.randint(1, 10), random.randint(1,10)) for i in range(n)]
-print(t)
