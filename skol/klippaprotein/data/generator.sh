@@ -16,10 +16,16 @@ tc g1-1 gen_rand n=50 k=1 alpha=1
 tc g1-2 gen_rand n=50 k=1 alpha=2
 tc g1-3 gen_rand n=50 k=1 alpha=5
 tc g1-4 gen_rand n=50 k=1 alpha=20
+tc g1-5 gen_rand n=1 k=1 alpha=1
+tc g1-6 gen_rand n=2 k=1 alpha=2
 
 group group2 20
 limits ab=1
 tc 2
+tc g1-1
+tc g1-2
+tc g1-5
+tc g1-6
 tc_manual ../manual/tc2.in
 tc g2-1 gen_rand n=50 k=1 alpha=2
 tc g2-2 gen_rand n=50 k=2 alpha=2
