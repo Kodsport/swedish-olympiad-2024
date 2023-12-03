@@ -21,6 +21,9 @@ group group2 80
 include_group sample
 include_group group1
 tc_manual ../manual/tc2.in
+tc_manual ../manual/tc3.in
+tc_manual ../manual/tc4.in
+tc_manual ../manual/tc5.in
 tc g2-1 gen_rand n=9 k=9
 tc g2-2 gen_rand n=9 k=8
 tc g2-3 gen_rand n=9 k=7

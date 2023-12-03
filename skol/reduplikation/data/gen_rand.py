@@ -16,7 +16,7 @@ def cmdlinearg(name, default=None):
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 n = int(cmdlinearg('n'))
 k = int(cmdlinearg("k"))
-letters = [chr(ord('a')+i) for i in range(20)]
+letters = [chr(ord('a')+i) for i in range(ord("z")-ord("a")+1)]
 
 print("".join(random.choice(letters) for i in range(n)))
 print(k)
