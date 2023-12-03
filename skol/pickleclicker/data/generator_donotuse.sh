@@ -36,7 +36,7 @@ tc g3-5 gen_rand n=6 t=1000 p=20
 tc g3-6 gen_rand n=6 t=1000 p=100
 
 group group4 40
-limits max_t=1000000
+limits max_t=100000
 include_group group1
 include_group group3
 tc_manual ../manual/tc4.in
