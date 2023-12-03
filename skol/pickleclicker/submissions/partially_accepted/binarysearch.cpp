@@ -173,10 +173,9 @@ int32_t main()
     cin.rdbuf(instream.rdbuf());
 #endif
 
-    dread(int, n);
+    dread(int, n, t);
     vp2 buildings(n);
     rep(i, n) read(buildings[i].first), read(buildings[i].second);
-    dread(int, t);
 
     int lo = 0;
     int hi = int(1e6);
@@ -191,5 +190,5 @@ int32_t main()
     }
     cout << hi << endl;
 
-    quit;
+    return 0;
 }

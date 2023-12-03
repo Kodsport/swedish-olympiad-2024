@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-n = int(input())
+n,t = [int(i) for i in input().split()]
 buildings = [[int(i) for i in input().split()] for j in range(n)]
-t = int(input())
 
 lo = 0
 hi = int(1e5+1)

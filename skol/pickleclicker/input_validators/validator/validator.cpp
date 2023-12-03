@@ -5,17 +5,18 @@ using namespace std;
 
 
 void run() {
-	int n = Int(1, 6); Endl();
+	int n = Int(1, Arg("n",6));
+	Space();
+	int t = Int(1, Arg("max_t", int(1e6)));
+	Endl();
 
 	for (int i = 0; i < n; i++)
 	{
-		int p = Int(1, int(1e6));
+		int p = Int(1, t);
 		Space();
-		int c = Int(1, int(1e6));
+		int c = Int(1, t);
 		Endl();
 	}
 	
-	int t = Int(1, Arg("max_t", int(1e6)));
-	Endl();
 	Eof();
 }

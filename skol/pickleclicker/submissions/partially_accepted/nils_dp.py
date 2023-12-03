@@ -16,14 +16,14 @@ def dp(rem, rate):
     DP[h] = ans
     return ans
 
-n = int(input())
+n,t = [int(i) for i in input().split()]
 P = []
 C = []
 for i in range(n):
     p,c = map(int,input().split())
     P.append(p)
     C.append(c)
-t = int(input())
+
 DP = {}
 
 ans = dp(0, P[0])

@@ -137,9 +137,8 @@ int32_t main()
     cin.rdbuf(instream.rdbuf());
 #endif
 
-    dread(int, n);
+    dread(int, n, t);
     dread(int, p, c);
-    dread(int, t);
 
     int ans = inf;
     
@@ -166,5 +165,5 @@ int32_t main()
 
     cout << ans << endl;
 
-    quit;
+    return 0;
 }

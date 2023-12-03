@@ -5,7 +5,7 @@ sys.setrecursionlimit(10**5)
 #Den här koden är O(n*t^2)
 #Funkar bäst med stora p_i värden, och låga t värden.
 
-n = int(input())
+n,goal = [int(i) for i in input().split()]
 
 p = []
 c = []
@@ -15,7 +15,6 @@ for _ in range(n):
     p.append(x)
     c.append(y)
 
-goal = int(input())
 
 memo = {}
 

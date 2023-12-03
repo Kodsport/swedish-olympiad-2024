@@ -22,14 +22,13 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     
-    cin >> n;
+    cin >> n >> t;
     rep(c1,0,n){
         int p,c;
         cin >> p >> c;
         P.push_back(p);
         C.push_back(c);
     }
-    cin >> t;
 
     int max_rate = P[0];
     rep(c1,0,MAXN){

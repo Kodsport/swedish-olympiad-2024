@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-n = int(input())
+n,t = [int(i) for i in input().split()]
 
 p = []
 c = []
@@ -10,7 +10,6 @@ for _ in range(n):
     p.append(x)
     c.append(y)
 
-t = int(input())
 
 l=0
 r=t

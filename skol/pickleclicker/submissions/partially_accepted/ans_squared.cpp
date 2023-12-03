@@ -173,10 +173,9 @@ int32_t main()
     cin.rdbuf(instream.rdbuf());
 #endif
 
-    dread(int, n);
+    dread(int, n, t);
     vp2 buildings(n);
     rep(i, n) read(buildings[i].first), read(buildings[i].second);
-    dread(int, t);
 
     rep(i, 1000000000)
     {
@@ -187,5 +186,5 @@ int32_t main()
         }
     }
 
-    quit;
+    return 0;
 }

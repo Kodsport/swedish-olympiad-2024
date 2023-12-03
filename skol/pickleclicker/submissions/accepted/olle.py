@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-n = int(input())
+n,t = [int(i) for i in input().split()]
 
 p = [None]*n
 c = [None]*n
@@ -8,7 +8,6 @@ c = [None]*n
 for i in range(n):
     p[i], c[i] = [int(k) for k in input().split()]
 
-t = int(input())
 
 # If the largest production possible at round X is P
 # then there are at most (T - X) / P rounds left
