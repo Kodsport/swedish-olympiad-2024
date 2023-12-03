@@ -1,17 +1,20 @@
-\problemname{Pianot}
-Christian vill lära sig spela piano, men klarar bara av att spela med pekfingret just nu.
-Just nu håller han på och över hårt för att lära sig ett stycke.
-Ett stycke beskrivs som en sekvens tangenter som ska tryckas i ordning. Exempelvis beskriver
+\problemname{Christians Piano}
+\noindent
+
+Christian vill lära sig spela piano, men klarar bara av att spela med pekfingret.
+Just nu håller han på att öva hårt för att lära sig ett stycke.
+Ett stycke beskrivs av en sekvens tangenter som ska tryckas i ordning. Exempelvis beskriver
 stycket \texttt{abdaa} att han ska trycka på tangenterna
 \texttt{a}, \texttt{b}, \texttt{d}, \texttt{a}, \texttt{a} i ordning. 
 Du märker dock att han har svårt att röra pekfingret snabbt nog mellan tangenterna.
-Märkvärdigt nog tar det honom alltid exakt en sekund att flytta fingret en tangent, men
-noll sekunder att spela noten.
+Märkvärdigt nog tar det honom alltid exakt en sekund att flytta fingret en tangent åt sidan, men
+noll sekunder att trycka ner en tangent.
 För att hjälpa honom tänker du ändra om ordningen på pianots tangenter så att totala tiden
 det tar att spela stycket blir så litet som möjligt.
 
-Exempelvis, om stycket han försöker lära sig är \texttt{abdaa} och pianot har ordningen
-\texttt{abd} \dots kommer han behöva flytta fingret totalt $6$ pianotangenters längd.
+Till exempel, om stycket han försöker lära sig är \texttt{abdaa} och pianot har ordningen
+\texttt{abd} $\cdots$ (resten av pianot visas inte då detta inte påverkar svaret)
+kommer det totalt ta $4$ sekunder att spela stycket.
 Avstånden när han spelar stycket blir följande:
 \begin{itemize}
   \item \texttt{a} till \texttt{b} tar en sekund.
@@ -19,20 +22,19 @@ Avstånden när han spelar stycket blir följande:
   \item \texttt{d} till \texttt{a} tar två sekunder.
   \item \texttt{a} till \texttt{a} tar noll sekunder.
 \end{itemize}
-Vilket innebär att det totalt tar fyra sekunder att spela stycket \texttt{abdaa} på ett piano
-med ordningen \texttt{abd} \dots.
+Detta innebär att det totalt tar fyra sekunder att spela stycket \texttt{abdaa} på ett piano
+med ordningen \texttt{abd} $\cdots$.
 
 Skriv ett program som läser ett stycke och skriver ut totala tiden det tar för Christian att
-spela stycket på det bästa pianot.
+spela stycket på pianot med bästa möjliga ordning på tangenter.
 
 \section*{Indata}
-Den första raden innehåller en sträng som består av bokstäverna \texttt{a}-\texttt{z}, proteinet Björn vill göra \texttt{rent}.
-Låt antalet bokstäver i proteinet vara $n$. Då gäller alltid $1 \leq n \leq 32$.
-
-På nästa rad följer ett heltal $k$ ($1 \leq k \leq n$), antalet bokstäver Björn kan ta bort med en klippning. 
+Den första och enda raden av indatan innehåller en sträng $S$ ($1 \leq |S| \leq 200$),
+stycket Christian vill lära sig. Stycket består av bokstäver från \texttt{a}-\texttt{z}
+och \textbf{innehåller som mest $15$ olika bokstäver}. 
 
 \section*{Utdata}
-Skriv ut ett heltal: det minsta antalet klippningar Björn behöver göra för att proteinet ska bli \texttt{rent}.
+Skriv ut ett heltal: totala tiden det tar för björn att spela stycket på pianot med bästa möjliga ordning.
 
 
 \section*{Poängsättning}
@@ -43,7 +45,10 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & $k = 1$ \\ \hline
-  $2$    & $20$       & Proteinet består endast av bokstäverna \texttt{a} och \texttt{b} \\ \hline
-  $3$    & $60$       & Inga ytterligare begränsningar. \\ \hline
+  $1$    & $20$       & Stycket innehåller som mest $8$ olika sorters bokstäver. \\ \hline
+  $2$    & $80$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
+
+\section*{Förklaring av exempelfall 2}
+
+En möjlig optimal ordning på pianots tangenter är \texttt{adbc}.

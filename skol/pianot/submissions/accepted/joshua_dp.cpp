@@ -190,5 +190,5 @@ int32_t main()
 
     cout << dp(0, 0, cost) << endl;
 
-    quit;
+    return 0;
 }

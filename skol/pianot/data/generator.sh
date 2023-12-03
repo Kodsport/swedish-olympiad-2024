@@ -6,21 +6,25 @@ use_solution joshua_dp.cpp
 compile gen_rand.py
 
 samplegroup
+limits max=5
 sample 1
+sample 2
 
 group group1 20
-tc 1
+limits max=8
+include_group sample
 tc_manual ../manual/tc1.in
+tc g1-1 gen_rand n=200 alpha=8
+tc g1-2 gen_rand n=32 alpha=8
+tc g1-3 gen_rand n=16 alpha=8
 
-group group2 20
+group group2 80
+limits max=15
+include_group group1
 tc_manual ../manual/tc2.in
-
-group group3 20
-tc 1
 tc_manual ../manual/tc3.in
-
-group group4 20
 tc_manual ../manual/tc4.in
-
-group group5 20
 tc_manual ../manual/tc5.in
+tc g2-1 gen_rand n=50 alpha=15
+tc g2-2 gen_rand n=100 alpha=15
+tc g2-3 gen_rand n=200 alpha=15

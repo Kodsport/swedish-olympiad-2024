@@ -177,5 +177,5 @@ int32_t main()
     cout << ans << endl;
     cerr << endl;
     repe(v, bestperm) cerr << revmap[v];
-    quit;
+    return 0;
 }

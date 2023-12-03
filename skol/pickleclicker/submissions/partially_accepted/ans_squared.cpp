@@ -182,7 +182,7 @@ int32_t main()
         if (possible(buildings,t,i))
         {
             cout << i << endl;
-            quit;
+            return 0;
         }
     }
 

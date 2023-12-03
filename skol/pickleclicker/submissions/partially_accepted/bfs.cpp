@@ -164,7 +164,7 @@ int32_t main()
         if (s.back() >= t)
         {
             cout << s[s.size() - 2] << endl;
-            quit;
+            return 0;
         }
 
         q.emplace(s);

@@ -185,5 +185,5 @@ int32_t main()
 
     cout << dp(0, 0, cost);
 
-    quit;
+    return 0;
 }
