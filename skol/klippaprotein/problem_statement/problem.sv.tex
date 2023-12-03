@@ -1,18 +1,26 @@
 \problemname{Klippa protein}
-Din kompis Björn har nyligen påbörjat ett stort kemiexperiment, med målet att skapa ett hemligt protein. 
-Alla protein kan beskrivas som strängar av bokstäver från \texttt{a}-\texttt{z}, exempelvis \texttt{bcaa} och \texttt{hejsan}.
-Han behöver skapa ett flertal så kallade \textit{rena} proteiner. Dessa är proteiner som bara består av kopior av en enda bokstav.
-För att göra detta har han mikroskopiska saxar som kallas CRISPR. Med hjälp av dessa kan han ta bort upp till $k$ bokstäver
-som ligger bredvid varandra.  
+\noindent
 
-Eftersom han är väldigt lat vill han ha din hjälp att lista ut minsta antalet gånger han behöver klippa ett visst protein för
-att det ska bli \textit{rent}.
+Din kompis Björn har nyligen påbörjat ett stort kemiexperiment, med målet att skapa
+ett hemligt protein. Alla protein beskrivs med strängar av bokstäver från
+\texttt{a}-\texttt{z}, exempelvis \texttt{bcaa} och \texttt{hejsan}. Han behöver skapa
+ett flertal så kallade \textit{rena} proteiner. Dessa är proteiner som består av kopior
+av en och samma bokstav. För att göra detta har han mikroskopiska saxar som kallas CRISPR.
+Med hjälp av dessa kan han ta bort upp till $K$ bokstäver som ligger bredvid varandra.
+Med andra ord kan han välja ett intervall med upp till $K$ bokstäver att klippa bort.
+Om ett protein delas i två delar när det klipps kommer dessa delar sedan att sättas ihop där de klipptes av. 
+
+Eftersom han är väldigt lat vill han ha din hjälp att skriva ett program som beräknar
+det minsta antalet gånger han behöver klippa ett visst protein för att det ska bli rent.
+Notera att proteinet \textbf{inte} får bli en tom sträng, eftersom det isåfall inte
+längre kan användas för kemi.
+
 
 \section*{Indata}
-Den första raden innehåller en sträng som består av bokstäverna \texttt{a}-\texttt{z}, proteinet Björn vill göra rent.
-Låt antalet bokstäver i proteinet vara $n$. Då gäller alltid $1 \leq n \leq 32$.
+Den första raden innehåller en sträng $P$ ($1 \leq |P| \leq 50$), proteinet Björn vill göra rent.
+$P$ består endast av bokstäver från \texttt{a}-\texttt{z}.
 
-På nästa rad följer ett heltal $k$ ($1 \leq k \leq n$), antalet bokstäver Björn kan ta bort med en klippning. 
+På nästa rad följer ett heltal $K$ ($1 \leq K \leq |P|$), antalet bokstäver Björn kan ta bort med en klippning. 
 
 \section*{Utdata}
 Skriv ut ett heltal: det minsta antalet klippningar Björn behöver göra för att proteinet ska bli rent.
@@ -26,12 +34,18 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & $k = 1$ \\ \hline
-  $2$    & $20$       & Proteinet består endast av bokstäverna \texttt{a} och \texttt{b} \\ \hline
+  $1$    & $20$       & $K = 1$. \\ \hline
+  $2$    & $20$       & Proteinet består endast av bokstäverna \texttt{a} och \texttt{b}. \\ \hline
   $3$    & $60$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
 \section*{Förklaring av exempelfall}
+Exempelfall $1$: ett möjligt sätt är att först klippa bort bokstäverna \texttt{pe}.
+Vi får då strängen \texttt{exemlfall}. \\
+Sedan kan vi klippa bort \texttt{fa} och får \texttt{exemlll}. \\
+Till sist klippa vi bort \texttt{exem} och får \texttt{lll}, ett rent protein. 
+
+
 
 \begin{figure}[h]
   \centering

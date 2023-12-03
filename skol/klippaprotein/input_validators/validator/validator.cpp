@@ -6,7 +6,8 @@ using namespace std;
 
 void run() {
 	string s = Line();
-
+	assert(s.size() <= 50);
+	
 	int k = Int(1, Arg("max_k", s.size())); Endl();
 	int ab = Arg("ab",0);
 	if (ab)
