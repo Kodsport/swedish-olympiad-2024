@@ -1,24 +1,25 @@
 \problemname{Meddelande}
+\noindent
 I staden som Paula bor i finns ett stort torg. Torget kan representeras av ett 
-rutnät med $n$ rader och $m$ kolumner. I vissa av rutorna finns det bokstäver 
+rutnät med $N$ rader och $M$ kolumner. I vissa av rutorna finns det bokstäver 
 inristade. 
 
 Enligt legenden så bildar dessa bokstäver ett meddelande om man 
 går på rutorna i en viss ordning. För att det ska bli rätt måste man börja 
 i det övre vänstra hörnet och sluta i det nedre högra hörnet, och man får bara gå steg åt höger 
 och nedåt. Om man lyckas besöka alla bokstavsrutorna på det här viset så bildas 
-det hemliga meddelandet.
+det hemliga meddelandet. 
 
 Paula har beslutat sig för att en gång för alla knäcka gåtan, och hitta meddelandet.
 
 Skriv ett program som hittar meddelandet, givet rutnätet.
 
 \section*{Indata}
-Den första raden innehåller två heltal $n$ och $m$ ($1 \leq n,m \leq 6$), 
+Den första raden innehåller två heltal $N$ och $M$ ($1 \leq N,M \leq 6$), 
 antalet rader och kolumner i rutnätet.
 
-Följande $n$ rader innehåller en sträng av längd $m$ vardera. Dessa strängar 
-representerar raderna i rutnätet, och innehåller små bokstäver \texttt{a-z} och punkter.
+Följande $N$ rader innehåller en sträng av längd $M$ vardera. Dessa strängar 
+representerar raderna i rutnätet, och innehåller små bokstäver \texttt{a}-\texttt{z} och punkter ``.''.
 Punkterna representerar tomma rutor.
 
 Det är garanterat att det går att besöka alla rutorna med bokstäver genom att 
@@ -35,12 +36,12 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & $n = 1$ \\ \hline
-  $2$    & $40$       & Antalet bokstäver är $n+m-1$ \\ \hline
+  $1$    & $20$       & $N = 1$ \\ \hline
+  $2$    & $40$       & Antalet bokstäver är $N+M-1$. \\ \hline
   $3$    & $40$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
-\section*{Förklaring av exempelfall}
+\section*{Förklaring av exempelfall 1}
 
 \begin{figure}[h]
   \centering
