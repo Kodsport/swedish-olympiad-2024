@@ -17,6 +17,10 @@ tc_manual ../manual/tc1.in
 tc g1-1 gen_rand n=200 alpha=8
 tc g1-2 gen_rand n=32 alpha=8
 tc g1-3 gen_rand n=16 alpha=8
+tc g1-4 gen_rand n=1 alpha=8
+tc g1-5 gen_rand n=2 alpha=8
+tc_manual ../manual/2letters.in
+tc_manual ../manual/allSame.in
 
 group group2 80
 limits max=15
