@@ -37,8 +37,8 @@ if t == 1:
                 for j in revert[level]:
                     room[level][j] = revert[level][j]
     
-    A = random.randint(n - 5, n - 1)
-    B = random.randint(n - 5, n - 1)
+    A = random.randint(max(1, n - 5), n - 1)
+    B = random.randint(max(1, n - 5), n - 1)
     
     def gen_path(x):
         path = []
@@ -54,13 +54,17 @@ if t == 1:
             else:
                 if room[relative_level+1][2*offset+go] == 0:
                     go = 1 - go
+                if room[relative_level+1][2*offset+go] == 0:
+                    return path
                 relative_level += 1
                 offset = 2*offset + go
             path.append(go)
         return path
 
     path_start = gen_path(A)
+    A = len(path_start)
     path_goal = gen_path(B)
+    B = len(path_goal)
     print(t)
     print(c, n)
     for level in range(c):

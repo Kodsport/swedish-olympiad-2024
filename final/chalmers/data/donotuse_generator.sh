@@ -5,51 +5,47 @@ PPATH=$(realpath ..)
 
 ulimit -s unlimited
 
-use_solution joakim.cc
+use_solution olle_full_solution.py
 
-compile gen.cc
-
-Q=500000
+compile generate.py
 
 samplegroup
-limits line=0 q=$Q maxn=5
+limits maxn=5
 sample 1
 
-group group1 10 # small line
-limits line=1 q=$Q maxn=99
-tc g1-2  gen -n=3  -q=$Q -type=bamboo
+group group1 10 
+limits maxn=2
+tc g11 generate type=1 n=2 c=2 r=0 seed=1
 
 
-group group2 12 # medium line
-include_group group1
-limits line=1 q=$Q maxn=999
-tc g2-1  gen -n=999 -q=$Q -type=bamboo -labeling=none
-
-
-group group3 21 # large line
-include_group group2
-limits line=1 q=$Q maxn=24999
-tc g3-1  gen -n=24999 -q=$Q -type=bamboo -labeling=none
-
-
-group group4 14 # small tree
-limits line=0 q=$Q maxn=99
-include_group group1
+group group2 10
 tc 1
-tc g4-1  gen -n=3  -q=$Q -type=random
+include_group group1
+limits maxn=10
+tc g21 generate type=1 n=10 c=10 r=2 seed=1230
 
 
-
-group group5 15 # medium tree
-limits line=0 q=$Q maxn=999
+group group3 10
+limits maxn=250
+include_group group1
 include_group group2
-include_group group4
-tc g5-1  gen -n=999 -q=$Q -type=random
+tc g31 generate type=1 n=250 c=10 r=2 seed=11209
 
 
-group group6 28 # large tree
-limits line=0 q=$Q maxn=24999
+
+group group4 20
+limits maxn=500
+include_group group1
+include_group group2
 include_group group3
-include_group group5
-tc g6-1  gen -n=24999 -q=$Q -type=random
+tc g41 generate type=1 n=500 c=15 r=2 seed=112983
+
+
+group group5 30
+limits maxn=1000
+include_group group1
+include_group group2
+include_group group3
+include_group group4
+tc g51 generate type=1 n=1000 c=20 r=2 seed=1192
 

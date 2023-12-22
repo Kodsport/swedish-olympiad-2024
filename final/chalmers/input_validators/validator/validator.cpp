@@ -12,43 +12,60 @@ typedef pair<int, int> pii;
 typedef vector<int> vi;
 
 
-struct UF {
-  vi e;
-  UF(int n) : e(n, -1) {}
-  bool sameSet(int a, int b) { return find(a) == find(b); }
-  int size(int x) { return -e[find(x)]; }
-  int find(int x) { return e[x] < 0 ? x : e[x] = find(e[x]); }
-  bool join(int a, int b) {
-    a = find(a), b = find(b);
-    if (a == b) return false;
-    if (e[a] > e[b]) swap(a, b);
-    e[a] += e[b]; e[b] = a;
-    return true;
-  }
-};
-
 void run() {
-  int q = Arg("q");
   int maxn = Arg("maxn");
-  bool line = Arg("line");
+  int t = Int(1,1); Endl();
 
-  int n = Int(3,maxn); Space();
-  Int(q,q); Endl();
-  assert(n%2 == 1);
+  if (t == 1) {
+    int c = Int(1, 25); Space(); int n = Int(1, maxn);
+    Endl();
+    vector<vector<bool>> Room(c);
+    rep(i,0,c) Room[i].resize(1<<i);
+    rep(i,0,c) {
+      rep(j,0,1<<i) {
+        int x = Int(0, 1);
+        Room[i][j] = (x==1);
+        if (j != (1<<i)-1) Space();
+      }
+      Endl();
+    }
+    assert(Room[0][0]);
 
-  UF uf(n);
-  vi deg(n);
+    int A = Int(1, n);
+    Endl();
+    vector<int> pathA(A);
+    rep(i,0,A) {
+      pathA[i] = Int(0,1); 
+      if (i != A-1) Space();
+    }
+    Endl();
+    int B = Int(1, n);
+    Endl();
+    vector<int> pathB(B);
+    rep(i,0,B) {
+      pathB[i] = Int(0,1); 
+      if (i != B-1) Space();
+    }
+    Endl();
 
-  rep(i,1,n) {
-    int a = Int(1,n); Space();
-    int b = Int(1,n); Endl();
-    --a,--b;
-    assert(uf.join(a,b));
-    ++deg[a];
-    ++deg[b];
+    auto validate_path = [&](vector<int> & path) {
+      int level = 0, offset = 0;
+      rep(i,0,path.size()) {
+        if (level == c - 1) {
+          assert(path[i] == 0);
+          level = 0; offset = 0;
+        }
+        else {
+          level++; offset = offset * 2 + path[i];
+          assert(Room[level][offset]);
+        }
+      }
+    };
+
+    validate_path(pathA);
+    validate_path(pathB);
   }
-  Eof();
 
-  if(line) assert(*max_element(all(deg)) <= 2);
+  Eof();
 }
 
