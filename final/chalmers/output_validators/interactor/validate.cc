@@ -158,7 +158,6 @@ struct Position {
     }
 };
 
-
 void run_copy_down() {
     int c, n;
     judge_in >> c >> n;
@@ -257,6 +256,8 @@ void run_copy_down() {
         else if (command == "up") {
             if (!cur.can_go_up()) wrong_answer("Tried to go up when not possible\n");
             cur.go_up();
+            walk_count++;
+            if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
 
             if (cur.true_level < lca_level_cur) {
                 goal.go_up();
@@ -269,6 +270,8 @@ void run_copy_down() {
         else if (command == "right") {
             if (!cur.can_go_right()) wrong_answer("Tried to go right when not possible\n");
             cur.go_right();
+            walk_count++;
+            if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
             if (cur.true_level / c == lca_level_cur / c) {
                 Position test(cur.true_level, cur.relative_level, cur.offset, r);
                 while (test.true_level > lca_level_cur) test.go_up();
@@ -278,6 +281,8 @@ void run_copy_down() {
         else if (command == "left") {
             if (!cur.can_go_left()) wrong_answer("Tried to go left when not possible\n");
             cur.go_left();
+            walk_count++;
+            if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
             if (cur.true_level / c == lca_level_cur / c) {
                 Position test(cur.true_level, cur.relative_level, cur.offset, r);
                 while (test.true_level > lca_level_cur) test.go_up();
@@ -288,6 +293,8 @@ void run_copy_down() {
         else if (command == "downright") {
             if (!cur.can_go_down_right()) wrong_answer("Tried to go down right when not possible\n");
             cur.go_down_right();
+            walk_count++;
+            if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
             if (lca_level_cur == cur.true_level - 1) {
                 // check if need to update lca values
                 if (lca_level_goal == B) continue; // lca goal is already goal
@@ -314,6 +321,8 @@ void run_copy_down() {
         else if (command == "downleft") {
             if (!cur.can_go_down_left()) wrong_answer("Tried to go down left when not possible\n");
             cur.go_down_left();
+            walk_count++;
+            if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
             if (lca_level_cur == cur.true_level - 1) {
                 // check if need to update lca values
                 if (lca_level_goal == B) continue; // lca goal is already goal
