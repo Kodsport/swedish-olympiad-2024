@@ -12,9 +12,9 @@ def cmdlinearg(name, default=None):
     return default
 
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
-type = int(cmdlinearg('type'))
+t = int(cmdlinearg('type'))
 
-if type == 1:
+if t == 1:
     n = int(cmdlinearg('n')) # how many floors total
     c = int(cmdlinearg('c')) # how many floors in copy struct
     r = int(cmdlinearg('r')) # how many rooms to remove
@@ -61,7 +61,7 @@ if type == 1:
 
     path_start = gen_path(A)
     path_goal = gen_path(B)
-
+    print(t)
     print(c, n)
     for level in range(c):
         print(*room[level])
