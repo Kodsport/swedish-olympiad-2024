@@ -11,6 +11,9 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 
+auto Start = chrono::high_resolution_clock::now();
+void resettimer() { Start = chrono::high_resolution_clock::now(); }
+int elapsedmillis() { return chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - Start).count(); }
 
 const int MAX_APP = 500;
 const int MAX_WALK = 5000;
@@ -47,16 +50,22 @@ struct Room {
             swap(level1, level2);
             swap(offset1, offset2);
         }
+        int iter_counts = 0;
         while (level1 < level2) {
             level2--;
             dist++;
             offset2 /= 2;
+            iter_counts++;
+            if (iter_counts > 1000) judge_error("inf loop\n");
         }
+        iter_counts = 0;
         while(!can_go(level1, offset1, offset2)) {
+            iter_counts++;
             level1--;
             dist += 2;
             offset1 /= 2;
             offset2 /= 2;
+            if (iter_counts > 1000) judge_error("inf loop\n");
         }
         dist += abs(offset2 - offset1);
         return dist;
@@ -131,6 +140,7 @@ struct Position {
         }
         else {
             Position* old_pos = new Position(true_level, relative_level, offset, room);
+            old_pos->up_copy_position = up_copy_position;
             up_copy_position = old_pos;
             true_level++;
             relative_level = 0;
@@ -139,7 +149,7 @@ struct Position {
     }
 
     bool can_go_down_right() {
-        if (relative_level == (room.room.size()-1)) return true;
+        if (relative_level == (room.room.size()-1)) return false;
         return room.room[relative_level+1][2*offset+1] == 1;
     }
 
@@ -241,10 +251,6 @@ void run_copy_down() {
         }
     }
     
-    //judge_message("start pos: %d %d\n", cur.true_level, cur.offset);
-    //judge_message("goal pos: %d %d\n", goal.true_level, goal.offset);
-
-    
     auto get_distance = [&]() {
         return (cur.true_level - lca_level_cur) + (B - lca_level_goal) + abs(lca_offset_cur - lca_offset_goal);
     };
@@ -252,17 +258,25 @@ void run_copy_down() {
     if (get_distance() == 0) judge_error("Start and goal is the same\n");
 
     /////////// INTERACTION STARTS HERE /////////////
+    //FILE *LOG = fopen("validator_log.txt", "w");
 
     int app_count = 0, walk_count = 0;
     cout << cur.info() << endl;
 
+    int x = 0;
+
     while (true) {
+        //fclose(LOG);
+        //LOG = fopen("validator_log.txt", "a");
+        
+        x++;
+        if(x > 10000) judge_error("too many x\n");
         judge_message("cur pos: %d %d %d\n", cur.true_level, cur.relative_level, cur.offset);
         judge_message("goal pos: %d %d %d\n", goal.true_level, goal.relative_level, goal.offset);
         judge_message("lca info: %d %d %d %d\n", lca_level_cur, lca_offset_cur, lca_level_goal, lca_offset_goal);
 
-
         string command;
+
         if (!(author_out >> command)) wrong_answer("Expected more commands\n");
         if (command == "app") {
             judge_message("app\n");
@@ -278,7 +292,7 @@ void run_copy_down() {
             walk_count++;
             if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
 
-            while (cur.true_level < lca_level_cur) {
+            if (cur.true_level < lca_level_cur) {
                 goal.go_up();
                 lca_level_cur--;
                 lca_level_goal--;
@@ -294,7 +308,12 @@ void run_copy_down() {
             if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
             if (cur.true_level / c == lca_level_cur / c) {
                 Position test(cur.true_level, cur.relative_level, cur.offset, r);
-                while (test.true_level > lca_level_cur) test.go_up();
+                int iter_counts = 0;
+                while (test.true_level > lca_level_cur) {
+                    iter_counts++;
+                    if (iter_counts > 1000) judge_error("inf loop\n");
+                    test.go_up();
+                }
                 lca_offset_cur = test.offset; 
             } // Check if in same "room copy"
         }
@@ -306,7 +325,12 @@ void run_copy_down() {
             if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
             if (cur.true_level / c == lca_level_cur / c) {
                 Position test(cur.true_level, cur.relative_level, cur.offset, r);
-                while (test.true_level > lca_level_cur) test.go_up();
+                int iter_counts = 0;
+                while (test.true_level > lca_level_cur) {
+                    iter_counts++;
+                    if (iter_counts > 1000) judge_error("inf loop\n");
+                    test.go_up();
+                }
                 lca_offset_cur = test.offset;
             } // Check if in same "room copy"
             
@@ -320,8 +344,12 @@ void run_copy_down() {
             if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
             if (lca_level_cur == cur.true_level - 1) {
                 // check if need to update lca values
-                if (lca_level_goal == B) continue; // lca goal is already goal
+                if (lca_level_goal == B) {
+                    cout << cur.info() << endl;
+                    continue; // lca goal is already goal
+                }
                 Position new_lca_goal(lca_level_goal, lca_level_goal % c, lca_offset_goal, r);
+                new_lca_goal.up_copy_position = goal.up_copy_position;
                 if (path_goal[lca_level_goal] == 0) {
                     if (!new_lca_goal.can_go_down_left()) judge_error("Invalid goal pathing\n");
                     new_lca_goal.go_down_left();
@@ -331,6 +359,7 @@ void run_copy_down() {
                     new_lca_goal.go_down_right();
                 }
                 if (cur.relative_level == 0 && lca_offset_cur != lca_offset_goal) {
+                    cout << cur.info() << endl;
                     continue;
                 } 
                 if (r.can_go(cur.relative_level, cur.offset, new_lca_goal.offset)) {
@@ -341,11 +370,11 @@ void run_copy_down() {
                     goal.true_level = new_lca_goal.true_level;
                     goal.offset = new_lca_goal.offset;
                     goal.relative_level = new_lca_goal.relative_level;
+                    goal.up_copy_position = new_lca_goal.up_copy_position;
                 }
             }
         }
         else if (command == "downleft") {
-
             judge_message("downleft\n");
 
             if (!cur.can_go_down_left()) wrong_answer("Tried to go down left when not possible\n");
@@ -354,8 +383,13 @@ void run_copy_down() {
             if (walk_count > MAX_WALK) wrong_answer("Too many rooms traversed\n");
             if (lca_level_cur == cur.true_level - 1) {
                 // check if need to update lca values
-                if (lca_level_goal == B) continue; // lca goal is already goal
-                Position new_lca_goal(lca_level_goal, lca_level_goal % c, lca_offset_goal, r);
+                if (lca_level_goal == B) {
+                    cout << cur.info() << endl;
+                    continue;
+                }; // lca goal is already goal
+
+                Position new_lca_goal(goal.true_level, goal.relative_level, goal.offset, r);
+                new_lca_goal.up_copy_position = goal.up_copy_position;
                 if (path_goal[lca_level_goal] == 0) {
                     if (!new_lca_goal.can_go_down_left()) judge_error("Invalid goal pathing (trying to go downleft)\n");
                     new_lca_goal.go_down_left();
@@ -365,8 +399,10 @@ void run_copy_down() {
                     new_lca_goal.go_down_right();
                 }
                 if (cur.relative_level == 0 && lca_offset_cur != lca_offset_goal) {
+                    cout << cur.info() << endl;
                     continue;
-                } 
+                }
+
                 if (r.can_go(cur.relative_level, cur.offset, new_lca_goal.offset)) {
                     lca_offset_cur = cur.offset;
                     lca_level_cur = cur.true_level;
@@ -375,8 +411,11 @@ void run_copy_down() {
                     goal.true_level = new_lca_goal.true_level;
                     goal.offset = new_lca_goal.offset;
                     goal.relative_level = new_lca_goal.relative_level;
+                    goal.up_copy_position = new_lca_goal.up_copy_position;
                 }
             }
+            
+
         }
         else if (command == "here") {
             if (get_distance() == 0) accept(); // :D
@@ -387,10 +426,151 @@ void run_copy_down() {
         }
         cout << cur.info() << endl;
     }
+}
 
+
+void run_full() {
+    int n;
+    int A = 0, B = 0; 
+    vector<int> path;
+    vector<int> goal;
+
+    int first_diff = 0;
+
+    auto can_go_up = [&]() {
+        return (A != 0);
+    };
+
+    auto up = [&]() {
+        if (A == 0) judge_error("tried to go up when impossible\n");
+        path.pop_back();
+        if (first_diff == A) first_diff++;
+        A--;
+    };
+
+    auto can_go_right = [&]() { // worst case O(n)
+        int i = A - 1;
+        while (path[i] == 1) {
+            i--;
+            if (i == -1) return false;
+        }
+        return true;
+    };
+
+    auto right = [&]() {
+        int i = A-1;
+        while (path[i] == 1) {
+            path[i] = 0;
+            if (first_diff > i && path[i] != goal[i]) first_diff = i;
+            i--;
+            if (i == -1) judge_error("tried to go right when impossible\n");
+        }
+        path[i] = 1;
+        if (first_diff > i && path[i] != goal[i]) first_diff = i;
+    };
+
+    auto can_go_left = [&]() {
+        int i = A - 1;
+        while (path[i] == 0) {
+            i--;
+            if (i == -1) return false;
+        }
+        return true;
+    };
+
+    auto left = [&]() {
+        int i = A-1;
+        while (path[i] == 0) {
+            path[i] = 1;
+            if (first_diff > i && path[i] != goal[i]) first_diff = i;
+            i--;
+            if (i == -1) judge_error("tried to go left when impossible\n");
+        }
+        path[i] = 0;
+        if (first_diff > i && path[i] != goal[i]) first_diff = i;
+    };
+
+    auto can_go_downleft = [&]() {
+        return A != n-1;
+    };
+
+    auto downleft = [&]() {
+        A++;
+        if (A > n) judge_error("tried to go downleft when not possible\n");
+        path.push_back(0);
+        if (A > B) {
+            B++;
+            goal.push_back(1);
+        }
+    };
     
+    auto can_go_downright = [&]() {
+        return A != n-1;
+    };
+
+    auto downright = [&]() {
+        A++;
+        if (A > n) judge_error("tried to go downleft when not possible\n");
+        path.push_back(0);
+        if (A > B) {
+            B++;
+            goal.push_back(1);
+
+        }
+    };
+
+    auto distance = [&]() {
+        int i = first_diff + 1;
+        if (i > A) return (ll)(n-A);
+        ll d = 0;
+        bool sw = path[i] > goal[i];
+        if (sw) swap(path, goal);
+        while (i < A) {
+            d *= 2;
+            if (goal[i] == 1) d++;
+            if (path[i] == 1) d--;
+            if (d > 1e10) break;
+        }
+        d += (n - A);
+        if (d > 1e9) return -1LL;
+        return d;
+    };
+    
+    auto info = [&]() {
+        string _ = "00000";
+        if (can_go_up()) _[0] = '1';
+        if (can_go_right()) _[1] = '1';
+        if (can_go_downright()) _[2] = '1';
+        if (can_go_downleft()) _[3] = '1';
+        if (can_go_left()) _[4] = '1';
+        return _;
+    };
+
+    int app_count = 0, walk_count = 0;
+    cout << info() << endl;
+
+    /*   INTERACTION STARTS HERE    */
+
+    while (true) {
+        string command;
+        cin >> command;
+        
+        if (command == "app") {
+            if (A - goal.size() > 25) {
+                cout << -1 << endl;
+                continue;
+            }
+
+            if (goal.size() < A) {
+                
+            }
+        }
+
+    }
 
 }
+
+
 
 int main(int argc, char **argv) {
     init_io(argc, argv);
@@ -411,8 +591,17 @@ int main(int argc, char **argv) {
         0 0 1 1 0 1 0 1         road down to start
         B
         0 1 0 0                 road down to goal
+
+
+    type = 2: No blocked rooms
+    n                           n = number of floors
+    A                           length of path to start
+    0 1 0 1 0 0                 path to start
+    B                           length of path to goal
+    0 1                         path to goal
     */
 
     if (type == 1) run_copy_down();
+    if (type == 2) run_full();
 
 }

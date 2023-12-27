@@ -1,5 +1,9 @@
+# TODO : Make sure solution does not make one extra query
+
 
 up, right, downright, downleft, left = [False]*5
+
+f = open("solution_log.txt", "w")
 
 def read_info():
     global up, right, downright, downleft, left
@@ -11,20 +15,20 @@ def app():
     return int(input())
 
 def go(dir):
+    f.write(dir + "\n")
     print(dir, flush=True)
     read_info()
+    f.write("read feedback\n")
 
 read_info()
 while up:
     go("up")
 
-distance = app()
-while distance > 0:
-    if not (downleft and downright):
-        go("downleft" if downleft else "downright")
-        distance -= 1
-        continue
 
+distance = app()
+
+
+while distance > 0:
     if distance == 1:
         go("downleft" if downleft else "downright")
         distance = app()
@@ -32,6 +36,10 @@ while distance > 0:
             go("right")
         break
 
+    if not (downleft and downright):
+        go("downleft" if downleft else "downright")
+        distance -= 1
+        continue
 
     arr = [False]*4
 
@@ -42,6 +50,9 @@ while distance > 0:
     go("right")
     arr[2] = downleft
     arr[3] = downright
+
+    if not any(arr):
+        print("error")
 
     dist = [
         [-1]*4 for i in range(4)
@@ -74,16 +85,19 @@ while distance > 0:
     elif query_from == 1:
         go("left")
         go("downright")
-    else:
+    elif query_from == 0:
         go("left")
         go("downleft")
+    else:
+        print("error")
     
     new_dist = app()
     wanted_dist = distance - 2
+    diff = new_dist - wanted_dist
 
     go_to = 0
     for j in range(4):
-        if dist[query_from][j] == new_dist - wanted_dist:
+        if dist[query_from][j] == diff:
             go_to = j
     
     go("up")
@@ -91,8 +105,9 @@ while distance > 0:
         go("right")
     if go_to <= 1 and query_from > 1:
         go("left")
-    go("downleft" if go_to % 2 == 0 else "downright")
+    go("downleft" if (go_to % 2 == 0) else "downright")
+    
+    distance -= 2
 
-    distance = wanted_dist
-    print(distance)
+f.write(f"final distance: {app()}")
 print("here")

@@ -33,19 +33,19 @@ tc g31 generate type=1 n=250 c=10 r=2 seed=11209
 
 
 
-group group4 20
+group group4 30
 limits maxn=500
 include_group group1
 include_group group2
 include_group group3
-tc g41 generate type=1 n=500 c=15 r=2 seed=112983
+tc g41 generate type=1 n=500 c=10 r=0 seed=112
 
 
-group group5 30
+group group5 40
 limits maxn=1000
 include_group group1
 include_group group2
 include_group group3
 include_group group4
-tc g51 generate type=1 n=1000 c=20 r=2 seed=1192
+tc g51 generate type=1 n=1000 c=17 r=2 seed=192
 
