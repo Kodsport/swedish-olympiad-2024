@@ -17,6 +17,7 @@ int elapsedmillis() { return chrono::duration_cast<chrono::milliseconds>(chrono:
 
 const int MAX_APP = 500;
 const int MAX_WALK = 5000;
+int N;
 
 struct Room {
     int levels;
@@ -128,6 +129,7 @@ struct Position {
     }
 
     bool can_go_down_left() {
+        if (true_level == N - 1) return false;
         if (relative_level == (room.room.size()-1)) return true;
         return room.room[relative_level+1][2*offset];
     }
@@ -149,6 +151,7 @@ struct Position {
     }
 
     bool can_go_down_right() {
+        if (true_level == N - 1) return false;
         if (relative_level == (room.room.size()-1)) return false;
         return room.room[relative_level+1][2*offset+1] == 1;
     }
@@ -178,6 +181,7 @@ struct Position {
 void run_copy_down() {
     int c, n;
     judge_in >> c >> n;
+    N = n;
     vector<vector<int>> room(c);
     rep(r,0,c) {
         room[r].resize(1<<r);

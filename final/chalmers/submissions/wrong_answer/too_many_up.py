@@ -15,4 +15,4 @@ def go(dir):
     read_info()
 
 while True:
-    up()
+    go("up")

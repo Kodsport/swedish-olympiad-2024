@@ -1988,19 +1988,31 @@ up
 read feedback
 up
 read feedback
-up
+app calls: 1
+distance: 999
+downleft
+read feedback
+right
+read feedback
+downright
 read feedback
+app calls: 2
+distance: 998
 up
 read feedback
 downleft
 read feedback
+downleft
+read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 3
+distance: 996
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2008,9 +2020,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 4
+distance: 994
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -2020,10 +2032,10 @@ right
 read feedback
 downright
 read feedback
+app calls: 5
+distance: 991
 up
 read feedback
-left
-read feedback
 downright
 read feedback
 downleft
@@ -2032,7 +2044,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 6
+distance: 991
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -2042,19 +2058,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 7
+distance: 990
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
+downleft
+read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 8
+distance: 986
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2062,11 +2084,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 9
+distance: 986
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2074,21 +2098,37 @@ right
 read feedback
 downright
 read feedback
+app calls: 10
+distance: 982
 up
 read feedback
 downleft
 read feedback
 downleft
 read feedback
+right
+read feedback
+downleft
+read feedback
+app calls: 11
+distance: 982
+up
+read feedback
+left
+read feedback
+downleft
+read feedback
 downleft
 read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 12
+distance: 978
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2096,8 +2136,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 13
+distance: 977
 up
 read feedback
+left
+read feedback
 downright
 read feedback
 downleft
@@ -2106,7 +2150,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 14
+distance: 976
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -2116,6 +2164,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 15
+distance: 973
 up
 read feedback
 left
@@ -2128,6 +2178,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 16
+distance: 972
 up
 read feedback
 left
@@ -2140,6 +2192,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 17
+distance: 968
 up
 read feedback
 downleft
@@ -2150,11 +2204,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 18
+distance: 968
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2162,9 +2218,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 19
+distance: 966
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
@@ -2174,16 +2232,22 @@ right
 read feedback
 downright
 read feedback
+app calls: 20
+distance: 964
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 21
+distance: 959
 up
 read feedback
 downleft
@@ -2194,9 +2258,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 22
+distance: 957
 up
-read feedback
-left
 read feedback
 downright
 read feedback
@@ -2206,11 +2270,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 23
+distance: 955
 up
 read feedback
-left
-read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -2218,6 +2282,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 24
+distance: 954
 up
 read feedback
 downleft
@@ -2228,11 +2294,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 25
+distance: 951
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -2240,6 +2306,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 26
+distance: 951
 up
 read feedback
 left
@@ -2252,11 +2320,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 27
+distance: 948
 up
 read feedback
 downleft
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 28
+distance: 945
+up
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -2264,17 +2344,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 29
+distance: 946
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
+downleft
+read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 30
+distance: 943
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -2282,9 +2370,13 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 31
+distance: 942
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -2294,18 +2386,32 @@ right
 read feedback
 downright
 read feedback
+app calls: 32
+distance: 937
 up
 read feedback
-left
+downright
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 33
+distance: 935
+up
 read feedback
+downright
+read feedback
 downleft
 read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 34
+distance: 935
 up
 read feedback
 left
@@ -2318,11 +2424,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 35
+distance: 933
 up
 read feedback
 left
+read feedback
+downright
+read feedback
+downleft
 read feedback
+right
+read feedback
 downright
+read feedback
+app calls: 36
+distance: 930
+up
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -2330,6 +2450,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 37
+distance: 927
 up
 read feedback
 downright
@@ -2340,11 +2462,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 38
+distance: 926
 up
 read feedback
 downleft
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 39
+distance: 925
+up
+read feedback
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -2352,6 +2488,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 40
+distance: 922
 up
 read feedback
 downleft
@@ -2360,8 +2498,10 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 41
+distance: 919
 up
 read feedback
 downleft
@@ -2372,7 +2512,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 42
+distance: 920
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -2382,19 +2526,35 @@ right
 read feedback
 downright
 read feedback
+app calls: 43
+distance: 915
 up
 read feedback
-left
+downright
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 44
+distance: 913
+up
 read feedback
+downright
+read feedback
 downleft
 read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 45
+distance: 913
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -2404,6 +2564,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 46
+distance: 909
 up
 read feedback
 downright
@@ -2414,6 +2576,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 47
+distance: 908
 up
 read feedback
 downleft
@@ -2424,11 +2588,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 48
+distance: 907
 up
 read feedback
 left
+read feedback
+downright
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 49
+distance: 904
+up
 read feedback
 downleft
 read feedback
@@ -2438,12 +2614,24 @@ right
 read feedback
 downright
 read feedback
+app calls: 50
+distance: 903
 up
 read feedback
 left
 read feedback
 downright
+read feedback
+downleft
+read feedback
+right
+read feedback
+downleft
 read feedback
+app calls: 51
+distance: 899
+up
+read feedback
 downleft
 read feedback
 downleft
@@ -2452,7 +2640,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 52
+distance: 900
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -2462,23 +2654,37 @@ right
 read feedback
 downright
 read feedback
+app calls: 53
+distance: 896
 up
 read feedback
-left
+downleft
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
 read feedback
+app calls: 54
+distance: 893
+up
+read feedback
+downright
+read feedback
 downleft
 read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 55
+distance: 894
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2486,9 +2692,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 56
+distance: 890
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2496,6 +2704,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 57
+distance: 887
 up
 read feedback
 downright
@@ -2506,6 +2716,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 58
+distance: 886
 up
 read feedback
 downleft
@@ -2514,11 +2726,13 @@ downleft
 read feedback
 right
 read feedback
-downleft
+downright
 read feedback
+app calls: 59
+distance: 883
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -2526,17 +2740,35 @@ right
 read feedback
 downright
 read feedback
+app calls: 60
+distance: 881
 up
 read feedback
+downright
+read feedback
+downleft
+read feedback
+right
+read feedback
 downleft
 read feedback
+app calls: 61
+distance: 879
+up
+read feedback
+downleft
+read feedback
 downleft
 read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 62
+distance: 880
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -2546,6 +2778,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 63
+distance: 877
 up
 read feedback
 left
@@ -2558,9 +2792,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 64
+distance: 875
 up
 read feedback
 left
+read feedback
+downright
+read feedback
+downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 65
+distance: 871
+up
 read feedback
 downright
 read feedback
@@ -2570,6 +2818,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 66
+distance: 871
 up
 read feedback
 left
@@ -2582,6 +2832,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 67
+distance: 868
 up
 read feedback
 downleft
@@ -2592,23 +2844,61 @@ right
 read feedback
 downright
 read feedback
+app calls: 68
+distance: 867
 up
 read feedback
 left
 read feedback
+downright
+read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 69
+distance: 863
+up
+read feedback
+downright
 read feedback
 downleft
 read feedback
 right
+read feedback
+downright
 read feedback
+app calls: 70
+distance: 861
+up
+read feedback
 downright
+read feedback
+downleft
 read feedback
+right
+read feedback
+downleft
+read feedback
+app calls: 71
+distance: 862
 up
 read feedback
 left
+read feedback
+downleft
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 72
+distance: 858
+up
 read feedback
 downleft
 read feedback
@@ -2618,6 +2908,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 73
+distance: 855
 up
 read feedback
 downright
@@ -2628,11 +2920,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 74
+distance: 856
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2640,9 +2934,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 75
+distance: 854
 up
 read feedback
 left
+read feedback
+downleft
+read feedback
+downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 76
+distance: 849
+up
 read feedback
 downright
 read feedback
@@ -2652,6 +2960,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 77
+distance: 850
 up
 read feedback
 left
@@ -2664,11 +2974,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 78
+distance: 847
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -2676,9 +2988,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 79
+distance: 844
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2686,6 +3000,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 80
+distance: 841
 up
 read feedback
 downright
@@ -2694,14 +3010,14 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 81
+distance: 842
 up
 read feedback
 left
 read feedback
-downright
-read feedback
 downleft
 read feedback
 downleft
@@ -2710,11 +3026,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 82
+distance: 839
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -2722,11 +3040,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 83
+distance: 837
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -2734,6 +3054,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 84
+distance: 834
 up
 read feedback
 downleft
@@ -2744,8 +3066,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 85
+distance: 833
 up
 read feedback
+left
+read feedback
 downright
 read feedback
 downleft
@@ -2754,11 +3080,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 86
+distance: 829
 up
 read feedback
-left
+downright
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 87
+distance: 829
+up
+read feedback
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -2766,16 +3106,32 @@ right
 read feedback
 downright
 read feedback
+app calls: 88
+distance: 826
 up
+read feedback
+downleft
+read feedback
+downleft
+read feedback
+right
 read feedback
 downright
+read feedback
+app calls: 89
+distance: 824
+up
 read feedback
 downleft
 read feedback
+downleft
+read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 90
+distance: 823
 up
 read feedback
 left
@@ -2786,12 +3142,26 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 91
+distance: 819
 up
+read feedback
+downleft
+read feedback
+downleft
+read feedback
+right
 read feedback
 downright
+read feedback
+app calls: 92
+distance: 820
+up
 read feedback
+left
+read feedback
 downleft
 read feedback
 downleft
@@ -2800,6 +3170,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 93
+distance: 815
 up
 read feedback
 downright
@@ -2810,9 +3182,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 94
+distance: 814
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2820,6 +3194,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 95
+distance: 811
 up
 read feedback
 downright
@@ -2830,8 +3206,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 96
+distance: 812
 up
 read feedback
+left
+read feedback
 downleft
 read feedback
 downleft
@@ -2840,6 +3220,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 97
+distance: 810
 up
 read feedback
 left
@@ -2852,11 +3234,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 98
+distance: 808
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -2864,11 +3248,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 99
+distance: 805
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -2876,12 +3262,22 @@ right
 read feedback
 downright
 read feedback
+app calls: 100
+distance: 801
 up
 read feedback
-left
+downright
+read feedback
+downleft
+read feedback
+right
 read feedback
 downleft
 read feedback
+app calls: 101
+distance: 799
+up
+read feedback
 downleft
 read feedback
 downleft
@@ -2890,13 +3286,37 @@ right
 read feedback
 downright
 read feedback
+app calls: 102
+distance: 799
 up
 read feedback
 left
+read feedback
+downright
+read feedback
+downleft
 read feedback
+right
+read feedback
 downright
+read feedback
+app calls: 103
+distance: 796
+up
+read feedback
+downleft
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 104
+distance: 793
+up
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -2904,6 +3324,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 105
+distance: 794
 up
 read feedback
 left
@@ -2916,11 +3338,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 106
+distance: 791
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -2928,11 +3352,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 107
+distance: 789
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -2940,6 +3366,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 108
+distance: 786
 up
 read feedback
 downleft
@@ -2950,9 +3378,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 109
+distance: 784
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -2962,6 +3390,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 110
+distance: 781
 up
 read feedback
 downright
@@ -2972,10 +3402,22 @@ right
 read feedback
 downleft
 read feedback
+app calls: 111
+distance: 779
 up
 read feedback
-left
+downleft
+read feedback
+downleft
+read feedback
+right
+read feedback
+downright
 read feedback
+app calls: 112
+distance: 778
+up
+read feedback
 downleft
 read feedback
 downleft
@@ -2984,11 +3426,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 113
+distance: 778
 up
 read feedback
 left
+read feedback
+downleft
 read feedback
+downleft
+read feedback
+right
+read feedback
 downright
+read feedback
+app calls: 114
+distance: 774
+up
 read feedback
 downleft
 read feedback
@@ -2998,9 +3452,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 115
+distance: 772
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3008,7 +3464,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 116
+distance: 772
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -3018,6 +3478,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 117
+distance: 767
 up
 read feedback
 downright
@@ -3028,9 +3490,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 118
+distance: 766
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -3040,6 +3502,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 119
+distance: 765
 up
 read feedback
 left
@@ -3052,11 +3516,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 120
+distance: 762
 up
 read feedback
-left
-read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3064,6 +3528,8 @@ right
 read feedback
 downleft
 read feedback
+app calls: 121
+distance: 762
 up
 read feedback
 left
@@ -3076,9 +3542,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 122
+distance: 757
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3086,9 +3554,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 123
+distance: 757
 up
 read feedback
-downleft
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -3096,9 +3568,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 124
+distance: 753
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3106,6 +3580,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 125
+distance: 752
 up
 read feedback
 downleft
@@ -3116,7 +3592,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 126
+distance: 752
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -3126,16 +3606,22 @@ right
 read feedback
 downright
 read feedback
+app calls: 127
+distance: 749
 up
 read feedback
-downleft
+left
 read feedback
+downright
+read feedback
 downleft
 read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 128
+distance: 746
 up
 read feedback
 downleft
@@ -3146,11 +3632,21 @@ right
 read feedback
 downright
 read feedback
+app calls: 129
+distance: 743
 up
 read feedback
-left
+downright
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 130
+distance: 742
+up
 read feedback
 downleft
 read feedback
@@ -3158,10 +3654,14 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 131
+distance: 742
 up
 read feedback
+left
+read feedback
 downleft
 read feedback
 downleft
@@ -3170,21 +3670,37 @@ right
 read feedback
 downright
 read feedback
+app calls: 132
+distance: 737
 up
+read feedback
+downright
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 133
+distance: 735
+up
 read feedback
+downright
+read feedback
 downleft
 read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 134
+distance: 735
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3192,9 +3708,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 135
+distance: 732
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3202,8 +3720,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 136
+distance: 731
 up
 read feedback
+left
+read feedback
 downright
 read feedback
 downleft
@@ -3212,6 +3734,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 137
+distance: 727
 up
 read feedback
 downright
@@ -3222,6 +3746,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 138
+distance: 728
 up
 read feedback
 left
@@ -3234,21 +3760,39 @@ right
 read feedback
 downright
 read feedback
+app calls: 139
+distance: 724
 up
+read feedback
+downleft
 read feedback
 downleft
+read feedback
+right
 read feedback
+downright
+read feedback
+app calls: 140
+distance: 724
+up
+read feedback
+left
+read feedback
 downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 141
+distance: 722
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -3256,9 +3800,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 142
+distance: 718
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3266,9 +3812,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 143
+distance: 715
 up
-read feedback
-left
 read feedback
 downright
 read feedback
@@ -3278,9 +3824,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 144
+distance: 713
 up
-read feedback
-left
 read feedback
 downright
 read feedback
@@ -3290,9 +3836,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 145
+distance: 712
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3300,11 +3848,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 146
+distance: 712
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3312,6 +3862,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 147
+distance: 709
 up
 read feedback
 left
@@ -3324,11 +3876,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 148
+distance: 708
 up
 read feedback
 left
-read feedback
-downright
 read feedback
 downleft
 read feedback
@@ -3338,11 +3890,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 149
+distance: 705
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3350,17 +3904,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 150
+distance: 702
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 151
+distance: 702
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -3370,6 +3930,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 152
+distance: 700
 up
 read feedback
 left
@@ -3382,9 +3944,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 153
+distance: 696
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3392,9 +3956,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 154
+distance: 695
 up
 read feedback
-downleft
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -3402,7 +3970,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 155
+distance: 693
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -3412,11 +3984,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 156
+distance: 689
 up
-read feedback
-downleft
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3424,6 +3996,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 157
+distance: 688
 up
 read feedback
 downleft
@@ -3434,11 +4008,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 158
+distance: 687
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3446,9 +4022,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 159
+distance: 684
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -3458,19 +4034,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 160
+distance: 684
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 161
+distance: 679
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -3480,6 +4060,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 162
+distance: 679
 up
 read feedback
 left
@@ -3492,6 +4074,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 163
+distance: 678
 up
 read feedback
 left
@@ -3504,9 +4088,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 164
+distance: 674
 up
-read feedback
-downright
 read feedback
 downleft
 read feedback
@@ -3516,9 +4100,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 165
+distance: 671
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3526,11 +4112,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 166
+distance: 672
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3538,6 +4126,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 167
+distance: 667
 up
 read feedback
 downright
@@ -3548,6 +4138,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 168
+distance: 666
 up
 read feedback
 downleft
@@ -3558,9 +4150,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 169
+distance: 665
 up
 read feedback
-downleft
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -3568,6 +4164,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 170
+distance: 662
 up
 read feedback
 downleft
@@ -3576,11 +4174,11 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 171
+distance: 659
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -3590,11 +4188,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 172
+distance: 660
 up
 read feedback
 left
-read feedback
-downright
 read feedback
 downleft
 read feedback
@@ -3604,13 +4202,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 173
+distance: 655
 up
-read feedback
-left
 read feedback
 downright
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -3618,7 +4214,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 174
+distance: 656
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -3628,6 +4228,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 175
+distance: 653
 up
 read feedback
 left
@@ -3640,9 +4242,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 176
+distance: 652
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -3650,6 +4256,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 177
+distance: 650
 up
 read feedback
 left
@@ -3662,11 +4270,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 178
+distance: 647
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3674,26 +4284,32 @@ right
 read feedback
 downright
 read feedback
+app calls: 179
+distance: 644
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downleft
+downright
 read feedback
+app calls: 180
+distance: 641
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 181
+distance: 642
 up
 read feedback
 left
@@ -3706,9 +4322,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 182
+distance: 637
 up
-read feedback
-left
 read feedback
 downright
 read feedback
@@ -3718,9 +4334,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 183
+distance: 635
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3728,6 +4346,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 184
+distance: 634
 up
 read feedback
 downleft
@@ -3738,9 +4358,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 185
+distance: 631
 up
-read feedback
-left
 read feedback
 downright
 read feedback
@@ -3750,9 +4370,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 186
+distance: 629
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3760,11 +4382,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 187
+distance: 630
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3772,9 +4396,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 188
+distance: 628
 up
 read feedback
-downleft
+left
 read feedback
 downleft
 read feedback
@@ -3784,6 +4410,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 189
+distance: 626
 up
 read feedback
 left
@@ -3796,6 +4424,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 190
+distance: 622
 up
 read feedback
 downleft
@@ -3804,13 +4434,15 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 191
+distance: 622
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3818,6 +4450,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 192
+distance: 617
 up
 read feedback
 downright
@@ -3828,9 +4462,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 193
+distance: 616
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3838,11 +4474,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 194
+distance: 614
 up
-read feedback
-left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3850,11 +4486,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 195
+distance: 614
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3862,11 +4500,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 196
+distance: 611
 up
 read feedback
-downright
+left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -3874,19 +4514,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 197
+distance: 610
 up
 read feedback
-downleft
+left
 read feedback
 downleft
-read feedback
-right
-read feedback
-downright
-read feedback
-up
-read feedback
-downright
 read feedback
 downleft
 read feedback
@@ -3894,11 +4528,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 198
+distance: 608
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3906,6 +4542,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 199
+distance: 606
 up
 read feedback
 left
@@ -3918,21 +4556,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 200
+distance: 601
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 201
+distance: 599
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -3940,6 +4580,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 202
+distance: 600
 up
 read feedback
 left
@@ -3952,11 +4594,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 203
+distance: 596
 up
-read feedback
-left
-read feedback
-downright
 read feedback
 downleft
 read feedback
@@ -3966,11 +4606,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 204
+distance: 594
 up
-read feedback
-left
-read feedback
-downright
 read feedback
 downleft
 read feedback
@@ -3980,6 +4618,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 205
+distance: 591
 up
 read feedback
 downright
@@ -3990,6 +4630,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 206
+distance: 591
 up
 read feedback
 left
@@ -4002,6 +4644,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 207
+distance: 587
 up
 read feedback
 downright
@@ -4012,6 +4656,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 208
+distance: 586
 up
 read feedback
 downleft
@@ -4022,11 +4668,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 209
+distance: 583
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4034,7 +4680,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 210
+distance: 584
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -4044,6 +4694,8 @@ right
 read feedback
 downleft
 read feedback
+app calls: 211
+distance: 582
 up
 read feedback
 left
@@ -4056,11 +4708,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 212
+distance: 580
 up
 read feedback
 left
-read feedback
-downright
 read feedback
 downleft
 read feedback
@@ -4070,9 +4722,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 213
+distance: 576
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -4082,7 +4734,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 214
+distance: 576
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -4092,9 +4748,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 215
+distance: 573
 up
 read feedback
-downleft
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -4102,9 +4762,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 216
+distance: 572
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -4112,11 +4776,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 217
+distance: 570
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4124,7 +4790,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 218
+distance: 567
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -4132,8 +4802,10 @@ downleft
 read feedback
 right
 read feedback
-downleft
+downright
 read feedback
+app calls: 219
+distance: 564
 up
 read feedback
 downleft
@@ -4144,6 +4816,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 220
+distance: 562
 up
 read feedback
 downleft
@@ -4152,11 +4826,13 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 221
+distance: 559
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4164,7 +4840,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 222
+distance: 559
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -4174,11 +4854,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 223
+distance: 557
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4186,9 +4868,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 224
+distance: 553
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4196,11 +4880,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 225
+distance: 553
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4208,6 +4894,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 226
+distance: 551
 up
 read feedback
 left
@@ -4220,11 +4908,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 227
+distance: 547
 up
 read feedback
 downright
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -4232,9 +4920,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 228
+distance: 546
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -4244,6 +4932,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 229
+distance: 543
 up
 read feedback
 downright
@@ -4251,9 +4941,23 @@ read feedback
 downleft
 read feedback
 right
+read feedback
+downright
+read feedback
+app calls: 230
+distance: 541
+up
 read feedback
 downright
+read feedback
+downleft
+read feedback
+right
+read feedback
+downleft
 read feedback
+app calls: 231
+distance: 539
 up
 read feedback
 downleft
@@ -4264,9 +4968,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 232
+distance: 537
 up
-read feedback
-left
 read feedback
 downright
 read feedback
@@ -4276,6 +4980,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 233
+distance: 537
 up
 read feedback
 left
@@ -4288,6 +4994,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 234
+distance: 534
 up
 read feedback
 downleft
@@ -4298,7 +5006,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 235
+distance: 534
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -4308,11 +5020,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 236
+distance: 532
 up
 read feedback
 left
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -4322,9 +5034,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 237
+distance: 527
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4332,9 +5046,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 238
+distance: 527
 up
 read feedback
-downleft
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -4342,9 +5060,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 239
+distance: 523
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4352,23 +5072,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 240
+distance: 524
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 241
+distance: 519
 up
-read feedback
-left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4376,9 +5098,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 242
+distance: 518
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -4388,6 +5110,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 243
+distance: 516
 up
 read feedback
 downleft
@@ -4398,13 +5122,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 244
+distance: 515
 up
 read feedback
 left
 read feedback
 downright
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -4412,7 +5136,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 245
+distance: 513
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -4422,9 +5150,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 246
+distance: 510
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -4434,7 +5162,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 247
+distance: 509
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -4444,9 +5176,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 248
+distance: 506
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4454,9 +5188,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 249
+distance: 506
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -4464,7 +5202,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 250
+distance: 504
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -4472,11 +5214,15 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 251
+distance: 502
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -4484,11 +5230,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 252
+distance: 500
 up
 read feedback
 left
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -4498,9 +5244,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 253
+distance: 496
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -4510,11 +5256,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 254
+distance: 496
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4522,6 +5270,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 255
+distance: 492
 up
 read feedback
 downleft
@@ -4532,11 +5282,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 256
+distance: 489
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4544,6 +5294,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 257
+distance: 490
 up
 read feedback
 left
@@ -4556,6 +5308,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 258
+distance: 487
 up
 read feedback
 left
@@ -4568,6 +5322,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 259
+distance: 485
 up
 read feedback
 left
@@ -4580,23 +5336,21 @@ right
 read feedback
 downright
 read feedback
+app calls: 260
+distance: 481
 up
-read feedback
-left
-read feedback
-downleft
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 261
+distance: 479
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -4606,6 +5360,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 262
+distance: 479
 up
 read feedback
 left
@@ -4618,9 +5374,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 263
+distance: 476
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4628,11 +5386,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 264
+distance: 474
 up
-read feedback
-left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4640,7 +5398,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 265
+distance: 474
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -4650,8 +5412,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 266
+distance: 471
 up
 read feedback
+left
+read feedback
 downright
 read feedback
 downleft
@@ -4660,11 +5426,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 267
+distance: 470
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4672,13 +5440,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 268
+distance: 467
 up
 read feedback
 left
 read feedback
-downleft
-read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4686,6 +5454,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 269
+distance: 466
 up
 read feedback
 left
@@ -4698,19 +5468,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 270
+distance: 463
 up
 read feedback
+left
+read feedback
 downright
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 271
+distance: 459
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4718,11 +5494,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 272
+distance: 457
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4730,6 +5506,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 273
+distance: 457
 up
 read feedback
 left
@@ -4742,6 +5520,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 274
+distance: 453
 up
 read feedback
 downright
@@ -4752,6 +5532,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 275
+distance: 451
 up
 read feedback
 downright
@@ -4762,13 +5544,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 276
+distance: 449
 up
-read feedback
-left
 read feedback
-downleft
-read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4776,11 +5556,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 277
+distance: 447
 up
 read feedback
-left
-read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4788,6 +5568,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 278
+distance: 447
 up
 read feedback
 left
@@ -4800,9 +5582,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 279
+distance: 444
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4810,6 +5594,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 280
+distance: 442
 up
 read feedback
 downleft
@@ -4818,8 +5604,10 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 281
+distance: 442
 up
 read feedback
 left
@@ -4832,9 +5620,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 282
+distance: 437
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4842,11 +5632,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 283
+distance: 436
 up
-read feedback
-left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4854,9 +5644,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 284
+distance: 436
 up
 read feedback
-downleft
+left
 read feedback
 downleft
 read feedback
@@ -4866,8 +5658,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 285
+distance: 433
 up
 read feedback
+left
+read feedback
 downright
 read feedback
 downleft
@@ -4876,11 +5672,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 286
+distance: 430
 up
-read feedback
-left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4888,11 +5684,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 287
+distance: 430
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -4900,11 +5698,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 288
+distance: 425
 up
 read feedback
-left
-read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4912,9 +5710,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 289
+distance: 426
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -4922,6 +5724,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 290
+distance: 423
 up
 read feedback
 left
@@ -4932,8 +5736,10 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 291
+distance: 419
 up
 read feedback
 downleft
@@ -4944,34 +5750,32 @@ right
 read feedback
 downright
 read feedback
+app calls: 292
+distance: 418
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
 downleft
 read feedback
-downleft
-read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 293
+distance: 415
 up
-read feedback
-left
 read feedback
 downright
 read feedback
 downleft
 read feedback
-downleft
-read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 294
+distance: 415
 up
 read feedback
 left
@@ -4984,11 +5788,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 295
+distance: 413
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -4996,11 +5802,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 296
+distance: 409
 up
 read feedback
-left
-read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5008,6 +5814,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 297
+distance: 408
 up
 read feedback
 downleft
@@ -5018,11 +5826,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 298
+distance: 407
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5030,16 +5840,22 @@ right
 read feedback
 downright
 read feedback
+app calls: 299
+distance: 405
 up
 read feedback
-downleft
+left
 read feedback
+downright
+read feedback
 downleft
 read feedback
 right
 read feedback
-downleft
+downright
 read feedback
+app calls: 300
+distance: 404
 up
 read feedback
 left
@@ -5050,9 +5866,13 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 301
+distance: 402
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -5062,6 +5882,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 302
+distance: 397
 up
 read feedback
 downright
@@ -5072,8 +5894,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 303
+distance: 398
 up
 read feedback
+left
+read feedback
 downleft
 read feedback
 downleft
@@ -5082,19 +5908,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 304
+distance: 396
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
+downleft
+read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 305
+distance: 392
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -5102,6 +5934,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 306
+distance: 391
 up
 read feedback
 left
@@ -5114,8 +5948,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 307
+distance: 389
 up
 read feedback
+left
+read feedback
 downright
 read feedback
 downleft
@@ -5124,9 +5962,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 308
+distance: 386
 up
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -5136,6 +5974,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 309
+distance: 385
 up
 read feedback
 left
@@ -5144,22 +5984,26 @@ downright
 read feedback
 downleft
 read feedback
-downleft
-read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 310
+distance: 383
 up
 read feedback
-downleft
+left
 read feedback
+downright
+read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 311
+distance: 379
 up
 read feedback
 downleft
@@ -5170,6 +6014,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 312
+distance: 380
 up
 read feedback
 left
@@ -5182,6 +6028,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 313
+distance: 377
 up
 read feedback
 left
@@ -5194,11 +6042,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 314
+distance: 375
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5206,6 +6056,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 315
+distance: 371
 up
 read feedback
 downright
@@ -5214,10 +6066,14 @@ downleft
 read feedback
 right
 read feedback
-downleft
+downright
 read feedback
+app calls: 316
+distance: 372
 up
 read feedback
+left
+read feedback
 downleft
 read feedback
 downleft
@@ -5226,9 +6082,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 317
+distance: 368
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -5236,6 +6094,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 318
+distance: 367
 up
 read feedback
 left
@@ -5248,6 +6108,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 319
+distance: 366
 up
 read feedback
 left
@@ -5260,6 +6122,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 320
+distance: 363
 up
 read feedback
 left
@@ -5270,8 +6134,10 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 321
+distance: 359
 up
 read feedback
 downleft
@@ -5282,6 +6148,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 322
+distance: 359
 up
 read feedback
 left
@@ -5294,19 +6162,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 323
+distance: 358
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
+downleft
+read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 324
+distance: 356
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
@@ -5316,9 +6190,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 325
+distance: 351
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5326,9 +6202,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 326
+distance: 349
 up
-read feedback
-left
 read feedback
 downright
 read feedback
@@ -5338,9 +6214,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 327
+distance: 350
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -5348,6 +6228,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 328
+distance: 346
 up
 read feedback
 downleft
@@ -5358,6 +6240,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 329
+distance: 346
 up
 read feedback
 left
@@ -5370,20 +6254,22 @@ right
 read feedback
 downright
 read feedback
+app calls: 330
+distance: 342
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 331
+distance: 339
 up
 read feedback
-left
-read feedback
 downleft
 read feedback
 downleft
@@ -5392,11 +6278,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 332
+distance: 339
 up
 read feedback
-downleft
+left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5404,11 +6292,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 333
+distance: 338
 up
 read feedback
 left
-read feedback
-downright
 read feedback
 downleft
 read feedback
@@ -5418,11 +6306,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 334
+distance: 336
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -5430,11 +6320,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 335
+distance: 333
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5442,6 +6334,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 336
+distance: 332
 up
 read feedback
 left
@@ -5454,6 +6348,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 337
+distance: 329
 up
 read feedback
 left
@@ -5466,9 +6362,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 338
+distance: 328
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -5476,6 +6376,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 339
+distance: 323
 up
 read feedback
 downright
@@ -5484,11 +6386,11 @@ downleft
 read feedback
 right
 read feedback
-downleft
+downright
 read feedback
+app calls: 340
+distance: 322
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -5496,8 +6398,10 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 341
+distance: 319
 up
 read feedback
 downleft
@@ -5508,11 +6412,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 342
+distance: 317
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5520,9 +6424,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 343
+distance: 316
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -5532,6 +6436,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 344
+distance: 313
 up
 read feedback
 downright
@@ -5542,8 +6448,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 345
+distance: 313
 up
 read feedback
+left
+read feedback
 downright
 read feedback
 downleft
@@ -5552,17 +6462,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 346
+distance: 312
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
+downleft
+read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 347
+distance: 309
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -5572,6 +6490,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 348
+distance: 307
 up
 read feedback
 left
@@ -5580,19 +6500,17 @@ downright
 read feedback
 downleft
 read feedback
-downleft
-read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 349
+distance: 305
 up
 read feedback
 left
 read feedback
 downright
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -5600,26 +6518,22 @@ right
 read feedback
 downright
 read feedback
+app calls: 350
+distance: 303
 up
 read feedback
-downleft
-read feedback
-downleft
-read feedback
-right
+left
 read feedback
 downright
-read feedback
-up
 read feedback
 downleft
 read feedback
-downleft
-read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 351
+distance: 299
 up
 read feedback
 downleft
@@ -5630,8 +6544,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 352
+distance: 299
 up
 read feedback
+left
+read feedback
 downright
 read feedback
 downleft
@@ -5640,11 +6558,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 353
+distance: 298
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -5652,18 +6572,22 @@ right
 read feedback
 downright
 read feedback
+app calls: 354
+distance: 296
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downleft
+downright
 read feedback
+app calls: 355
+distance: 294
 up
 read feedback
 left
@@ -5676,13 +6600,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 356
+distance: 289
 up
 read feedback
-left
-read feedback
 downright
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -5690,6 +6612,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 357
+distance: 290
 up
 read feedback
 left
@@ -5702,6 +6626,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 358
+distance: 288
 up
 read feedback
 left
@@ -5714,6 +6640,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 359
+distance: 284
 up
 read feedback
 downleft
@@ -5724,23 +6652,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 360
+distance: 283
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 361
+distance: 279
 up
 read feedback
-left
-read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -5748,21 +6678,27 @@ right
 read feedback
 downright
 read feedback
+app calls: 362
+distance: 279
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
 right
 read feedback
-downleft
+downright
 read feedback
+app calls: 363
+distance: 277
 up
 read feedback
-downleft
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -5770,6 +6706,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 364
+distance: 274
 up
 read feedback
 downleft
@@ -5780,9 +6718,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 365
+distance: 274
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -5790,9 +6732,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 366
+distance: 269
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5800,9 +6744,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 367
+distance: 268
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -5812,11 +6756,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 368
+distance: 265
 up
 read feedback
-left
-read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5824,9 +6768,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 369
+distance: 263
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5834,35 +6780,37 @@ right
 read feedback
 downright
 read feedback
+app calls: 370
+distance: 264
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 371
+distance: 259
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
 downleft
 read feedback
-downleft
-read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 372
+distance: 257
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5870,10 +6818,10 @@ right
 read feedback
 downright
 read feedback
+app calls: 373
+distance: 255
 up
 read feedback
-left
-read feedback
 downright
 read feedback
 downleft
@@ -5882,21 +6830,27 @@ right
 read feedback
 downright
 read feedback
+app calls: 374
+distance: 256
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
+downleft
+read feedback
 right
 read feedback
 downright
 read feedback
+app calls: 375
+distance: 253
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -5904,8 +6858,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 376
+distance: 252
 up
 read feedback
+left
+read feedback
 downleft
 read feedback
 downleft
@@ -5914,11 +6872,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 377
+distance: 250
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -5926,6 +6886,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 378
+distance: 247
 up
 read feedback
 left
@@ -5938,9 +6900,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 379
+distance: 246
 up
 read feedback
-downleft
+left
 read feedback
 downleft
 read feedback
@@ -5950,9 +6914,9 @@ right
 read feedback
 downright
 read feedback
-up
-read feedback
-left
+app calls: 380
+distance: 242
+up
 read feedback
 downleft
 read feedback
@@ -5960,13 +6924,15 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 381
+distance: 242
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -5974,11 +6940,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 382
+distance: 238
 up
-read feedback
-left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -5986,7 +6952,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 383
+distance: 237
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -5996,6 +6966,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 384
+distance: 233
 up
 read feedback
 downright
@@ -6006,11 +6978,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 385
+distance: 232
 up
-read feedback
-left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6018,9 +6990,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 386
+distance: 229
 up
-read feedback
-left
 read feedback
 downright
 read feedback
@@ -6030,9 +7002,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 387
+distance: 230
 up
 read feedback
-downleft
+left
 read feedback
 downleft
 read feedback
@@ -6042,6 +7016,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 388
+distance: 228
 up
 read feedback
 left
@@ -6054,9 +7030,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 389
+distance: 223
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6064,6 +7042,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 390
+distance: 221
 up
 read feedback
 downright
@@ -6072,8 +7052,10 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 391
+distance: 219
 up
 read feedback
 downleft
@@ -6084,11 +7066,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 392
+distance: 219
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6096,7 +7080,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 393
+distance: 218
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -6106,9 +7094,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 394
+distance: 214
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6116,11 +7106,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 395
+distance: 211
 up
-read feedback
-downleft
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6128,9 +7118,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 396
+distance: 211
 up
 read feedback
-downleft
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -6138,6 +7132,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 397
+distance: 210
 up
 read feedback
 left
@@ -6150,11 +7146,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 398
+distance: 207
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6162,11 +7160,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 399
+distance: 206
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6174,7 +7174,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 400
+distance: 204
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -6182,11 +7186,11 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 401
+distance: 199
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -6196,6 +7200,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 402
+distance: 200
 up
 read feedback
 left
@@ -6208,11 +7214,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 403
+distance: 195
 up
-read feedback
-downleft
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6220,6 +7226,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 404
+distance: 194
 up
 read feedback
 downleft
@@ -6230,6 +7238,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 405
+distance: 194
 up
 read feedback
 left
@@ -6242,11 +7252,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 406
+distance: 189
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6254,9 +7264,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 407
+distance: 187
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6264,11 +7276,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 408
+distance: 185
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6276,7 +7288,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 409
+distance: 185
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -6286,21 +7302,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 410
+distance: 184
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 411
+distance: 182
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
@@ -6310,7 +7330,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 412
+distance: 179
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -6320,7 +7344,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 413
+distance: 178
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -6330,6 +7358,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 414
+distance: 174
 up
 read feedback
 downleft
@@ -6340,11 +7370,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 415
+distance: 173
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6352,7 +7384,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 416
+distance: 172
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -6362,9 +7398,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 417
+distance: 170
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -6372,6 +7412,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 418
+distance: 167
 up
 read feedback
 left
@@ -6384,13 +7426,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 419
+distance: 163
 up
-read feedback
-left
-read feedback
-downleft
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6398,16 +7438,20 @@ right
 read feedback
 downright
 read feedback
+app calls: 420
+distance: 162
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 421
+distance: 162
 up
 read feedback
 left
@@ -6420,9 +7464,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 422
+distance: 158
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6430,6 +7476,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 423
+distance: 157
 up
 read feedback
 left
@@ -6442,6 +7490,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 424
+distance: 156
 up
 read feedback
 left
@@ -6454,9 +7504,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 425
+distance: 151
 up
-read feedback
-left
 read feedback
 downright
 read feedback
@@ -6466,7 +7516,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 426
+distance: 152
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -6476,13 +7530,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 427
+distance: 149
 up
 read feedback
 left
-read feedback
-downleft
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6490,9 +7544,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 428
+distance: 146
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6500,9 +7556,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 429
+distance: 145
 up
 read feedback
-downleft
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -6510,6 +7570,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 430
+distance: 143
 up
 read feedback
 left
@@ -6520,11 +7582,11 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 431
+distance: 139
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -6534,11 +7596,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 432
+distance: 137
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6546,11 +7608,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 433
+distance: 135
 up
 read feedback
-left
+downright
 read feedback
 downleft
+read feedback
+right
+read feedback
+downright
+read feedback
+app calls: 434
+distance: 133
+up
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -6558,11 +7632,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 435
+distance: 134
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6570,11 +7646,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 436
+distance: 132
 up
 read feedback
 left
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -6584,9 +7660,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 437
+distance: 128
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -6596,6 +7672,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 438
+distance: 125
 up
 read feedback
 downright
@@ -6606,9 +7684,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 439
+distance: 124
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6616,6 +7696,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 440
+distance: 124
 up
 read feedback
 left
@@ -6626,11 +7708,13 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 441
+distance: 119
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6638,9 +7722,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 442
+distance: 118
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -6650,6 +7734,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 443
+distance: 118
 up
 read feedback
 left
@@ -6662,9 +7748,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 444
+distance: 116
 up
 read feedback
-downright
+left
 read feedback
 downleft
 read feedback
@@ -6674,6 +7762,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 445
+distance: 112
 up
 read feedback
 downleft
@@ -6684,7 +7774,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 446
+distance: 112
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -6694,6 +7788,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 447
+distance: 110
 up
 read feedback
 left
@@ -6706,9 +7802,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 448
+distance: 108
 up
 read feedback
-downright
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -6716,6 +7816,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 449
+distance: 106
 up
 read feedback
 left
@@ -6728,6 +7830,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 450
+distance: 102
 up
 read feedback
 downleft
@@ -6736,13 +7840,15 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 451
+distance: 102
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6750,11 +7856,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 452
+distance: 100
 up
 read feedback
 left
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -6764,13 +7870,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 453
+distance: 97
 up
 read feedback
 left
 read feedback
 downright
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -6778,6 +7884,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 454
+distance: 96
 up
 read feedback
 left
@@ -6790,9 +7898,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 455
+distance: 91
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6800,6 +7910,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 456
+distance: 89
 up
 read feedback
 downright
@@ -6810,11 +7922,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 457
+distance: 88
 up
-read feedback
-left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6822,7 +7934,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 458
+distance: 88
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -6832,11 +7948,27 @@ right
 read feedback
 downright
 read feedback
+app calls: 459
+distance: 85
 up
 read feedback
 left
+read feedback
+downright
+read feedback
+downleft
+read feedback
+right
 read feedback
 downright
+read feedback
+app calls: 460
+distance: 84
+up
+read feedback
+left
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -6844,6 +7976,8 @@ right
 read feedback
 downleft
 read feedback
+app calls: 461
+distance: 79
 up
 read feedback
 downleft
@@ -6854,9 +7988,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 462
+distance: 78
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -6866,11 +8000,23 @@ right
 read feedback
 downright
 read feedback
+app calls: 463
+distance: 75
 up
 read feedback
-left
+downright
+read feedback
+downleft
+read feedback
+right
 read feedback
 downright
+read feedback
+app calls: 464
+distance: 74
+up
+read feedback
+downleft
 read feedback
 downleft
 read feedback
@@ -6878,11 +8024,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 465
+distance: 74
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6890,6 +8038,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 466
+distance: 69
 up
 read feedback
 downright
@@ -6900,9 +8050,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 467
+distance: 67
 up
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -6910,9 +8062,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 468
+distance: 67
 up
 read feedback
-downleft
+left
+read feedback
+downright
 read feedback
 downleft
 read feedback
@@ -6920,6 +8076,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 469
+distance: 63
 up
 read feedback
 downright
@@ -6930,21 +8088,25 @@ right
 read feedback
 downright
 read feedback
+app calls: 470
+distance: 63
 up
 read feedback
 left
 read feedback
 downright
-read feedback
-downleft
 read feedback
 downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 471
+distance: 62
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -6954,9 +8116,9 @@ right
 read feedback
 downright
 read feedback
+app calls: 472
+distance: 58
 up
-read feedback
-left
 read feedback
 downleft
 read feedback
@@ -6966,11 +8128,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 473
+distance: 58
 up
 read feedback
 left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -6978,6 +8142,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 474
+distance: 55
 up
 read feedback
 left
@@ -6990,6 +8156,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 475
+distance: 52
 up
 read feedback
 downleft
@@ -7000,11 +8168,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 476
+distance: 49
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -7012,9 +8180,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 477
+distance: 48
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -7022,11 +8192,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 478
+distance: 45
 up
 read feedback
 downright
-read feedback
-downleft
 read feedback
 downleft
 read feedback
@@ -7034,11 +8204,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 479
+distance: 45
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -7046,7 +8218,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 480
+distance: 44
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -7054,8 +8230,10 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 481
+distance: 39
 up
 read feedback
 downleft
@@ -7066,7 +8244,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 482
+distance: 39
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -7076,7 +8258,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 483
+distance: 37
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -7086,11 +8272,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 484
+distance: 34
 up
-read feedback
-left
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -7098,6 +8284,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 485
+distance: 33
 up
 read feedback
 left
@@ -7110,9 +8298,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 486
+distance: 32
 up
 read feedback
-downleft
+left
 read feedback
 downleft
 read feedback
@@ -7122,7 +8312,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 487
+distance: 30
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -7132,7 +8326,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 488
+distance: 27
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -7142,7 +8340,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 489
+distance: 26
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -7152,7 +8354,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 490
+distance: 24
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -7160,8 +8366,10 @@ downleft
 read feedback
 right
 read feedback
-downright
+downleft
 read feedback
+app calls: 491
+distance: 19
 up
 read feedback
 downleft
@@ -7172,7 +8380,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 492
+distance: 20
 up
+read feedback
+left
 read feedback
 downleft
 read feedback
@@ -7182,6 +8394,8 @@ right
 read feedback
 downright
 read feedback
+app calls: 493
+distance: 17
 up
 read feedback
 left
@@ -7194,11 +8408,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 494
+distance: 16
 up
 read feedback
 left
-read feedback
-downright
 read feedback
 downleft
 read feedback
@@ -7208,7 +8422,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 495
+distance: 13
 up
+read feedback
+left
 read feedback
 downright
 read feedback
@@ -7218,9 +8436,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 496
+distance: 10
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -7228,9 +8448,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 497
+distance: 8
 up
 read feedback
-downright
+downleft
 read feedback
 downleft
 read feedback
@@ -7238,11 +8460,11 @@ right
 read feedback
 downright
 read feedback
+app calls: 498
+distance: 5
 up
-read feedback
-left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -7250,11 +8472,13 @@ right
 read feedback
 downright
 read feedback
+app calls: 499
+distance: 5
 up
 read feedback
 left
 read feedback
-downleft
+downright
 read feedback
 downleft
 read feedback
@@ -7262,8 +8486,12 @@ right
 read feedback
 downright
 read feedback
+app calls: 500
+distance: 1
 up
+read feedback
+downright
 read feedback
 downleft
 read feedback
-final distance: 0
+app calls: 501

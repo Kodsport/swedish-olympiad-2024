@@ -38,7 +38,7 @@ if t == 1:
                     room[level][j] = revert[level][j]
     
     A = random.randint(max(1, n - 5), n - 1)
-    B = random.randint(max(1, n - 5), n - 1)
+    B = n - 1
     
     def gen_path(x):
         path = []
