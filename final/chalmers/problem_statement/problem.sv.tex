@@ -5,17 +5,18 @@ Ditt lokalsinne är inte på topp, och det hjälper inte att källaren är utfor
 
 Källaren består av $N$ våningar. 
 På bottenplan finns ett enda stort rum. 
-Under varje rum finns upp till två rum som är precis hälften så stora. 
+När du går ner en våning blir rummen hälften så stora.
+Under varje rum $i$ finns upp till två rum $l_i$ och $r_i$ som är precis hälften så stora.
+Det är också möjligt att bara ett av $l_i$ och $r_i$ finns, eller att inget av dem finns. 
 Du kan ta dig mellan två rum genom en dörr om de ligger bredvid varandra, 
 eller via en trappa om det ena ligger direkt över det andra.
 
 Du befinner dig just nu i något rum i källaren, och du vet att rummet där finalen hålls också ligger i källaren. 
 Du vill nu ta dig till finalen. Till din hjälp har du appen campus maps. 
-Campus maps, som ju är utformat för Chalmerister, 
-är kodad för att hitta kortaste vägen till din destination,
+Campus maps är kodad för att hitta kortaste vägen till din destination,
 där antalet trappor du behöver gå upp eller ned för minimeras.
-Du kan närsomhelst kolla i appen, 
-och den kommer då säga längden på den kortaste väg som också minimerar antalet trapport du behöver gå upp eller ner för. 
+Du kan när som helst kolla i appen, 
+och den kommer då säga längden på den kortaste väg som också minimerar antalet trappor du behöver gå upp eller ner för. 
 Längden av en väg definieras som antalet rum du måste besöka på vägen till ditt mål. 
 Eftersom appen tar väldigt lång tid att ladda så hinner du kolla i den som mest $K = 500$ gånger. 
 Du hinner inte heller passera fler än $R = 5000$ rum.
@@ -28,7 +29,7 @@ Så strängen 01001 innebär att det finns ett rum till ditt vänster och ett ti
 men inga andra närliggande rum.
 
 Du får sedan välja om du vill gå till ett annat rum, eller använda appen Campus Maps.
-För att gå till ett annat rum skriver du någon av strängarna "up", "left", "downleft", "downright", eller "right".
+För att gå till ett annat rum skriver du någon av strängarna "up", "right", "downright", "downleft", eller "left".
 Du får då information om det nya rum du befinner dig i, enligt samma format som ovan.
 
 För att använda appen skriver du "app". 
@@ -54,7 +55,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   Grupp & Poängvärde & Gränser \\ \hline \hline
   $1$   & $10$        & $N = 2$ \\ \hline
   $2$   & $10$        & $N \leq 10$ \\ \hline
-  $3$   & $10$        & $N \leq 250$ \\ \hline \hline
+  $3$   & $10$        & $N \leq 250$ \\ \hline
   $4$   & $20$        & $N \leq 500$ \\ \hline
   $5$   & $25$        & $N \leq 950$ \\ \hline
   $6$   & $25$        & $N \leq 1000$ \\ \hline

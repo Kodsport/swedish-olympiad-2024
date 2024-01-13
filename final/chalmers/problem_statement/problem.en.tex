@@ -1,74 +1,66 @@
-\problemname{Meeting Place}
-$N$ friends live on each vertex in a tree with $N$ vertices, where $N$ is an \textbf{odd} number.
-A \emph{tree} is a connected graph with exactly $N-1$ edges.
+\problemname{The Dark Chambers of Chalmers}
+You are on your way to the final competition of the Swedish programming olympiad, which is hosted at Chalmers Technical University.
+However, you have gotten lost in the university basement.
+Your sense of direction is not great, and what makes matters even worse is the very strange design of the basement.
 
-The friends want to meet at one vertex in the tree.
-They have agreed that the best meeting place is the vertex that minimizes
-the sum of distances to the friends, and have asked you to help them find 
-this optimal meeting place.
-The \emph{distance} $\text{dist}(a,b)$ between two vertices $a$ and $b$ in the tree is 
-the number of edges on the path between $a$ and $b$.
-So formally, the goal is to find the vertex $x$ that minimizes 
-$\sum_{i=1}^{n} \text{dist}(x,i)$.
+The basement consists of $N$ floors.
+At the ground level, there is just one large room.
+When you go down one floor, the rooms are half as big.
+Beneath every room $i$, there are up to two rooms $l_i$ and $r_i$, each exactly half as big as room $i$.
+It is possible that only one of $l_i$ and $r_i$ exists, or that both or neither of them exist.
+You can move between two rooms through a door if they are directly next to each other,
+or through a staircase if one room is directly above the other.
 
-You think this is an easy problem, and start writing a solution right away.
-But there is a twist!
-The friends have bad memory and don't remember what the tree looks like.
-However, they do remember the following: given three \textbf{different} friends 
-$a,b,c$, they can tell you the vertex where those three usually meet, which is
-the vertex $x$ that minimizes
-$\text{dist}(x,a) +\text{dist}(x,b) +\text{dist}(x,c)$.
-Note that $x$ is not necessarily one of the vertices $a$, $b$ or $c$.
 
-In this problem you will not read the graph from the input, instead you can ask $Q-1$
-questions on the form:
-\emph{Where do the friends $a,b,c$ usually meet?}
-Your task is to find the optimal meeting place by using these questions.
+You are currently in some room in the basement, and you know that the final competition is hosted in some other room in the basement.
+You now want to get to the competition.
+Luckily, you have downloaded the app "Campus Maps".
+Campus Maps is programmed to find the length of the shortest path to your destination,
+where the number of staircases you need to traverse is minimized.
+At any point, you can look at the app, and it will tell you this length.
+The length of a path is defined as the number of rooms you need to visit on the way to your goal.
+Since the app is quite slow, you only have time to check it at most $K = 500$.
+You also do not have time to pass more than $R = 5000$ rooms.
 
-\begin{figure}[!h]
-\begin{center}
-  \includegraphics[width=7cm]{sample.png}
-\end{center}
-  \caption{The tree in the sample. Vertex 2 is the optimal meeting place.}
-\end{figure}
 
 \section*{Interaction}
+First, you get information about the room you are currently in. 
+This will be given as a binary string of length five, where every character is '1' if you can go in a certain direction, and '0' otherwise.
+In order, the characters tell you if you can go up, right, down to the right, down to the left, and left.
+So the string 01001 means that you can go to the right and to the left, but in no other directions.
 
-The first line of input contains two integers $N$ and $Q$,
-the number of vertices in the tree, and the number of queries you can make.
-It is guaranteed that $N$ is odd and that $Q = 500\,000$ in all test cases.
+Then, you choose either to go to an adjacent room, or to use Campus Maps.
+To go to an adjacent room you write any of the strings "up", "right", "downright", "downleft", or "left".
+Then you get information about the new room you are in, according to the same format as above.
 
-Then you can make the following queries:
-\begin{itemize}
-  \item Output one line with ``\verb|? a b c|'' where $1\le a,b,c\le N$ are $3$ \textbf{different} friends.
-    After that, the judge will respond with one integer $x$ that you should read from input
-    ($1\le x\le N$), the vertex that minimizes $\text{dist}(x,a) +\text{dist}(x,b) +\text{dist}(x,c)$.
-  \item Output one line with ``\verb|! x|'' where $1\le x\le N$ is the optimal meeting place.
-    After you have printed this query your program should terminate without outputting anything more. 
-    If $x$ is the vertex that minimizes $\sum_{i=1}^{n} \text{dist}(x,i)$ you will get \textit{Accepted} on the test case, otherwise you will get \textit{Wrong Answer}.
-\end{itemize}
-If you make more than $Q$ queries (including the last on the form ``\verb|! x|'')
-your program will be terminated and you will get \textit{Wrong Answer}.
+To use the app you write "app".
+The app will then calculate the length of the shortest path from where you are to the goal that uses as few staircases as possible.
+Since the app is very sensitive to Integer Overflows, it will crash if this length exceeds $10^9$.
+In that case, the app will write $-1$.
+Otherwise, the length of the path to the goal is written.
 
-\textbf{Make sure to flush the output after each query}, otherwise you may get \textit{Time Limit Exceeded}.
-In C++ this can be done for example with \texttt{cout << flush}
+When you reach your destination, you should print out "here", and your program should be terminated.
+
+
+\textbf{Make sure to flush the output after each query}, otherwise you can get \textit{Time Limit Exceeded}.
+In C++ this can be done using \texttt{cout << flush}
 or \texttt{fflush(stdout)};
 in Python with \texttt{stdout.flush()};
 and in Java with \texttt{System.out.flush()}.
 
 \section*{Scoring}
-Your solution will be tested on a set of test case groups.
-To get points for a group, you must pass all test cases in the group.
+Your solution will be tested on a number of sample groups.
+To get points in a group your solution must pass all test cases in that group.
 
 
 \noindent
 \begin{tabular}{| l | l | l |}
   \hline
-  Group & Points & Constraints \\ \hline
-  $1$   & $10$        & $3 \le N\le 99$ and all vertices have degree at most 2 (the tree is a line) \\ \hline
-  $2$   & $12$        & $3 \le N\le 999$ and all vertices have degree at most 2 (the tree is a line) \\ \hline
-  $3$   & $21$        & $3 \le N\le 24\,999$ and all vertices have degree at most 2 (the tree is a line) \\ \hline \hline
-  $4$   & $14$        & $3 \le N\le 99$ \\ \hline
-  $5$   & $15$        & $3 \le N\le 999$ \\ \hline
-  $6$   & $28$        & $3 \le N\le 24\,999$ \\ \hline
+  Group & Point value & Constraints \\ \hline \hline
+  $1$   & $10$        & $N = 2$ \\ \hline
+  $2$   & $10$        & $N \leq 10$ \\ \hline
+  $3$   & $10$        & $N \leq 250$ \\ \hline
+  $4$   & $20$        & $N \leq 500$ \\ \hline
+  $5$   & $25$        & $N \leq 950$ \\ \hline
+  $6$   & $25$        & $N \leq 1000$ \\ \hline
 \end{tabular}
