@@ -10,7 +10,6 @@ samplegroup
 sample 1
 
 group group1 10 
-include_group sample
 limits mode="line"
 tc g1-1 gen_line n=100000 k=99999 
 tc g1-2 gen_line n=100000 k=50000 
