@@ -39,7 +39,7 @@ tc g2-3
 tc g3-1 gen_rand n=20 k=19
 tc g3-2 gen_rand n=20 k=13
 tc g3-3 gen_rand n=20 k=8
-tc g3-4 gen_rand n=20 k=3
+tc g3-4 gen_rand n=20 k=3 #this is the only g3 tc that cheese.py is failing on
 
 group group4 15 
 include_group group2

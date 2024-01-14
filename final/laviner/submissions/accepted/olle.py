@@ -1,5 +1,6 @@
+#!/usr/bin/python3
 import sys
-sys.setrecursionlimit(1000000)
+sys.setrecursionlimit(100000+10)
 
 n, k = [int(i) for i in input().split()]
 p = [int(i) - 1 for i in input().split()]
