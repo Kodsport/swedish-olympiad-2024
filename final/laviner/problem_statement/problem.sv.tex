@@ -1,0 +1,42 @@
+\problemname{Laviner}
+\noindent
+Alexander och Joshua är på en skidresa tillsammans, och Alexander planerar att göra ``lite'' bus idag. 
+Tillsammans har de åkt till ett stort skidsystem med $N$ skidbyar som är sammankopplat med $N-1$ enkelriktade skidbackar. 
+Skidby $1$ befinner sig t upp i skidsystemet, och det är möjligt att nå alla andra skidbyar från skidby $1$ genom att endast åka ner för skidbackar.
+Alexander får åka upp och ställa sig vid en valfri skidby och skrika. Det skapas då en lavin som utgår från skidbyn och fortsätter längs med alla riktade skidbackar. 
+
+Men Joshua vill förhindra Alexanders bus, och kan placera ut $K$ murar på $K$ olika skidbyar. 
+Muren skyddar den specifika skidbyn från att bli påverkad av lavinen och skriket, och skyddar på sätt alla andra skidbyar under den skidbyn. 
+Joshua är en skarpsinnig grabb, och kommer att placera murarna på ett sätt som minimerar antal antalet påverkade skidbyar oavsett vilken skidby som Alexbörjar skrika ifrån.
+Notera att Alexander kan inte heller starta en lavin och skrika från en skidby där Joshua har murat in.
+
+Vad är det maximala antalet skidbyar som Alexander kan drabba trots att Joshua försöker stoppa honom? 
+
+\section*{Indata}
+Den första raden i indatan innehåller två heltal, $N,K$ ($1 \le K < N \le 10^5$), antalet skidbyar i skidsystemet, samt antalet murar Joshua kan sätta ut.
+
+Därefter följer en rad med $N-1$ heltal $a_i$, där för varje $i$ ($1 \leq i \leq N-1$) representerar $a_i$ 
+att det finns en enkelriktad skidbacke där man kan åka från skidby $a_i$ ($1 \le a_i \le i$) till skidby $i+1$. 
+
+
+\section*{Utdata}
+Skriv ut ett heltal, maximala antalet skidbyar som Alexander drabba genom att skrika från en nod en gång, efter att Joshua har placerat ut sina $K$ murar.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $10$       & $a_i = i$ för alla $(1 \le i \le N-1)$. \\ \hline
+  $2$    & $10$       & $K = 1, N \le 1000$ \\ \hline
+  $3$    & $10$       & $N \le 20$ \\ \hline
+  $4$    & $15$       & $K = 1$ \\ \hline
+  $5$    & $25$       & $N \leq 1000$ \\ \hline
+  $6$    & $30$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
+%\section*{Exempelfall}
+
