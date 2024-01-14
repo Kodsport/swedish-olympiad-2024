@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import heapq
 
 up, right, downright, downleft, left = [False]*5

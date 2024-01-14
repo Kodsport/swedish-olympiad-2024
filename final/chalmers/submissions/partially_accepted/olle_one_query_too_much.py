@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # TODO : Make sure solution does not make one extra query
 
 

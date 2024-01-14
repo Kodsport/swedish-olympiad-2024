@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 up, right, downright, downleft, left = [False]*5
 
