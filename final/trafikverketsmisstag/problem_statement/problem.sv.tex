@@ -1,5 +1,6 @@
 \problemname{Trafikverkets misstag}
 \noindent
+
 Alexander och Joshua är på en skidresa tillsammans, och Alexander planerar att göra ``lite'' bus. 
 Tillsammans har de åkt till ett stort skidsystem med $N$ skidbyar som är sammankopplat med $N-1$ enkelriktade skidbackar. 
 Skidby $1$ befinner sig t upp i skidsystemet, och det är möjligt att nå alla andra skidbyar från skidby $1$ genom att endast åka ner för skidbackar.
@@ -13,14 +14,20 @@ Notera att Alexander kan inte heller starta en lavin och skrika från en skidby 
 Vad är det maximala antalet skidbyar som Alexander kan drabba trots att Joshua försöker stoppa honom? 
 
 \section*{Indata}
-Den första raden i indatan innehåller två heltal, $N,K$ ($1 \le K < N \le 10^5$), antalet skidbyar i skidsystemet, samt antalet murar Joshua kan sätta ut.
+Den första raden i indatan innehåller två heltal, $N,C$ ($1 \le C \leq N \le 2 \cdot 10^5$), antalet hus i Lönnköpings vägnätverk
+och antalet bilar som vill åka hem.
 
-Därefter följer en rad med $N-1$ heltal $a_i$, där för varje $i$ ($1 \leq i \leq N-1$) representerar $a_i$ 
-att det finns en enkelriktad skidbacke där man kan åka från skidby $a_i$ ($1 \le a_i \le i$) till skidby $i+1$. 
+De följande $N-1$ raderna innehåller vardera heltalen $a,b$ ($1 \leq a,b \leq N$, $a \neq b$),
+vilket betyder att det finns en väg mellan hus $a$ och hus $b$. Det är garanterat att man kan färdas
+mellan varje par av hus genom en att använda en eller flera vägar.
 
+Därefter följer $C$ rader som vardera heltalen $W_i,H_i$ ($1 \leq H_i,W_i \leq N$), vilket hus
+den $i$:te personen jobbar i respektive vilket hus de bor i. Det är garanterat att det börjar som mest en vid varje hus.
 
 \section*{Utdata}
-Skriv ut ett heltal, maximala antalet skidbyar som Alexander drabba genom att skrika från en nod en gång, efter att Joshua har placerat ut sina $K$ murar.
+Om det finns en ordning som bilarna kan åka hem utan att krocka, skriv först ut ``Yes''. På nästa rad, skriv ut ordningen som bilarna ska åka hem.
+
+Om det inte finns en ordning, skriv ut ``No''.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
