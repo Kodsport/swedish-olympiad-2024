@@ -82,7 +82,7 @@ signed main()
 		}
 		if (works)
 		{
-			cout << "Possible\n";
+			cout << "Yes\n";
 			repe(s, squirrels)
 			{
 				cout << get<2>(s) + 1 << " ";
@@ -93,7 +93,7 @@ signed main()
 	} while (next_permutation(all(squirrels)));
 
 
-	cout << "Impossible\n";
+	cout << "No\n";
 
 	return 0;
 }
