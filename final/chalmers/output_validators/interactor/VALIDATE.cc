@@ -439,7 +439,18 @@ void run_full() {
     vector<int> path;
     vector<int> goal;
 
-    int first_diff = 0;
+    judge_in >> n;
+    judge_in >> A;
+    path.resize(A);
+    rep(i,0,A) judge_in >> path[i];
+    judge_in >> B;
+    rep(i,0,B) judge_in >> goal[i];
+
+    int first_diff = min(A,B)-1;
+    rep(i,0,min(A, B)) if (path[i] != goal[i]) {
+        first_diff = i;
+        break;
+    }
 
     auto can_go_up = [&]() {
         return (A != 0);
@@ -466,6 +477,7 @@ void run_full() {
         while (path[i] == 1) {
             path[i] = 0;
             if (first_diff > i && path[i] != goal[i]) first_diff = i;
+            if (first_diff == i && path[i] == goal[i]) first_diff--;
             i--;
             if (i == -1) judge_error("tried to go right when impossible\n");
         }
