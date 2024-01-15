@@ -1,33 +1,35 @@
 \problemname{Trafikverkets misstag}
 \noindent
+Det otänkbara har hänt! Trafikverkets plan gick åt skogen (se \textit{Trafikverkets plan}). Efter en hiskelig snöstorm har allt internet i staden slagits ut och folk
+vet inte vilken riktning varje väg är riktad åt. På grund av hur lyckad Trafikverkets plan varit fram tills nu vet folk inte längre hur de ska köra hem från jobbet utan de
+enkelriktade vägarna.
+Det faller nu på dig att hitta ett sätt för alla att åka hem utan krockar. Lönnköpings vägnätverk består av $N$ hus och $N-1$ vägar. Varje väg går direkt mellan två hus.
+Om du befinner dig vid ett visst hus kan du åka till vilken annan av vägarna den är kopplad till som helst. Nätverket är dessutom konstruerat så att
+man kan ta sig mellan varje par av hus genom att färdas längs med en eller flera vägar.
 
-Alexander och Joshua är på en skidresa tillsammans, och Alexander planerar att göra ``lite'' bus. 
-Tillsammans har de åkt till ett stort skidsystem med $N$ skidbyar som är sammankopplat med $N-1$ enkelriktade skidbackar. 
-Skidby $1$ befinner sig t upp i skidsystemet, och det är möjligt att nå alla andra skidbyar från skidby $1$ genom att endast åka ner för skidbackar.
-Alexander får åka upp och ställa sig vid en valfri skidby och skrika. Det skapas då en lavin som utgår från skidbyn och fortsätter längs med alla riktade skidbackar. 
+Det är just nu kväll och alla invånare i staden vill köra hem från jobbet. Med hjälp av datan som samlades in för Trafikverkets plan vet du var varje person befinner sig
+(de är alla på jobbet) och vilket hus de vill åka hem till. Just nu står varje person med bilen på sitt jobb och blockerar andra bilar att köra förbi det huset.
+För att få hem alla säkert kommer du använda en drönare som flyger runt och säger till folk ``kör hem''. Då kommer de köra hem längs med den unika vägen mellan arbete
+och hemmet om ingen annan bil blockerar vägen. När de väl är hemma kör de in i garaget och blockerar inga vägar längre. Eftersom drönaren är så långsam kan du anta
+att varje person hinner åka hem helt innan du kommit till nästa person.
 
-Men Joshua vill förhindra Alexanders bus, och kan placera ut $K$ murar på $K$ olika skidbyar. 
-Muren skyddar den specifika skidbyn från att bli påverkad av lavinen och skriket, och skyddar på sätt alla andra skidbyar under den skidbyn. 
-Joshua är en skarpsinnig grabb, och kommer att placera murarna på ett sätt som minimerar antal antalet påverkade skidbyar oavsett vilken skidby som Alexbörjar skrika ifrån.
-Notera att Alexander kan inte heller starta en lavin och skrika från en skidby där Joshua har murat in.
-
-Vad är det maximala antalet skidbyar som Alexander kan drabba trots att Joshua försöker stoppa honom? 
+Avgör först om det finns en ordning som folk kan köra hem utan krockar. Om det finns en säker ordning, hitta ordningen.
 
 \section*{Indata}
 Den första raden i indatan innehåller två heltal, $N,C$ ($1 \le C \leq N \le 2 \cdot 10^5$), antalet hus i Lönnköpings vägnätverk
-och antalet bilar som vill åka hem.
+och antalet personer som vill åka hem. 
 
 De följande $N-1$ raderna innehåller vardera heltalen $a,b$ ($1 \leq a,b \leq N$, $a \neq b$),
 vilket betyder att det finns en väg mellan hus $a$ och hus $b$. Det är garanterat att man kan färdas
-mellan varje par av hus genom att använda en eller flera vägar.
+mellan varje par av hus genom en att använda en eller flera vägar.
 
 Därefter följer $C$ rader som vardera heltalen $W_i,H_i$ ($1 \leq H_i,W_i \leq N$), vilket hus
-den $i$:te personen jobbar i respektive vilket hus de bor i. Det är garanterat att det börjar som mest en vid varje hus.
+den $i$:te personen jobbar i respektive vilket hus de bor i. Det är garanterat att det börjar som mest en person vid varje hus ($W_i \neq H_i$ för varje $1 \leq i,j \leq N$, $i \neq j$).
 
 \section*{Utdata}
 Om det finns en ordning som bilarna kan åka hem utan att krocka, skriv först ut ``Yes''. På nästa rad, skriv ut ordningen som bilarna ska åka hem.
 
-Om det inte finns en ordning, skriv ut ``No''.
+Om det inte finns en ordning utan krockar, skriv ut ``No''.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
