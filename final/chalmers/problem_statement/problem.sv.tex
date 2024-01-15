@@ -17,9 +17,25 @@ Campus maps är kodad för att hitta kortaste vägen till din destination,
 där antalet trappor du behöver gå upp eller ned för minimeras.
 Du kan när som helst kolla i appen, 
 och den kommer då säga längden på den kortaste väg som också minimerar antalet trappor du behöver gå upp eller ner för. 
-Längden av en väg definieras som antalet rum du måste besöka på vägen till ditt mål. 
+Mer formellt är en väg $v$ en sekvens av steg till närliggande rum.
+För någon väg $v$ från rummet du befinner dig i till rummet finalen hålls i,
+låt $A_v$ vara antalet gånger du går genom en dörr,
+och $B_v$ antalet gånger du går upp eller ner för en trappa.
+Längden av vägen definieras som summan $L_v = A_v + B_v$.
+Av alla möjliga vägar till finalen kommer appen att hitta de som minimerar värdet på $B_v$.
+Av alla dessa vägar kommer appen sedan välja den som minimerar värdet på $L_v$.
+Den kommer sedan ge dig värdet $L_v$.
 Eftersom appen tar väldigt lång tid att ladda så hinner du kolla i den som mest $K = 500$ gånger. 
 Du hinner inte heller passera fler än $R = 5000$ rum.
+
+\begin{centering}
+  \begin{figure}[h]
+      \centering
+      \includegraphics[scale=0.2]{temporary_sample_image.png}
+      \caption{[bilden ska göras finare:)]Källarens utseende i sample.}
+      \label{fig:enter-label}
+  \end{figure}
+\end{centering}
 
 \section*{Interaktion}
 Först och främst får du information om rummet du befinner dig i. Detta ges i form av en binär sträng av längd fem,
