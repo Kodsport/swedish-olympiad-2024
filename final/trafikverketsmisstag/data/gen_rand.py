@@ -15,9 +15,9 @@ def cmdlinearg(name, default=None):
     return default
 
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
-n = randint(2,6)#int(cmdlinearg('n'))
-s = randint(1, min(4, n))#int(cmdlinearg('s'))
-assert s<=n
+n = int(cmdlinearg('n'))
+c = int(cmdlinearg('c'))
+assert c<=n
 
 # Stolen from https://github.com/cheran-senthil/PyRival/blob/master/pyrival/data_structures/DisjointSetUnion.py
 class UF:
@@ -37,7 +37,7 @@ class UF:
 
 uf = UF(n)
 
-print(n, s)
+print(n, c)
 for i in range(n-1):
     while True:
         a,b=randint(0,n-1),randint(0,n-1)
@@ -49,5 +49,5 @@ for i in range(n-1):
 
 startorder = [i+1 for i in range(n)]
 random.shuffle(startorder)
-for i in range(s):
+for i in range(c):
     print(startorder[i],randint(1,n))

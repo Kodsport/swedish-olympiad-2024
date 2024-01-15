@@ -17,13 +17,9 @@ struct UF {
 
 
 void run() {
-	int maxn = Arg("maxn", int(1e5));
-	string mode = Arg("mode","");
-	int setk = Arg("k", 0);
-
-	int n = Int(1, Arg("maxn", int(1e5)));
+	int n = Int(1, Arg("maxn", int(2e5)));
 	Space();
-	int s = Int(1, Arg("maxs", int(1e5)));
+	int c = Int(1, Arg("maxc", int(2e5)));
 	Endl();
 	
 	UF uf(n);
@@ -37,7 +33,7 @@ void run() {
 		assert(uf.join(a,b));
 	}
 	vector<int> used(n);
-	for (int i = 0; i < s; i++)
+	for (int i = 0; i < c; i++)
 	{
 		int a = Int(1,n);
 		Space();

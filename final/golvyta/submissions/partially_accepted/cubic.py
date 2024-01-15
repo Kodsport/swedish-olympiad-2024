@@ -19,11 +19,14 @@ s = input()
 r,c = map(int,input().split())
 
 ans = 10**9
-
-for n in range(1, len(s)+1):
-    for m in range(1, len(s)+1):
+assert(len(s) <= 400)
+for n in range(r+1, len(s)+1):
+    for m in range(c+1, len(s)+1):
         if check(n,m) and n*m < ans:
             ans = n*m
+            break
+    if ans != 10**9:
+        break
 
 if ans == 10**9:
     ans = -1

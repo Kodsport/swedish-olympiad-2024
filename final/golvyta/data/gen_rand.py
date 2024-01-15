@@ -47,8 +47,8 @@ if mode == "random":
     L = []
     for _ in range(length):
         L.append(random.choice(dirs))
-    r = random.randint(0, maxn)
-    c = random.randint(0, maxm)
+    r = random.randrange(0, maxn)
+    c = random.randrange(0, maxm)
     s = "".join(L)
     print(length)
     print(s)

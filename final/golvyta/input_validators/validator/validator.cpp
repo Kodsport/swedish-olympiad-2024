@@ -14,9 +14,9 @@ void run() {
 	string s = Line();
 	assert(s.length() == n);
 	//Endl();
-	int r = Int(0, 300000);
+	int r = Int(0, 300000-1);
 	Space();
-	int c = Int(0, 300000);
+	int c = Int(0, 300000-1);
 	Endl();
 	
 	for(int c1 = 0; c1 < n; c1++){
