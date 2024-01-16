@@ -12,16 +12,42 @@ You can move between two rooms through a door if they are directly next to each 
 or through a staircase if one room is directly above the other.
 
 
-You are currently in some room in the basement, and you know that the final competition is hosted in some other room in the basement.
+You are currently in some room in the basement, 
+and you know that the final competition is hosted in some other room in the basement.
 You now want to get to the competition.
 Luckily, you have downloaded the app "Campus Maps".
 Campus Maps is programmed to find the length of the shortest path to your destination,
 where the number of staircases you need to traverse is minimized.
 At any point, you can look at the app, and it will tell you this length.
-The length of a path is defined as the number of rooms you need to visit on the way to your goal.
+
+Formally, a path $v$ is some sequence of moves to adjacent rooms.
+For any path $v$ from the room that you are currently in to the room where the final is held,
+let $A_v$ be the number of times you go through a door, 
+and $B_v$ the number of times you go up or down a staircase.
+The length of the path is $L_v = A_v + B_v$.
+For all possible paths to the final, the app will find those that minimize the value of $B_v$.
+Out of these paths, it will choose the one that minimizes the value of $L_v$.
+It will then tell you the value of $L_v$.
+
 Since the app is quite slow, you only have time to check it at most $K = 500$.
 You also do not have time to pass more than $R = 5000$ rooms.
 
+\begin{centering}
+  \begin{figure}[h]
+      \centering
+      \begin{subfigure}
+        \centering
+        \includegraphics[scale=0.8]{sample1.png}
+      \end{subfigure}
+      \begin{subfigure}
+        \centering
+        \includegraphics[scale=0.8]{sample2.png}
+      \end{subfigure}
+      \centering
+      \caption{The basement in sample cases 1 and 2. The blue circle is your starting position, and the green circle is the room where the final competition is held.}
+      \label{fig:samples}
+  \end{figure}
+\end{centering}
 
 \section*{Interaction}
 First, you get information about the room you are currently in. 
