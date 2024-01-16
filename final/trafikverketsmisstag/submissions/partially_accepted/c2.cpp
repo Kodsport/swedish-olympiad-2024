@@ -108,25 +108,34 @@ struct pathsum
 {
 	int n;
 	LCA lc;
+	vvi up;
 	Tree fenwick;
 	vi tin;
 	vi tout;
-	pathsum(vvi& edges) : n(edges.size()), lc(edges), fenwick(n * 2), tin(n), tout(n)
+	vi depth;
+	pathsum(vvi& edges) : n(edges.size()), lc(edges), fenwick(n * 2), tin(n), tout(n), up(n, vi(19)), depth(n)
 	{
-		dfs(0, 0, edges);
+		dfs(0, 0, 0, edges);
 	}
 
-	void update(int i, bool in, int v)
+	void update(int i, int v)
 	{
-		i = in ? tin[i] : tout[i];
-		fenwick.update(i, v);
+		fenwick.update(tin[i], v);
+		fenwick.update(tout[i], -v);
 	}
 
 	int timer = 0;
-	void dfs(int u, int p, vvi& edges)
+	void dfs(int u, int p, int d, vvi& edges)
 	{
+		depth[u] = d;
+		up[u][0] = p;
+		repp(d, 1, 19)
+		{
+			up[u][d] = up[up[u][d-1]][d-1];
+		}
+
 		tin[u] = timer++;
-		repe(e, edges[u]) if (e != p) dfs(e, u, edges);
+		repe(e, edges[u]) if (e != p) dfs(e, u, d+1, edges);
 		tout[u] = timer++;
 	}
 
@@ -134,10 +143,10 @@ struct pathsum
 	{
 		int lca = lc.lca(a, b);
 		int nums = fenwick.query(tin[a]) + fenwick.query(tin[b]) - 2 * fenwick.query(tin[lca]) + fenwick.sum(tin[lca], tin[lca]);
-		assert(nums >= 1);
 		return nums;
 	}
 };
+
 
 
 struct squirrel
@@ -176,8 +185,7 @@ signed main()
 		int a, b;
 		cin >> a >> b;
 		a--; b--;
-		path.update(a, 1, 1);
-		path.update(a, 0, -1);
+		path.update(a, 1);
 		squirrels[a] = squirrel({ a, b, i });
 		squirrellist.emplace_back(squirrel({ a, b, i }));
 	}
@@ -194,10 +202,7 @@ signed main()
 			if (path.query(s.start, s.goal) == 1)
 			{
 				order.push_back(s.index);
-				path.update(s.start, 1, -1);
-				//print();
-				path.update(s.start, 0, 1);
-				//print();
+				path.update(s.start, -1);
 				any = 1;
 			}
 			else newsquirrels.push_back(s);

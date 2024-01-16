@@ -28,19 +28,19 @@ include_group group1
 tc g2-1 gen_rand n=100 c=100
 tc g2-2 gen_semihard n=100
 
-
-group group3 25
-limits maxn=4000 maxc=4000
-include_group group2
-tc g3-1 gen_rand n=4000 c=2000
-tc g3-2 gen_semihard n=4000
-tc g3-3 gen_longpaths n=4000
-
-group group4 10
+group group3 10
 limits maxn=4000 diameter=50
 tc g4-1 gen_chains n=4000 len=24
 tc g4-2 gen_chains n=4000 len=10
 tc g4-3 gen_chains n=4000 len=5
+
+group group4 25
+limits maxn=4000 maxc=4000
+include_group group2
+tc g3-1 gen_rand n=4000 c=4000
+tc g3-2 gen_semihard n=4000
+tc g3-3 gen_longpaths n=4000
+
 
 group group5 50
 include_group group3
@@ -48,3 +48,8 @@ include_group group4
 tc g5-1 gen_rand n=200000 c=200000
 tc g5-2 gen_semihard n=200000
 tc g5-3 gen_longpaths n=200000
+tc g5-4 gen_chains n=200000 len=1
+tc g5-5 gen_chains n=200000 len=2
+tc g5-6 gen_chains n=200000 len=10
+tc g5-7 gen_chains n=200000 len=100
+tc g5-8 gen_chains n=200000 len=1000
