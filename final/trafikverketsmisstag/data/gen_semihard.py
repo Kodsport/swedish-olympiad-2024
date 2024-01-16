@@ -20,12 +20,12 @@ n = int(cmdlinearg('n'))
 edges = []
 p = 0
 last = 0
-while p < n*0.9:
+while p+2 < n*0.9:
     edges.append((p+1,p+2))
     last = p+2
     p+=1
 
-while p < n-1:
+while len(edges) < n-1:
     edges.append((randint(int(last*0.9),p+1), p+2))
     p+=1
 
@@ -40,8 +40,20 @@ while l >= 1 and r <= n:
     l-=1
     r+=1
 
-random.shuffle(people)
+# Shuffle node labels for extra cache misses 🤤
+nodes = set(node for edge in edges for node in edge)
+
+shuffled_nodes = list(nodes)
+random.shuffle(shuffled_nodes)
+
+node_mapping = dict(zip(nodes, shuffled_nodes))
+
+edges = [(node_mapping[edge[0]], node_mapping[edge[1]]) for edge in edges]
+people = [(node_mapping[p[0]], node_mapping[p[1]]) for p in people]
+
+
 random.shuffle(edges)
+random.shuffle(people)
 print(n,len(people))
 for e in edges:
     print(e[0],e[1])
