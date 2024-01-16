@@ -69,7 +69,7 @@ struct LCA {
 			dfs(C, y, v);
 		}
 	}
-	
+
 	int lca(int a, int b) {
 		if (a == b) return a;
 		tie(a, b) = minmax(time[a], time[b]);
@@ -167,7 +167,7 @@ signed main()
 		edges[b].push_back(a);
 	}
 	LCA lc(edges);
-	Tree tree(n*2);
+	Tree tree(n * 2);
 	dfs(0, 0, edges);
 	dfs2(0, 0, edges);
 	int centroid = 0;
@@ -189,13 +189,14 @@ signed main()
 	}
 	sort(all(squirrels), [](const squirrel& l, const squirrel& r)
 		{
-			return depth[l.start] < depth[r.start];
+			if (depth[l.start] != depth[r.start]) return depth[l.start] < depth[r.start];
+			return l.start > r.start;
 		});
 
 	auto pathfast = [&](int a, int b)
 	{
 		int lca = lc.lca(a, b);
-		int nums = tree.query(tin[a]) + tree.query(tin[b]) - 2 * tree.query(tin[lca]) + tree.sum(tin[lca],tin[lca]);
+		int nums = tree.query(tin[a]) + tree.query(tin[b]) - 2 * tree.query(tin[lca]) + tree.sum(tin[lca], tin[lca]);
 		assert(nums >= 1);
 		return nums == 1;
 	};
@@ -207,13 +208,16 @@ signed main()
 		cout << "\n";
 	};
 	//print();
+	int k = 0;
+	int its = 0;
 	while (squirrels.size())
 	{
 		bool any = 0;
-		
+		its++;
 		vector<squirrel> newsquirrels;
 		repe(s, squirrels)
 		{
+			k++;
 			if (pathfast(s.start, s.goal))
 			{
 				order.push_back(s.index);
@@ -234,6 +238,7 @@ signed main()
 		cout << "Yes\n";
 		repe(i, order) cout << i + 1 << " ";
 		cout << "\n";
+		cerr << "k:" << k << ", its:" << its << "\n";
 		return 0;
 	}
 
