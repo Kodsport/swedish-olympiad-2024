@@ -438,18 +438,24 @@ void run_full() {
     int A = 0, B = 0; 
     vector<int> path;
     vector<int> goal;
+    judge_message("running full\n");
 
     judge_in >> n;
     judge_in >> A;
     path.resize(A);
     rep(i,0,A) judge_in >> path[i];
     judge_in >> B;
+    goal.resize(B);
     rep(i,0,B) judge_in >> goal[i];
 
-    int first_diff = min(A,B)-1;
-    rep(i,0,min(A, B)) if (path[i] != goal[i]) {
-        first_diff = i;
-        break;
+    assert(B == n-1);
+    rep(i,0,B) assert(goal[i] == 0);
+
+    judge_message("cleared asserts\n");
+
+    set<int> path_ones;
+    rep(i,0,A) if (path[i] == 1) {
+        path_ones.insert(i);
     }
 
     auto can_go_up = [&]() {
@@ -458,98 +464,93 @@ void run_full() {
 
     auto up = [&]() {
         if (A == 0) judge_error("tried to go up when impossible\n");
+        if (path[A - 1] == 1) path_ones.erase(A-1);
         path.pop_back();
-        if (first_diff == A) first_diff++;
         A--;
     };
 
     auto can_go_right = [&]() { // worst case O(n)
+        if (A == 0) return false;
         int i = A - 1;
         while (path[i] == 1) {
             i--;
-            if (i == -1) return false;
+            if (i < 0) return false;
         }
         return true;
     };
 
     auto right = [&]() {
+        if (A == 0) judge_error("Tried to go right when impossible\n");
         int i = A-1;
         while (path[i] == 1) {
+            path_ones.erase(i);
             path[i] = 0;
-            if (first_diff > i && path[i] != goal[i]) first_diff = i;
-            if (first_diff == i && path[i] == goal[i]) first_diff--;
             i--;
-            if (i == -1) judge_error("tried to go right when impossible\n");
+            if (i < 0) judge_error("tried to go right when impossible\n");
         }
         path[i] = 1;
-        if (first_diff > i && path[i] != goal[i]) first_diff = i;
+        path_ones.insert(i);
     };
 
     auto can_go_left = [&]() {
+        if (A == 0) return false;
         int i = A - 1;
         while (path[i] == 0) {
             i--;
-            if (i == -1) return false;
+            if (i < 0) return false;
         }
         return true;
     };
 
     auto left = [&]() {
+        if (A == 0) judge_error("Tried to go right when impossible\n");
         int i = A-1;
         while (path[i] == 0) {
             path[i] = 1;
-            if (first_diff > i && path[i] != goal[i]) first_diff = i;
+            path_ones.insert(i);
             i--;
-            if (i == -1) judge_error("tried to go left when impossible\n");
+            if (i < 0) judge_error("tried to go left when impossible\n");
         }
         path[i] = 0;
-        if (first_diff > i && path[i] != goal[i]) first_diff = i;
+        path_ones.erase(i);
     };
 
     auto can_go_downleft = [&]() {
-        return A != n-1;
+        return A < n;
     };
 
     auto downleft = [&]() {
         A++;
         if (A > n) judge_error("tried to go downleft when not possible\n");
         path.push_back(0);
-        if (A > B) {
-            B++;
-            goal.push_back(1);
-        }
     };
     
     auto can_go_downright = [&]() {
-        return A != n-1;
+        return A < n;
     };
 
     auto downright = [&]() {
         A++;
-        if (A > n) judge_error("tried to go downleft when not possible\n");
-        path.push_back(0);
-        if (A > B) {
-            B++;
-            goal.push_back(1);
-
-        }
+        if (A > n) judge_error("tried to go downright when not possible\n");
+        path.push_back(1);
+        path_ones.insert(A-1);
     };
 
-    auto distance = [&]() {
-        int i = first_diff + 1;
-        if (i > A) return (ll)(n-A);
-        ll d = 0;
-        bool sw = path[i] > goal[i];
-        if (sw) swap(path, goal);
-        while (i < A) {
-            d *= 2;
-            if (goal[i] == 1) d++;
-            if (path[i] == 1) d--;
-            if (d > 1e10) break;
+    auto distance = [&]() -> ll {
+        if (path_ones.size() == 0) return B - A;
+        else {
+            int first_one = *path_ones.begin();
+            ll distance = 1;
+
+            for (int i = first_one+1; i < A; i++) {
+                distance *= 2;
+                if (path[i] == 1) distance++;
+                if (distance > 1e9) return -1;
+            }
+            distance += B - A;
+            if (distance > 1e9) return -1;
+            return distance;
         }
-        d += (n - A);
-        if (d > 1e9) return -1LL;
-        return d;
     };
     
     auto info = [&]() {
@@ -565,25 +566,60 @@ void run_full() {
     int app_count = 0, walk_count = 0;
     cout << info() << endl;
 
-    /*   INTERACTION STARTS HERE    */
+    /*   INTERACTION STARTS HERE   */
+    judge_message("starting interaction\n");
+
+    string command;
 
     while (true) {
-        string command;
         cin >> command;
         
         if (command == "app") {
-            if (A - goal.size() > 25) {
-                cout << -1 << endl;
-                continue;
-            }
-
-            if (goal.size() < A) {
-                
-            }
+            app_count++;
+            if (app_count > MAX_APP) wrong_answer("Too many app calls");
+            cout << distance() << endl;
         }
-
+        else if (command == "up") {
+            judge_message("go up\n");
+            walk_count++;
+            if (!can_go_up()) wrong_answer("Tried to go up when impossible");
+            up();
+            cout << info() << endl;
+        }
+        else if (command == "right") {
+            walk_count++;
+            if (!can_go_right()) wrong_answer("Tried to go right when impossible");
+            right();
+            cout << info() << endl;
+        }
+        else if (command == "downright") {
+            walk_count++;
+            if (!can_go_downright()) wrong_answer("Tried to go downright when impossible");
+            downright();
+            cout << info() << endl;
+        }
+        else if (command == "downleft") {
+            walk_count++;
+            if (!can_go_downleft()) wrong_answer("Tried to go downleft when impossible");
+            downleft();
+            cout << info() << endl;
+        }
+        else if (command == "left") {
+            walk_count++;
+            if (!can_go_left()) wrong_answer("Tried to go left when impossible");
+            left();
+            cout << info() << endl;
+        }
+        else if (command == "here") {
+            if (distance() == 0) accept();
+            else wrong_answer("Said here when not here");
+        }
+        else {
+            wrong_answer("Invalid command");
+        }
+        if (walk_count > MAX_WALK) wrong_answer("Too many room traversals\n");
+        judge_message("completed command\n");
     }
-
 }
 
 
@@ -613,8 +649,8 @@ int main(int argc, char **argv) {
     n                           n = number of floors
     A                           length of path to start
     0 1 0 1 0 0                 path to start
-    B                           length of path to goal
-    0 1                         path to goal
+    B                           length of path to goal, needs to be = n
+    0 0 0 0 0 0                 path to goal, needs all 0
     */
 
     if (type == 1) run_copy_down();

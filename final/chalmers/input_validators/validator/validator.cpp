@@ -14,7 +14,7 @@ typedef vector<int> vi;
 
 void run() {
   int maxn = Arg("maxn");
-  int t = Int(1,1); Endl();
+  int t = Int(1,2); Endl();
 
   if (t == 1) {
     int c = Int(1, 25); Space(); int n = Int(1, maxn);
@@ -64,6 +64,25 @@ void run() {
 
     validate_path(pathA);
     validate_path(pathB);
+  }
+
+  if (t == 2) {
+    int n = Int(1, maxn);
+    Endl();
+    int A = Int(1, n);
+    Endl();
+    for (int i = 0; i < A; i++) {
+      int bit = Int(0,1);
+      if (i < A-1) Space();
+    }
+    Endl();
+    int B = Int(n-1,n-1);
+    Endl();
+    for (int i = 0; i < B; i++) {
+      int bit = Int(0,0);
+      if (i < B - 1) Space();
+    }
+    Endl();
   }
 
   Eof();

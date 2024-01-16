@@ -75,3 +75,17 @@ if t == 1:
     print(B)
     print(*path_goal)
 
+elif t == 2:
+    n = int(cmdlinearg('n')) # how many floors total
+    A = random.randint(max(1, n-5), n-1)
+    path = [1] + [random.choice([0,1]) for i in range(A-1)]
+
+    B = n-1
+    goal = [0]*B
+
+    print(2)
+    print(n)
+    print(A)
+    print(*path)
+    print(B)
+    print(*goal)
