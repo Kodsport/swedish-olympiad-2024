@@ -201,7 +201,7 @@ int main(int argc, char **argv) {
   bool author_found_sol = check(author_out, wrong_answer);
 
   if(!judge_found_sol && author_found_sol)
-    judge_error("NO! Solution found a cycle, but judge says none exists");
+    judge_error("NO! Solution found an order, but judge says none exists");
 
   if(judge_found_sol && !author_found_sol)
     wrong_answer("Order exists, but solution did not find it");
