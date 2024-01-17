@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 import sys
 sys.setrecursionlimit(10000)
+
+
+#From PyRival
+#https://github.com/cheran-senthil/PyRival/blob/master/pyrival/graphs/lca.py 
 class RangeQuery:
     def __init__(self, data, func=min):
         self.func = func
@@ -42,6 +46,8 @@ class LCA:
             a, b = b, a
         return self.path[self.rmq.query(a, b)]
 
+#From PyRival
+#https://github.com/cheran-senthil/PyRival/blob/master/pyrival/data_structures/FenwickTree.py
 class FenwickTree:
     def __init__(self, x):
         """transform list into BIT"""
@@ -92,7 +98,6 @@ def traverse(root,graph):
     DFS(root)
     return order
 
-
 n,c = map(int,input().split())
 
 edges = [[] for _ in range(n)]
@@ -106,7 +111,6 @@ order = traverse(0,edges)
 fenInd = [[] for _ in range(n)]
 for i in range(len(order)):
     fenInd[order[i]].append(i)
-
 
 cars = [[*map(lambda x: int(x)-1,input().split())] for _ in range(c)]
 data = [0]*(2*n)
@@ -138,78 +142,23 @@ def move(a,b):
     #Move car from node a to node b
     fen.update(fenInd[a][0],-1)
     fen.update(fenInd[a][1],1)
-    #fen.update(fenInd[b][0],1)
-    #fen.update(fenInd[b][1],-1)
 
-"""
-
-carOrder = [] #The order to try to move all the cars
-unmoved = [] #What cars were unmoveable
-visited = [0]*n #Visited during the find of order of cars
-carsIndex = [[] for _ in range(n)] #If node is a cars goal -> then node has the car's index
-i = -1
-for a,b in cars:
-    i+=1
-    carsIndex[b].append(i)
-
-BFS = []
-for i in range(n):
-    if len(edges[i])==1:
-        BFS.append(i)
-        visited[i] = 1
-        if carsIndex[i]:
-            carOrder+=carsIndex[i]
-
-notVisited = [] #dessa har inte checkat carsIndex än
-for curr in BFS:
-    for nxt in edges[curr]:
-        if visited[nxt]:
-            continue
-        visited[nxt] = 1
-        if len(edges[nxt])!=2:
-            notVisited.append(nxt)
-            continue
-        if carsIndex[i] != -1:
-            carOrder+=carsIndex[i]
-        BFS.append(visited[nxt])
-
-for i in notVisited:
-    if carsIndex[i] != -1:
-        carOrder+=carsIndex[i]
-
-BFS,notVisited = notVisited,BFS
-
-for curr in BFS:
-    for nxt in edges[curr]:
-        if visited[nxt]:
-            continue
-        visited[nxt] = 1
-        if carsIndex[i] != -1:
-            carOrder+=carsIndex[i]
-        BFS.append(visited[nxt])
-print(len(carOrder))
-assert len(carOrder) == c
-
-"""
-
-carOrder = [*range(c)]
-
+carsRemaining = [*range(c)]
 
 output = []
-carOrder.reverse()
-while carOrder:
-    for i in range(len(carOrder)-1,-1,-1):
-        a,b = cars[carOrder[i]]
-        #print(a,b)
-        #print(query(a,b))
+carsRemaining.reverse()
+while carsRemaining:
+    for i in range(len(carsRemaining)-1,-1,-1):
+        a,b = cars[carsRemaining[i]]
         if query(a,b):
-            output.append(carOrder[i]+1)
-            carOrder.pop(i)
+            output.append(carsRemaining[i]+1)
+            carsRemaining.pop(i)
             move(a,b)
             break
     else:
         print("No")
         exit()
+
 print("Yes")
 print(*output)
 
