@@ -20,9 +20,22 @@ if t == 1:
     r = int(cmdlinearg('r')) # how many rooms to remove
 
     room = [[1 for i in range(1<<level)] for level in range(c)]
-    for i in range(r):
+    removed = 0
+    iterations = 0
+    while removed < r:
+        iterations += 1
         L = random.randint(1, c-1)
         OFFSET = random.randint(0, 1<<L-1)
+
+        if iterations > 100:
+            break
+        if room[L][OFFSET] == 0:
+            continue
+        if room[L].count(1) == 1:
+            continue
+        
+
+
         a = b = OFFSET
         revert = {}
         for level in range(L, c):
@@ -36,6 +49,7 @@ if t == 1:
             for level in revert:
                 for j in revert[level]:
                     room[level][j] = revert[level][j]
+        removed += 1
     
     A = random.randint(max(1, n - 5), n - 1)
     B = n - 1

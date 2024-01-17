@@ -259,8 +259,6 @@ void run_copy_down() {
         return (cur.true_level - lca_level_cur) + (B - lca_level_goal) + abs(lca_offset_cur - lca_offset_goal);
     };
 
-    if (get_distance() == 0) judge_error("Start and goal is the same\n");
-
     /////////// INTERACTION STARTS HERE /////////////
     //FILE *LOG = fopen("validator_log.txt", "w");
 
