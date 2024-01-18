@@ -15,10 +15,10 @@ def cmdlinearg(name, default=None):
     return default
 
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
+n = int(cmdlinearg('n'))
 x = int(cmdlinearg('x'))
 ret = int(cmdlinearg('r'))
-n = int(cmdlinearg('n'))
-
+#randint(1,int(cmdlinearg("maxx")))
 grid = [['.' for i in range(n)] for j in range(n)]
 positions = [(i,j) for i in range(n) for j in range(n)]
 
