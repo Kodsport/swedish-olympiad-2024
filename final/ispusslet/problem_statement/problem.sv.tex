@@ -27,9 +27,9 @@ $K$ ($2 \leq K \leq min(20000, N \cdot M)$).
 
 \section*{Utdata}
 Om det finns en sekvens drag som gör om alla kryss till cirklar, skriv först ut längden på denna. Längden får vara som mest $10^5$.
-Skriv sedan ut sekvensen på nästa rad. Denna ska bestå av karaktärerna \texttt{``V''}, \texttt{``<''}, \texttt{``\^{}''} och \texttt{``>''}. 
-\texttt{``V''} betyder att Olle ska åka nedåt, \texttt{``\^{}''} uppåt, \texttt{``<''} åt vänster
-och \texttt{``>''} åt höger. Om $R=1$ måste dessutom Olle sluta på samma ruta som han startade.
+Skriv sedan ut sekvensen på nästa rad. Denna ska bestå av karaktärerna \verb|V|, \verb|<|, \verb|^| och \verb|>|. 
+\verb|V| betyder att Olle ska åka nedåt, \verb|^| uppåt, \verb|<| åt vänster
+och \verb|>| åt höger. Om $R=1$ måste dessutom Olle sluta på samma ruta som han startade.
 
 Om det inte finns en giltig sekvens av drag, skriv ut $-1$ och inget mer.
 
@@ -51,5 +51,33 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   $6$    & $20$       & $R=1$ \\ \hline
 \end{tabular}
 
-%\section*{Exempelfall}
-
+\section*{Exempelfall 1}
+Till en början ser rutnätet ut så här (Olle befinner sig på krysset högst uppe till vänster):
+\noindent
+\begin{verbatim}
+  X.X
+  ...
+  X.X
+\end{verbatim}
+Efter dragen \verb|>|, \verb|V| och \verb|^| befinner sig Olle högst uppe till höger och rutnätet ser ut så här:
+\noindent
+\begin{verbatim}
+  X.X
+  ...
+  X.O
+\end{verbatim}
+Efter att han utfört dragen \verb|<| och \verb|>| befinner han sig fortfarande högst uppe till höger och rutnätet ser ut så här:
+\noindent
+\begin{verbatim}
+  O.O
+  ...
+  X.O
+\end{verbatim}
+Han kommer därefter utföra dragen \verb|<|, \verb|V|, \verb|^| för att skapa en kryssfri isrink, där han
+dessutom slutar på startpositionen (detta är dock inte ett krav på detta testfall eftersom $R=0$):
+\noindent
+\begin{verbatim}
+  O.O
+  ...
+  O.O
+\end{verbatim}

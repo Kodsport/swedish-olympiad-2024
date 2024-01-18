@@ -14,6 +14,7 @@ samplegroup
 sample 1
 sample 2
 sample 3
+sample 4
 
 #for i in {1..100}
 #do
@@ -24,6 +25,7 @@ group group1 20
 limits maxX=100 r=0
 tc 1
 tc 2
+tc 3
 tc g1-11 gen_rand n=5 m=10 x=42 r=0
 tc g1-12 gen_rand n=10 m=5 x=42 r=0
 tc g1-1 gen_rand n=1000 x=100 r=0
@@ -66,7 +68,7 @@ tc g3-6 gen_cycle_walk n=10 m=19991 row=5 p=1 r=0
 
 group group4 10
 limits maxX=100 r=1
-tc 3
+tc 4
 tc_manual ../manual/odd.in
 tc_manual ../manual/walkodd.in
 tc_manual ../manual/disconnected.in
