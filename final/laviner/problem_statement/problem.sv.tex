@@ -1,26 +1,51 @@
 \problemname{Laviner}
 \noindent
-Alexander och Joshua är på en skidresa tillsammans, och Alexander planerar att göra ``lite'' bus. 
-Tillsammans har de åkt till ett stort skidsystem med $N$ skidbyar som är sammankopplat med $N-1$ enkelriktade skidbackar. 
-Skidby $1$ befinner sig högst upp i skidsystemet, och det är möjligt att nå alla andra skidbyar från skidby $1$ genom att endast åka ner för skidbackar.
-Alexander får åka upp och ställa sig vid en valfri skidby och skrika. Det skapas då en lavin som utgår från skidbyn och fortsätter längs med alla riktade skidbackar. 
+Efter att Joshua såg igenom Alexanders försök att förfalska bilder på snöflingor\footnote{Se https://open.kattis.com/problems/falskflinga}
+har Alexander blivit besatt av snö, och väldigt arg.
+Han har kommit på en ondskefull plan med oklara motiv,
+där första steget var att bjuda med Joshua på skidresa.
+Tillsammans befinner de sig nu i ett stort skidsystem med $N$ skidbyar numrerade från $1$ till $N$.
+Skidbyarna är sammankopplade med $N-1$ enkelriktade skidbackar.
+Högst upp i skidsystemet ligger skidby $1$,
+och från den går det att ta sig till alla andra
+skidbyar genom att enbart åka ner för backar.
+För varje annan skidby finns det exakt en backe som leder till skidbyn.
 
-Men Joshua vill förhindra Alexanders bus, och kan placera ut $K$ murar på $K$ olika skidbyar. 
-Muren skyddar den specifika skidbyn från att bli påverkad av lavinen och skriket, och skyddar på sätt alla andra skidbyar under den skidbyn. 
-Joshua är en skarpsinnig grabb, och kommer att placera murarna på ett sätt som minimerar antal antalet påverkade skidbyar oavsett vilken skidby som Alexbörjar skrika ifrån.
-Notera att Alexander kan inte heller starta en lavin och skrika från en skidby där Joshua har murat in.
+Alexander vill nu göra ``lite'' bus. 
+Han vill nämligen starta en lavin i skidsystemet.
+Det planerar han att göra genom att ställa sig i någon skidby och skrika väldigt högt.
+Då kommer snön i denna skidby att sprida sig ner längs alla backar som utgår från byn.
+Sedan kommer snön att spridas vidare neråt i alla riktningar så långt som möjligt.
+Lavinens \emph{skadogörelse} är antalet skidbyar som drabbas av lavinen
 
-Vad är det maximala antalet skidbyar som Alexander kan drabba trots att Joshua försöker stoppa honom? 
+Joshua, som har märkt att Alexander inte verkar vara vid sina sinnes fulla bruk,
+har genomskådat Alexanders ondskefulla plan.
+Joshua är väldigt händig, och kan bygga murar i vissa skidbyar.
+En mur i en viss skidby gör så lavinen inte kan sprida sig till byn.
+Alexander kan inte heller starta lavinen från en murad skidby.
+
+Men tiden är knapp, och eftersom Joshua först och främst måste varna alla andra skidåkare för vad som är på väg att hända
+hinner han bara bygga murar i $K$ olika skidbyar.
+Joshua vet inte i vilken skidby Alexander kommer ställa sig och skrika,
+men han vill minimera antalet skidbyar som drabbas av laviner.
+
+Joshua kommer först att sätta ut de $K$ murarna så att den maximala skadegörelse
+Alexander kan åstadkomma minimeras.
+Sedan kommer Alexander ställa sig och skrika i den noden som orsakar maximal skadegörelse.
+Din uppgift är att beräkna hur stor skadegörelsen blir,
+alltså hur många skidbyar som drabbas av lavinen. 
+
 
 \section*{Indata}
-Den första raden i indatan innehåller två heltal, $N,K$ ($1 \le K < N \le 10^5$), antalet skidbyar i skidsystemet, samt antalet murar Joshua kan sätta ut.
+Den första raden i indatan innehåller två heltal, $N$ och $K$ ($1 \le K < N \le 10^5$), 
+antalet skidbyar i skidsystemet, och antalet murar Joshua kan sätta ut.
 
-Därefter följer en rad med $N-1$ heltal $a_i$, där för varje $i$ ($1 \leq i \leq N-1$) representerar $a_i$ 
-att det finns en enkelriktad skidbacke där man kan åka från skidby $a_i$ ($1 \le a_i \le i$) till skidby $i+1$. 
-
+Därefter följer en rad med $N-1$ heltal $a_1, a_2, ..., a_{N-1}$.
+För varje $i = 1, 2, ..., N-1$ finns det en skibacke från skidbyn med nummer $a_i$ till skidbyn med nummer $i+1$. 
 
 \section*{Utdata}
-Skriv ut ett heltal, maximala antalet skidbyar som Alexander drabba genom att skrika från en nod en gång, efter att Joshua har placerat ut sina $K$ murar.
+Skriv ut ett heltal: Den maximala skadogörelsen Alexander kan åstadkomma, givet att Joshua placerar murarna optimalt.
+
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
