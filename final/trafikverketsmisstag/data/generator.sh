@@ -12,10 +12,12 @@ compile gen_star.py
 
 samplegroup
 sample 1
+sample 2
 
 group group1 5
 limits maxn=100 maxc=8
 tc 1
+tc 2
 tc g1-1 gen_rand n=100 c=8
 tc g1-2 gen_rand n=100 c=8
 tc g1-3 gen_rand n=100 c=8
