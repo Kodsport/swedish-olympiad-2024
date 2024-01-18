@@ -1,4 +1,3 @@
-// O(clog(n)^2) from fenwick+binary search
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -114,28 +113,28 @@ signed main()
 {
 	fast();
 
-	int n;
-	cin >> n;
+	int n, m;
+	cin >> n >> m;
 	int r, c;
 	int retstart;
 	cin >> retstart;
 	vector<string> grid(n);
 	rep(i, n) cin >> grid[i];
-	nodeindex.resize(n, vector<int>(n));
+	nodeindex.resize(n, vector<int>(m));
 	int ind = 0;
 	vector<p2> position;
-	rep(i, n) rep(j, n)
+	rep(i, n) rep(j, m)
 	{
-		if (grid[i][j] == 'O') r = i, c = j, grid[i][j]='X';
+		if (grid[i][j] == 'O') r = i, c = j, grid[i][j] = 'X';
 	}
-	rep(i, n) rep(j, n)
+	rep(i, n) rep(j, m)
 	{
 		if (grid[i][j] == 'X') nodeindex[i][j] = ind++, position.emplace_back(i, j);
 	}
 
 	vvi edges(ind);
 	vector<p2> edgelist;
-	rep(i, n) rep(j, n)
+	rep(i, n) rep(j, m)
 	{
 		if (grid[i][j] != 'X') continue;
 		repe(dir, dirs)
@@ -143,7 +142,7 @@ signed main()
 			p2 p = p2(i, j);
 			p.first += dir.first;
 			p.second += dir.second;
-			while (p.first >= 0 && p.second >= 0 && p.first < n && p.second < n)
+			while (p.first >= 0 && p.second >= 0 && p.first < n && p.second < m)
 			{
 				if (grid[p.first][p.second] == 'X')
 				{
@@ -193,14 +192,14 @@ signed main()
 	while (q.size())
 	{
 		int u = q.front(); q.pop();
-		if (color[u]==0)
+		if (color[u] == 0)
 		{
 			walkto(currp, currp, u, treeadj, color, nodes);
 			currp = u;
 			walkto(u, u, start, treeadj, color, nodes);
 			currp = start;
 		}
-		
+
 		repe(e, treeadj[u])
 		{
 			deg[e]--;

@@ -171,28 +171,29 @@ signed main()
 {
 	fast();
 
-	int n;
-	cin >> n;
+	int n, m;
+	cin >> n >> m;
 	int r, c;
+	r = c = -1;
 	int retstart;
 	cin >> retstart;
 	vector<string> grid(n);
 	rep(i, n) cin >> grid[i];
-	nodeindex.resize(n, vector<int>(n));
+	nodeindex.resize(n, vector<int>(m));
 	int ind = 0;
 	vector<p2> position;
-	rep(i, n) rep(j, n)
+	rep(i, n) rep(j, m)
 	{
 		if (grid[i][j] == 'O') r = i, c = j, grid[i][j] = 'X';
 	}
-	rep(i, n) rep(j, n)
+	rep(i, n) rep(j, m)
 	{
 		if (grid[i][j] == 'X') nodeindex[i][j] = ind++, position.emplace_back(i, j);
 	}
 
 	vvi edges(ind);
 	vector<p2> edgelist;
-	rep(i, n) rep(j, n)
+	rep(i, n) rep(j, m)
 	{
 		if (grid[i][j] != 'X') continue;
 		repe(dir, dirs)
@@ -200,7 +201,7 @@ signed main()
 			p2 p = p2(i, j);
 			p.first += dir.first;
 			p.second += dir.second;
-			while (p.first >= 0 && p.second >= 0 && p.first < n && p.second < n)
+			while (p.first >= 0 && p.second >= 0 && p.first < n && p.second < m)
 			{
 				if (grid[p.first][p.second] == 'X')
 				{
@@ -228,12 +229,13 @@ signed main()
 			treeadj[e.second].emplace_back(e.first);
 		}
 	}
-	if (uf.size[uf.find(0)] != edges.size())
+	if (uf.size[uf.find(0)] != sz(edges))
 	{
 		cout << "-1\n";
 		return 0;
 	}
 
+	assert(r >= 0 && c >= 0);
 	int start = nodeindex[r][c];
 	auto getsol = [&](vi& color, vi& nodes)
 	{
@@ -284,14 +286,14 @@ signed main()
 
 			assert(!bipartite);
 			int best = 0;
-			rep(i, cycle.size()) if (depth[cycle[i]] < depth[cycle[best]])best = i;
+			rep(i, sz(cycle)) if (depth[cycle[i]] < depth[cycle[best]])best = i;
 
 			nodes.push_back(start);
 			walkto(start, start, cycle[best], treeadj, color, nodes);
 			int k = cycle.size() / 2;
 			auto dopath = [&](vi path)
 			{
-				repp(i, 1, path.size())
+				repp(i, 1, sz(path))
 				{
 					int u = path[i];
 					color[u] ^= 1;
@@ -332,7 +334,7 @@ signed main()
 			rep(i, qcnt)if (i != start)assert(color[i] == 0);
 
 			vi c2(qcnt);
-			repp(i, 1, nodes.size()) c2[nodes[i]] ^= 1;
+			repp(i, 1, sz(nodes)) c2[nodes[i]] ^= 1;
 			assert(c2 == color);
 			nodes.pop_back();
 

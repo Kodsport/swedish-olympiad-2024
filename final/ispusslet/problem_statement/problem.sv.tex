@@ -1,12 +1,12 @@
 \problemname{Ispusslet}
 \noindent
 Olle hatar kryss. De påminner honom för mycket om \texttt{wrong answer} resultat på inskickningar. När han anlände i Partille isrink
-och såg att det fanns $K$ ($1 \leq K \leq 12000$) stycken kryss utplacerade i den blev han argare än en tjur. Isrinken kan representeras
-som ett $N \times N$ stort rutnät, där $K$ stycken rutor har ett kryss och de resterande $N \times N - K$ är tomma.
+och såg att det fanns $K$ ($2 \leq K \leq 20000$) stycken kryss utplacerade i den blev han argare än en tjur. Isrinken kan representeras
+som ett $N \times M$ stort rutnät, där $K$ stycken rutor har ett kryss och de resterande $N \times M - K$ är tomma.
 Olle är dock en problemlösare och har en plan att lösa denna katastrofala situation. 
 
 Till en början befinner han sig på rutan markerad med \texttt{O}. Denna rutan är också ett kryss. I ett \texttt{drag} kan han
-börja åka i en av de $4$ riktningarna utan möjligthet att svänga. Han kommer fortsätta åka i samma riktning tills dess att han
+börja åka i en av de $4$ riktningarna utan möjlighet att svänga. Han kommer fortsätta åka i samma riktning tills dess att han
 hamnar vid ett kryss eller krockar med väggen. Om Olle krockar med väggen kommer han att utsättas för en skada så allvarlig
 att han kommer tvingas avbryta sin plan. Varje gång han åker på ett kryss stannar han och byter det från ett kryss till en cirkel.
 Om han någonsin åker på en cirkel stannar han och gör om det till ett kryss i sin blinda ilska. Eftersom han inte har hela dagen
@@ -14,14 +14,15 @@ vill han hitta en sekvens drag av längd som mest $10^5$ lång som gör om alla 
 sluta på samma ruta som han började, men detta är inte nödvändigt i alla testfallsgrupper.
 
 \section*{Indata}
-Den första raden i indatan innehåller två heltal, $N,R$ ($1 \le N \leq 1000$, $R \in {0,1}$), sidlängden på rutnätet och om
+Den första raden i indatan innehåller tre heltal, $N,M$ och $R$ ($1 \le N,M$, $N \cdot M \leq 10^6$, $R \in {0,1}$), antalet rader
+och antalet kolumner på rutnätet och om
 du behöver återvända till starten för denna testfallsgruppen. Om $R = 1$ så måste du återvänta till starten, och om $R = 0$
-kan du avsluta sekvensen av drag på vilken ruta som helst.
+kan du avsluta sekvensen av drag på vilken ruta som helst (notera att du aldrig får krocka Olle in i väggen, även på sista draget).
 
-De följande $N$ raderna innehåller vardera en sträng av längd $N$, vilket beskriver hur vardera rad av isrinken ser ut.
-Varje karaktär antingen \texttt{``.''}, \texttt{``O''} eller \texttt{``X''}. Det är garanterat att exakt en ruta innehåller 
+De följande $N$ raderna innehåller vardera en sträng av längd $M$, vilket beskriver hur vardera rad av isrinken ser ut.
+Varje tecken är antingen \texttt{``.''}, \texttt{``O''} eller \texttt{``X''}. Det är garanterat att exakt en ruta innehåller 
 \texttt{``O''}. Det är även garanterat att antalet \texttt{``O''} och antalet \texttt{``X''} tillsammans är exakt
-$K$ ($1 \leq K \leq 12000$). Rutan högst uppe till vänster är numrerad som $(1,1)$.
+$K$ ($2 \leq K \leq min(20000, N \cdot M)$). Rutan högst uppe till vänster är numrerad som $(1,1)$.
 
 \section*{Utdata}
 Om det finns en sekvens drag som gör om alla kryss till cirklar, skriv först ut längden på denna. Skriv sedan ut sekvensen
@@ -41,11 +42,12 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & $K \leq 200, R=0$. \\ \hline
-  $2$    & $20$       & $K \leq 200, R=1$ \\ \hline
-  $3$    & $5$        & $K \leq 5000, R=0$ \\ \hline
-  $4$    & $15$       & $R=0$ \\ \hline
-  $5$    & $40$       & $R=1$ \\ \hline
+  $1$    & $20$       & $K \leq 100, R=0$. \\ \hline
+  $2$    & $5$        & $K \leq 5000, R=0$ \\ \hline
+  $3$    & $15$       & $R=0$ \\ \hline
+  $4$    & $10$       & $K \leq 100, R=1$ \\ \hline
+  $5$    & $30$       & $K \leq 10000, R=1$ \\ \hline
+  $6$    & $20$       & $R=1$ \\ \hline
 \end{tabular}
 
 %\section*{Exempelfall}

@@ -1,0 +1,50 @@
+Main solution comprises of 3 parts:
+Tree solution
+Walk to cycle (and back)
+Use cycle to switch parity
+
+Crude upper bound:
+Tree: 4x
+Cycle: 2x
+Walk to cycle and back: 2x
+
+8x in total
+
+Tree is 3x:
+We visit each node twice due to euler tour->2x
+Each time we want to fix a node, it costs 2 moves.
+After the euler tour, each node will have color=deg[u]%2
+We will use the following operation to fix them: take two adjacent nodes and flip each operation
+Let's consider some different paths of colors:
+0101010101 will clearly only take n/2 operations
+1000000000 or 0111111111 will clearly take n operations.
+
+Case 0111111111:
+We cannot have a line of leafs. Therefore, the construction will be
+5 0
+OXXXX
+.XXX.
+.....
+.....
+.....
+The cost of more fixes is paid by the leafs being cheap. 
+
+1000000000
+This case is not a problem, since we will fix them in x/2 moves 1000000000->1110000000 etc.
+This also explains the the complexity of fixing cycles: we will make a total of 3 revolutions of walking, and fix the cycle, taking
+x operations. 3x+x=4x
+
+In a general graph, the bound is now 7x.
+However, we know that the cycle and path are necessarily disjoint. Let l be path length and c be cycle length.
+We get:
+maximize 2*l+2*c
+s.t. l+c<=x
+Obviously, our choice doesn't matter. However, we know that cycle+path<=2x Therefore, we get 2x+3x=5x
+So it seems that asymptotically, in sufficiently large grids, a single cycle where we have to return is the worst, taking 5x moves.
+
+
+Open problems:
+If the side lengths are much smaller than n, does the complexity depend on n istead of x? How much?
+Further, if we shuffle edge order, what is the expected number of steps in that case?
+Are the tree and cycle algorithms optimal respectively?
+How much better can we get if we conjoin them? Shortest odd cycle?

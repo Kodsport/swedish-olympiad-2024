@@ -17,10 +17,11 @@ def cmdlinearg(name, default=None):
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 
 n = int(cmdlinearg('n'))
+m = int(cmdlinearg("m",n))
 ret = int(cmdlinearg("r"))
-grid = [['X' for i in range(n)] for j in range(n)]
-grid[randint(0,n-1)][randint(0,n-1)]='O'
+grid = [['X' for i in range(m)] for j in range(n)]
+grid[randint(0,n-1)][randint(0,m-1)]='O'
 
 
-print(n, ret)
+print(n, m, ret)
 [print("".join(row)) for row in grid]

@@ -15,21 +15,37 @@ def cmdlinearg(name, default=None):
     return default
 
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
-x = int(cmdlinearg('x'))
-ret = int(cmdlinearg('r'))
-n = 1000
+r = int(cmdlinearg('r'))
+row = int(cmdlinearg('row'))
+parity = int(cmdlinearg("p"))
+n = int(cmdlinearg("n"))
+m = int(cmdlinearg("m", n))
 #randint(1,int(cmdlinearg("maxx")))
-grid = [['.' for i in range(n)] for j in range(n)]
-positions = [(i,j) for i in range(n) for j in range(n)]
+grid = [['.' for i in range(m)] for j in range(n)]
 
-random.shuffle(positions)
+m-=4
+i = 0
+while i < m:
+    grid[0][i]='X'
+    i+=2
 
-for i in range(x):
-    r,c = positions[i]
-    if i==0:
-        grid[r][c]='O'
+i = 1
+while i < m:
+    grid[row][i]='X'
+    i+=2
+
+for i in range(1,row):
+    if i%2==0:
+        grid[i][0]='X'
     else:
-        grid[r][c]='X'
+        grid[i][m-1]='X'
+grid[row][0]='X'
+grid[row][m-1]='X'
+grid[0][m-1]='X'
+grid[0][0]='O'
+m+=4
+if parity:
+    grid[row+1][0]='X'
 
-print(n, ret)
+print(n, m, r)
 [print("".join(row)) for row in grid]

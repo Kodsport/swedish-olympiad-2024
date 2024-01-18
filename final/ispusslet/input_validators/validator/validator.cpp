@@ -1,10 +1,13 @@
 #include "validator.h"
 
 void run() {
-	int n = Int(1, 1000);
+	int n = Int(1, int(1e6));
+	Space();
+	int m = Int(1, int(1e6));
 	Space();
 	int retstart = Int(0,1);
 	Endl();
+	assert(n*m<=int(1e6));
 	int ret = Arg("r",-1);
 	if (ret!=-1) assert(retstart==ret);
 
@@ -21,15 +24,16 @@ void run() {
 	{
 		string row = Line();
 		rows.push_back(row);
-		for (int j = 0; j < n; j++) assert(good[row[j]]);
+		assert(row.size()==m);
+		for (int j = 0; j < m; j++) assert(good[row[j]]);
 
-		for (int j = 0; j < n; j++) xcnt += row[j]=='X';
-		for (int j = 0; j < n; j++) if (row[j]=='O') xcnt++, ocnt++, r=i,c=j;
+		for (int j = 0; j < m; j++) xcnt += row[j]=='X';
+		for (int j = 0; j < m; j++) if (row[j]=='O') xcnt++, ocnt++, r=i,c=j;
 
 	}
 	assert(ocnt==1);
 	assert(rows[r][c]=='O');
-	assert(xcnt<=int(Arg("maxX", int(1e5))));
-	
+	assert(xcnt<=int(Arg("maxX", int(2e4))));
+	assert(xcnt>=2);
 	Eof();
 }

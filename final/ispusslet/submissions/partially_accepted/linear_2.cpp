@@ -1,4 +1,3 @@
-// O(clog(n)^2) from fenwick+binary search
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -114,7 +113,7 @@ string getans(vi& nodes, vector<p2>& position)
 int dfs(int u, int p, vi& subtree, vvi& treeadj)
 {
 	int ret = 1;
-	repe(e, treeadj[u]) if(e!=p)ret += dfs(e, u, subtree, treeadj);
+	repe(e, treeadj[u]) if (e != p)ret += dfs(e, u, subtree, treeadj);
 
 	subtree[u] = ret;
 	return ret;
@@ -124,28 +123,28 @@ signed main()
 {
 	fast();
 
-	int n;
-	cin >> n;
+	int n, m;
+	cin >> n >> m;
 	int r, c;
 	int retstart;
 	cin >> retstart;
 	vector<string> grid(n);
 	rep(i, n) cin >> grid[i];
-	nodeindex.resize(n, vector<int>(n));
+	nodeindex.resize(n, vector<int>(m));
 	int ind = 0;
 	vector<p2> position;
-	rep(i, n) rep(j, n)
+	rep(i, n) rep(j, m)
 	{
 		if (grid[i][j] == 'O') r = i, c = j, grid[i][j] = 'X';
 	}
-	rep(i, n) rep(j, n)
+	rep(i, n) rep(j, m)
 	{
 		if (grid[i][j] == 'X') nodeindex[i][j] = ind++, position.emplace_back(i, j);
 	}
 
 	vvi edges(ind);
 	vector<p2> edgelist;
-	rep(i, n) rep(j, n)
+	rep(i, n) rep(j, m)
 	{
 		if (grid[i][j] != 'X') continue;
 		repe(dir, dirs)
@@ -153,7 +152,7 @@ signed main()
 			p2 p = p2(i, j);
 			p.first += dir.first;
 			p.second += dir.second;
-			while (p.first >= 0 && p.second >= 0 && p.first < n && p.second < n)
+			while (p.first >= 0 && p.second >= 0 && p.first < n && p.second < m)
 			{
 				if (grid[p.first][p.second] == 'X')
 				{

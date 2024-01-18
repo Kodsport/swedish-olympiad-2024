@@ -18,11 +18,12 @@ typedef long double ld;
 void check_isvalid(string& moves, vector<string> grid, int return_start, feedback_function feedback)
 {
 	int n = grid.size();
-	vvi nodeindex(n,vi(n,-1));
+	int m = grid[0].size();
+	vvi nodeindex(n,vi(m,-1));
 	pii o = pii(-1,-1);
-	rep(i,0,n) rep(j,0,n) if(grid[i][j]=='O') o=pii(i,j), grid[i][j]='X';
+	rep(i,0,n) rep(j,0,m) if(grid[i][j]=='O') o=pii(i,j), grid[i][j]='X';
 	int ind = 0;
-	rep(i,0,n) rep(j,0,n) if (grid[i][j]=='X') nodeindex[i][j]=ind++;
+	rep(i,0,n) rep(j,0,m) if (grid[i][j]=='X') nodeindex[i][j]=ind++;
 	int cnt = ind;
 
 	vvi edges(cnt, vi(4,-1));
@@ -33,7 +34,7 @@ void check_isvalid(string& moves, vector<string> grid, int return_start, feedbac
 	movetodir['^']=1;
 	movetodir['<']=2;
 	movetodir['>']=3;
-	rep(i,0,n) rep(j,0,n)
+	rep(i,0,n) rep(j,0,m)
 	{
 		if (nodeindex[i][j]==-1) continue;
 		int me = nodeindex[i][j];
@@ -41,7 +42,7 @@ void check_isvalid(string& moves, vector<string> grid, int return_start, feedbac
 		{
 			pii dir = directions[k];
 			pii pos = pii(i+dir.first,j+dir.second);
-			while (pos.first>=0&&pos.second>=0&&pos.first<n&&pos.second<n)
+			while (pos.first>=0&&pos.second>=0&&pos.first<n&&pos.second<m)
 			{
 				if (nodeindex[pos.first][pos.second]!=-1)
 				{
@@ -79,8 +80,8 @@ const int MAX_MOVES = int(1e5);
 int main(int argc, char **argv) {
 	init_io(argc, argv);
 
-	int n, return_start;
-	judge_in >> n >> return_start;
+	int n, m, return_start;
+	judge_in >> n >> m >> return_start;
 	vector<string> grid(n);
 	for (int i = 0; i < n; i++) judge_in >> grid[i];
 
