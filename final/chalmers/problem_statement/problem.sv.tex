@@ -26,8 +26,8 @@ För någon väg $v$ från rummet du befinner dig i till rummet finalen hålls i
 låt $A_v$ vara antalet gånger du går genom en dörr,
 och $B_v$ antalet gånger du går upp eller ner för en trappa.
 Vägens \emph{längd} definieras som summan $L_v = A_v + B_v$.
-Du vill nu ta dig till finalen. Till din hjälp har du appen Campus maps.
-Campus maps är programmerad för att hitta längden på den väg till din destination,
+Du vill nu ta dig till finalen. Till din hjälp har du appen Campus Maps.
+Campus Maps är programmerad för att hitta längden på den väg till din destination,
 där antalet trappor du behöver gå upp eller ned för minimeras.
 Av alla möjliga vägar $v$ till rummet där finalen hålls kommer appen att hitta de som minimerar värdet på $B_v$.
 Av alla dessa vägar kommer appen sedan välja den som minimerar värdet på $L_v$.
@@ -48,7 +48,12 @@ Du hinner inte heller passera fler än $5000$ rum.
         \includegraphics[scale=0.8]{sample2.png}
       \end{subfigure}
       \centering
-      \caption{Källarens utseende i exempelfall 1 och exempelfall 2. Den blåa cirkeln markerar var du börjar, och den gröna cirkeln är salen där finalen hålls.}
+      \caption{Källarens utseende i exempelfall 1 och exempelfall 2. 
+      Den blåa cirkeln markerar var du börjar, och den gröna cirkeln är salen där finalen hålls.
+      I båda bilderna är den vägen som Campus Maps hittar markerad lila.
+      I exempelfall 1 passerar denna väg tre trappor och en dörr.
+      I exempelfall 2 passerar vägen genom noll trappor och sex dörrar.
+      }
       \label{fig:samples}
   \end{figure}
 \end{centering}
@@ -85,11 +90,11 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | l |}
   \hline
   Grupp & Poängvärde & Gränser \\ \hline \hline
-  $1$   & $10$        & $N = 2$ \\ \hline
+  $1$   & $5$        & $N = 2$ \\ \hline
   $2$   & $10$        & $N \leq 10$ \\ \hline
   $3$   & $10$        & $N \leq 250$ \\ \hline
-  $4$   & $10$        & Varje rum som inte ligger längst ner i källaren har två rum under sig. \\ \hline
-  $5$   & $10$        & $N \leq 500$ \\ \hline
-  $6$   & $25$        & $N \leq 950$ \\ \hline
+  $4$   & $15$        & Varje rum som inte ligger längst ner i källaren har två rum under sig. \\ \hline
+  $5$   & $14$        & $N \leq 500$ \\ \hline
+  $6$   & $21$        & $N \leq 950$ \\ \hline
   $7$   & $25$        & $N \leq 1000$ \\ \hline
 \end{tabular}

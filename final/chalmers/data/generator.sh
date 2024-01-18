@@ -14,7 +14,7 @@ limits maxn=5
 sample 1
 sample 2
 
-group group1 10 
+group group1 5
 limits maxn=2
 tc g1-1 generate type=1 n=2 c=2 r=0 seed=1
 tc g1-2 generate type=1 n=2 c=2 r=1 seed=101
@@ -49,7 +49,7 @@ tc g3-10 generate type=2 n=250 seed=151209
 tc g3-11 generate type=2 n=250 seed=15
 tc g3-12 generate type=2 n=250 seed=9
 
-group group4 10
+group group4 15
 limits maxn=1000
 tc g4-1 generate type=2 n=1000 seed=1
 tc g4-2 generate type=2 n=498 seed=2 
@@ -60,7 +60,7 @@ tc g4-6 generate type=2 n=1000 seed=6
 tc g4-7 generate type=2 n=1000 seed=707
 tc g4-8 generate type=2 n=999 seed=8 
 
-group group5 10
+group group5 14
 limits maxn=500
 include_group group1
 include_group group2
@@ -78,7 +78,7 @@ tc g5-10 generate type=2 n=500 seed=4
 tc g5-11 generate type=2 n=500 seed=5123
 tc g5-12 generate type=2 n=500 seed=6
 
-group group6 25
+group group6 21
 limits maxn=950
 include_group group1
 include_group group2
