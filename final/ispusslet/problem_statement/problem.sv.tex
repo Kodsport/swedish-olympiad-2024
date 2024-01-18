@@ -15,7 +15,8 @@ sluta på samma ruta som han började, men detta är inte nödvändigt i alla te
 
 \section*{Indata}
 Den första raden i indatan innehåller två heltal, $N,R$ ($1 \le N \leq 1000$, $R \in {0,1}$), sidlängden på rutnätet och om
-du behöver återvända till starten för denna testfallsgruppen. 
+du behöver återvända till starten för denna testfallsgruppen. Om $R = 1$ så måste du återvänta till starten, och om $R = 0$
+kan du avsluta sekvensen av drag på vilken ruta som helst.
 
 De följande $N$ raderna innehåller vardera en sträng av längd $N$, vilket beskriver hur vardera rad av isrinken ser ut.
 Varje karaktär antingen \texttt{``.''}, \texttt{``O''} eller \texttt{``X''}. Det är garanterat att exakt en ruta innehåller 
@@ -28,7 +29,7 @@ på nästa rad. Denna ska bestå av karaktärerna \texttt{``V''}, \texttt{``<''}
 \texttt{``V''} betyder att Olle ska åka i riktning av ökande radindex, \texttt{``\^{}''} minskande radindex, \texttt{``<''}
 minskande kolumnindex, \texttt{``>''} ökande kolumnindex.
 
-Om det inte finns en giltig sekvens drag, skriv ut -1 och inget mer.
+Om det inte finns en giltig sekvens drag, skriv ut $-1$ och inget mer.
 
 
 
