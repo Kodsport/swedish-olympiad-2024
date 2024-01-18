@@ -5,7 +5,7 @@ Use cycle to switch parity
 
 Crude upper bound:
 Tree: 4x
-Cycle: 2x
+Cycle: 2x (4x naively)
 Walk to cycle and back: 2x
 
 8x in total

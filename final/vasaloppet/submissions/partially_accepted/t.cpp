@@ -1,4 +1,3 @@
-// slow, but obviously correct. I don't want to deal with off-by-one errors
 #include <bits/stdc++.h>
 using namespace std;
 

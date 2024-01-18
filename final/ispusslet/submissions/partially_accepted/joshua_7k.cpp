@@ -1,4 +1,4 @@
-// O(clog(n)^2) from fenwick+binary search
+// 3k from tree+4k from cycle
 #include <bits/stdc++.h>
 using namespace std;
 
