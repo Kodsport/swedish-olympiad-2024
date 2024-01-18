@@ -16,7 +16,7 @@ void run() {
 	int last = -1;
 	for (int i = 0; i < n; i++)
 	{
-		int l = Int(last, t);
+		int l = Int(last+1, t);
 		Space();
 		int r = Int(l+1,t);
 		Endl();
