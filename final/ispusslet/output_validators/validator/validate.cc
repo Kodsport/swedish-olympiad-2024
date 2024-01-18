@@ -31,6 +31,7 @@ void check_isvalid(string& moves, vector<string> grid, int return_start, feedbac
 	vector<pii> directions = {{1,0},{-1,0},{0,-1},{0,1}};
 	map<char,int> movetodir;
 	movetodir['V']=0;
+	movetodir['v']=0;
 	movetodir['^']=1;
 	movetodir['<']=2;
 	movetodir['>']=3;
