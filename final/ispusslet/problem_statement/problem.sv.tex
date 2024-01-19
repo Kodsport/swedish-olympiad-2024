@@ -2,13 +2,15 @@
 \noindent
 Olle hatar kryss. De påminner honom för mycket om \texttt{wrong answer} resultat på inskickningar. När han anlände i Partille isrink
 och såg att det fanns $K$ ($2 \leq K \leq 20000$) stycken kryss utplacerade i den blev han argare än en tjur.
-Olle är dock en problemlösare och har en plan att lösa denna katastrofala situation. Isrinken kan representeras
+Olle är dock en problemlösare och har en plan att lösa denna katastrofala situation. Han tänker nämligen göra om alla kryss till cirklar.
+Isrinken kan representeras
 som ett $N \times M$ stort rutnät, där $K$ stycken rutor har ett kryss och de resterande $N \times M - K$ är tomma.
 Raderna av rutnätet är numrerade från $0$ till $N-1$ uppifrån och ned, och kolumnerna är numrerade från $0$ till $M-1$ från vänster till höger.
 
 Till en början befinner han sig på rutan markerad med \texttt{S}. Denna rutan är också ett kryss. I ett \texttt{drag} kan han
 börja åka i en av de $4$ riktningarna utan möjlighet att svänga. Han kommer fortsätta åka i samma riktning tills dess att han
-hamnar vid ett kryss eller krockar med väggen. Om Olle krockar med väggen kommer han att utsättas för en skada så allvarlig
+hamnar vid ett kryss eller cirkel och stannar på den rutan. Om det inte finns några kryss eller cirklar i riktningen Olle åker
+kommer han krocka med väggen och utsättas för en skada så allvarlig
 att han kommer tvingas avbryta sin plan. Varje gång han åker på ett kryss stannar han helt och byter det från ett kryss till en cirkel.
 Om han någonsin åker på en cirkel stannar han också helt och gör om det till ett kryss i sin blinda ilska. Eftersom han inte har hela dagen
 på sig vill han hitta en sekvens av drag som innehåller som mest \textbf{$10^5$} drag och gör om alla kryss till cirklar. För lite stilpoäng vill han
@@ -20,7 +22,7 @@ och antalet kolumner som rutnätet utgörs av och om
 du behöver återvända till starten för denna testfallsgruppen. Om $R = 1$ så måste du återvänta till starten, och om $R = 0$
 kan du avsluta sekvensen av drag på vilken ruta som helst (notera att du aldrig får krocka Olle in i väggen, även på sista draget).
 
-De följande $N$ raderna innehåller vardera en sträng av längd $M$, vilket beskriver den raden av isrinken ser ut.
+De följande $N$ raderna innehåller vardera en sträng av längd $M$, vilket beskriver hur den raden av isrinken ser ut.
 Varje tecken är antingen \texttt{``.''}, \texttt{``S''} eller \texttt{``X''}. Det är garanterat att exakt en ruta innehåller 
 \texttt{``S''}. Det är även garanterat att antalet \texttt{``S''} och antalet \texttt{``X''} tillsammans är exakt
 $K$ ($2 \leq K \leq min(20000, N \cdot M)$). 
@@ -31,8 +33,8 @@ Skriv sedan ut sekvensen på nästa rad. Denna ska bestå av karaktärerna \verb
 \verb|V| betyder att Olle ska åka nedåt, \verb|^| uppåt, \verb|<| åt vänster
 och \verb|>| åt höger. Om $R=1$ måste dessutom Olle sluta på samma ruta som han startade.
 
-Om det inte finns en giltig sekvens av drag, skriv ut $-1$ och inget mer. Notera att om en giltig sekvens existerar kan bero på
-om $R=0$ eller $R=1$.
+Om det inte finns en giltig sekvens av drag, skriv ut $-1$ och inget mer. Notera att vare sig en giltig sekvens existerar eller inte
+kan bero på om $R=0$ eller $R=1$.
 
 
 \section*{Poängsättning}
