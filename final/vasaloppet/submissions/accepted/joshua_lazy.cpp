@@ -111,7 +111,7 @@ signed main()
 		int l, r;
 		cin >> l >> r;
 		leftp.push_back(l);
-		root->add(l, r, 1); // add 1 to [l,r]
+		root->add(l, r-1, 1); // add 1 to [l,r]
 	}
 
 	int ans = 0;
