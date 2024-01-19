@@ -60,7 +60,7 @@ tc g3-14 generate type=2 n=250 seed=9
 tc g3-15 generate type=2 n=230 seed=100
 tc g3-16 generate type=2 n=249 seed=100000
 
-group group4 15
+group group4 16
 limits maxn=1000
 tc g4-1 generate type=2 n=1000 seed=1
 tc g4-2 generate type=2 n=498 seed=2 
@@ -71,7 +71,7 @@ tc g4-6 generate type=2 n=1000 seed=6
 tc g4-7 generate type=2 n=1000 seed=707
 tc g4-8 generate type=2 n=999 seed=8 
 
-group group5 14
+group group5 13
 limits maxn=500
 include_group group1
 include_group group2

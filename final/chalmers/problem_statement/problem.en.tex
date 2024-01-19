@@ -13,6 +13,7 @@ Your sense of direction is not great, and what makes matters worse is the very s
 
 The basement consists of $2 \leq N \leq 1000$ floors.
 At the ground level, there is just one large room.
+For all other rooms, there is some room directly above.
 When you go down one floor, the rooms are half as big.
 Beneath every room $i$, there are up to two rooms $l_i$ and $r_i$, each exactly half as big as room $i$.
 It is possible that only one of $l_i$ and $r_i$ exists, or that both or neither of them exist.
@@ -98,8 +99,8 @@ To get points in a group your solution must pass all test cases in that group.
   $1$   & $5$        & $N = 2$ \\ \hline
   $2$   & $10$        & $N \leq 10$ \\ \hline
   $3$   & $10$        & $N \leq 250$ \\ \hline
-  $4$   & $15$        & Every room that is not on the lowest floor has two rooms directly below it. \\ \hline
-  $4$   & $14$        & $N \leq 500$ \\ \hline
+  $4$   & $16$        & Every room that is not on the lowest floor has two rooms directly below it. \\ \hline
+  $4$   & $13$        & $N \leq 500$ \\ \hline
   $5$   & $21$        & $N \leq 950$ \\ \hline
   $6$   & $25$        & $N \leq 1000$ \\ \hline
 \end{tabular}
