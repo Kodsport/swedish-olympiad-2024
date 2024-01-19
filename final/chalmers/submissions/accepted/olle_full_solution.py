@@ -127,24 +127,31 @@ else:
 
         go_to(3, a)
         q1 = app()
-        go("up")
-        go("up")
-        go("up")
-        go_to(3, b)
-        q2 = app()
-        go("up")
-        go("up")
-        go("up")
-        
-        res = ans.index(q1 - q2)
-        res = cands[res]
-        go_to(3, res)
-        distance = q1 - dics[a][(3, res)][1]
-        if distance < 0:
+
+        if q1 < 500:
             go("up")
             go("up")
             go("up")
             distance = app()
+        else:
+            go("up")
+            go("up")
+            go("up")
+            go_to(3, b)
+            q2 = app()
+            go("up")
+            go("up")
+            go("up")
+            
+            res = ans.index(q1 - q2)
+            res = cands[res]
+            go_to(3, res)
+            distance = q1 - dics[a][(3, res)][1]
+            if distance < 0:
+                go("up")
+                go("up")
+                go("up")
+                distance = app()
 
 while distance > 0:
     if not (downleft and downright):

@@ -187,13 +187,13 @@ void searchnexttwo() {
             cin >> tmp;
             if(tmp[3] == '1') {
                 cout << "downleft" << endl;
-                cin >> tmp;
+                cin >> s;
                 cout << "app" << endl;
                 int val;
                 cin >> val;
                 if(val == dist - 1) {
                     cout << "right" << endl;
-                    cin >> tmp;
+                    cin >> s;
                     dist -= 2;
                     return;
                 } else if(val == dist + 1) {
@@ -202,7 +202,7 @@ void searchnexttwo() {
                     cout << "left" << endl;
                     cin >> tmp;
                     cout << "downleft" << endl;
-                    cin >> tmp;
+                    cin >> s;
                     dist -= 2;
                     return;
                 } else {
@@ -211,7 +211,7 @@ void searchnexttwo() {
                 }
             } else if (tmp[2] == '1') {
                 cout << "downright" << endl;
-                cin >> tmp;
+                cin >> s;
                 cout << "app" << endl;
                 int val;
                 cin >> val;
@@ -224,7 +224,7 @@ void searchnexttwo() {
                     cout << "left" << endl;
                     cin >> tmp;
                     cout << "downleft" << endl;
-                    cin >> tmp;
+                    cin >> s;
                     dist -= 2;
                     return;
                 }
@@ -232,7 +232,7 @@ void searchnexttwo() {
                 cout << "left" << endl;
                 cin >> tmp;
                 cout << "downleft" << endl;
-                cin >> tmp;
+                cin >> s;
                 dist -= 2;
                 return;
             }
@@ -243,8 +243,8 @@ void searchnexttwo() {
             cout << "app" << endl;
             int val;
             cin >> val;
-            for(int i = val; i >= dist - 2; i--)
-                cout << "right" << endl, cin >> tmp;
+            for(int i = val; i > dist - 2; i--)
+                cout << "right" << endl, cin >> s;
             dist -= 2;
             return;
         }
@@ -257,12 +257,12 @@ void searchnexttwo() {
             cout << "app" << endl;
             int val;
             cin >> val;
-            if(val == dist - 1) cout << "right" << endl, cin >> tmp;
+            if(val == dist - 1) cout << "right" << endl, cin >> s;
             dist -= 2;
             return;
         } else {
             cout << "downright" << endl;
-            cin >> tmp;
+            cin >> s;
             dist -= 2;
             return;
         }
@@ -312,7 +312,7 @@ int main() {
     resetall();
     search1(at, 1, 4);
 
-    // cerr << "DONESEARCH" << endl;
+    cerr << "DONESEARCH" << endl;
 
     if(low.empty()) {
         // cerr << "trying everything" << endl;
@@ -354,7 +354,7 @@ int main() {
     }
 
     assert(dist != 2000);
-    // cerr << "dist: " << dist << endl;
+    cerr << "dist: " << dist << endl;
     while(dist) {
         searchnexttwo();
     }

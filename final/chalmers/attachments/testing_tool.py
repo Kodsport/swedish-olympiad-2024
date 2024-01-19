@@ -181,14 +181,12 @@ def main():
         pl -= 1
         po //= 2
         return pl, po
-    
     def info(pl, po):
         return "".join(
         ["1" if x(pl,po) else "0" for x in 
             [CGU, CGR, CGDR, CGDL, CGL]
         ]
         )
-    
     def d(pl,po):
         v = [CGU, CGR, CGDR, CGDL, CGL]
         m = [GU, GR, GDR, GDL, GL]
@@ -218,6 +216,7 @@ def main():
 
     proc.stdin.write(f"{info(pos_level, pos_offset)}\n".encode("utf8"))
     proc.stdin.flush()
+    print(f"< {info(pos_level, pos_offset)}")
 
     app_calls = 0
     walk_calls = 0
@@ -274,7 +273,6 @@ def main():
         else:
             print(f"[*] Wrong answer: invalid command '{command}'")
             exit(0)
-        
         if command in ["up", "right", "downright", "downleft", "left"]:
             walk_calls += 1
             if not silent:
