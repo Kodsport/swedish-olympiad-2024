@@ -49,7 +49,7 @@ i = n-1
 while i >=row:
     grid[i][m-1]='X'
     i-=1
-grid[n-1][m-1]='O'
+grid[n-1][m-1]='S'
 if parity:
     grid[n-1][m-2]='X'
 

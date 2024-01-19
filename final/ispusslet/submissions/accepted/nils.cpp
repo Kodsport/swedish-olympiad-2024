@@ -118,7 +118,7 @@ int main() {
         rep(c2,0,m){
             if(s[c2] != '.'){
                 grid[c1].push_back(k);
-                if(s[c2] == 'O'){
+                if(s[c2] == 'S'){
                     start = k;
                 }
                 k++;

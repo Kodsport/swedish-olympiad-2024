@@ -42,7 +42,7 @@ for i in range(1,row):
 grid[row][0]='X'
 grid[row][m-1]='X'
 grid[0][m-1]='X'
-grid[0][0]='O'
+grid[0][0]='S'
 m+=4
 if parity:
     grid[row+1][0]='X'

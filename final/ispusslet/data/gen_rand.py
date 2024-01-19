@@ -28,7 +28,7 @@ random.shuffle(positions)
 for i in range(x):
     r,c = positions[i]
     if i==0:
-        grid[r][c]='O'
+        grid[r][c]='S'
     else:
         grid[r][c]='X'
 

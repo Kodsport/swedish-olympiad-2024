@@ -20,7 +20,7 @@ n = int(cmdlinearg('n'))
 m = int(cmdlinearg("m",n))
 ret = int(cmdlinearg("r"))
 grid = [['X' for i in range(m)] for j in range(n)]
-grid[randint(0,n-1)][randint(0,m-1)]='O'
+grid[randint(0,n-1)][randint(0,m-1)]='S'
 
 
 print(n, m, ret)

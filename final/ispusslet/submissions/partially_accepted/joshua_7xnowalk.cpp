@@ -182,7 +182,7 @@ signed main()
 	vector<p2> position;
 	rep(i, n) rep(j, m)
 	{
-		if (grid[i][j] == 'O') r = i, c = j, grid[i][j] = 'X';
+		if (grid[i][j] == 'S') r = i, c = j, grid[i][j] = 'X';
 	}
 	rep(i, n) rep(j, m)
 	{

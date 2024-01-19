@@ -21,7 +21,7 @@ void check_isvalid(string& moves, vector<string> grid, int return_start, feedbac
 	int m = grid[0].size();
 	vvi nodeindex(n,vi(m,-1));
 	pii o = pii(-1,-1);
-	rep(i,0,n) rep(j,0,m) if(grid[i][j]=='O') o=pii(i,j), grid[i][j]='X';
+	rep(i,0,n) rep(j,0,m) if(grid[i][j]=='S') o=pii(i,j), grid[i][j]='X';
 	int ind = 0;
 	rep(i,0,n) rep(j,0,m) if (grid[i][j]=='X') nodeindex[i][j]=ind++;
 	int cnt = ind;

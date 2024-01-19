@@ -17,7 +17,7 @@ void run() {
 	int c = -1;
 	vector<int> good(250);
 	good['X']=1;
-	good['O']=1;
+	good['S']=1;
 	good['.']=1;
 	int ocnt = 0;
 	for (int i = 0; i < n; i++)
@@ -28,11 +28,11 @@ void run() {
 		for (int j = 0; j < m; j++) assert(good[row[j]]);
 
 		for (int j = 0; j < m; j++) xcnt += row[j]=='X';
-		for (int j = 0; j < m; j++) if (row[j]=='O') xcnt++, ocnt++, r=i,c=j;
+		for (int j = 0; j < m; j++) if (row[j]=='S') xcnt++, ocnt++, r=i,c=j;
 
 	}
 	assert(ocnt==1);
-	assert(rows[r][c]=='O');
+	assert(rows[r][c]=='S');
 	assert(xcnt<=int(Arg("maxX", int(2e4))));
 	assert(xcnt>=2);
 	Eof();
