@@ -65,7 +65,11 @@ void check_isvalid(string& moves, vector<string> grid, int return_start, feedbac
 		int dir = movetodir[moves[i]];
 		if (edges[currp][dir]==-1)
 		{
-			feedback("Crashed into wall");
+			bool allwhite = 1;
+			rep(j,0,cnt) allwhite&= color[j];
+			if (!allwhite) feedback("Not all are circles");
+			if (return_start) feedback("Crashed into wall while need to return");
+			return;
 		}
 		currp = edges[currp][dir];
 		color[currp] ^= 1;

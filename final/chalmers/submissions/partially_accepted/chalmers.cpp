@@ -40,7 +40,7 @@ vector<string> path[20];
 
 vi low;
 
-void search1(int at, int dep, int gd = 3) {
+void search1(int at, int dep, int gd = 4) {
     string cpy = s;
     // cerr << at << " " << path[at].size() << endl;
     if(dep == gd) {
@@ -90,29 +90,26 @@ void search1(int at, int dep, int gd = 3) {
     if(cpy[0] == '1') cout << "up" << endl, cin >> s;
 }
 
+int ans[20];
+void dfs(int at) {
+     // if can travel left and right do that first
+    if(sib[at].ff > 0 && ans[sib[at].ff] == -1) ans[sib[at].ff] = ans[at] + 1, dfs(sib[at].ff);
+    if(sib[at].ss > 0 && ans[sib[at].ss] == -1) ans[sib[at].ss] = ans[at] + 1, dfs(sib[at].ss);
+    
+    // travel down
+    if(chi[at].ff > 0 && ans[chi[at].ff] == -1) ans[chi[at].ff] = ans[at] + 1, dfs(chi[at].ff);
+    if(chi[at].ss > 0 && ans[chi[at].ss] == -1) ans[chi[at].ss] = ans[at] + 1, dfs(chi[at].ss);
+
+    // travel up
+    if(par[at] > 0 && ans[par[at]] == -1) ans[par[at]] = ans[at] + 1, dfs(par[at]);
+}
+
 vi searchdists(int st) {
-    int ans[20];
     for(int i = 0; i < 20; i++)
         ans[i] = -1;
     
-    queue<int> q;
-    q.push(st);
     ans[st] = 0;
-    while(!q.empty()) {
-        int at = q.front();
-        q.pop();
-
-        // if can travel left and right do that first
-        if(sib[at].ff > 0 && ans[sib[at].ff] == -1) ans[sib[at].ff] = ans[at] + 1, q.push(sib[at].ff);
-        if(sib[at].ss > 0 && ans[sib[at].ss] == -1) ans[sib[at].ss] = ans[at] + 1, q.push(sib[at].ss);
-        
-        // travel down
-        if(chi[at].ff > 0 && ans[chi[at].ff] == -1) ans[chi[at].ff] = ans[at] + 1, q.push(chi[at].ff);
-        if(chi[at].ss > 0 && ans[chi[at].ss] == -1) ans[chi[at].ss] = ans[at] + 1, q.push(chi[at].ss);
-
-        // travel up
-        if(par[at] > 0 && ans[par[at]] == -1) ans[par[at]] = ans[at] + 1, q.push(par[at]);
-    }
+    dfs(st);
 
     vi ret(low.size(), -1);
     for(int i = 0; i < low.size(); i++)
@@ -158,7 +155,6 @@ void resetall() {
 
 void searchnexttwo() {
     resetall();
-    // search1(1, 1);
     string tmp;
     if(dist == 1) {
         if(s[3] == '1') {
@@ -187,13 +183,13 @@ void searchnexttwo() {
             cin >> tmp;
             if(tmp[3] == '1') {
                 cout << "downleft" << endl;
-                cin >> tmp;
+                cin >> s;
                 cout << "app" << endl;
                 int val;
                 cin >> val;
                 if(val == dist - 1) {
                     cout << "right" << endl;
-                    cin >> tmp;
+                    cin >> s;
                     dist -= 2;
                     return;
                 } else if(val == dist + 1) {
@@ -202,7 +198,7 @@ void searchnexttwo() {
                     cout << "left" << endl;
                     cin >> tmp;
                     cout << "downleft" << endl;
-                    cin >> tmp;
+                    cin >> s;
                     dist -= 2;
                     return;
                 } else {
@@ -211,7 +207,7 @@ void searchnexttwo() {
                 }
             } else if (tmp[2] == '1') {
                 cout << "downright" << endl;
-                cin >> tmp;
+                cin >> s;
                 cout << "app" << endl;
                 int val;
                 cin >> val;
@@ -224,7 +220,7 @@ void searchnexttwo() {
                     cout << "left" << endl;
                     cin >> tmp;
                     cout << "downleft" << endl;
-                    cin >> tmp;
+                    cin >> s;
                     dist -= 2;
                     return;
                 }
@@ -232,7 +228,7 @@ void searchnexttwo() {
                 cout << "left" << endl;
                 cin >> tmp;
                 cout << "downleft" << endl;
-                cin >> tmp;
+                cin >> s;
                 dist -= 2;
                 return;
             }
@@ -243,8 +239,8 @@ void searchnexttwo() {
             cout << "app" << endl;
             int val;
             cin >> val;
-            for(int i = val; i >= dist - 2; i--)
-                cout << "right" << endl, cin >> tmp;
+            for(int i = val; i > dist - 2; i--)
+                cout << "right" << endl, cin >> s;
             dist -= 2;
             return;
         }
@@ -257,12 +253,12 @@ void searchnexttwo() {
             cout << "app" << endl;
             int val;
             cin >> val;
-            if(val == dist - 1) cout << "right" << endl, cin >> tmp;
+            if(val == dist - 1) cout << "right" << endl, cin >> s;
             dist -= 2;
             return;
         } else {
             cout << "downright" << endl;
-            cin >> tmp;
+            cin >> s;
             dist -= 2;
             return;
         }
@@ -270,7 +266,7 @@ void searchnexttwo() {
 }
 
 bool found = 0;
-void tryeverything(int at = 1) {
+void tryeverything(int at = 1, int cd = 1, int md = 6) {
     cout << "app" << endl;
     int val;
     cin >> val;
@@ -280,22 +276,30 @@ void tryeverything(int at = 1) {
         return;
     }
     string cpy = s;
-    if(cpy[3] == '1') {
+    if(cpy[3] == '1' && cd + 1 <= md) {
         cout << "downleft" << endl;
         cin >> s;
-        tryeverything(cur);
+        tryeverything(cur, cd + 1);
     }
 
     if(found) return;
 
-    if(cpy[2] == '1') {
+    if(cpy[2] == '1' && cd + 1 <= md) {
         cout << "downright" << endl;
         cin >> s;
-        tryeverything(cur);
+        tryeverything(cur, cd + 1);
     }
 
     if(found) return;
     if(cpy[0] == '1') cout << "up" << endl, cin >> s;
+}
+
+void fullsearchok(int md = 6) {
+    while(s[0] == '1') {
+        cout << "up" << endl;
+        cin >> s;
+    }
+    tryeverything();
 }
 
 int main() {
@@ -310,9 +314,9 @@ int main() {
 
     int at = 1;
     resetall();
-    search1(at, 1, 4);
+    search1(at, 1);
 
-    // cerr << "DONESEARCH" << endl;
+    cerr << "DONESEARCH" << endl;
 
     if(low.empty()) {
         // cerr << "trying everything" << endl;
@@ -336,6 +340,9 @@ int main() {
                 KYSS.insert(kys1[p] - kys2[p]);
 
             if(KYSS.size() == low.size()) {
+                for(int p = 0; p < kys1.size(); p++)
+                    cerr << kys1[p] - kys2[p] << " ";
+                cerr << "\n";
                 pii okk = doasearch(low[i], low[j]);
                 for(int p = 0; p < kys1.size(); p++) {
                     if(okk.ff - okk.ss == kys1[p] - kys2[p]) {
@@ -354,7 +361,12 @@ int main() {
     }
 
     assert(dist != 2000);
-    // cerr << "dist: " << dist << endl;
+    cerr << "dist: " << dist << endl;
+
+    if(dist <= 3) {
+        fullsearchok();
+        return 0;
+    }
     while(dist) {
         searchnexttwo();
     }

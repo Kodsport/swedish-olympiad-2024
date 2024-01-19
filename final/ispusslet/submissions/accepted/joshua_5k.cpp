@@ -96,7 +96,7 @@ int sign(int x)
 string getans(vi& nodes, vector<p2>& position)
 {
 	map<p2, string> difftodir;
-	difftodir[p2(1, 0)] = 'V';
+	difftodir[p2(1, 0)] = 'v';
 	difftodir[p2(-1, 0)] = '^';
 	difftodir[p2(0, 1)] = '>';
 	difftodir[p2(0, -1)] = '<';

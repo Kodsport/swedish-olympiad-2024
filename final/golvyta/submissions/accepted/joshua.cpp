@@ -1,4 +1,3 @@
-// O(clog(n)^2) from fenwick+binary search
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -10,6 +10,7 @@ samplegroup
 sample 1
 sample 2
 sample 3
+sample 4
 
 MAXN=100000
 MAXM=100000
@@ -51,15 +52,15 @@ limits maxn=$MAXN
 limits maxm=$MAXM
 tc g3-1 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=23
 tc g3-2 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=24
-tc g3-3 gen_rand n=$MAXN m=$MAXM mode=no_cheater seed=25
+tc g3-3 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=25
 tc g3-4 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=26
-tc g3-5 gen_rand n=$MAXN m=$MAXM mode=no_cheater seed=27
-tc g3-6 gen_rand n=$MAXN m=$MAXM mode=no_cheater seed=28
+tc g3-5 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=27
+tc g3-6 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=28
 tc g3-7 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=29
 tc g3-8 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=30
 tc g3-9 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=31
 tc g3-10 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=32
-tc g3-11 gen_rand n=$MAXN m=$MAXM mode=no_cheater seed=33
+tc g3-11 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=33
 
 group group4 20
 include_group group2
@@ -81,6 +82,7 @@ group group5 40
 tc 1
 tc 2
 tc 3
+tc 4
 include_group group1
 include_group group2
 include_group group3
