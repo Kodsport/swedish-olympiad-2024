@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 n,t,s = [int(x) for x in input().split(" ")]
 
 intervals = []
