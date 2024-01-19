@@ -64,9 +64,10 @@ elif mode == "joshua_cheater":
     cheater = "joshua"
 
     hunters = set([names[0], cheater])
+    is_cheater = random.randint(0,1) == 1
 
     for iter in range(m):
-        if random.randint(0, 1) == 1:
+        if random.randint(0, 1) == 1 and is_cheater:
             hunter = "joshua"
         else:
             hunter = hunters.pop()
