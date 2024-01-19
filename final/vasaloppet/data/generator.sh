@@ -20,6 +20,12 @@ limits n=1
 tc_manual ../manual/n1_covers.in
 tc_manual ../manual/n1_notcovers.in
 tc_manual ../manual/n1_small.in
+tc_manual ../manual/n1_endpoint.in
+tc_manual ../manual/n1_endpoint2.in
+tc_manual ../manual/n1_endpoint3.in
+tc_manual ../manual/n1_endpoint4.in
+tc_manual ../manual/n1_startpoint.in
+tc_manual ../manual/n1_startpoint2.in
 
 group group2 25
 include_group group1
@@ -33,6 +39,9 @@ tc g2-4 gen_rand n=1000 t=$BILLION s_ratio=0.2
 tc g2-5 gen_rand n=1000 t=$BILLION s_ratio=0.4 mode=12
 tc_manual ../manual/endpoints1.in
 tc_manual ../manual/endpoints2.in
+tc_manual ../manual/n3_endpoints.in
+tc_manual ../manual/n3_endpoints1.in
+
 
 group group3 30
 limits t=$MILLION
@@ -42,6 +51,12 @@ tc g3-3 gen_rand n=$MAXN t=$MILLION s_ratio=0.1
 tc g3-4 gen_rand n=$MAXN t=$MILLION s_ratio=0.2
 tc g3-5 gen_rand n=$MAXN t=$MILLION s_ratio=0.4 mode=12
 tc_manual ../manual/g3_zero.in
+tc n1_endpoint
+tc n1_endpoint2
+tc n1_endpoint3
+tc n1_startpoint
+tc n3_endpoints
+tc n3_endpoints1
 
 group group4 35
 include_group group2
