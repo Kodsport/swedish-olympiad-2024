@@ -32,7 +32,8 @@ tc g1-11 gen_rand n=100 m=1 mode=no_cheater seed=11
 tc g1-12 gen_rand n=100 m=1 mode=no_cheater seed=12
 tc g1-13 gen_rand n=100 m=1 mode=no_cheater seed=13
 tc g1-14 gen_rand n=100 m=1 mode=no_cheater seed=14
-
+tc_manual ../manual/joshuam1n2.in
+tc_manual ../manual/boshuam1n2.in
 
 group group2 15
 limits maxn=2
@@ -45,7 +46,10 @@ tc g2-5 gen_rand n=2 m=$MAXM mode=no_cheater seed=19
 tc g2-6 gen_rand n=2 m=$MAXM mode=no_cheater seed=20
 tc g2-7 gen_rand n=2 m=$MAXM mode=no_cheater seed=21
 tc g2-8 gen_rand n=2 m=$MAXM mode=no_cheater seed=22
-
+tc_manual ../manual/joshuam2n2.in
+tc_manual ../manual/boshuam2n2.in
+tc joshuam1n2
+tc boshuam1n2
 
 group group3 15
 limits maxn=$MAXN
@@ -61,6 +65,8 @@ tc g3-8 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=30
 tc g3-9 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=31
 tc g3-10 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=32
 tc g3-11 gen_rand n=$MAXN m=$MAXM mode=joshua_cheater seed=33
+tc joshuam2n2
+tc joshuam1n2
 
 group group4 20
 include_group group2
@@ -115,3 +121,4 @@ tc g5-23 gen_rand n=$MAXN m=$MAXM mode=few_cheaters seed=68
 tc g5-24 gen_rand n=$MAXN m=$MAXM mode=few_cheaters seed=69
 tc g5-25 gen_rand n=$MAXN m=$MAXM mode=few_cheaters seed=70
 tc g5-26 gen_rand n=$MAXN m=$MAXM mode=few_cheaters seed=71
+
