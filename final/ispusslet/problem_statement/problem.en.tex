@@ -1,7 +1,7 @@
 \problemname{The Ice Puzzle}
 \noindent
 Olle hates crosses. They remind him too much of getting a \texttt{Wrong Answer} verdict on Programmeringsolympiaden.
-When he arrived at Vallhamra Ishall and saw that there were $K$ ($2 \leq K \leq 20000$) crosses placed on the ice,
+When he arrived at Vallhamra Icehall and saw that there were $K$ ($2 \leq K \leq 20000$) crosses placed on the ice,
 he became angrier than a raging bull.
 
 Being the problem solver he is, Olle has come up with a plan to solve this disastrous situation. He intends to
@@ -58,4 +58,34 @@ To get the points for a group, it must pass all the test cases in the group.
 \end{tabular}
 
 %\section*{Samples}
+
+\section*{Explanation of Sample 1}
 Initially, Olle is at the cross in the upper-left corner, and the grid looks like this:
+\noindent
+\begin{verbatim}
+  X.X
+  ...
+  X.X
+\end{verbatim}
+After the moves \verb|>|, \verb|v| and \verb|^|, Olle is located at the top-right cell of the grid, and it looks like this:
+\noindent
+\begin{verbatim}
+  X.X
+  ...
+  X.O
+\end{verbatim}
+After having made the moves \verb|<| and \verb|>|, he is still located att at the top-right cell of the grid, and it looks like this:
+\noindent
+\begin{verbatim}
+  O.O
+  ...
+  X.O
+\end{verbatim}
+Finally, he will make the moves \verb|<|, \verb|v|, \verb|^| to create a cross-free ice rink, where he also
+finishes at the starting position (this is not a requirement in this test case, as $R=0$):
+\noindent
+\begin{verbatim}
+  O.O
+  ...
+  O.O
+\end{verbatim}
