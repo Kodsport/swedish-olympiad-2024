@@ -9,11 +9,11 @@ Han tänker nämligen göra om alla kryss till cirklar.
 Isrinken kan representeras
 som ett $N \times M$ stort rutnät, där $K$ stycken rutor har ett kryss och de resterande $N \times M - K$ är tomma.
 Rutnätets rader är numrerade från $0$ till $N-1$ uppifrån och ned, och kolumnerna är numrerade från $0$ till $M-1$ från vänster till höger.
-När Olle är färdig ska alla rutor som från början hade kryss gjorts om till cirklar istället.
+När Olle är färdig ska alla rutor som från början hade kryss i sig innehålla cirklar istället.
 
 Till en början befinner han sig på rutan markerad med \texttt{S}. 
-Denna rutan är också ett kryss. 
-I ett \texttt{drag} kan han börja åka i en av riktningarna uppåt, nedåt, höger eller vänster utan möjlighet att svänga. 
+Denna rutan innehåller också ett kryss. 
+I ett drag kan han börja åka i en av riktningarna uppåt, nedåt, höger eller vänster utan möjlighet att svänga. 
 Han kommer fortsätta åka i samma riktning tills dess att han
 hamnar vid ett kryss eller cirkel och stannar på den rutan.
 Om det inte finns några kryss eller cirklar i riktningen som Olle åker i
@@ -27,7 +27,7 @@ För lite stilpoäng vill han
 också sluta på samma ruta som han började, men detta är inte nödvändigt i alla testfallsgrupper.
 
 \section*{Indata}
-Den första raden i indatan innehåller de tre heltalen $N,M$ och $R$ ($1 \le N,M$, $N \cdot M \leq 10^6$, $R \in {0,1}$).
+Den första raden i indatan innehåller de tre heltalen $N,M$ och $R$ ($1 \le N \cdot M \leq 10^6$, $R \in \{0,1\}$).
 Talen $N$ och $M$ är antalet rader
 och antalet kolumner som rutnätet utgörs av, 
 och $R$ berättar om du måste återvända till startrutan eller inte.
@@ -43,8 +43,8 @@ Det är garanterat att exakt en ruta innehåller
 \section*{Utdata}
 Om det finns en sekvens drag som gör om alla kryss till cirklar, skriv först ut längden på denna.
 Längden får vara som mest $10^5$.
-Skriv sedan ut sekvensen på nästa rad. Denna ska bestå av karaktärerna \verb|V|, \verb|<|, \verb|^| och \verb|>|. 
-\verb|V| betyder att Olle ska åka nedåt, \verb|^| uppåt, \verb|<| åt vänster
+Skriv sedan ut sekvensen på nästa rad. Denna ska bestå av karaktärerna \verb|v|, \verb|<|, \verb|^| och \verb|>|. 
+\verb|v| betyder att Olle ska åka nedåt, \verb|^| uppåt, \verb|<| åt vänster
 och \verb|>| åt höger. Om $R=1$ måste dessutom Olle sluta på samma ruta som han startade.
 
 Om det inte finns en giltig sekvens av drag, skriv ut $-1$ och inget mer. 
@@ -60,7 +60,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $20$       & $K \leq 100, R=0$. \\ \hline
+  $1$    & $20$       & $K \leq 100, R=0$ \\ \hline
   $2$    & $5$        & $K \leq 5000, R=0$ \\ \hline
   $3$    & $15$       & $R=0$ \\ \hline
   $4$    & $10$       & $K \leq 100, R=1$ \\ \hline
