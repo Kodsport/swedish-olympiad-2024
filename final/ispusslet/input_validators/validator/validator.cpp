@@ -8,6 +8,7 @@ void run() {
 	int retstart = Int(0,1);
 	Endl();
 	assert(n*m<=int(1e6));
+	assert(n*m>=2);
 	int ret = Arg("r",-1);
 	if (ret!=-1) assert(retstart==ret);
 
