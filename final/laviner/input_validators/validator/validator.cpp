@@ -16,6 +16,7 @@ void run() {
 
 	for (int i = 0; i<n-1; i++){
 		parents[i] = Int(1,i+1);
+		assert(parents[i] <= i + 1);
 		if (i != n-2) Space();
 
 		if (mode == "line") assert(parents[i] == i+1);

@@ -2,8 +2,9 @@
 \noindent
 Efter att Joshua såg igenom Alexanders försök att förfalska bilder på snöflingor\footnote{Se https://open.kattis.com/problems/falskflinga}
 har Alexander blivit besatt av snö, och väldigt arg.
-Han har kommit på en ondskefull plan med oklara motiv,
-där första steget är att bjuda med Joshua på skidresa.
+Alexander har nu kommit på en ondskefull plan med oklara motiv,
+där det första steget är att bjuda med Joshua på skidresa.
+
 Tillsammans befinner de sig nu i ett stort skidsystem med $N$ skidbyar numrerade från $1$ till $N$.
 Skidbyarna är sammankopplade med $N-1$ enkelriktade skidbackar.
 Högst upp i skidsystemet ligger skidby $1$,
@@ -16,7 +17,7 @@ Han vill nämligen starta en lavin i skidsystemet.
 Det planerar han att göra genom att ställa sig i någon skidby och skrika väldigt högt.
 Då kommer snön i denna skidby att sprida sig ner längs alla backar som utgår från byn.
 Sedan kommer snön att spridas vidare neråt i alla riktningar så långt som möjligt.
-Lavinens \emph{skadogörelse} är antalet skidbyar som drabbas av lavinen
+Lavinens \emph{skadogörelse} är antalet skidbyar som drabbas av lavinen.
 
 Joshua, som har märkt att Alexander inte verkar vara vid sina sinnes fulla bruk,
 har genomskådat Alexanders ondskefulla plan.
@@ -40,11 +41,11 @@ alltså hur många skidbyar som drabbas av lavinen.
 Den första raden i indatan innehåller två heltal, $N$ och $K$ ($1 \le K < N \le 10^5$), 
 antalet skidbyar i skidsystemet, och antalet murar Joshua kan sätta ut.
 
-Därefter följer en rad med $N-1$ heltal $a_1, a_2, ..., a_{N-1}$.
+Därefter följer en rad med $N-1$ heltal $a_1, a_2, ..., a_{N-1}$, där $1 \le a_i \le i$.
 För varje $i = 1, 2, ..., N-1$ finns det en skidbacke från skidbyn med nummer $a_i$ till skidbyn med nummer $i+1$. 
 
 \section*{Utdata}
-Skriv ut ett heltal: den maximala skadogörelsen Alexander kan åstadkomma, givet att Joshua placerar murarna optimalt.
+Skriv ut ett heltal: Den maximala skadogörelsen Alexander kan åstadkomma, givet att Joshua placerar murarna optimalt.
 
 
 \section*{Poängsättning}
