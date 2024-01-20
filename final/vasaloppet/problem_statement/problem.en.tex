@@ -23,18 +23,18 @@ while there is no ad break running.
 \end{centering}
 
 \section*{Input}
-The first line if input contains three integers $N, T,$ and $S$ ($0 \leq N \leq 10^5$, $1 \leq S \leq T \leq 10^9$). 
+The first line of input contains three integers $N, T,$ and $S$ ($0 \leq N \leq 10^5$, $1 \leq S \leq T \leq 10^9$). 
 $N$ is the number of ad breaks, $T$ is the duration of the broadcast in seconds, and $S$ is the length of the skiing trip in seconds.
 
 The following $N$ lines each contain two integers $l_i, r_i$ ($0 \leq l_i < r_i \leq T$),
 indicating that the $i$-th commercial break lasts from second $l_i$ to second $r_i$.\\
 The commercial breaks are given in the order they occur, and all breaks are disjoint and sorted, 
-meaning $r_i < l_{i+1}$ for $i < N$.
+which means that $r_i < l_{i+1}$ for $i < N$.
 
 \section*{Output}
-Print an integer, the minimum number of seconds that Charlotte can miss the Vasaloppet during her skiing trip if it is
+Print an integer, the minimum number of seconds that Charlotte can miss of Vasaloppet during her skiing trip if it is
 chosen optimally. Note that the skiing trip can end exactly at second $T$. For example, the skiing trip can cover
-the entire duration of the Vasaloppet if $S=3, T=3$.
+the entire duration of Vasaloppet if $S=3$ and $T=3$.
 
 \section*{Points}
 Your solution will be tested on several test case groups.
