@@ -1,6 +1,6 @@
 \problemname{The Ice Puzzle}
 \noindent
-Olle hates crosses. They remind him too much of getting a \texttt{Wrong Answer} verdict on Programmeringsolympiaden.
+Olle hates crosses. They remind him too much of getting a \texttt{Wrong Answer} verdict in Programmeringsolympiaden.
 When he arrived at Vallhamra Icehall and saw that there were $K$ ($2 \leq K \leq 20000$) crosses placed on the ice,
 he became angrier than a raging bull.
 
@@ -8,16 +8,16 @@ Being the problem solver he is, Olle has come up with a plan to solve this disas
 transform all crosses into circles. The ice rink can be represented as an $N \times M$ grid, where $K$ squares
 have a cross, and the remaining $N \times M - K$ are empty. The rows of the grid are numbered from $0$ to $N-1$
 from top to bottom, and the columns are numbered from $0$ to $M-1$ from left to right. When Olle is done,
-all squares that originally had crosses should be transformed into circles.
+all squares that originally had crosses should be transformed to contain circles instead.
 
 Initially, he is at the square marked with \texttt{S}. This square also contains a cross. In a \texttt{move}, he can
 start moving in one of the directions up, down, right, or left, without the ability to turn. He will continue
 in the same direction until he reaches a cross or circle and stops on that square. If there are no crosses or
-circles in the direction Olle is moving, he will collide with the wall, suffering a serious injury that will
+circles in the direction Olle is moving, he will collide with the wall, suffering an injury serious enough to
 force him to abandon his plan. Each time he reaches a cross, he stops completely and changes it from a cross to a circle.
-If he ever reaches a circle, he also stops completely and transforms it back into a cross in his blind anger.
+If he ever reaches a circle, he also stops completely and transforms it back into a cross in his blind rage.
 Since he doesn't have all day, he wants to find a sequence of moves containing at most \textbf{$10^5$} moves that
-transforms all crosses into circles. For extra style points, he also wants to finish at the same square where he
+transforms all crosses into circles. For extra style points, he also wants to finish at the same square as he
 started, but this is not necessary in all test case groups.
 
 \section*{Input}
@@ -36,7 +36,7 @@ If there exists a sequence of moves that transforms all crosses into circles, fi
 The length can be at most $10^5$. On the next line, output the sequence. It should consist of the characters
 \verb|v|, \verb|<|, \verb|^|, and \verb|>|.
 \verb|v| means that Olle should move downward, \verb|^| upward, \verb|<| to the left, and \verb|>| to the right.
-If $R=1$, Olle must also finish at the same square where he started.
+If $R=1$, Olle must also finish at the same square as he started.
 
 If there is no valid sequence of moves, output $-1$ and nothing more. Note that the existence of a valid sequence may
 depend on whether $R=0$ or $R=1$.
@@ -49,11 +49,11 @@ To get the points for a group, it must pass all the test cases in the group.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
-  $1$    & $20$       & $K \leq 100, R=0$ \\ \hline
-  $2$    & $5$        & $K \leq 5000, R=0$ \\ \hline
+  $1$    & $20$       & $R=0, K \leq 100$ \\ \hline
+  $2$    & $5$        & $R=0, K \leq 5000$ \\ \hline
   $3$    & $15$       & $R=0$ \\ \hline
-  $4$    & $10$       & $K \leq 100, R=1$ \\ \hline
-  $5$    & $30$       & $K \leq 10000, R=1$ \\ \hline
+  $4$    & $10$       & $R=1, K \leq 100$ \\ \hline
+  $5$    & $30$       & $R=1, K \leq 10000$ \\ \hline
   $6$    & $20$       & $R=1$ \\ \hline
 \end{tabular}
 
