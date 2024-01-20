@@ -6,7 +6,7 @@ he became angrier than a raging bull.
 
 Being the problem solver he is, Olle has come up with a plan to solve this disastrous situation. He intends to
 transform all crosses into circles. The ice rink can be represented as an $N \times M$ grid, where $K$ squares
-have a cross, and the remaining $N \times M - K$ are empty. The rows of the grid are numbered from $0$ to $N-1$
+have a cross, and the remaining $N \cdot M - K$ squares are empty. The rows of the grid are numbered from $0$ to $N-1$
 from top to bottom, and the columns are numbered from $0$ to $M-1$ from left to right. When Olle is done,
 all squares that originally had crosses should be transformed to contain circles instead.
 
@@ -36,9 +36,9 @@ If there exists a sequence of moves that transforms all crosses into circles, fi
 The length can be at most $10^5$. On the next line, output the sequence. It should consist of the characters
 \verb|v|, \verb|<|, \verb|^|, and \verb|>|.
 \verb|v| means that Olle should move downward, \verb|^| upward, \verb|<| to the left, and \verb|>| to the right.
-If $R=1$, Olle must also finish at the same square as he started.
+If $R=1$, Olle must also finish on the same square as he started.
 
-If there is no valid sequence of moves, output $-1$ and nothing more. Note that the existence of a valid sequence may
+If there is no valid sequence of moves, output $-1$ and nothing else. Note that the existence of a valid sequence may
 depend on whether $R=0$ or $R=1$.
 
 \section*{Points}
@@ -60,7 +60,7 @@ To get the points for a group, it must pass all the test cases in the group.
 %\section*{Samples}
 
 \section*{Explanation of Sample 1}
-Initially, Olle is at the cross in the upper-left corner, and the grid looks like this:
+Initially, Olle is on the cross in the upper-left corner, and the grid looks like this:
 \noindent
 \begin{verbatim}
   X.X
