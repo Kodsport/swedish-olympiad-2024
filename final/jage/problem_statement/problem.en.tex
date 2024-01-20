@@ -26,8 +26,8 @@ Each name consists of 1-20 characters and only contains the letters \texttt{a-z}
 All names are unique. The first name in this list is the person who started as the hunter.
 
 Finally, there are $M$ lines, where each line is in the form ``$s_i$ \texttt{tar} $s_j$'', 
-with $s_i \neq s_j$. These lines indicate in chronological order which students tagged each other. 
-Since you observed the game very carefully, you are sure that you did not miss any tagging.
+with $s_i \neq s_j$, which means that $s_i$ has tagged $s_j$. These lines indicate in chronological order which students tagged each other. 
+Since you observed the game very carefully, you are sure that you did not miss any tags.
 
 \section*{Output}
 First write an integer, the number of students who cheated.
@@ -43,10 +43,10 @@ To get points in a group your solution must pass all test cases in that group.
 \begin{tabular}{| l | l | l |}
   \hline
   Group & Point value & Constraints \\ \hline \hline
-  $1$    & $10$       & $M = 1$. \\ \hline
+  $1$    & $10$       & $M = 1$ \\ \hline
   $2$    & $15$       & $N = 2$ \\ \hline
   $3$    & $15$       & \texttt{joshua} is playing, and either no one cheats or only \texttt{joshua} cheats. \\ \hline
-  $4$    & $20$       & $N \leq 200$. \\ \hline
+  $4$    & $20$       & $N \leq 200$ \\ \hline
   $5$    & $40$       & No further constraints. \\ \hline
 \end{tabular}
 
@@ -57,4 +57,4 @@ This means that \texttt{alexander} cheats when he tags \texttt{joshua}.
 After that, both \texttt{olle} and \texttt{joshua} believe that they are the hunter.
 Since \texttt{joshua} thinks he is the hunter, he is not cheating when he tags \texttt{alexander}.
 Finally, \texttt{olle} tags \texttt{joshua}, and after that \texttt{joshua} and \texttt{alexander} believe that they are hunters.
-The conclusion is that only \texttt{alexander} cheats in this case.
+The conclusion is the only who cheated was \texttt{alexander}.
