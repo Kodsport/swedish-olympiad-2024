@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def read_info():
     global up, right, downright, downleft, left
     s = input()

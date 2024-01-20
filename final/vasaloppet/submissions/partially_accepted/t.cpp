@@ -55,7 +55,7 @@ signed main()
 	{
 		int l, r;
 		cin >> l >> r;
-		repp(i, l, r + 1) time[i]++;
+		repp(i, l, r) time[i]++;
 	}
 
 	int profit = 0;

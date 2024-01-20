@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from collections import defaultdict
 
 def find_cheaters(N, M, participants, tags):
