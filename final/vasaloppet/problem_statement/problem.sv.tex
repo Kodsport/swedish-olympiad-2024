@@ -1,12 +1,14 @@
 \problemname{Vasaloppet}
 \noindent
 Charlotte tittar på Vasaloppet på TV. Sändningen börjar vid sekund $0$ och slutar vid sekund $T$. Tyvärr finns det
-också $N$ reklamavbrott, som varar under $N$ icke-överlappande intervall av sekunder mellan sekund $0$ och sekund $T$. Charlotte blir
-väldigt inspirerad av att se de tävlande på startlinjen, och vill därför själv ut och åka skidor under loppet.
-Skidturen tar $S$ sekunder, och hon måste vara tillbaka senast vid sekund $T$ (för hon vill se vem som vinner).
+också $N$ reklamavbrott, som varar under $N$ icke-överlappande intervall av sekunder mellan sekund $0$ och sekund $T$. 
+Charlotte blir väldigt inspirerad av att se de tävlande på startlinjen, 
+och vill därför själv ut och åka skidor under loppet.
+Hennes skidtur tar $S$ sekunder, och för att se vem som vinner Vasaloppet måste hon vara tillbaka senast vid sekund $T$.
 
 Charlotte vill åka på sin skidtur vid ett tillfälle då hon missar så lite av Vasaloppet som möjligt. Din uppgift
-är att räkna ut det minsta antalet sekunder av Vasaloppet som Charlotte kan missa om hon optimalt väljer när hon ska åka på sin skidtur.
+är att räkna ut det minsta antalet sekunder av Vasaloppet som Charlotte kan missa,
+om hon optimalt väljer när hon ska åka på sin skidtur.
 Missade sekunder är de sekunder när Charlotte är ute på sin skidtur samtidigt som det inte är reklampaus.
 
 \begin{centering}
@@ -28,7 +30,9 @@ Reklamavbrotten ges även i samma ordning som de startar, och alla reklamavbrott
 det vill säga att $r_i < l_{i+1}$ för $i < N$. 
 
 \section*{Utdata}
-Skriv ut ett heltal, det minsta antalet sekunder som Charlotte kan missa av Vasaloppet under sin skidtur om den väljs optimalt. Notera att skidturen får sluta precis vid sekund $T$. Exempelvis kan skidturen vara under hela Vasaloppet om $S=3, T=3$.
+Skriv ut ett heltal, det minsta antalet sekunder som Charlotte kan missa av Vasaloppet under sin skidtur om den väljs optimalt. 
+Notera att skidturen får sluta precis vid sekund $T$. 
+Exempelvis kan skidturen vara under hela Vasaloppet om $S=3, T=3$.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
