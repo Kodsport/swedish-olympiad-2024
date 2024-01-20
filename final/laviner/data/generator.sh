@@ -10,6 +10,7 @@ compile gen_resenaren.py
 samplegroup
 sample 1
 sample 2
+sample 3
 
 group group1 10 
 limits mode="line"
@@ -45,6 +46,7 @@ group group3 10
 limits maxn=20
 tc 1
 tc 2
+tc 3
 tc g1-06
 tc g1-09
 tc g1-10
