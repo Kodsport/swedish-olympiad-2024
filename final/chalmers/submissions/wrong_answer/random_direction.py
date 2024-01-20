@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import random
 
 up, right, downright, downleft, left = [False]*5
