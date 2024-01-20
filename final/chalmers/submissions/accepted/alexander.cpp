@@ -24,12 +24,15 @@ enum dir {
     l  = 0b1,
 };
 
+int current_level = 1;
 int dist = -1;
 int get_dist() {
     if (dist != -1) return dist;
 
     cout << "app" << endl;
     cin >> dist;
+
+    cerr << "query at level " << current_level << endl;
 
     return dist;
 }
@@ -55,6 +58,10 @@ void move(dir d) {
         case dir::dr: cout << "downright"; break;
         case dir::r:  cout << "right";     break;
     }
+
+    if(d == dir::u) current_level -= 1;
+    if(d == dir::dl || d == dir::dr) current_level += 1;
+    current_level = max(1, current_level);
 
     cout << endl;
     read_room_mask();
@@ -102,34 +109,46 @@ int perform_start() {
     vector<dir> _curr_path;
     gather_rooms(1, 0, room_exists, room2path, _curr_path);
 
+    bool any_layer4 = false;
+    for(int r = (1 << 3) - 1; r < (1 << 4); r++) any_layer4 = any_layer4 || room_exists[r];
+    if(!any_layer4) return get_dist(); 
+
     vector<vector<int>> dist_room2room(max_rooms, vector<int>(max_rooms, -1));
     for(int start = 0; start < max_rooms; start++) {
-        queue<pair<int, int>> doorq, stairq;
+        priority_queue<tuple<int, int, int>> pq;
         set<int> visited;
 
-        doorq.push({ start, 0 });
-        visited.insert(start);
+        pq.push({ 0, 0, start });
 
-        while(!doorq.empty() || !stairq.empty()) {
-            queue<pair<int, int>>& q = !doorq.empty() ? doorq : stairq;
-            auto [r, dist] = q.front();
-            q.pop();
+        while(!pq.empty()) {
+            auto [stair_dist, door_dist, r] = pq.top();
+            pq.pop();
 
-            dist_room2room[start][r] = dist;
+            if(visited.find(r) != visited.end()) continue;
+            visited.insert(r);
 
-            vector<pair<int, queue<pair<int, int>>&>> neighs;
-            if(r != 0) neighs.push_back({ r / 2, stairq });
-            if(__builtin_clz((r - 1) + 1) == __builtin_clz(r + 1)) neighs.push_back({ r - 1, doorq });
-            if(__builtin_clz((r + 1) + 1) == __builtin_clz(r + 1)) neighs.push_back({ r + 1, doorq });
-            if((r * 2 + 1) < (1 << 4)) neighs.push_back({r * 2 + 1, stairq });
-            if((r * 2 + 2) < (1 << 4)) neighs.push_back({r * 2 + 2, stairq });
+            //cout << "{" << stair_dist << "," << door_dist << "," << r << "}";
 
-            for(auto [r, nq] : neighs) {
-                if(!room_exists[r] || visited.find(r) != visited.end()) continue;
+            dist_room2room[start][r] = -(stair_dist + door_dist);
 
-                visited.insert(r);
-                nq.push({ r, dist + 1 });
+            vector<tuple<int, int, int>> neighs;
+            if(r != 0) neighs.push_back({ stair_dist - 1, door_dist,  (r - 1) / 2 });
+            if(r > 1 && __builtin_clz((r - 1) + 1) == __builtin_clz(r + 1)) neighs.push_back({ stair_dist, door_dist - 1, r - 1 });
+            if(__builtin_clz((r + 1) + 1) == __builtin_clz(r + 1)) neighs.push_back({ stair_dist, door_dist - 1, r + 1 });
+            if((r * 2 + 1) < max_rooms) neighs.push_back({ stair_dist - 1, door_dist, r * 2 + 1 });
+            if((r * 2 + 2) < max_rooms) neighs.push_back({ stair_dist - 1, door_dist, r * 2 + 2 });
+
+            //cout << "c" << r << "=" << neighs.size() << " ";
+            //cout << "->[";
+            for(auto neigh : neighs) {
+                int nr = get<2>(neigh);
+                //cout << nr << ",";
+
+                if(!room_exists[nr]) continue;
+
+                pq.push(neigh);
             }
+            //cout << "] ";
         }
     }
 
@@ -139,9 +158,12 @@ int perform_start() {
         for(int r2 = r1 + 1; r2 < max_rooms; r2++) {
             if(!room_exists[r2]) continue;
 
+            //cout << r1 << "->" << r2 << ":" << dist_room2room[r1][r2] << " ";
+            //continue;
+
             map<int, int> diff2room;
             bool valid = true;
-            for(int target_r = (1 << 3); target_r < (1 << 4); target_r++) {
+            for(int target_r = (1 << 3) - 1; target_r < (1 << 4) - 1; target_r++) {
                 if(!room_exists[target_r]) continue;
 
                 int diff = dist_room2room[r1][target_r] - dist_room2room[r2][target_r];
@@ -168,7 +190,6 @@ int perform_start() {
 
             int diff = dist1 - dist2;
             int start_room = diff2room[diff];
-
             for(dir d : room2path[start_room]) move(d);
             return dist1 - dist_room2room[r1][start_room];
         }
@@ -186,6 +207,8 @@ int main() {
 
     int levels_left = perform_start();
     while(levels_left > 0) {
+        cerr << "levels_left: " << levels_left << endl;
+
         if(can_move(dir::dl) && can_move(dir::dr) && levels_left > 1) {
             int prev_dist = levels_left;
 
@@ -249,12 +272,12 @@ int main() {
             else move(dir::dr);
 
             levels_left--;
-        }
-    }
 
-    if(get_dist() != 0) {
-        if(last_dir == dir::dl) move(dir::r);
-        else if(last_dir == dir::dr) move(dir::l);
+            if(levels_left == 0 && get_dist() != 0) {
+                if(last_dir == dir::dl) move(dir::r);
+                else if(last_dir == dir::dr) move(dir::l);
+            }
+        }
     }
 
     cout << "here" << endl;
