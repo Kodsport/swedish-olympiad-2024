@@ -27,6 +27,7 @@ tc_manual ../manual/n1_endpoint3.in
 tc_manual ../manual/n1_endpoint4.in
 tc_manual ../manual/n1_startpoint.in
 tc_manual ../manual/n1_startpoint2.in
+tc_manual ../manual/n1_included.in
 tc g1-1 gen_ends n=1 t=$BILLION s_ratio=0.49 endSize=100000 mode="begin"
 tc g1-2 gen_ends n=1 t=$BILLION s_ratio=0.47 endSize=100005 mode="end"
 tc g1-3 gen_ends n=1 t=$BILLION s_ratio=0.000001 endSize=1000 mode="begin"
@@ -69,6 +70,7 @@ tc n1_endpoint3
 tc n1_startpoint
 tc n3_endpoints
 tc n3_endpoints1
+tc n1_included
 
 group group4 35
 include_group group2
