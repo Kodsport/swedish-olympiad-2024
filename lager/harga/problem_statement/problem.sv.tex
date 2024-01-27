@@ -19,7 +19,8 @@ $y$ vid sekund $t$, så kommer musiker $i$ spela takt $f(y)$ vid sekund $t+1$. N
 till höger om musiker $N$ är $1$.
 
 Låten tar slut när alla musiker någon gång har spelat alla takter. Din uppgift är att räkna 
-ut, för varje musiker, när den har spelat alla olika takter i låten minst en gång.
+ut, för varje musiker, när den har spelat alla olika takter i låten minst en gång. Det kan hända 
+att vissa musiker aldrig spelar alla takter, i så fall blir orkestern tvungen att spela för evigt.
 
 \section*{Indata}
 Första raden innehåller två heltal $N$ och $M$ ($1 \leq N,M \leq 3 \cdot 10^5$), antalet 
@@ -32,8 +33,9 @@ Tredje raden innehåller $M$ heltal $f(1), f(2), \dots, f(M)$ ($1 \leq f(i) \leq
 avgör vilka takter musikerna ska spela.
 
 \section*{Utdata}
-Skriv ut $N$ heltal $t_1, t_2, \dots, t_N$, där $t_i$ är efter hur många sekunder musiker 
-$i$ har spelat alla takter. Om någon musiker aldrig spelar alla takter, låt $t_i = -1$.
+Om någon musiker aldrig kommer spela alla takter, skriv ut $-1$.
+Annars, skriv ut $N$ heltal $t_1, t_2, \dots, t_N$, där $t_i$ är efter hur många sekunder musiker 
+$i$ har spelat alla takter.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -43,11 +45,12 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $17$       & $f(i) = i$ för alla $1 \leq i \leq M$ \\ \hline
-  $2$    & $16$       & $N,M \leq 300$ \\ \hline
-  $3$    & $22$       & $N,M \leq 3000$ och $f(i) \neq f(j)$ om $i \neq j$ \\ \hline
-  $4$    & $18$       & $N,M \leq 3000$  \\ \hline
-  $5$    & $27$       & Inga ytterligare begränsningar. \\ \hline
+  $1$    & $10$       & $N = 1$ \\ \hline
+  $2$    & $17$       & $f(i) = i$ för alla $1 \leq i \leq M$ \\ \hline
+  $3$    & $16$       & $N,M \leq 300$ \\ \hline
+  $4$    & $22$       & $N,M \leq 3000$ och $f(i) \neq f(j)$ om $i \neq j$ \\ \hline
+  $5$    & $9$       & $N,M \leq 3000$  \\ \hline
+  $6$    & $26$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
 

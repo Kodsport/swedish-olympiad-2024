@@ -88,9 +88,7 @@ int main() {
 
     // can't reach > 1 zero
     if(zeros > 1){
-        rep(c1,0,n){
-            cout << "-1 ";
-        }cout << "\n";
+        cout << "-1\n";
         return 0;
     }
 
@@ -153,6 +151,8 @@ int main() {
         reverse(all(LL[c1]));
     }
 
+    vi ANS;
+
     rep(c1,0,n){
         int ma = -1;
         rep(c2,0,m){
@@ -164,13 +164,18 @@ int main() {
             }
         }
         if(ma == inf || possible[c1] == 0){
-            cout << "-1 ";
+            cout << "-1\n";
+            return 0;
         }
         else{
-            cout << chain + ma - c1 + 1 << " ";
+            ANS.push_back(chain + ma - c1 + 1);
         }
         int x = perm(X[c1%n],c1);
         LL[x].pop_back();
+    }
+
+    trav(y, ANS){
+        cout << y << " ";
     }
     cout << "\n";
 

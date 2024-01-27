@@ -25,5 +25,7 @@ for t in range(1, n*m+2):
         if seen[i][X[i]] == 0:
             seen[i][X[i]] = 1
             unique[i] += 1
-
-print(*ans)
+if min(ans) == -1:
+    print(-1)
+else:
+    print(*ans)
