@@ -1,7 +1,7 @@
 #!/bin/bash
 . ../../testdata_tools/gen.sh
 
-use_solution quadratic.cpp
+use_solution nils.cpp
 
 compile gen_rand.py
 
@@ -40,6 +40,10 @@ tc small-6 gen_rand n=300 m=30 mode=chain chain=10
 tc small-7 gen_rand n=300 m=100 mode=chain chain=40
 tc small-8 gen_rand n=100 m=30 mode=permutation
 tc small-9 gen_rand n=300 m=30 mode=permutation
+tc small-10 gen_rand n=300 m=30 mode=permutation
+tc small-11 gen_rand n=300 m=30 mode=permutation
+tc small-12 gen_rand n=300 m=30 mode=permutation
+tc small-13 gen_rand n=300 m=30 mode=permutation
 
 group group4 22
 limits maxn=3000
