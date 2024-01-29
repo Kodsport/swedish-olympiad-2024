@@ -26,8 +26,21 @@ profits = []
 costs = []
 if mode == "random":
     for _ in range(n):
-        profits.append(rand(1,c))
+        profits.append(rand(1,int(1e9)))
         costs.append(rand(1,c))
+elif mode=="manysmall":
+    for _ in range(n):
+        profits.append(rand(1,int(1e9)))
+        costs.append(rand(1,200))
+elif mode=="increasing":
+    last = 1
+    delta = int(cmdlinearg("delta", c//int(n*1.5)))
+
+    for _ in range(n):
+        profits.append(rand(1,int(1e9)))
+        next = rand(last, last+delta)
+        costs.append(next)
+        last = next
 else:
     assert 0, f"Unknown mode {mode}"
 

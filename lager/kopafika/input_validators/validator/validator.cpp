@@ -15,5 +15,11 @@ void run() {
 	vector<int> profits = SpacedInts(n, 1, int(1e9));
 	vector<int> costs = SpacedInts(n, 1, c);
 
+	int increasing = Arg("increasing", 0);
+	if (increasing)
+	{
+		for (int i = 0; i < n-1; i++) assert(costs[i]<=costs[i+1]);
+	}
+
 	Eof();
 }
