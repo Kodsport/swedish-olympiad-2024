@@ -18,21 +18,21 @@ men han hoppas att kunna lösa det snabbt genom att nyttja sin tur.
 
 Hans idé är följande: först, ta alla påsarna och ordna de i en slumpmässig ordning. Sedan, ignorera
 de $K$ första påsarna. Därefter kommer han att betrakta varje påse i ordning och köpa den om han har
-råd har råd, annars skippa den och gå vidare. Han fortsätter så ända tills han betrakat alla $N-K$
+råd, annars skippa den och gå vidare. Han fortsätter så ända tills han betraktat alla $N-K$
 godispåsar. 
 
 Om han har tur med sin valda ordning kommer något $K$ ge det optimala svaret. Kalle har efter mycket slit
 permuterat alla påsarna, och han ber nu dig om hjälp med att utföra hans algoritm för varje $K=0,1,\dots,N-1$.
 
 \section*{Indata}
-Första raden innehåller två heltal $N$ och $C$ ($1 \leq N \leq 2 \cdot 10^5$), antalet godispåsar 
+Första raden innehåller två heltal $N$ och $C$ ($1 \leq N \leq 2 \cdot 10^5$, $1 \leq C \leq 10^9$), antalet godispåsar 
 och riksdagens fikabudget i kronors.
 
 Den andra raden innehåller $N$ heltal $p_1, p_2, \dots, p_N$ ($1 \leq p_i \leq 10^9$), hur mycket godispåse $i$
 uppskattas av riksdagen.
 
-Den tredje raden innehåller $N$ heltal $c_1, c_2, \dots, c_N$ ($1 \leq c_i \leq C$), hur mycket godispåse $i$
-kostar i kronor.
+Den tredje raden innehåller $N$ heltal $c_1, c_2, \dots, c_N$ ($1 \leq c_i \leq C$), hur många kronor som godispåse $i$
+kostar.
 
 Notera att permutationen av godispåsar \textit{inte} är valt uniformt slumpmässigt. Detta beror på att Kalles tur gör
 det mer sannolikt att en bra permutation väljs.
