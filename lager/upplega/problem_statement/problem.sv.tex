@@ -1,19 +1,61 @@
 \problemname{Upplega}
+
+\begin{center}
+\textit{``Ja, nu börjar det likna jul längs vägen. Överallt vi går.''}
+\end{center}
+
 \noindent
+Snön har nu lagt sig på alla grenar på alla träd vid en gata där du bor. 
+Längs denna väg finns det $N$ träd som står på olika positioner på en rad. Varje träd $i$ har $s_i$ grenar, 
+där varje gren befinner sig på en höjd, och har även en längd som sticker ut antingen åt vänster eller åt höger. 
+Inga två grenar kommer befinna sig på exakt samma position, även om det är från 2 olika träd. 
+Grenarna är även så långa att de aldrig kommer att gå förbi något annat träd.
+Upplega har lyckats lägga sig på alla träd på denna gata. Upplega är all snö som samlats på översidan av alla grenar på träd. 
+På varje längdenhet av varje gren befinner sig 1 enhet snö på sig.
 
+Du är en sann vinterentusiast, och älskar jullåtar, det mysiga kalla vädret, och framförallt all upplega. 
+Enligt väderprognosen kommer det en vara en stor storm snart, vilket kommer skaka på alla träd. 
+När ett träd blir skakad, kommer snön på dess grenar att falla rakt ner. 
+Snön kommer att falla ner tills antingen snön hamnar på ett träd som inte blir skakad, eller på marken.
+Du har inte så mycket tid, men du har möjligheten att skydda $K$ träd från att bli påverkade 
+av stormen genom att placera ut trädskydd på $K$ valfria träd.
 
+Vad är det maximala antalet enheter snö som du kan hindra att hamna på marken?
+
+\begin{centering}
+  \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.4\textwidth]{upplegaTemp.jpg}
+      \caption{Bilden visar sample 1.}
+  \end{figure}
+\end{centering}
 
 \section*{Indata}
-N,K
-tree1, tree2, ..., treeN #given sorted, no 2 trees will be on the same index
-size1, size2, ..., sizeN
-#2*N rows, 2 rows for each tree:
-h_1,h_2,...,h_{size_i}  #given in a sorted ascending order, there can't be 2 branches on the exact same position, even from two different trees.
-l_1,l_2,...,l_{size_i} #no branch will be so long that it will go outside [0,10^9]
+Första raden innehåller två heltal $N$ och $K$ ($1 \leq K \leq N \leq 10^5$), antalet 
+träd längs gatan och träd som du hinner rädda från stormen.
+
+Andra raden innehåller $N$ heltal $pos_1, pos_2, \dots, pos_N$ ($0 \leq pos_i \leq 10**9$), där $pos_i$ är antalet längdenheter från början av gatan till träd $i$. 
+Träden kommer att ges i sorterad ordning, och det är garanterat att inga två träd befinner sig på samma position. Formellt innebär det att om $i<j$, så gäller $pos_i < pos_j$.
+
+Tredje raden innehåller $N$ heltal $s_1, s_2, \dots, s_N$ ($1 \leq s_i \leq 20$), där $s_i$ är antalet grenar som träd $i$ har. 
+
+Till slut följer $2N$ rader av indata, 2 rader per träd som beskriver grenarna för varje träd:
+\begin{itemize}
+  \item Första raden innehåller $s_i$ heltal $h_{i,1}, h_{i,2}, \dots, h_{i,s_i}$ ($1 \leq h_{i,j} \leq 10**9$) där $h_{i,j}$ är höjden av gren $j$ som tillhör träd $i$.
+  \item Andra raden innehåller $s_i$ heltal $l_{i,1}, l_{i,2}, \dots, l_{i,s_i}$ ($-10**5 \leq l_{i,j} \leq 10**5$ , $l_{i,j} \neq 0$). 
+  Om $l_{i,j}$ är positivt innebär det att gren $j$ som tillhör träd $i$ riktas åt höger $l_{i,j}$ meter, 
+  och om $l_{i,j}$ är negativt innebär det att gren $j$ som tillhör träd $i$ riktas åt vänster $abs(l_{i,j})$ meter.
+\end{itemize}
+
+Det är garanterat att inga två grenar kommer befinna sig på samma position på gatan samtidigt som grenarna befinner sig på samma höjd. 
+Ingen gren kommer heller att befinna sig utanför början av gatan, eller befinna sig över $10^9$ meter från början av gatan. 
+%#2*N rows, 2 rows for each tree:
+%h_1,h_2,...,h_{size_i}  %#given in a sorted ascending order, there can't be 2 branches on the exact same position, even from two different trees.
+%l_1,l_2,...,l_{size_i} %#no branch will be so long that it will go outside [0,10^9]
 
 
 \section*{Utdata}
-min snow? max snow?
+Skriv ut det maximala antalet enheter snö som du kan hindra att hamna på marken.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -23,10 +65,10 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $10$       & $N = 1$ \\ \hline
-  $2$    & $17$       & $f(i) = i$ för alla $1 \leq i \leq M$ \\ \hline
-  $3$    & $16$       & $N,M \leq 300$ \\ \hline
-  $4$    & $22$       & $N,M \leq 3000$ och $f(i) \neq f(j)$ om $i \neq j$ \\ \hline
-  $5$    & $9$       & $N,M \leq 3000$  \\ \hline
+  $1$    & $10$       & $ $ \\ \hline
+  $2$    & $17$       & $ $ \\ \hline
+  $3$    & $16$       & $ $ \\ \hline
+  $4$    & $22$       & $ $ \\ \hline
+  $5$    & $9$        & $ $  \\ \hline
   $6$    & $26$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}

@@ -1,14 +1,14 @@
 #!/bin/bash
 . ../../testdata_tools/gen.sh
 
-use_solution harry.py
+use_solution harryAlien.py
 
 compile gen.py
 
 # Generate answers to sample cases
 samplegroup
 sample 1
-
+sample 2
 
 group group1 20
 tc g1-exam gen n=4 k=4
