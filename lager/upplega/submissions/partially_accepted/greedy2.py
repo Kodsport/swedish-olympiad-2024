@@ -1,0 +1,1 @@
+#testa alla möjliga ranges av k träd med typ en prefixsumma eller ngt.

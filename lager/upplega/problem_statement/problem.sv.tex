@@ -1,0 +1,32 @@
+\problemname{Upplega}
+\noindent
+
+
+
+\section*{Indata}
+N,K
+tree1, tree2, ..., treeN #given sorted, no 2 trees will be on the same index
+size1, size2, ..., sizeN
+#2*N rows, 2 rows for each tree:
+h_1,h_2,...,h_{size_i}  #given in a sorted ascending order, there can't be 2 branches on the exact same position, even from two different trees.
+l_1,l_2,...,l_{size_i} #no branch will be so long that it will go outside [0,10^9]
+
+
+\section*{Utdata}
+min snow? max snow?
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $10$       & $N = 1$ \\ \hline
+  $2$    & $17$       & $f(i) = i$ för alla $1 \leq i \leq M$ \\ \hline
+  $3$    & $16$       & $N,M \leq 300$ \\ \hline
+  $4$    & $22$       & $N,M \leq 3000$ och $f(i) \neq f(j)$ om $i \neq j$ \\ \hline
+  $5$    & $9$       & $N,M \leq 3000$  \\ \hline
+  $6$    & $26$       & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
