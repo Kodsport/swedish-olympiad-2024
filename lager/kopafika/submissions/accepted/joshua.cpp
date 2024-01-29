@@ -48,13 +48,11 @@ mt19937 rng(rd());
 template<typename T, typename U> inline int randint(T lo, U hi) { return uniform_int_distribution<int>((int)lo, (int)hi)(rng); } // [lo,hi]
 template<typename T> inline T randel(vector<T>& v) { return v[uniform_int_distribution<int>(int(0), int(v.size()) - int(1))(rng)]; } // [lo,hi]
 
-// Define a custom struct
 struct query {
 	int value;
 	int weight;
 	int index;
 
-	// Comparison operator for sorting in the set based on value
 	bool operator<(const query& other) const {
 		if (weight != other.weight) return weight < other.weight;
 		return index < other.index;
