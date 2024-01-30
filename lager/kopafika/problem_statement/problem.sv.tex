@@ -10,10 +10,10 @@ sista bussen och fick $1.4$ utav $2$ poäng i högskoleprovet genom att kryssa i
 
 Han tänker nu använda sin ofantliga tur för att hjälpa riksdagen: han tänker nämligen lösa en instans
 av det ökända knapsack-problemet. Riksdagen har en fikabudget på $C$ kronor och deras fikaleverantör
-har ett utbud av $N$ olika godispåsar. Varje påse $i$ har ett mått på hur uppskattad den är,
+har ett utbud av $N$ olika godispåsar. Varje påse $i$ har ett mått på hur smaskig den är,
 $p_i$ och en kostnad på $c_i$ kronor. Du kan bara köpa varje godispåse en gång. 
 Målet är att köpa en delmängd av alla påsar, så att totala kostnaden inte överstiger $C$, samtidigt som
-totala nivån av uppskattning är så stor som möjligt. I allmänhet är detta ett väldigt svårt problem att lösa,
+totala nivån av smaskighet är så stor som möjligt. I allmänhet är detta ett väldigt svårt problem att lösa,
 men han hoppas att kunna lösa det snabbt genom att nyttja sin tur. 
 
 Hans idé är följande: först, ta alla påsarna och ordna de i en slumpmässig ordning. Sedan, ignorera
@@ -26,19 +26,18 @@ permuterat alla påsarna, och han ber nu dig om hjälp med att utföra hans algo
 
 \section*{Indata}
 Första raden innehåller två heltal $N$ och $C$ ($1 \leq N \leq 2 \cdot 10^5$, $1 \leq C \leq 10^9$), antalet godispåsar 
-och riksdagens fikabudget i kronors.
+och riksdagens fikabudget i kronor.
 
-Den andra raden innehåller $N$ heltal $p_1, p_2, \dots, p_N$ ($1 \leq p_i \leq 10^9$), hur mycket godispåse $i$
-uppskattas av riksdagen.
+Den andra raden innehåller $N$ heltal $p_1, p_2, \dots, p_N$ ($1 \leq p_i \leq 10^9$), smaskigheten av godispåse $i$.
 
 Den tredje raden innehåller $N$ heltal $c_1, c_2, \dots, c_N$ ($1 \leq c_i \leq C$), hur många kronor som godispåse $i$
 kostar.
 
-Notera att permutationen av godispåsar \textit{inte} är valt uniformt slumpmässigt. Detta beror på att Kalles tur gör
+Notera att permutationen av godispåsar \textit{inte} är vald uniformt slumpmässigt. Detta beror på att Kalles tur gör
 det mer sannolikt att en bra permutation väljs.
 
 \section*{Utdata}
-Skriv $N$ stycken heltal separerade av mellanslag, totala uppskattningen av delmängden godispåsar som Kalles
+Skriv $N$ stycken heltal separerade av mellanslag, totala smaskigheten av delmängden godispåsar som Kalles
 algoritm hittar för $K=0,1,\dots,N-1$ i ordning. 
 
 \section*{Poängsättning}
