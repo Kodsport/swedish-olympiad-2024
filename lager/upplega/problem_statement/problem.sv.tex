@@ -34,15 +34,15 @@ Vad är det maximala antalet enheter snö som du kan hindra att hamna på marken
 Första raden innehåller två heltal $N$ och $K$ ($1 \leq K \leq N \leq 10^5$), antalet 
 träd längs gatan och träd som du hinner rädda från stormen.
 
-Andra raden innehåller $N$ heltal $pos_1, pos_2, \dots, pos_N$ ($0 \leq pos_i \leq 10**9$), där $pos_i$ är antalet längdenheter från början av gatan till träd $i$. 
+Andra raden innehåller $N$ heltal $pos_1, pos_2, \dots, pos_N$ ($0 \leq pos_i \leq 10^9$), där $pos_i$ är antalet längdenheter från början av gatan till träd $i$. 
 Träden kommer att ges i sorterad ordning, och det är garanterat att inga två träd befinner sig på samma position. Formellt innebär det att om $i<j$, så gäller $pos_i < pos_j$.
 
 Tredje raden innehåller $N$ heltal $s_1, s_2, \dots, s_N$ ($1 \leq s_i \leq 20$), där $s_i$ är antalet grenar som träd $i$ har. 
 
 Till slut följer $2N$ rader av indata, 2 rader per träd som beskriver grenarna för varje träd:
 \begin{itemize}
-  \item Första raden innehåller $s_i$ heltal $h_{i,1}, h_{i,2}, \dots, h_{i,s_i}$ ($1 \leq h_{i,j} \leq 10**9$) där $h_{i,j}$ är höjden av gren $j$ som tillhör träd $i$.
-  \item Andra raden innehåller $s_i$ heltal $l_{i,1}, l_{i,2}, \dots, l_{i,s_i}$ ($-10**5 \leq l_{i,j} \leq 10**5$ , $l_{i,j} \neq 0$). 
+  \item Första raden innehåller $s_i$ heltal $h_{i,1}, h_{i,2}, \dots, h_{i,s_i}$ ($1 \leq h_{i,j} \leq 10^9$) där $h_{i,j}$ är höjden av gren $j$ som tillhör träd $i$.
+  \item Andra raden innehåller $s_i$ heltal $l_{i,1}, l_{i,2}, \dots, l_{i,s_i}$ ($-10^5 \leq l_{i,j} \leq 10^5$ , $l_{i,j} \neq 0$). 
   Om $l_{i,j}$ är positivt innebär det att gren $j$ som tillhör träd $i$ riktas åt höger $l_{i,j}$ meter, 
   och om $l_{i,j}$ är negativt innebär det att gren $j$ som tillhör träd $i$ riktas åt vänster $abs(l_{i,j})$ meter.
 \end{itemize}
@@ -65,10 +65,13 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
-  $1$    & $10$       & $ $ \\ \hline
-  $2$    & $17$       & $ $ \\ \hline
-  $3$    & $16$       & $ $ \\ \hline
-  $4$    & $22$       & $ $ \\ \hline
-  $5$    & $9$        & $ $  \\ \hline
-  $6$    & $26$       & Inga ytterligare begränsningar. \\ \hline
+  $1$    & $5$        & Alla träd har endast grenar som pekar åt höger. Formellt gäller $l_{i,j} > 0$ för alla $i,j$.  \\ \hline
+  $2$    & $5$        & $K = 1$ \\ \hline
+  $3$    & $7$        & $N \leq 15$ \\ \hline
+  $4$    & $11$       & $N \leq 1000, |l_{i,j}| \leq 10^5, pos_i \leq 10^5$ för alla $i,j$. \\ \hline
+  $5$    & $23$       & $N \leq 1000$  \\ \hline
+  $6$    & $31$       & $|l_{i,j}| \leq 10^5, pos_i \leq 10^5$ för alla $i,j$. \\ \hline
+  $7$    & $18$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
+
+Grupp 4 och 6 garanterar att alla träd och grenar att befinner sig inom intervallet från position 0 till position $2 \cdot 10^5$.
