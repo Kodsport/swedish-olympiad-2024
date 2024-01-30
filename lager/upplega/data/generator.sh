@@ -1,7 +1,7 @@
 #!/bin/bash
 . ../../testdata_tools/gen.sh
 
-use_solution harryAlien.py
+use_solution harryAlienIter.py
 
 compile gen.py
 

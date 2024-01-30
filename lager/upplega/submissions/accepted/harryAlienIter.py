@@ -1,20 +1,15 @@
 #!/usr/bin/env python3
-import sys
-sys.setrecursionlimit(10**5)
-
 n,k = map(int,input().split())
 
 trees = [*map(int,input().split())]
 sizes = [*map(int,input().split())]
 
-#branches = [[] for _ in range(n)]
-#branches = [[[*map(int,input().split())],[*map(int,input().split())]] for _ in range(n)]
 gaps = [[] for _ in range(n+1)]
 for tree in range(n):
     heights = [*map(int,input().split())]
     lengths = [*map(int,input().split())]
     for i in range(len(heights)):
-        #branches[tree].append((heights[i],lengths[i]))
+
         if lengths[i]<0:
             gaps[tree].append((heights[i],lengths[i]))
         else:
@@ -57,38 +52,26 @@ totalDropPrefix = [0]
 for x in totalDrop:
     totalDropPrefix.append(totalDropPrefix[-1] + x)
 
-def debugDrops():
-    print(leftDrop)
-    print(rightDrop)
-    print(totalDrop)
-
-#Choose k trees where the snow never falls, returns how the max to save
 
 def dp(index, pushedLast = 1):
-    if index == n:
-        return (0,0)
+    memo[n] = [(0,0),(0,0)]
 
-    if memo[index][pushedLast] != -1:
-        return memo[index][pushedLast]
-
-    #save = dp(index+1, moves-1, 0) + pushedLast*(totalDrop[index]-leftDrop[index]) + (1-pushedLast)*rightDrop[index] + totalDrop[index+1]-rightDrop[index+1] 
-    save,saveK = dp(index+1, 0) 
-    save += pushedLast*(totalDrop[index]-leftDrop[index]) + (1-pushedLast)*rightDrop[index] + totalDrop[index+1]-rightDrop[index+1] - mid
-    saveK += 1
-
-    dont,dontK = dp(index+1, 1)
-
-    #print(save,dont)
-    if save > dont:
-        best = save
-        bestK = saveK
-    else:
-        best = dont
-        bestK = dontK
-
-    memo[index][pushedLast] = (best,bestK)
-
-    return (best,bestK)
+    for i in range(n-1,-1,-1):
+        for push in range(2):
+            save,saveK = memo[i+1][0]
+            save += push*(totalDrop[i]-leftDrop[i]) + (1-push)*rightDrop[i] + totalDrop[i+1]-rightDrop[i+1] - mid
+            saveK += 1
+            
+            dont,dontK = memo[i+1][1]
+            if save > dont:
+                best = save
+                bestK = saveK
+            else:
+                best = dont
+                bestK = dontK
+            memo[i][push] = (best,bestK)
+    
+    return memo[0][1]
 
 lo = 0
 hi = 10**18
@@ -96,8 +79,7 @@ for i in range(100):
     mid = (lo+hi)/2
     memo = [[-1,-1] for _  in range(n+1)]
     ans,ansK = dp(0,1)
-    #print(ansK,lo,hi,mid)
-    #print(ans, ansK, lo, hi, mid)
+
     if ansK > k: 
         lo = mid
     else:
@@ -106,4 +88,3 @@ for i in range(100):
 mid = hi
 print(round(dp(0,1)[0] + mid*k))
 
-#debugDrops()

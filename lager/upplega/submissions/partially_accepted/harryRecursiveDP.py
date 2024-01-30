@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-sys.setrecursionlimit(10**7)
+sys.setrecursionlimit(2*10**5)
 
 n,k = map(int,input().split())
 
