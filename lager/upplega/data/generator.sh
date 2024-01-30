@@ -1,28 +1,95 @@
 #!/bin/bash
 . ../../testdata_tools/gen.sh
 
-use_solution harryAlienIter.py
+use_solution harryAlienIter50.py
 
-compile gen.py
+compile gen_random.py
+compile gen_bounded.py
 
 # Generate answers to sample cases
 samplegroup
 sample 1
 sample 2
 
-group group1 20
-tc g1-exam gen n=4 k=4
-tc g1-exam5 gen n=5 k=5
-tc g1-example gen n=10 k=10
-tc g1-01 gen n=1000 k=500 
-tc g1-02 gen n=1000 k=250 
-tc g1-03 gen n=1000 k=100 
-tc g1-04 gen n=1000 k=50 
-tc g1-05 gen n=1000 k=1000 
+group group1 5
+limits onlyRight=1
+tc g1-smallN gen_random n=15 k=5 onlyRight=1 
+tc g1-smallN_bigDist gen_random n=15 k=5 onlyRight=1 dist=10000000 
+tc g1-k1 gen_random n=100000 k=1 onlyRight=1 
+tc g1-n1500 gen_random n=1500 k=500 onlyRight=1 
+tc g1-n2000 gen_random n=2000 k=1000 onlyRight=1 dist=10000
+tc g1-bounded gen_bounded n=10000 k=5000 bounded=1 onlyRight=1
+tc g1-max1 gen_random n=100000 k=50000 onlyRight=1 dist=49 
+tc g1-max2 gen_random n=100000 k=100000 onlyRight=1 dist=1000
+tc g1-max3 gen_random n=100000 k=99998 onlyRight=1 dist=69
 
-group group2 20
-tc g2-01 gen n=10000 k=100 
-tc g2-02 gen n=100000 k=10
-tc g2-03 gen n=10000 k=100 
-tc g2-04 gen n=100000 k=10 
-tc g2-05 gen n=100000 k=10 
+
+group group2 5
+tc 2 
+tc g1-k1
+tc g2-smallN gen_random n=15 k=1 dist=10000001 branches=10
+tc g2-bounded gen_bounded n=10000 k=1 bounded=1
+tc g2-max1 gen_random n=100000 k=1 dist=1000 
+tc g2-max2 gen_bounded n=100000 k=1 
+
+
+group group3 7
+tc 1
+tc g1-smallN
+tc g1-smallN_bigDist
+tc g2-smallN
+#tc_manual ../manual/greedyKiller_n3.in
+tc g3-max gen_random n=15 k=7 dist=10000002 branches=10
+tc g3-max2 gen_random n=15 k=15 dist=10000002 branches=10
+tc g3-bounded gen_bounded n=15 k=8 bounded=1 branches=10
+tc g3-max3 gen_bounded n=15 k=14 branches=10
+
+group group4 11
+tc g1-smallN
+tc g1-n1500
+tc g3-bounded
+tc g4-01 gen_bounded n=2000 k=1000 bounded=1 branches=8
+tc g4-02 gen_bounded n=2000 k=2000 bounded=1 branches=10
+tc g4-03 gen_bounded n=2000 k=1643 bounded=1 branches=10
+tc g4-04 gen_bounded n=2000 k=1998 bounded=1 branches=10
+tc g4-05 gen_random n=2000 k=1234 dist=10 branches=10
+#tc_manual ../manual/greedyKiller_n1000.in
+#tc_manual ../manual/greedyKiller2_n1000.in
+
+group group5 23
+include_group group3
+include_group group4
+tc g1-smallN_bigDist
+tc g1-n2000
+tc g5-01 gen_bounded n=2000 k=1000 branches=10
+tc g5-02 gen_bounded n=2000 k=1999 branches=10
+tc g5-03 gen_bounded n=2000 k=2000 branches=10
+tc g5-04 gen_random n=2000 k=1984 dist=100000 branches=10
+
+group group6 31 #If it's bounded by 10^5, and no 2 trees are touching, then, n can't be more than 33333...
+include_group group4
+tc g1-bounded
+tc g2-bounded
+tc g6-01 gen_bounded n=10000 k=1000 bounded=1
+tc g6-02 gen_bounded n=20000 k=5000 bounded=1
+tc g6-03 gen_bounded n=23456 k=12345 bounded=1
+tc g6-04 gen_bounded n=30333 k=20345 bounded=1
+tc g6-05 gen_bounded n=30333 k=30000 bounded=1
+tc g6-06 gen_bounded n=33333 k=33333 bounded=1
+tc g6-07 gen_bounded n=20500 k=10250 bounded=1 
+tc g6-08 gen_bounded n=60000 k=30000 bounded=1 
+tc g6-09 gen_bounded n=60000 k=56789 bounded=1 
+tc g6-10 gen_random n=12345 k=1984 dist=8 branches=10
+
+group group7 18
+include_group group1
+include_group group2
+include_group group3
+include_group group4
+include_group group5
+include_group group6
+tc g7-01 gen_bounded n=100000 k=1000 
+tc g7-02 gen_bounded n=100000 k=50000 
+tc g7-03 gen_bounded n=100000 k=99911
+tc g7-04 gen_bounded n=100000 k=100000
+tc g7-05 gen_random n=100000 k=56789 dist=100 branches=5

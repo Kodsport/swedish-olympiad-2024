@@ -8,5 +8,5 @@ using namespace std;
 void run() {
 	//TODO Fix a validator
 
-	Eof();
+	//Eof();
 }

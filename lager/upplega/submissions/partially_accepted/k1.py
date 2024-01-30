@@ -15,7 +15,7 @@ for tree in range(n):
 
         snow[tree] += abs(lengths[i])
 
-snow.sort()
+snow.sort(reverse=1)
 
 print(sum(snow[:k]))
     

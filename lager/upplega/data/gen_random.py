@@ -18,18 +18,22 @@ random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 
 n = int(cmdlinearg('n'))
 k = int(cmdlinearg('k'))
+dist = int(cmdlinearg('dist', 10))
+branches = int(cmdlinearg('branches', 5))
+
+onlyRight = int(cmdlinearg('onlyRight', 0))
 
 print(n,k)
 
-print(*range(10,10*(n+1),10))
-print(*[10]*n)
+print(*range(dist,dist*(n+1),dist))
+print(*[branches]*n)
 
-grenar = [(i,(-1)**random.randint(0,1)*random.randint(1,9)) for i in range(n*10)]
+grenar = [(i,(-1)**random.randint(0,1-onlyRight)*random.randint(1,dist-1)) for i in range(1,1+n*branches)]
 random.shuffle(grenar)
 for _ in range(n):
     heights = []
     lengths = []
-    for _ in range(10):
+    for _ in range(branches):
         h,l = grenar.pop()
         heights.append(h)
         lengths.append(l)
