@@ -25,6 +25,7 @@ tc g1-max3 gen_random n=100000 k=99998 onlyRight=1 dist=69
 
 
 group group2 5
+limits maxk=1
 tc 2 
 tc g1-k1
 tc g2-smallN gen_random n=15 k=1 dist=10000001 branches=10
@@ -34,6 +35,7 @@ tc g2-max2 gen_bounded n=100000 k=1
 
 
 group group3 7
+limits maxn=15
 tc 1
 tc g1-smallN
 tc g1-smallN_bigDist
@@ -45,6 +47,7 @@ tc g3-bounded gen_bounded n=15 k=8 bounded=1 branches=10
 tc g3-max3 gen_bounded n=15 k=14 branches=10
 
 group group4 11
+limits maxn=2000
 tc g1-smallN
 tc g1-n1500
 tc g3-bounded
@@ -57,6 +60,7 @@ tc g4-05 gen_random n=2000 k=1234 dist=10 branches=10
 #tc_manual ../manual/greedyKiller2_n1000.in
 
 group group5 23
+limits maxn=2000
 include_group group3
 include_group group4
 tc g1-smallN_bigDist
