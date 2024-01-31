@@ -12,6 +12,9 @@ void run() {
 	Endl();
 
 	vector<int> distances = SpacedInts(n, 0, int(1e9));
+
+	for (int i = 0; i < n-1; i++) assert(distances[i]<distances[i+1]);
+
 	vector<int> degrees = SpacedInts(n, 1, 10);
 
 	bool onlyright = (bool)Arg("onlyRight", 0);
@@ -23,6 +26,7 @@ void run() {
 		vector<int> heights = SpacedInts(degrees[i], 1, int(1e9));
 		allheights.push_back(heights);
 		vector<int> lengths = SpacedInts(degrees[i], -int(1e5), int(1e5));
+
 		for (int j = 0; j < degrees[i]; j++) // check that we do not intersect next tree
 		{
 			if (i==n-1) break;
@@ -51,7 +55,8 @@ void run() {
 			assert(heightmap[heights[j]].size()<3);
 			if (heightmap[heights[j]].size()==2)
 			{
-				assert(heightmap[heights[j]][0]==-heightmap[heights[j]][1]);
+				assert( (heightmap[heights[j]][0] < 0 && heightmap[heights[j]][1] > 0) || 
+						(heightmap[heights[j]][0] > 0 && heightmap[heights[j]][1] < 0));
 			}
 		}
 		heightmapping.push_back(heightmap);
@@ -75,8 +80,6 @@ void run() {
 			}
 		}
 	}
-
-	//TODO Fix a validator
 
 	Eof();
 }
