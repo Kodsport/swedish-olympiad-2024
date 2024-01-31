@@ -6,9 +6,9 @@
 
 \noindent
 Först när snön har lagt sig på alla grenar av de $N$ träden på gatan utanför ditt hus är det vinter på riktigt. 
-Gatan kan representeras som ett $10^9 \times 10^9$ stort rutnät.
-Längs med gatan står de $N$ träden på rad. Stammen av vardera träd $i$ befinner sig på $pos_i$ och beskrivs av en
-rektangel med bredd $1$ och är ett antal längdenheter hög. Varje träd $i$ har dessutom $s_i$ grenar. Dessa grenar beskrivs vardera av en
+Gatan kan representeras som ett $(10^9+1) \times (10^9+1)$ stort rutnät.
+Längs med gatan står de $N$ träden på rad. Stammen av vardera träd $i$ befinner sig på $pos_i$ och beskrivs som en
+rektangel med bredd $1$ och har en oändlig höjd. Varje träd $i$ har dessutom $s_i$ grenar. Dessa grenar beskrivs vardera av en
 rektangel som sticker ut från stammen med höjd $1$ och är ett antal längdenheter breda.
 Det är garanterat att rutorna som varje gren befinner sig i inte innehåller någon annan gren eller stam. 
 Det är dessutom garanterat att ingen gren går förbi ett annat träd, även ovanför det.
@@ -29,7 +29,7 @@ falla till marken genom att rota exakt $K$ stycken träd.
 \begin{centering}
   \begin{figure}[h]
       \centering
-      \includegraphics[width=0.8\textwidth]{upplegaSample1.png}
+      \includegraphics[width=0.8\textwidth]{upplegaSample1_ver2.png}
       \caption{Bilden visar sample 1.}
   \end{figure}
 \end{centering}
@@ -46,7 +46,7 @@ Tredje raden innehåller $N$ heltal $s_1, s_2, \dots, s_N$ ($1 \leq s_i \leq 10$
 Till slut följer $2N$ rader, 2 rader per träd som beskriver grenarna för trädet:
 \begin{itemize}
   \item Första raden innehåller $s_i$ heltal $h_{i,1}, h_{i,2}, \dots, h_{i,s_i}$ ($1 \leq h_{i,j} \leq 10^9$) där $h_{i,j}$ är höjden av gren $j$ som tillhör träd $i$.
-  \item Andra raden innehåller $s_i$ heltal $l_{i,1}, l_{i,2}, \dots, l_{i,s_i}$ ($-10^5 \leq l_{i,j} \leq 10^5$ , $l_{i,j} \neq 0$). 
+  \item Andra raden innehåller $s_i$ heltal $l_{i,1}, l_{i,2}, \dots, l_{i,s_i}$ ($-10^9 \leq l_{i,j} \leq 10^9$ , $l_{i,j} \neq 0$). 
   Varje $l_{i,j}$ beskriver en gren hos träd $i$. $l_{i,j}$ är positiv innebär det att gren $j$ riktas åt höger $l_{i,j}$ meter. 
   Om $l_{i,j}$ är negativ riktas grenen åt vänster $abs(l_{i,j})$ meter.
 \end{itemize}
