@@ -41,6 +41,10 @@ elif mode=="increasing":
         next = rand(last, last+delta)
         costs.append(next)
         last = next
+elif mode=="randomweight":
+    for _ in range(n):
+        profits.append(rand(1,int(1e9)))
+        costs.append(rand(1,int(1e9)))
 else:
     assert 0, f"Unknown mode {mode}"
 

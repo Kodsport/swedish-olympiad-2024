@@ -13,7 +13,7 @@ void run() {
 	Endl();
 
 	vector<int> profits = SpacedInts(n, 1, int(1e9));
-	vector<int> costs = SpacedInts(n, 1, c);
+	vector<int> costs = SpacedInts(n, 1, int(1e9));
 
 	int increasing = Arg("increasing", 0);
 	if (increasing)
