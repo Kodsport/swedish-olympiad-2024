@@ -5,6 +5,8 @@ use_solution joshua.cpp
 
 compile gen_rand.py
 compile gen_spikes.py
+compile gen_killsmalltolarge.py
+compile gen_killer2.py
 
 # Generate answers to sample cases
 samplegroup
@@ -52,3 +54,5 @@ tc g5-1 gen_spikes n=$MAXN c=$MAXC
 tc g5-2 gen_spikes n=$MAXN c=999999999
 tc g5-3 gen_spikes n=$MAXN c=972356712
 tc g5-4 gen_rand   n=$MAXN c=972356712 mode=manysmall
+tc g5-5 gen_killsmalltolarge
+tc g5-6 gen_killer2
