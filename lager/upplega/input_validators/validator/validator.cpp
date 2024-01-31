@@ -20,7 +20,7 @@ void run() {
 	vector<vector<int>> allheights;
 	for (int i = 0; i < n; i++)
 	{
-		vector<int> heights = SpacedInts(degrees[i], 0, int(1e9));
+		vector<int> heights = SpacedInts(degrees[i], 1, int(1e9));
 		allheights.push_back(heights);
 		vector<int> lengths = SpacedInts(degrees[i], -int(1e5), int(1e5));
 		for (int j = 0; j < degrees[i]; j++) // check that we do not intersect next tree
