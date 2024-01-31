@@ -11,21 +11,44 @@ void run() {
 	int k = Int(1, Arg("maxk", n));
 	Endl();
 
-	vector<int> distances = SpacedInts(n, 0, int(1e9));
+	bool bounded = (bool)Arg("bounded",0);
+	int bounds = 1e9;
+	if (bounded) bounds = 2e5;
+
+	vector<int> distances = SpacedInts(n, 0, int(bounds));
 
 	for (int i = 0; i < n-1; i++) assert(distances[i]<distances[i+1]);
 
 	vector<int> degrees = SpacedInts(n, 1, 10);
 
 	bool onlyright = (bool)Arg("onlyRight", 0);
-
+	
 	vector<map<int,vector<int>>> heightmapping;
 	vector<vector<int>> allheights;
 	for (int i = 0; i < n; i++)
 	{
 		vector<int> heights = SpacedInts(degrees[i], 1, int(1e9));
 		allheights.push_back(heights);
-		vector<int> lengths = SpacedInts(degrees[i], -int(1e5), int(1e5));
+		vector<int> lengths = SpacedInts(degrees[i], -int(bounds), int(bounds));
+
+		for (int j = 0; j < degrees[i]; j++) // check that our branches do not get outside [0,10**9]
+		{
+			if (lengths[j]>0) {
+				if (bounded){
+					assert(distances[i]+lengths[j]<4e5);
+				}
+				else{
+					assert(distances[i]+lengths[j]<=1e9);
+				}
+			}
+			else {
+				assert(distances[i]-abs(lengths[j])>=0);
+			}
+		}
+		
+		for (int j = 0; j < degrees[i]; j++) assert(lengths[j] != 0); // Check that none of the branches has length 0
+
+
 
 		for (int j = 0; j < degrees[i]; j++) // check that we do not intersect next tree
 		{
