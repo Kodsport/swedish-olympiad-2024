@@ -61,9 +61,12 @@ tc small-8 gen_repeat n=300 m=300 chain=100
 tc small-9 gen_repeat n=300 m=300 chain=100 mode=invalid
 tc small-10 gen_identity n=300 m=20 mode=cycle2
 tc small-11 gen_valid n=299 m=300 mode=random
-tc small-12 gen_valid n=297 m=300 mode=random
-tc small-13 gen_valid n=297 m=300 mode=unicycle cycles=177
-tc small-14 gen_valid n=297 m=300 mode=cycles cycles=100
+tc small-12 gen_valid n=299 m=300 mode=random
+tc small-13 gen_valid n=299 m=300 mode=unicycle cycles=177
+tc small-14 gen_valid n=299 m=300 mode=cycles cycles=100
+tc small-15 gen_valid n=299 m=300 mode=equal_cycles cycles=50
+tc small-16 gen_valid n=101 m=300 mode=equal_cycles cycles=100
+tc small-17 gen_valid n=299 m=300 mode=equal_cycles_random cycles=100
 
 group group4 22
 limits maxn=3000
@@ -79,6 +82,9 @@ tc perm-7 gen_valid n=2989 m=3000 mode=unicycle cycles=10
 tc perm-8 gen_valid n=2989 m=3000 mode=cycles cycles=100
 tc perm-9 gen_valid n=2989 m=3000 mode=cycles cycles=2000
 tc perm-10 gen_valid n=2989 m=3000 mode=unicycle cycles=2000
+tc perm-11 gen_valid n=2989 m=3000 mode=equal_cycles cycles=500
+tc perm-12 gen_valid n=2989 m=3000 mode=equal_cycles cycles=1500
+tc perm-13 gen_valid n=2989 m=3000 mode=equal_cycles_random cycles=500
 
 group group5 9
 include_group group4
@@ -87,7 +93,10 @@ limits maxn=3000
 tc medium-1 gen_rand n=300 m=30 mode=chain chain=1
 tc medium-2 gen_rand n=300 m=300 mode=chain chain=10
 tc medium-3 gen_rand n=300 m=40 mode=chain chain=20
-tc medium-4 gen_repeat n=3000 m=3000 chain=1500
+tc medium-4 gen_repeat n=3000 m=3000 chain=3
+tc medium-5 gen_repeat n=3000 m=3000 chain=1500 mode=invalid
+tc medium-7 gen_repeat n=3000 m=3000 chain=2987
+tc medium-8 gen_rand n=3000 m=3000
 
 group group6 26
 include_group group5
@@ -106,3 +115,7 @@ tc large-9 gen_valid n=299999 m=$MAXN mode=unicycle cycles=400
 tc large-10 gen_valid n=299999 m=$MAXN mode=unicycle cycles=250000
 tc large-11 gen_valid n=299999 m=$MAXN mode=cycles cycles=10
 tc large-12 gen_valid n=299999 m=$MAXN mode=cycles cycles=10000
+tc large-13 gen_valid n=299999 m=$MAXN mode=equal_cycles cycles=10000
+tc large-14 gen_valid n=299999 m=$MAXN mode=equal_cycles cycles=150000
+tc large-15 gen_valid n=299999 m=$MAXN mode=equal_cycles_random cycles=20000
+tc large-16 gen_valid n=299997 m=$MAXN mode=equal_cycles_random cycles=10000

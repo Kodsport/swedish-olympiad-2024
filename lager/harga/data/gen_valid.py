@@ -79,6 +79,25 @@ elif mode == "unicycle":
     for i in range(n):
         X[i] += 1
 
+elif mode == "equal_cycles" or mode == "equal_cycles_random":
+    m -= m%cycles
+    pi = equal_cycles(m // cycles, cycles)
+    sigma = pi.exponentiate(n)
+    Y = []
+    for i in range(n):
+        j = i%len(sigma.cycles)
+        Y.append(sigma.cycles[j][0])
+    for i in range(cycles):
+        Y[n-cycles+i] = sigma.cycles[i][0] # last should be in same order as first
+    if mode == "equal_cycles_random":
+        random.shuffle(Y)
+    for i in range(n):
+        X.append(pi.step(Y[i], -i))
+    for i in range(m):
+        F.append(pi.p[i]+1)
+    for i in range(n):
+        X[i] += 1
+
 
 print(n,m)
 print(*X)

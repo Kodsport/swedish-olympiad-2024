@@ -53,3 +53,18 @@ def get_permutation(m, cycles):
     
     perm = permutation(p2)
     return perm
+
+def equal_cycles(length, cycles):
+    m = length*cycles
+    p1 = list(range(m))
+    random.shuffle(p1)
+    p2 = [0]*m
+    for i in range(cycles):
+        start = i*length
+        for j in range(length):
+            a = start+j
+            b = start+(j+1)%length
+            p2[p1[a]] = p1[b]
+    perm = permutation(p2)
+    return perm
+
