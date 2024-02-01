@@ -72,7 +72,7 @@ if 1:
             if used[i+1]:
                 temp += leftDrop[i+1]
             else:
-                temp += totalDrop[i+1]-rightDrop[i]
+                temp += totalDrop[i+1]-rightDrop[i+1]
         else:
             temp += leftDrop[i+1]
         
@@ -84,6 +84,7 @@ if 1:
     out = 0
 
     for i in range(n):
+        assert checkSnow(i) == (totalDrop[i]-leftDrop[i]) + (totalDrop[i+1]-rightDrop[i+1])
         heapq.heappush(queue, (-checkSnow(i),i))
 
     while picked<k:

@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#@EXPECTED_GRADES@ AC AC AC AC AC WA WA
+
 import sys
 import heapq
 
@@ -95,7 +97,7 @@ else:
             if used[i+1]:
                 temp += leftDrop[i+1]
             else:
-                temp += totalDrop[i+1]-rightDrop[i]
+                temp += totalDrop[i+1]-rightDrop[i+1]
         else:
             temp += leftDrop[i+1]
         
