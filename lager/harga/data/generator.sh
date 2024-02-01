@@ -57,10 +57,10 @@ tc small-7 gen_repeat n=300 m=300
 tc small-8 gen_repeat n=300 m=300 chain=100
 tc small-9 gen_repeat n=300 m=300 chain=100 mode=invalid
 tc small-10 gen_identity n=300 m=20 mode=cycle2
-tc small-11 gen_valid n=299 m=$MAXN mode=random
-tc small-12 gen_valid n=297 m=$MAXN mode=random
-tc small-13 gen_valid n=297 m=$MAXN mode=unicycle cycles=10
-tc small-14 gen_valid n=297 m=$MAXN mode=cycles cycles=100
+tc small-11 gen_valid n=299 m=300 mode=random
+tc small-12 gen_valid n=297 m=300 mode=random
+tc small-13 gen_valid n=297 m=300 mode=unicycle cycles=177
+tc small-14 gen_valid n=297 m=300 mode=cycles cycles=100
 
 group group4 22
 limits maxn=3000
