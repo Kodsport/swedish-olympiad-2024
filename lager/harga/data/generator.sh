@@ -13,6 +13,7 @@ samplegroup
 sample 1
 sample 2
 sample 3
+sample 4
 
 MAXN=300000
 
@@ -32,6 +33,7 @@ tc one-9 gen_valid n=1 m=$MAXN cycles=1 mode=unicycle
 group group2 17
 limits identity=1
 limits maxn=$MAXN
+tc 4
 tc identity-1 gen_rand n=1 m=10 mode=identity
 tc identity-2 gen_rand n=300 m=300 mode=identity
 tc identity-3 gen_rand n=300 m=30 mode=identity
@@ -47,6 +49,7 @@ group group3 16
 limits maxn=300
 tc 2
 tc 3
+tc 4
 tc small-1 gen_rand n=10 m=10 mode=random
 tc small-2 gen_rand n=10 m=10 mode=permutation
 tc small-3 gen_rand n=300 m=30 mode=permutation
@@ -65,6 +68,7 @@ tc small-14 gen_valid n=297 m=300 mode=cycles cycles=100
 group group4 22
 limits maxn=3000
 limits permutation=1
+tc 4
 tc perm-1 gen_rand n=300 m=30 mode=permutation
 tc perm-2 gen_repeat n=3000 m=3000
 tc perm-3 gen_identity n=3000 m=100 mode=cycle2

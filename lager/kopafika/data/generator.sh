@@ -12,12 +12,14 @@ compile kill_buyupgraded.py
 # Generate answers to sample cases
 samplegroup
 sample 1
+sample 2
 
 MAXC=1000000000
 MAXN=200000
 group group1 9
 limits maxn=1000
 tc 1
+tc 2
 tc g1-1 gen_rand n=1000 c=$MAXC mode=random
 tc g1-2 gen_rand n=1000 c=$MAXC mode=random
 tc g1-3 gen_rand n=1000 c=1000 mode=randomweight
@@ -25,6 +27,7 @@ tc g1-3 gen_rand n=1000 c=1000 mode=randomweight
 group group2 12
 limits maxc=50
 tc 1
+tc 2
 tc g2-1 gen_rand n=$MAXN c=50 mode=random
 tc g2-2 gen_rand n=$MAXN c=50 mode=random
 tc g2-3 gen_rand n=$MAXN c=50 mode=randomweight
@@ -37,6 +40,7 @@ tc g2-3 gen_rand n=$MAXN c=50 mode=randomweight
 #done
 group group3 11 # Increasing
 limits increasing=1
+tc 2
 tc g3-1 gen_rand n=$MAXN c=$MAXC mode=increasing
 tc g3-2 gen_rand n=$MAXN c=$MAXC mode=increasing delta=1
 tc g3-3 gen_rand n=$MAXN c=$MAXC mode=increasing delta=5

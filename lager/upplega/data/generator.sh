@@ -10,6 +10,7 @@ compile gen_bounded.py
 samplegroup
 sample 1
 sample 2
+sample 3
 
 group group1 5
 limits onlyRight=1
@@ -40,6 +41,7 @@ tc_manual ../manual/coverAll_n2.in
 group group3 7
 limits maxn=15
 tc 1
+tc 3
 tc g1-smallN
 tc g1-smallN_bigDist
 tc coverAll_n1_right
@@ -55,6 +57,9 @@ tc_manual ../manual/coverAll_n4.in
 
 group group4 11
 limits maxn=2000 bounded=1
+tc 1
+tc 2
+tc 3
 tc g1-smallN
 tc g1-n1500
 tc g3-bounded
