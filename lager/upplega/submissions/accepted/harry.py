@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-import sys
-#input = sys.stdin.readline
+
 n,k = map(int,input().split())
 
 trees = [*map(int,input().split())]
@@ -21,7 +20,7 @@ leftDrop    = [0]*(n+1) #Amount of snow dropped in the i:th gap if the left tree
 rightDrop   = [0]*(n+1) #Amount of snow dropped in the i:th gap if the right tree gets shaken
 totalDrop   = [0]*(n+1) #Amount of snow dropped in the i:th gap if the both trees gets shaken
 
-for i in range(n+1):
+for i in range(n+1): #Calculate for the amount of snow between each pair of adjacent trees
     treeLeft = i-1
     treeRight = i
     if treeLeft == -1:
@@ -49,15 +48,9 @@ for i in range(n+1):
     leftDrop[i] = left
     rightDrop[i] = right
     totalDrop[i] = total
-
-totalDropPrefix = [0]
-for x in totalDrop:
-    totalDropPrefix.append(totalDropPrefix[-1] + x)
-
+    
 
 def dp(index, pushedLast = 1):
-    memo[n] = [(0,0),(0,0)]
-
     for i in range(n-1,-1,-1):
         for push in range(2):
             save,saveK = memo[i+1][0]
@@ -75,18 +68,20 @@ def dp(index, pushedLast = 1):
     
     return memo[0][1]
 
-memo = [[-1,-1] for _  in range(n+1)]
+memo = [[(0,0),(0,0)] for _  in range(n+1)]
 lo = 0
 hi = 10**9
 for i in range(50):
     mid = (lo+hi)/2
     ans,ansK = dp(0,1)
 
-    if ansK > k: 
+    if ansK == k:
+        lo = hi = mid
+        break
+    elif ansK > k: 
         lo = mid
     else:
         hi = mid
 
 mid = hi
 print(round(dp(0,1)[0] + mid*k))
-
