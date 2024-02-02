@@ -28,8 +28,14 @@ F = [-1] * m
 
 inds = list(range(m))
 random.shuffle(inds)
-for i in range(m):
-    if i == m-1:
+
+extra = 0
+if mode == "disconnected":
+    F[inds[-1]] = inds[-1]
+    extra = 1
+
+for i in range(m-extra):
+    if i == m-1-extra:
         F[inds[i]] = inds[chain]
     else:
         F[inds[i]] = inds[i+1]

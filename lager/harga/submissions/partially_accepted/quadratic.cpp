@@ -62,6 +62,7 @@ int main() {
     cin.tie(0);
     
     cin >> n >> m;
+    //assert(n <= 10000 && m <= 10000);
     rep(c1,0,n){
         int a;
         cin >> a;

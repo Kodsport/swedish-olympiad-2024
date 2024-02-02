@@ -29,6 +29,8 @@ tc one-6 gen_repeat n=1 m=$MAXN chain=100000
 tc one-7 gen_repeat n=1 m=$MAXN chain=299999
 tc one-8 gen_repeat n=1 m=$MAXN chain=100000 mode=invalid
 tc one-9 gen_valid n=1 m=$MAXN cycles=1 mode=unicycle
+tc one-10 gen_valid n=1 m=$MAXN cycles=2 mode=cycles
+tc one-11 gen_repeat n=1 m=$MAXN chain=150000 mode=disconnected
 
 group group2 17
 limits identity=1
@@ -67,6 +69,7 @@ tc small-14 gen_valid n=299 m=300 mode=cycles cycles=100
 tc small-15 gen_valid n=299 m=300 mode=equal_cycles cycles=50
 tc small-16 gen_valid n=101 m=300 mode=equal_cycles cycles=100
 tc small-17 gen_valid n=299 m=300 mode=equal_cycles_random cycles=100
+tc small-18 gen_repeat n=300 m=300 chain=150 mode=disconnected
 
 group group4 22
 limits maxn=3000
@@ -97,6 +100,7 @@ tc medium-4 gen_repeat n=3000 m=3000 chain=3
 tc medium-5 gen_repeat n=3000 m=3000 chain=1500 mode=invalid
 tc medium-7 gen_repeat n=3000 m=3000 chain=2987
 tc medium-8 gen_rand n=3000 m=3000
+tc medium-10 gen_repeat n=3000 m=3000 chain=1500 mode=disconnected
 
 group group6 26
 include_group group5

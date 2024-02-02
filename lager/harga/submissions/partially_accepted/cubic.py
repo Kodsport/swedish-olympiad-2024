@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 n,m = map(int,input().split())
+#assert(n <= 1000 and m <= 1000)
 X = list(map(int,input().split()))
 F = list(map(int,input().split()))
 
