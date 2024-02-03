@@ -2,7 +2,6 @@
 using namespace std;
 
 typedef long long ll;
-#define int ll
 const int inf = int(1e18);
 
 typedef vector<int> vi;
@@ -44,51 +43,97 @@ vector<p2> dirs = { {0,1},{0,-1},{1,0},{-1,0} };
 // time and rng
 auto Start = chrono::high_resolution_clock::now();
 void resettimer() { Start = chrono::high_resolution_clock::now(); }
-int elapsedmillis() { return chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - Start).count(); }
+ll elapsedmillis() { return chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - Start).count(); }
 random_device rd;
 mt19937 rng(rd());
 template<typename T, typename U> inline int randint(T lo, U hi) { return uniform_int_distribution<int>((int)lo, (int)hi)(rng); } // [lo,hi]
 template<typename T> inline T randel(vector<T>& v) { return v[uniform_int_distribution<int>(int(0), int(v.size()) - int(1))(rng)]; } // [lo,hi]
 
+struct Node;
+struct ptr {
+	int index = 0;
+	Node* operator->();
+	explicit operator bool();
+};
+
 struct Node
 {
-	Node* l, * r;
-	int sum;
+	ptr l, r;
+	ll sum = 0;
 
-	Node(int x) : sum(x), l(nullptr),r(nullptr){}
-	Node(Node* l, Node*r) : l(l), r(r), sum(0) 
-	{
+	void init(int x) { sum = x; }
+	void init(ptr l, ptr r) {
+		this->l = l;
+		this->r = r;
 		if (l) sum += l->sum;
 		if (r) sum += r->sum;
 	}
-
 };
+const int NODE_TEMPS = 10'000'000;
+Node nodeTemps[NODE_TEMPS];
+int tempInd = 2;
+ptr::operator bool() {
+	return index != 0;
+}
+Node* ptr::operator->() {
+	assert(index != 0);
+	return &nodeTemps[index];
+}
+ptr emptyNode{1};
 
-Node* roots[int(2e5 + 10)];
-Node* rootsprofit[int(2e5 + 10)];
-
-Node* build(int l, int r)
-{
-	if (l == r) return new Node(0);
-	int mid = (l + r) / 2;
-	return new Node(build(l, mid), build(mid + 1, r));
+template<class... Params>
+ptr newNode(Params... params) {
+	assert(tempInd < NODE_TEMPS);
+	ptr ret{tempInd++};
+	ret->init(params...);
+	return ret;
 }
 
-Node* update(Node* x, int l, int r, int i, int v)
-{
-	if (l == r) return new Node(v);
+ptr roots[int(2e5 + 10)];
+ptr rootsprofit[int(2e5 + 10)];
 
-	int mid = (l + r) / 2;
-	if (i <= mid) return new Node(update(x->l, l, mid, i, v), x->r);
-	else return new Node(x->l, update(x->r, mid + 1, r, i, v));
+ptr build(int l, int r)
+{
+	if (l == r) return emptyNode;
+	int mid = (l + r) >> 1;
+	return newNode(build(l, mid), build(mid + 1, r));
 }
 
-int query(Node* x, int l, int r, int ql, int qr)
+ptr update(ptr x, int l, int r, int i, int v)
 {
-	if (l >= ql && r <= qr) return x->sum;
+	if (l == r) return newNode(v);
+	int mid = (l + r) >> 1;
+	if (i <= mid) return newNode(update(x->l, l, mid, i, v), x->r);
+	else return newNode(x->l, update(x->r, mid + 1, r, i, v));
+}
+
+ll query(ptr x, int l, int r, int ql, int qr)
+{
 	if (l > qr || r < ql) return 0;
-	int mid = (l + r) / 2;
+	if (l >= ql && r <= qr) return x->sum;
+	int mid = (l + r) >> 1;
 	return query(x->l, l, mid, ql, qr) + query(x->r, mid + 1, r, ql, qr);
+}
+
+bool binsearch(ptr x, int l, int r, int ql, ll& rem, int& out)
+{
+	if (r < ql) return true;
+	if (ql <= l) {
+		if (x->sum <= rem) {
+			rem -= x->sum;
+			return true;
+		}
+	}
+
+	if (l == r) {
+		out = l;
+		return false;
+	}
+
+	int mid = (l + r) / 2;
+	return
+		binsearch(x->l, l, mid, ql, rem, out) &&
+		binsearch(x->r, mid+1, r, ql, rem, out);
 }
 
 signed main()
@@ -128,8 +173,8 @@ signed main()
 
 	rep(q, n)
 	{
-		int cap = c;
-		int profit = 0;
+		ll cap = c;
+		ll profit = 0;
 	
 		int i = q;
 		while (i<n)
@@ -137,17 +182,14 @@ signed main()
 			auto it = upper_bound(all(weightssorted), cap);
 			if (it == begin(weightssorted)) break;
 			it = prev(it);
-			int ind = it - begin(weightssorted)+1;
-			Node* root = roots[ind];
+			int ind = (int)(it - begin(weightssorted)+1);
+			ptr root = roots[ind];
 
-			int lo = i - 1;
+			// find max lo s.t. query(i, lo) <= cap
+			ll rem = cap;
 			int hi = n;
-			while (lo + 1 < hi)
-			{
-				int mid = (lo + hi) / 2;
-				if (query(root, 0, n - 1, i, mid) <= cap) lo = mid;
-				else hi = mid;
-			}
+			binsearch(root, 0, n - 1, i, rem, hi);
+			int lo = hi - 1;
 
 			if (lo>=i)
 			{
@@ -159,8 +201,8 @@ signed main()
 		}
 		
 		cout << profit << " ";
-
 	}
 
-	return 0;
+	cout << endl;
+	_Exit(0);
 }
