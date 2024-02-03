@@ -1,26 +1,26 @@
 \problemname{Upplega}
 
 \begin{center}
-\textit{``Ja, nu börjar det likna jul längs vägen\\ Överallt vi går''}
+\textit{''Ja, nu börjar det likna jul längs vägen\\ Överallt vi går''}
 \end{center}
 
 \noindent
 Först när snön har lagt sig på alla grenar av de $N$ träden på gatan utanför ditt hus är det vinter på riktigt. 
 Gatan med alla träd kan representeras i ett godtyckligt stort rutnät.
-Längs med gatan står de $N$ träden på rad. Stammen av vardera träd $i$ befinner sig på $pos_i$ och beskrivs av en
-rektangel med bredd $1$ som tar upp hela kolumnen $pos_i$. Varje träd $i$ har dessutom $s_i$ grenar. Dessa grenar beskrivs vardera av en
-rektangel som har höjd $1$ och sticker ut från stammen och är ett heltal längdenheter breda.
-Det är garanterat att rutorna som varje gren befinner sig i inte innehåller någon annan gren eller stam. 
-Det är dessutom garanterat att ingen gren går förbi ett annat träd, även ovanför det.
+Längs med gatan står de $N$ träden på rad. Stammen av träd $i$ befinner sig på $pos_i$ och beskrivs av en
+rektangel med bredd $1$ som tar upp hela kolumnen $pos_i$. Träd $i$ har dessutom $s_i$ grenar. Dessa grenar beskrivs vardera av en
+rektangel som har höjd $1$ och sticker ut från stammen och är ett heltal längdenheter bred.
+Det är garanterat att rutorna som varje gren befinner sig i inte överlappas av någon annan gren eller stam. 
+Det är dessutom garanterat att ingen gren går förbi ett annat träd, ens ovanför det.
 
-Efter en riktigt snöig afton har Upplega lagt sig på alla träden. Upplega är benämningen på snö
+Efter en riktigt snöig afton har upplega lagt sig på alla träden. Upplega är benämningen på snö
 som samlas på toppen av träds grenar. 
-På varje längdenhet av varje gren befinner det sig $1$ enhet snö. Snön är så liten att den inte tar
+Ovanpå varje längdenhet av varje gren befinner det sig $1$ enhet snö. Snön är så tunn att den inte tar
 upp en ruta. Detta innebär att snöns höjd är försumbar.
 
-Du är en sann vinterentusiast som älskar jullåtar, det mysiga kalla vädret, och framförallt all upplega. 
+Du är en sann vinterentusiast som älskar jullåtar, det mysiga kalla vädret och framför allt all upplega. 
 Enligt väderprognosen kommer det snart en stor storm, vilket kommer att skaka alla träd riktigt ordentligt. 
-När ett träd blir skakat så kommer snön på dess grenar börja falla rakt ner tills dess att snön antingen
+När ett träd blir skakat så kommer snön på dess grenar börja falla rakt ner till dess att snön antingen
 landar säkert på en gren från ett träd som inte har blivit skakat eller att den hamnar på marken.
 Trots att stormen snart ska börja hinner du skydda $K$ stycken träd från att skaka genom att rota träden.
 
@@ -40,7 +40,7 @@ Första raden innehåller två heltal $N$ och $K$ ($1 \leq K \leq N \leq 10^5$),
 träd längs gatan och antalet träd som du hinner skydda från att skakas.
 
 Andra raden innehåller $N$ heltal $pos_1, pos_2, \dots, pos_N$ ($0 \leq pos_i \leq 10^9$), där $pos_i$ är antalet längdenheter från början av gatan till träd $i$. 
-Träden kommer att ges i sorterad ordning, och det är garanterat att inga två träd befinner sig på samma position. Formellt innebär det att om $i<j$, så gäller $pos_i < pos_j$.
+Träden kommer att ges i sorterad ordning, och det är garanterat att inga två träd befinner sig på samma position. Formellt innebär det att om $i<j$ så gäller $pos_i < pos_j$.
 
 Tredje raden innehåller $N$ heltal $s_1, s_2, \dots, s_N$ ($1 \leq s_i \leq 10$), där $s_i$ är antalet grenar som träd $i$ har. 
 
@@ -78,8 +78,8 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   $7$    & $18$       & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 
-Grupp 4 och 6 garanterar också att alla träd och grenar att befinner sig inom intervallet från position $0$ till position $4 \cdot 10^5$.
+Grupp 4 och 6 garanterar också att alla träd och grenar befinner sig inom intervallet från $0$ till $4 \cdot 10^5$ längdenheter från början av gatan.
 
 \section*{Explanation of sample 1:}
-Genom att rädda det första och andra trädet så förhindrar vi $10$ enheter snö från att falla från träd $1$, $18$ från träd $2$ och $9$ från träd $3$,
+Genom att rota det första och andra trädet så förhindrar vi $10$ enheter snö från att falla från träd $1$, $18$ från träd $2$ och $9$ från träd $3$,
 vilket sammanlagt blir $10+18+9=37$.
