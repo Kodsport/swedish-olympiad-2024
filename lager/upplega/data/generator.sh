@@ -1,7 +1,7 @@
 #!/bin/bash
 . ../../testdata_tools/gen.sh
 
-use_solution harry.py
+use_solution joshua.cpp
 
 compile gen_random.py
 compile gen_bounded.py
