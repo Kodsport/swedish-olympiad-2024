@@ -91,7 +91,6 @@ signed main()
 
 	auto whichset = [&](int c)
 	{
-
 		auto it = lower_bound(all(sizes), c);
 		if (*it == c) return it - sizes.begin();
 		return it - sizes.begin() - 1;
@@ -106,19 +105,10 @@ signed main()
 		sets[where].insert(qu);
 	};
 
-	auto popback = [&](int where)
+	auto pop = [&](int where, auto location)
 	{
-		query qu = *prev(sets[where].end());
-		sets[where].erase(prev(sets[where].end()));
-		qu.value += lazyprofit[where];
-		qu.weight -= lazycap[where];
-		return qu;
-	};
-
-	auto popfront = [&](int where)
-	{
-		query qu = *sets[where].begin();
-		sets[where].erase(sets[where].begin());
+		query qu = *location;
+		sets[where].erase(location);
 		qu.value += lazyprofit[where];
 		qu.weight -= lazycap[where];
 		return qu;
@@ -134,7 +124,7 @@ signed main()
 
 		while (sets[ind].size() && prev(sets[ind].end())->weight - lazycap[ind] >= cap)
 		{
-			query qu = popback(ind);
+			query qu = pop(ind, prev(sets[ind].end()));
 			qu.value += items[i].first;
 			qu.weight -= cap;
 			assert(qu.weight >= 0);
@@ -147,7 +137,7 @@ signed main()
 			lazycap[j] += cap;
 			while (sets[j].size() && begin(sets[j])->weight - lazycap[j] < sizes[j])
 			{
-				query qu = popfront(j);
+				query qu = pop(j, begin(sets[j]));
 				assert(qu.weight >= 0);
 				insert(qu);
 			}
