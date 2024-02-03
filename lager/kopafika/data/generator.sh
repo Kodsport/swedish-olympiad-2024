@@ -32,12 +32,6 @@ tc g2-1 gen_rand n=$MAXN c=50 mode=random
 tc g2-2 gen_rand n=$MAXN c=50 mode=random
 tc g2-3 gen_rand n=$MAXN c=50 mode=randomweight
 
-
-#for i in {1..1000}
-#do
-#tc g1-$i gen_rand mode=random
-
-#done
 group group3 11 # Increasing
 limits increasing=1
 tc 2
@@ -47,11 +41,10 @@ tc g3-3 gen_rand n=$MAXN c=$MAXC mode=increasing delta=5
 tc g3-4 gen_rand n=$MAXN c=$MAXC mode=increasing delta=10
 tc g3-5 gen_rand n=$MAXN c=$MAXC mode=increasing delta=100
 
-
 group group4 17 # Random
 tc g4-1 gen_rand n=$MAXN c=$MAXC mode=random
 tc g4-2 gen_rand n=$MAXN c=$MAXC mode=random
-tc g4-3 gen_rand n=$MAXN c=1000 mode=randomweight
+tc g4-3 gen_rand n=$MAXN c=1000 mode=random
 
 group group5 51
 include_group group1
