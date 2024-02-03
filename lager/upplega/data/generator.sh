@@ -1,6 +1,7 @@
 #!/bin/bash
 . ../../testdata_tools/gen.sh
 
+ulimit -s unlimited
 use_solution joshua.cpp
 
 compile gen_random.py
