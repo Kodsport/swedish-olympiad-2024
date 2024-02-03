@@ -9,14 +9,14 @@ Först när snön har lagt sig på alla grenar av de $N$ träden på gatan utanf
 Gatan med alla träd kan representeras i ett godtyckligt stort rutnät.
 Längs med gatan står de $N$ träden på rad. Stammen av vardera träd $i$ befinner sig på $pos_i$ och beskrivs av en
 rektangel med bredd $1$ som tar upp hela kolumnen $pos_i$. Varje träd $i$ har dessutom $s_i$ grenar. Dessa grenar beskrivs vardera av en
-rektangel som sticker ut från stammen med höjd $1$ och är ett heltal längdenheter breda.
+rektangel som har höjd $1$ och sticker ut från stammen och är ett heltal längdenheter breda.
 Det är garanterat att rutorna som varje gren befinner sig i inte innehåller någon annan gren eller stam. 
 Det är dessutom garanterat att ingen gren går förbi ett annat träd, även ovanför det.
 
 Efter en riktigt snöig afton har Upplega lagt sig på alla träden. Upplega är benämningen på snö
 som samlas på toppen av träds grenar. 
 På varje längdenhet av varje gren befinner det sig $1$ enhet snö. Snön är så liten att den inte tar
-upp en ruta.
+upp en ruta. Detta innebär att snöns höjd är försumbar.
 
 Du är en sann vinterentusiast som älskar jullåtar, det mysiga kalla vädret, och framförallt all upplega. 
 Enligt väderprognosen kommer det snart en stor storm, vilket kommer att skaka alla träd riktigt ordentligt. 
@@ -44,12 +44,12 @@ Träden kommer att ges i sorterad ordning, och det är garanterat att inga två 
 
 Tredje raden innehåller $N$ heltal $s_1, s_2, \dots, s_N$ ($1 \leq s_i \leq 10$), där $s_i$ är antalet grenar som träd $i$ har. 
 
-Till slut följer $2N$ rader, 2 rader per träd som beskriver grenarna för trädet:
+Till slut följer $2N$ rader, 2 rader per träd, som beskriver grenarna för trädet:
 \begin{itemize}
-  \item Första raden innehåller $s_i$ heltal $h_{i,1}, h_{i,2}, \dots, h_{i,s_i}$ ($1 \leq h_{i,j} \leq 10^9$) där $h_{i,j}$ är höjden på den $j$:te grenen som tillhör träd $i$.
+  \item Första raden innehåller $s_i$ heltal $h_{i,1}, h_{i,2}, \dots, h_{i,s_i}$ ($1 \leq h_{i,j} \leq 10^9$) där $h_{i,j}$ är höjden på den $j$:te grenen som tillhör träd $i$. 
   \item Andra raden innehåller $s_i$ heltal $l_{i,1}, l_{i,2}, \dots, l_{i,s_i}$ ($-10^9 \leq l_{i,j} \leq 10^9$ , $l_{i,j} \neq 0$). 
-  Varje $l_{i,j}$ beskriver en gren hos träd $i$. Om $l_{i,j}$ är positiv innebär det att gren $j$ riktas åt höger $l_{i,j}$ längdenheter. 
-  Om $l_{i,j}$ är negativ riktas grenen åt vänster $abs(l_{i,j})$ längdenheter.
+  Varje $l_{i,j}$ beskriver längden och riktningen av gren $j$ som tillhör träd $i$. Om $l_{i,j}$ är positiv innebär det att gren $j$ riktas åt höger $l_{i,j}$ längdenheter. 
+  Om $l_{i,j}$ är negativ riktas grenen $j$ åt vänster $|l_{i,j}|$ längdenheter.
 \end{itemize}
 
 Ingen gren kommer att befinna sig utanför gatans början som är vid $0$, eller befinna sig över $10^9$ längdenheter från början av gatan. 
@@ -81,5 +81,5 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 Grupp 4 och 6 garanterar också att alla träd och grenar att befinner sig inom intervallet från position $0$ till position $4 \cdot 10^5$.
 
 \section*{Explanation of sample 1:}
-Genom att rädda det första och andra trädet så förhindrar vi $10$ snö från att falla från träd $1$, $18$ från träd $2$ och $9$ från träd $3$,
+Genom att rädda det första och andra trädet så förhindrar vi $10$ enheter snö från att falla från träd $1$, $18$ från träd $2$ och $9$ från träd $3$,
 vilket sammanlagt blir $10+18+9=37$.

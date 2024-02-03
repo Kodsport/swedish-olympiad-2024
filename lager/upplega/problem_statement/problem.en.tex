@@ -8,14 +8,15 @@
 It is only truly winter once the snow has settled on all the branches of the $N$ trees on the street outside your house.
 The street with all the trees can be represented in an arbitrarily large grid. Along the street, the $N$ trees stand in a row.
 The trunk of each tree $i$ is located at position $pos_i$ and is described by a rectangle with a width of $1$, occupying the
-entire column $pos_i$. Additionally, each tree $i$ has $s_i$ branches. Each branch is described by a rectangle that sticks out
-from the trunk with a height of $1$ and is an integer number of units wide.
+entire column $pos_i$. Additionally, each tree $i$ has $s_i$ branches. Each branch is described by a rectangle with a height of $1$ 
+that sticks out from the trunk and is an integer number of units wide.
 It is guaranteed that the squares that each branch occupies do not contain any other branch or trunk. It is also guaranteed that
 no branch goes beyond another tree, not even above it.
 
 After a snowy evening, Upplega has settled on all the trees.
 Upplega is the Swedish term for snow that has accumulated on top of a tree's branches.
-On each unit length of each branch, there is $1$ unit of snow. The snow is so small that it does not occupy a square.
+On each unit length of each branch, there is $1$ unit of snow. The snow is so small that it does not occupy a square. In other words, 
+the height is negligible. 
 
 You are a true winter enthusiast who loves Christmas songs, the cozy cold weather, and above all, all the Upplega.
 According to the weather forecast, there will soon be a big storm that will shake all the trees quite vigorously.
@@ -51,8 +52,8 @@ Finally, $2N$ rows follows, with $2$ rows per tree, which describes its branches
 \begin{itemize}
   \item The first row contains $s_i$ integers $h_{i,1}, h_{i,2}, \dots, h_{i,s_i}$ ($1 \leq h_{i,j} \leq 10^9$), where $h_{i,j}$ is the height of the $j$:th branch belonging to tree $i$.
   \item The second row contains $s_i$ integers $l_{i,1}, l_{i,2}, \dots, l_{i,s_i}$ ($-10^9 \leq l_{i,j} \leq 10^9$ , $l_{i,j} \neq 0$). 
-  Each $l_{i,j}$ describes a branch of tree $i$. If $l_{i,j}$ is positive, it means that branch $j$ is directed to the right and is $l_{i,j}$ length units long. 
-  If $l_{i,j}$ is negative, the branch is directed to the left and is $abs(l_{i,j})$ length units long.
+  Each $l_{i,j}$ describes the length and direction of the $j$:th branch of tree $i$. If $l_{i,j}$ is positive, it means that branch $j$ is directed to the right and is $l_{i,j}$ length units long. 
+  If $l_{i,j}$ is negative, the branch is directed to the left and is $|l_{i,j}|$ length units long.
 \end{itemize}
 
 No branch will be outside the beginning of the street located at $0$, or beyond $10^9$ length units from the beginning of the street.
@@ -83,5 +84,5 @@ Group 4 and 6 additionally guarantee that all trees and branches have positions 
 
 
 \section*{Explanation of sample 1:}
-By choosing to save the first and second tree, we prevent $10$ snow from falling from tree $1$, $18$ from tree $2$ and $9$ from tree $3$,
+By choosing to save the first and second tree, we prevent $10$ snow units from falling from tree $1$, $18$ from tree $2$ and $9$ from tree $3$,
 totalling $10+18+9=37$.
