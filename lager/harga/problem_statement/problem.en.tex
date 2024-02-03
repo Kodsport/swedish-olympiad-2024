@@ -7,7 +7,8 @@ To fit with the theme of the lyrics, Tom has composed the arrangement in such a 
 forever if they start at the wrong place.
 
 The orchestra consists of $N$ musicians arranged in a circle, where musician $1$ is to the left of musician $2$,
-who is to the left of musician $3$, and so on. The arrangement consists of $M$ measures numbered from $1$ to $M$.
+who is to the left of musician $3$, and so on. Note that the musician to the right of musician $N$
+is musician $1$. The arrangement consists of $M$ measures numbered from $1$ to $M$.
 Initially, there is a list of integers $X_1, X_2, \dots, X_N$, where $X_i$ indicates the measure that musician $i$
 should start playing. Playing one measure takes one second, and everyone plays simultaneously. After musician $i$
 finishes playing measure $X_i$, they look at the measure played by the musician to their right (i.e., $X_{i+1}$).
@@ -15,8 +16,7 @@ Then, musician $i$ plays the measure $f(X_{i+1})$, where $f(1), f(2), \dots, f(M
 repeats over and over again.
 
 In other words, if musician $i$ played measure $x$ at second $t$, and the musician to the right played measure $y$
-at second $t$, musician $i$ will play measure $f(y)$ at second $t+1$. Note that the musician to the right of musician $N$
-is musician $1$.
+at second $t$, musician $i$ will play measure $f(y)$ at second $t+1$. 
 
 The song ends when all musicians have played all measures at least once. Your task is to determine, for each musician,
 when they have played all different measures in the song at least once. It may happen that some musicians never play
@@ -34,7 +34,7 @@ which measures the musicians should play.
 
 \section*{Output}
 If some musician will never play all measures, output $-1$.
-otherwise, output $N$ integers $t_1, t_2, \dots, t_N$, where $t_i$ is the number of seconds it takes for musician
+Otherwise, output $N$ integers $t_1, t_2, \dots, t_N$, where $t_i$ is the number of seconds it takes for musician
 $i$ to have played each measure at least once. 
 
 \section*{Points}
@@ -48,7 +48,7 @@ To get the points for a group, it must pass all the test cases in the group.
   $1$    & $10$       & $N = 1$ \\ \hline
   $2$    & $17$       & $f(i) = i$ for all $1 \leq i \leq M$. \\ \hline
   $3$    & $16$       & $N,M \leq 300$ \\ \hline
-  $4$    & $22$       & $N,M \leq 3000$ och $f(i) \neq f(j)$ if $i \neq j$. \\ \hline
+  $4$    & $22$       & $N,M \leq 3000$ and $f(i) \neq f(j)$ if $i \neq j$. \\ \hline
   $5$    & $9$        & $N,M \leq 3000$  \\ \hline
   $6$    & $26$       & No additional constraints. \\ \hline
 \end{tabular}
