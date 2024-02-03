@@ -9,19 +9,19 @@ sista bussen och fick $1.4$ av $2$ poäng i högskoleprovet genom att kryssa i s
 
 Han tänker nu använda sin ofantliga tur för att hjälpa riksdagen: han tänker nämligen lösa en instans
 av det ökända knapsack-problemet. Riksdagen har en fikabudget på $C$ kronor och deras fikaleverantör
-har ett utbud av $N$ olika godispåsar. Varje påse $i$ har ett mått på hur smaskig den är,
+har ett utbud av $N$ olika godispåsar. Påse $i$ har ett mått på hur smaskig den är,
 $s_i$ och en kostnad på $c_i$ kronor. Du kan bara köpa varje godispåse en gång. 
 Målet är att köpa en delmängd av alla påsar, så att totala kostnaden inte överstiger $C$, samtidigt som
 totala nivån av smaskighet är så stor som möjligt. I allmänhet är detta ett väldigt svårt problem att lösa,
 men han hoppas att kunna lösa det snabbt genom att nyttja sin tur. 
 
-Hans idé är följande: först, ta alla påsarna och ordna de i en slumpmässig ordning. Sedan, ignorera
+Hans idé är följande: först, ta alla påsarna och ordna dem i en slumpmässig ordning. Sedan, ignorera
 de $K$ första påsarna. Därefter kommer han att betrakta varje påse i ordning och köpa den om han har
 råd, annars skippa den och gå vidare. Han fortsätter så ända tills han har betraktat alla $N-K$
 godispåsar. 
 
 Om han har tur med sin valda ordning kommer något $K$ att ge det optimala svaret. Kalle har efter mycket slit
-permuterat alla påsarna, och han ber nu dig om hjälp med att utföra hans algoritm för varje $K=0,1,\dots,N-1$.
+ändrat ordningen på alla påsar, och han ber nu dig om hjälp med att utföra hans algoritm för varje $K=0,1,\dots,N-1$.
 
 \section*{Indata}
 Första raden innehåller två heltal $N$ och $C$ ($1 \leq N \leq 2 \cdot 10^5$, $1 \leq C \leq 10^9$), antalet godispåsar 
@@ -32,8 +32,7 @@ Den andra raden innehåller $N$ heltal $s_1, s_2, \dots, s_N$ ($1 \leq s_i \leq 
 Den tredje raden innehåller $N$ heltal $c_1, c_2, \dots, c_N$ ($1 \leq c_i \leq 10^9$), hur många kronor som godispåse $i$
 kostar.
 
-Notera att permutationen av godispåsar \textit{inte} är vald uniformt slumpmässigt. Detta beror på att Kalles tur gör
-det mer sannolikt att en bra permutation väljs.
+Notera att ordningen av godispåsar \textit{inte} är vald uniformt slumpmässigt. 
 
 \section*{Utdata}
 Skriv ut $N$ heltal separerade av mellanslag, totala smaskigheten av delmängden godispåsar som Kalles
