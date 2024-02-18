@@ -40,20 +40,22 @@ int main(int argc, char **argv) {
     rep(i,0,k) {
         int rat;
         judge_in >> rat;
+        rat--;
         rats.insert(rat);
     }
 
     rep(i,0,k) {
         int t;
         judge_in >> t;
+        t--;
         target.insert(t);
     }
 
     // Give initial info
     cout << n << " " << k << endl;
-    for (auto r : rats) cout << r << " ";
+    for (auto r : rats) cout << r + 1 << " ";
     cout << endl;
-    for (auto t : target) cout << t << " ";
+    for (auto t : target) cout << t + 1 << " ";
     cout << endl;
 
 

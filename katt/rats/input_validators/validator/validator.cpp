@@ -30,10 +30,10 @@ struct UF {
 };
 
 void run() {
-  int maxn = Arg("maxn");
-  
+  int maxn = (int)Arg("maxn");
+  int maxk = (int)Arg("maxk");
   int n = Int(1, maxn); Space();
-  int k = Int(1, n); Endl();
+  int k = Int(1, min(n, maxk)); Endl();
 
   UF uf(n);
   rep(i,0,n-1) {
