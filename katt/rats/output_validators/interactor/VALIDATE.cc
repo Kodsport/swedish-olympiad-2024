@@ -28,6 +28,8 @@ int main(int argc, char **argv) {
     init_io(argc, argv);
 
     judge_in >> n >> k;
+
+    g.resize(n);
     rep(i,0,n-1) {
         int a, b; judge_in >> a >> b;
         a--; b--;
@@ -58,7 +60,9 @@ int main(int argc, char **argv) {
     // "game loop"
     while (true) {
         string query;
-        getline(cin, query);
+        if (!getline(cin, query)) {
+            wrong_answer("expected more queries\n");
+        };
 
         if (query == "activate!") {
             judge_message("activating traps..\n");
@@ -71,21 +75,28 @@ int main(int argc, char **argv) {
         query_count++;
         if (query_count > MAX_QUERY) wrong_answer("too many queries\n");
 
-        stringstream ss;
-        ss << query;
-        int count; ss >> count;
+        int count;
         set<int> sonar;
-        rep(i,0,count) {
-            int x;
-            if (!(ss >> x)) wrong_answer("too few sonar devices\n");
-            if (sonar.find(x-1) != sonar.end()) {
-                wrong_answer("duplicate sonar device\n");
+        try {
+            stringstream ss;
+            ss << query;
+            ss >> count;
+            rep(i,0,count) {
+                int x;
+                if (!(ss >> x)) wrong_answer("too few sonar devices\n");
+                if (sonar.find(x-1) != sonar.end()) {
+                    wrong_answer("duplicate sonar device\n");
+                }
+                if (x < 1 || x > n) {
+                    wrong_answer("invalid node index\n");
+                }
+                sonar.insert(x-1);
             }
-            if (x < 1 || x > n) {
-                wrong_answer("invalid node index\n");
-            }
-            sonar.insert(x-1);
         }
+        catch (const exception& e) {
+            judge_error("invalid query\n");
+        }
+        
 
         auto getScore = [&]() -> vector<int> {
             // multi source bfs
@@ -120,7 +131,7 @@ int main(int argc, char **argv) {
 
             for (auto nei : g[x]) {
                 if (occupied[nei]) continue;
-                if (score[nei] < best_score || (score[nei] == best_score && nei < best_pos)) {
+                if (score[nei] > best_score || (score[nei] == best_score && nei < best_pos)) {
                     best_pos = nei;
                     best_score = score[nei];
                 }

@@ -1,0 +1,29 @@
+\problemname{KATT och råtta}
+
+
+\section*{Interaktion}
+
+
+
+\textbf{Se till att flusha outputen efter varje query}, annars kan du få \textit{Time Limit Exceeded}.
+I C++ kan detta göras med exempelvis \texttt{cout << flush;}
+eller \texttt{fflush(stdout);},
+i Python med \texttt{stdout.flush()}
+och i Java med \texttt{System.out.flush();}.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline \hline
+  $1$   & $5$        & $N = 2$ \\ \hline
+  $2$   & $10$        & $N \leq 10$ \\ \hline
+  $3$   & $10$        & $N \leq 250$ \\ \hline
+  $4$   & $16$        & Varje rum som inte ligger längst ner i källaren har två rum under sig. \\ \hline
+  $5$   & $13$        & $N \leq 500$ \\ \hline
+  $6$   & $21$        & $N \leq 950$ \\ \hline
+  $7$   & $25$        & $N \leq 1000$ \\ \hline
+\end{tabular}

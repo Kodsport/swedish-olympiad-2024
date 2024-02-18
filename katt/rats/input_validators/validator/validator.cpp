@@ -36,7 +36,7 @@ void run() {
   int k = Int(1, n); Endl();
 
   UF uf(n);
-  rep(i,0,n) {
+  rep(i,0,n-1) {
     int a = Int(1, n); Space();
     int b = Int(1, n); Endl();
     a--; b--;
@@ -48,8 +48,8 @@ void run() {
 
   set<int> rats;
   rep(i,0,k) {
-    int r = Int(1,n); 
-    if (i != k-1) Space();
+    int r = Int(1,n);
+    if (i < k-1) Space();
     else Endl();
     rats.insert(r);
   }
@@ -59,7 +59,7 @@ void run() {
   bool differs = false;
   rep(i,0,k) {
     int r = Int(1, n);
-    if (i != k-1) Space();
+    if (i < k-1) Space();
     else Endl();
     target.insert(r);
     if (rats.find(r) == rats.end()) differs = true;
