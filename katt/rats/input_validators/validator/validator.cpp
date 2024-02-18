@@ -11,79 +11,61 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 
+struct UF {
+  int n;
+  vector<int> p;
+  UF(int n) :n(n) {
+    p.resize(n);
+    rep(i,0,n) p[i] = i;
+  }
+  int P(int x) {return (x == p[x]) ? x : p[x] = P(p[x]);}
+  void join(int a, int b) {
+    a = P(a); b = P(b);
+    p[b] = a;
+  }
+  bool all_same() {
+    rep(i,1,n) if (P(i) != P(0)) return false;
+    return true;
+  }
+};
 
 void run() {
   int maxn = Arg("maxn");
-  int t = Int(1,2); Endl();
+  
+  int n = Int(1, maxn); Space();
+  int k = Int(1, n); Endl();
 
-  if (t == 1) {
-    int c = Int(1, 25); Space(); int n = Int(1, maxn);
-    Endl();
-    vector<vector<bool>> Room(c);
-    rep(i,0,c) Room[i].resize(1<<i);
-    rep(i,0,c) {
-      rep(j,0,1<<i) {
-        int x = Int(0, 1);
-        Room[i][j] = (x==1);
-        if (j != (1<<i)-1) Space();
-      }
-      Endl();
-    }
-    assert(Room[0][0]);
-
-    int A = Int(1, n);
-    Endl();
-    vector<int> pathA(A);
-    rep(i,0,A) {
-      pathA[i] = Int(0,1); 
-      if (i != A-1) Space();
-    }
-    Endl();
-    int B = Int(1, n);
-    Endl();
-    vector<int> pathB(B);
-    rep(i,0,B) {
-      pathB[i] = Int(0,1); 
-      if (i != B-1) Space();
-    }
-    Endl();
-
-    auto validate_path = [&](vector<int> & path) {
-      int level = 0, offset = 0;
-      rep(i,0,path.size()) {
-        if (level == c - 1) {
-          assert(path[i] == 0);
-          level = 0; offset = 0;
-        }
-        else {
-          level++; offset = offset * 2 + path[i];
-          assert(Room[level][offset]);
-        }
-      }
-    };
-
-    validate_path(pathA);
-    validate_path(pathB);
+  UF uf(n);
+  rep(i,0,n) {
+    int a = Int(1, n); Space();
+    int b = Int(1, n); Endl();
+    a--; b--;
+    assert(a != b);
+    uf.join(a, b);
   }
 
-  if (t == 2) {
-    int n = Int(1, maxn);
-    Endl();
-    int A = Int(1, n);
-    Endl();
-    for (int i = 0; i < A; i++) {
-      int bit = Int(0,1);
-      if (i < A-1) Space();
-    }
-    Endl();
-    int B = Int(n-1,n-1);
-    Endl();
-    for (int i = 0; i < B; i++) {
-      int bit = Int(0,0);
-      if (i < B - 1) Space();
-    }
-    Endl();
+  assert(uf.all_same());
+
+  set<int> rats;
+  rep(i,0,k) {
+    int r = Int(1,n); 
+    if (i != k-1) Space();
+    else Endl();
+    rats.insert(r);
   }
+  assert(rats.size() == k);
+
+  set<int> target;
+  bool differs = false;
+  rep(i,0,k) {
+    int r = Int(1, n);
+    if (i != k-1) Space();
+    else Endl();
+    target.insert(r);
+    if (rats.find(r) == rats.end()) differs = true;
+  }
+  assert(differs);
+  assert(target.size() == k);
 
   Eof();
 }
