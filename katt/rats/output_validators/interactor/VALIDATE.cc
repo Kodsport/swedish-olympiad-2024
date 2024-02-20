@@ -79,6 +79,7 @@ int main(int argc, char **argv) {
 
         int count;
         set<int> sonar;
+        vector<int> input;
         try {
             stringstream ss;
             ss << query;
@@ -86,13 +87,13 @@ int main(int argc, char **argv) {
             rep(i,0,count) {
                 int x;
                 if (!(ss >> x)) wrong_answer("too few sonar devices\n");
-                if (sonar.find(x-1) != sonar.end()) {
-                    wrong_answer("duplicate sonar device\n");
-                }
+
+                if (i != 0) if (x <= input[i-1]) wrong_answer("sonar devices query not sorted\n");
                 if (x < 1 || x > n) {
                     wrong_answer("invalid node index\n");
                 }
                 sonar.insert(x-1);
+                input.pb(x);
             }
         }
         catch (const exception& e) {
@@ -133,7 +134,7 @@ int main(int argc, char **argv) {
 
             for (auto nei : g[x]) {
                 if (occupied[nei]) continue;
-                if (score[nei] > best_score || (score[nei] == best_score && nei < best_pos)) {
+                if (score[nei] > best_score || (score[nei] == best_score && nei < best_pos && best_pos != x)) {
                     best_pos = nei;
                     best_score = score[nei];
                 }

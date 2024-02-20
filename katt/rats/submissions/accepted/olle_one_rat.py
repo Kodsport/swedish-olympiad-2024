@@ -1,10 +1,9 @@
-
 n, k = [int(i) for i in input().split()]
 
 assert k == 1
 
 def query(positions):
-    positions = list(positions)
+    positions = sorted(list(positions))
     print(len(positions), *[i+1 for i in positions])
     res = int(input())-1
     if res == target:
@@ -47,7 +46,6 @@ def dfs(cur):
 
         if go == cur:
             go = query(get_all_below(cur))
-            #print("!", go+1)
             return
         
         if go in all_below:

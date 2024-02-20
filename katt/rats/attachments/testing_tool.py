@@ -162,7 +162,7 @@ def main():
             best_score = dist[r]
             best = r
             for nei in g[r]:
-                if (dist[nei] > best_score) or (dist[nei] == best_score and nei < best):
+                if (dist[nei] > best_score) or (dist[nei] == best_score and nei < best and best != r):
                     best = nei
                     best_score = dist[nei]
             occupied[r] = False

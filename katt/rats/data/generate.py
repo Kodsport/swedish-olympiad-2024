@@ -31,7 +31,7 @@ while len(rats) < k:
     r = random.randint(1, n)
     rats.add(r)
 
-print(*list(rats))
+print(*sorted(list(rats)))
 
 def get_targets():
     targets = set()
@@ -44,4 +44,4 @@ targets = rats
 while targets == rats:
     targets = get_targets()
 
-print(*list(targets))
+print(*sorted(list(targets)))

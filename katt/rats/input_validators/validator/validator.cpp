@@ -47,20 +47,26 @@ void run() {
   assert(uf.all_same());
 
   set<int> rats;
+  int maxrat = 0;
   rep(i,0,k) {
     int r = Int(1,n);
     if (i < k-1) Space();
     else Endl();
+    assert(r > maxrat);
+    maxrat = r;
     rats.insert(r);
   }
   assert(rats.size() == k);
 
   set<int> target;
+  int maxtarget = 0;
   bool differs = false;
   rep(i,0,k) {
     int r = Int(1, n);
     if (i < k-1) Space();
     else Endl();
+    assert(r > maxtarget);
+    maxtarget = r;
     target.insert(r);
     if (rats.find(r) == rats.end()) differs = true;
   }
