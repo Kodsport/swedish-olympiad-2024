@@ -24,7 +24,9 @@ och på grund av hur ljudet färdas kommer råttorna att göra detta i ordning a
 Alltså, om det finns råttor i brunn $1$ och $2$ så kommer den i brunn $1$ att försöka fly först.
 När denna råtta flytt färdigt kommer råttan i brunn $2$ att utföra sin flykt.
 Råttorna vill maximera avståndet till närmsta ljudmaskin.
-Om en råtta inte kan ändra avståndet till närmsta ljudmaskin genom att flytta sig genom ett rör kommer den att stanna i sin nuvarande brunn.
+En råtta kommer överväga att röra sig till alla brunnar, fria från andra råttor, 
+inom ett rörs avstånd från där de befinner sig just nu.
+Om ingen av dessa brunnar har ett strikt större avstånd till närmsta ljudkälla kommer råttan att stanna där den befinner sig nu. 
 Annars kommer den att gå till den närliggande brunn med högst avstånd till närmsta ljudmaskin.
 Om det finns flera sådana brunnar väljer råttan brunnen med lägst nummer.
 

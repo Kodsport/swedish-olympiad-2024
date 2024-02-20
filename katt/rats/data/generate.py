@@ -14,17 +14,22 @@ def cmdlinearg(name, default=None):
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 n = int(cmdlinearg("n"))
 k = int(cmdlinearg("k"))
+line = int(cmdlinearg("line", "0"))
 
 print(n, k)
-connected = set([1])
-unconnected = set([i for i in range(2, n + 1)])
+if line == 0:
+    connected = set([1])
+    unconnected = set([i for i in range(2, n + 1)])
 
-for i in range(n-1):
-    a = random.choice(list(connected))
-    b = random.choice(list(unconnected))
-    print(a, b)
-    unconnected.remove(b)
-    connected.add(b)
+    for i in range(n-1):
+        a = random.choice(list(connected))
+        b = random.choice(list(unconnected))
+        print(a, b)
+        unconnected.remove(b)
+        connected.add(b)
+else:
+    for i in range(1,n):
+        print(i, i+1)
 
 rats = set()
 while len(rats) < k:
