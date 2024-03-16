@@ -146,7 +146,7 @@ void run() {
 	Space();
 	int m = Int(1, Arg("maxM", int(200)));
 	Endl();
-
+	//vector<vector<int> > signs(n);
 	vector<PlateData> data;
 	data.reserve(n);
 	for(int plateno = 0; plateno < n; plateno++){
@@ -157,6 +157,7 @@ void run() {
 		for(int num = 0; num < m; num++){
 			dataP.dist[num] = Int(1,1000000);
 			if (num != m-1) Space();
+			//signs[plateno].push_back(dataP.dist[num]);
 			dataP.totalSum += dataP.dist[num];
 		}
 		Endl();
@@ -183,14 +184,6 @@ void run() {
 
 	// Check that the answer is atleast 20% of n
 	assert(currentResult.size()*5 >= n);
-
-
-
-
-	//TODO check the other stuff
-
-
-	
 
 	Eof();
 }
