@@ -13,7 +13,7 @@ sample 2
 sample 3
 
 group group1 21
-limits maxN = 15 maxM = 50
+limits maxN=15 maxM=50
 tc 1
 tc 2
 tc 3
@@ -34,7 +34,7 @@ tc g1-spec3 gen_special n=15 m=5
 tc g1-spec4 gen_special n=15 m=5 r=500000
 
 group group2 31
-limits maxN = 100 maxM = 50
+limits maxN=100 maxM=50
 include_group group1
 tc_manual ../manual/tab2a.in
 tc_manual ../manual/tab2b.in
@@ -54,7 +54,7 @@ tc g2-spec3 gen_special n=100 m=5
 tc g2-spec4 gen_special n=100 m=50 r=500000
 
 group group3 18
-limits maxN = 500 maxM = 50
+limits maxN=500 maxM=50
 include_group group2
 tc_manual ../manual/tab4a.in
 tc_manual ../manual/tab4b.in

@@ -25,6 +25,15 @@ const int Infty = 1010101010;
 int plates[MaxN][MaxM], startPlates[MaxN][MaxM];
 int N, M;
 
+template<class InputIt, class T>
+constexpr // since C++20
+T accumulate(InputIt first, InputIt last, T init)
+{
+    for (; first != last; ++first)
+        init = std::move(init) + *first; // std::move since C++20
+ 
+    return init;
+}
 
 // wczytywanie danych do wektora tabliczek
 void input(){

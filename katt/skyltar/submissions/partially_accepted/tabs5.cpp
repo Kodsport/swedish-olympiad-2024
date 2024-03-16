@@ -165,7 +165,7 @@ int main(){
 	int N = data.size(); //, M = data[0].dist.size();
 	
 	// inicjujemy ziarno generatora losowego
-	default_random_engine generator(0xCACAFE);
+	//default_random_engine generator(0xCACAFE);
 	uniform_int_distribution<int> random_nums(0, N-1);
 	
 	vector<int> currentResult;
