@@ -4,6 +4,8 @@
 ulimit -s unlimited
 use_solution tab.cpp
 
+compile gen_special.py
+
 # Generate answers to sample cases
 samplegroup
 sample 1
@@ -26,6 +28,10 @@ tc_manual ../manual/tab1h.in
 tc_manual ../manual/tab1i.in
 tc_manual ../manual/tab1j.in
 tc_manual ../manual/tab1k.in
+tc g1-spec1 gen_special n=15 m=50 
+tc g1-spec2 gen_special n=15 m=15 
+tc g1-spec3 gen_special n=15 m=5 
+tc g1-spec4 gen_special n=15 m=5 r=500000
 
 group group2 31
 limits maxN = 100 maxM = 50
@@ -42,7 +48,10 @@ tc_manual ../manual/tab3c.in
 tc_manual ../manual/tab3d.in
 tc_manual ../manual/tab3e.in
 tc_manual ../manual/tab3f.in
-
+tc g2-spec1 gen_special n=100 m=50
+tc g2-spec2 gen_special n=100 m=15
+tc g2-spec3 gen_special n=100 m=5
+tc g2-spec4 gen_special n=100 m=50 r=500000
 
 group group3 18
 limits maxN = 500 maxM = 50
@@ -59,8 +68,12 @@ tc_manual ../manual/tab5c.in
 tc_manual ../manual/tab5d.in
 tc_manual ../manual/tab5e.in
 tc_manual ../manual/tab5f.in
+tc g3-spec1 gen_special n=500 m=50
+tc g3-spec2 gen_special n=500 m=15
+tc g3-spec3 gen_special n=500 m=5
+tc g3-spec4 gen_special n=500 m=50 r=500000
 
-group group4 40
+group group4 30
 include_group group3
 tc_manual ../manual/tab6a.in
 tc_manual ../manual/tab6b.in
@@ -81,6 +94,7 @@ tc_manual ../manual/tab8d.in
 tc_manual ../manual/tab8e.in
 tc_manual ../manual/tab8f.in
 tc_manual ../manual/tabOcenSpecial1.in
+tc g4-spec1 gen_special n=1000 m=200
 
 
 
