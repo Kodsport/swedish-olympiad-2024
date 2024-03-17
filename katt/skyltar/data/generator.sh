@@ -5,6 +5,7 @@ ulimit -s unlimited
 use_solution tab.cpp
 
 compile gen_special.py
+compile gen_same.py
 
 # Generate answers to sample cases
 samplegroup
@@ -32,6 +33,7 @@ tc g1-spec1 gen_special n=15 m=50
 tc g1-spec2 gen_special n=15 m=15 
 tc g1-spec3 gen_special n=15 m=5 
 tc g1-spec4 gen_special n=15 m=5 r=500000
+tc g1-spec5 gen_same n=15 m=50
 
 group group2 31
 limits maxN=100 maxM=50
