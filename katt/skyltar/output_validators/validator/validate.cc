@@ -15,7 +15,7 @@ typedef long double ld;
 
 
 
-bool check(vi &answer, vvi &signs, int size, int m){
+bool valid(vi &answer, vvi &signs, int size, int m){
 	
 	rep(j,0,m){
 		rep(i,0,size-1){
@@ -44,40 +44,31 @@ int main(int argc, char **argv) {
 		}
 	}
 
-	int correct_ans;
-	if(!(judge_ans >> correct_ans)) judge_error("Expected more output");
+	auto check = [&](istream& sol, feedback_function feedback)
+	{
+		int ans;
+		if(!(sol >> ans)) feedback("Expected more output");
 	
-	vi judge_nums;
-	rep(i,0,correct_ans){
-		int temp;
-		if(!(judge_ans >> temp)) judge_error("Expected more output (sign indicies)");
-		judge_nums.push_back(temp);
-	}
+		vi nums;
+		rep(i,0,ans){
+			int temp;
+			if(!(sol >> temp)) feedback("Expected more output (sign indicies)");
+			nums.push_back(temp);
+		}
 
-	string trailing;
-	if(judge_ans >> trailing) judge_error("Trailing output");
+		string trailing;
+		if(sol >> trailing) feedback("Trailing output");
 
-	if (!check(judge_nums, signs, correct_ans, m)) judge_error("Judge's solution is invalid.");
+		if (!valid(nums, signs, ans, m)) feedback("Invalid solution");
 
+		return ans;
+	};
 
-	int auth_ans;
-	// Check if the output has the same answer (number) as the Judge.
-	if(!(author_out >> auth_ans)) wrong_answer("Expected more output");
+	int judgeAns = check(judge_ans, judge_error);
+	int authorAns = check(author_out, wrong_answer);
 	
-	if (auth_ans != correct_ans) wrong_answer("The answer (maximum number of signs) is wrong.");
-
-	vi auth_nums;
-	rep(i,0,correct_ans){
-		int temp;
-		if(!(author_out >> temp)) judge_error("Expected more output (sign indicies)");
-		auth_nums.push_back(temp);
-	}
-
-	string trailing2;
-	if(author_out >> trailing2) judge_error("Trailing output");
-
-
-	if (!check(auth_nums, signs, correct_ans, m)) wrong_answer("Judge's solution is invalid.");
+	if (authorAns>judgeAns) judge_error("Contestant found better solution than judge");
+	if (authorAns<judgeAns) wrong_answer("Contestant found suboptimal solution");
 
 	accept();
 }
