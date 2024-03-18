@@ -97,7 +97,7 @@ int main(int argc, char **argv) {
             }
         }
         catch (const exception& e) {
-            judge_error("invalid query\n");
+            wrong_answer("invalid query\n");
         }
         
 
