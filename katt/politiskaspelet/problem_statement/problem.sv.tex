@@ -1,72 +1,66 @@
-\problemname{KATT och råtta}
-En speciell typ av muterade jätteråttor har tagit över Göteborgs kloaker,
-och stadsledningen har bett dig om hjälp med att lösa problemet.
+\problemname{Politiska spelet}
+Landet Gattekatt har en väldigt ovanlig form. Det är nämligen så avlångt att dess $N$ städer ockuperar ett intervall av landet.
+De är numrerade från $1$ till $N$, från vänster till höger. Varje stad har ett antal katter som invånare. Lustigt nog är
+kattbefolkningen alltid lika med $2^k$ för något heltal $k$ (det finns väldigt många katter i Gattekatt).
+För att förstärka landet inför en potentiell råttinvasion vill de att så många städer som möjligt ska gå tillsammans.
+Tyvärr är de väldigt kräsna med vem de kan tänka sig att samarbeta med. För att två städer $a$ och $b$ ska gå ihop krävs följande:
+\begin{itemize}
+  \item Städer $a$ och $b$ ligger bredvid varandra. Med andra stämmer antingen $a+1=$ eller $b+1=a$.
+  \item Antalet katter i stad $a$ och $b$ är exakt samma. Detta beror på att antalet katter i staden är direkt korrelerat med
+  politiskt inflytande, och en stad kan inte tänka sig samarbeta med en stad de anser har mindre politiskt inflytande.
+\end{itemize}
 
-Kloaken består av $N$ brunnar numrerade från $1$ till $N$, med $N-1$ rör som kopplar samman brunnarna,
-så att det går att färdas mellan varje par av brunnar genom att gå igenom en sekvens av rör.
-För att dra ner på kostnaderna avskedade man alla kloak-utvecklare i Göteborg, 
-och man råkade därigenom lämna kloaksystemet helt odokumenterat.
-Nu finns det alltså ingen som vet mellan vilka par av brunnar det finns rör.
+Om två städer $a$ och $b$ ($a < b$) med $k$ stycken katter vardera går tillsammans, så ersätts de av en enda stad, vars kattbefolkning är $2k$.
+Den nya staden kan nu potentiellt gå tillsammans med stad $a-1$ och $b+1$.
 
-Det finns $K$ stycken jätteråttor, som befinner sig i olika brunnar.
-Eftersom råttorna är så stora och aggresiva kan det aldrig vara två råttor i samma brunn.
-Du har redan placerat ut $K$ specialdesignade råttfällor som du kan aktivera med ett knapptryck i olika brunnar,
-och du vill försöka få råttorna att gå till de brunnar med fällor.
-Men råttorna är väldigt intelligenta, och om inte alla fällor aktiveras samtidigt så kommer de
-att lära sig att använda fällorna emot dig.
+Topp-politiker från Gattekatt vill nu ha din hjälp att beräkna minsta antalet städer som kan finnas kvar i slutet om man
+slår ihop städer i en optimal ordning. 
 
-För att få råttorna att röra sig har du en stor mängd ljudmaskiner,
-som spelar låtar som är särskilt irriterande för muterade jätteråttor.
-Ljudmaskinerna fungerar genom att du placerar dem i en delmängd av brunnarna,
-och alla råttor kommer sedan springa genom upp till ett rör för att undvika ljudet.
-Mer specifikt kommer varje råtta att få möjligheten att fly,
-och på grund av hur ljudet färdas kommer råttorna att göra detta i ordning av numret på brunnen de befinner sig i just nu.
-Alltså, om det finns råttor i brunn $1$ och $2$ så kommer den i brunn $1$ att försöka fly först.
-När denna råtta flytt färdigt kommer råttan i brunn $2$ att utföra sin flykt.
-Råttorna vill maximera avståndet till närmsta ljudmaskin.
-En råtta kommer överväga att röra sig till alla brunnar, fria från andra råttor, 
-inom ett rörs avstånd från där de befinner sig just nu.
-Om ingen av dessa brunnar har ett strikt större avstånd till närmsta ljudkälla kommer råttan att stanna där den befinner sig nu. 
-Annars kommer den att gå till den närliggande brunn med högst avstånd till närmsta ljudmaskin.
-Om det finns flera sådana brunnar väljer råttan brunnen med lägst nummer.
+Exempelvis, om städerna har följande kattbefolkningar (samma som exempelfall 1):
+\begin{verbatim}
+4 4 8 8 8
+\end{verbatim}
+Städerna längst till höger slås ihop till 16
+\begin{verbatim}
+4 4 8 16
+\end{verbatim}
+Sedan kan fyrorna slås ihop till en 8
+\begin{verbatim}
+8 8 16
+\end{verbatim}
+Sedan kan åttorna slås ihop till 16
+\begin{verbatim}
+16 16
+\end{verbatim}
+Til slut kan de slås ihop till 32
+\begin{verbatim}
+32
+\end{verbatim}
 
-Du har fått väldigt många ljudmaskiner, men hinner bara göra $5000$ utplaceringar av maskiner innan 
-råttornas parningssäsong (som skulle få ödesdigra konsekvenser!) börjar.
+Därmed blir svaret 1.
 
+\section*{Indata}
+Den första raden i indatan innehåller heltalet $N$ ($1 \leq N \leq 10^6$).
 
-\section*{Interaktion}
-Först skrivs talen $N$ ($2 \leq N \leq 1000$) och $K$ ($1 \leq K < N$) ut på en rad.
-Sedan följer en rad med $K$ olika tal $1 \leq r_1 < ... < r_K \leq N$, som beskriver numren på de brunnar där det från början finns råttor.
-Därefter skrivs ytterligare en rad med $K$ olika tal $1 \leq t_1 < ... < t_K \leq N$, som beskriver numren på de brunnar där du har placerat fällor.
+Den andra raden i indatan innehåller $N$ heltal $k_1,k_2,\dots,k_N$ ($1 \leq k_i \leq 10^9$).
+Varje $k_i$ innebär att stad $i$ har $\textbf{2^{k_i}}$ stycken katter i sig. 
 
-När du vill göra en placering av ljudmaskiner ska du först skriva ut ett tal $M$, antalet maskiner du placerar ut. 
-Därefter ska du, på samma rad, skriva talen $1 \leq s_1 < ... < s_M \leq N$,
-de brunnar där du vill placera ljudmaskiner. Ljudmaskiner får placeras i en brunn oavsett om det finns en råtta där eller inte.
-Det kommer då att skrivas ut en rad med $K$ tal, $1 \leq r_1 < ... < r_K \leq N$, 
-de brunnar där det finns råttor efter att alla råttor försökt fly från ljudet.
-
-När du lyckats få alla råttor till brunnar med fällor i ska du skriva ut ``\texttt{activate!}'' på en rad. 
-Ditt program ska sedan avslutas.
-
-
-\textbf{Se till att flusha outputen efter varje query}, annars kan du få \textit{Time Limit Exceeded}.
-I C++ kan detta göras med exempelvis \texttt{cout << flush;}
-eller \texttt{fflush(stdout);},
-i Python med \texttt{stdout.flush()}
-och i Java med \texttt{System.out.flush();}.
+\section*{Utdata}
+Skriv ut ett heltal: minsta antalet städer som kan finnas kvar om städerna slås ihop i en optimal ordning.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
 För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 
 \noindent
-\begin{tabular}{| l | l | l |}
+\begin{tabular}{| l | l | p{12cm} |}
   \hline
-  Grupp & Poängvärde & Gränser \\ \hline \hline
-  $1$   & $5$        & $N = 2$ \\ \hline
-  $2$   & $5$        & $N \leq 3$ \\ \hline
-  $3$   & $20$        & $K = 1$ \\ \hline
-  $4$   & $15$        & Det går ett rör mellan brunn $i$ och brunn $i + 1$ för alla $i = 1, ..., N-1$. \\ \hline
-  $5$   & $17$        & $N \leq 50$ \\ \hline
-  $6$   & $38$        & Inga ytterliga begränsningar. \\ \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $7$       & $N \leq 10, k_i \leq 30$ \\ \hline
+  $2$    & $14$      & $N \leq 200, k_i \leq 30$ \\ \hline
+  $3$    & $15$      & $N \leq 2000, k_i \leq 30$ \\ \hline
+  $4$    & $9$       & $N \leq 2000$ \\ \hline
+  $5$    & $37$      & $k_i \leq 30$ \\ \hline
+  $6$    & $18$      & Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
+

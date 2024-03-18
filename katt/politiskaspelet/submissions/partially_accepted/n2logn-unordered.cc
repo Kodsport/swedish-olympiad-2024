@@ -19,7 +19,8 @@ long long sum(int l, int r) {
 bool can(int l, int r) {
     if (l + 1 == r)
         return true;
-    if (auto it = can_memo.find(key(l, r)); it != can_memo.end())
+    auto it = can_memo.find(key(l, r));
+    if (it != can_memo.end())
         return it->second;
     int midsum = pa[l] + sum(l, r) / 2;
     int m = prev(upper_bound(pa.begin() + l + 1, pa.begin() + r + 1, midsum)) - pa.begin();
