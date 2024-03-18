@@ -97,7 +97,7 @@ int main(int argc, char **argv) {
             }
         }
         catch (const exception& e) {
-            judge_error("invalid query\n");
+            wrong_answer("invalid query\n");
         }
         
 
@@ -146,6 +146,7 @@ int main(int argc, char **argv) {
 
         rats.clear();
         rep(i,0,n) if (occupied[i]) rats.insert(i);
+        assert(rats.size()==k);
         for (auto x : rats) cout << x + 1 << " ";
         cout << endl;
     }
