@@ -29,4 +29,5 @@ int main() {
     dp[i] = ans;
   }
   cout << dp.back() << '\n';
+  return 0;
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Testing tool for the task The Dark Chambers of Chalmers.
+# Testing tool for the task KATT:s and rats.
 #
 # Usage:
 #
@@ -35,7 +35,6 @@
 
 import subprocess
 import sys
-import heapq
 
 def error(msg):
     print("ERROR:", msg)

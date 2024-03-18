@@ -44,4 +44,5 @@ int main() {
     while (true) {
         query(rand() % (1<<n));
     }
+    return 0;
 }

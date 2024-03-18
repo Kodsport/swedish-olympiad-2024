@@ -52,4 +52,5 @@ signed main() {
     pa.resize(n + 1);
     partial_sum(a.begin(), a.end(), pa.begin() + 1);
     cout << rec(0, n) << '\n';
+    return 0;
 }

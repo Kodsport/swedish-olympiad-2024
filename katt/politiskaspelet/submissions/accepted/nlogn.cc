@@ -61,4 +61,5 @@ int main() {
   copy_n(istream_iterator<int>(cin), n, back_inserter(a));
   precompute_can();
   cout << rec(0, n) << '\n';
+  return 0;
 }
