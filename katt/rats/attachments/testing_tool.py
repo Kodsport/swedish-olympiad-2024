@@ -108,12 +108,13 @@ def main():
         print("<",rs, end="")
         print("<",ts, end="")
 
-    MAX_QUERIES = 5000
+    MAX_QUERIES = 50000
     queries = 0
 
     while True:
         command = proc.stdout.readline().decode("utf8")
         command = command.strip()
+        line = command
 
         if queries > MAX_QUERIES:
             error("[*] Wrong answer: Too many queries")
@@ -138,7 +139,7 @@ def main():
             assert(len(sonar) == len(set(sonar)))
             assert(all([0 <= x < n for x in sonar]))
         except:
-            error(f"Invalid query: {command}")
+            error(f"Invalid query: '{line}'")
                 
 
         dist = [-1] * n
