@@ -23,8 +23,8 @@ Du kan tillslut även anta att åtminstone $20\%$ av alla skyltar är helt korre
 Första raden innehåller två heltal $N$ ($1 \leq N \leq 1000$) och $M$ ($1 \leq M \leq 200$) 
 som representerar antalet skyltar dina vänner har sett och antalet byar i Lund respektivt.
 
-De följande $N$ raderna innehåller vardera en rad med $M$ heltal. Det $i$:te raden innehåller heltalen $d_{i,1}, d_{i,2}, \ldots, d_{i,M}$ ($1 \leq d_{i,j} \leq 10^6$). 
-På den $i$:te skylten står det alltså att avståndet från skylt $i$ till by $j$ avrundat nedåt blir $d_{i,j}$.
+De följande $N$ raderna innehåller $M$ heltal vardera. Det $i$:te raden innehåller heltalen $d_{i,1}, d_{i,2}, \ldots, d_{i,M}$ ($1 \leq d_{i,j} \leq 10^6$). 
+På den $i$:te skylten står det alltså att avståndet från skylt $i$ till by $j$ avrundat nedåt blir $d_{i,j}$ för alla $1 \leq j \leq M$.
 
 
 
@@ -32,7 +32,7 @@ På den $i$:te skylten står det alltså att avståndet från skylt $i$ till by 
 Skriv först ut på en rad ett heltal $t$, maximala antalet skyltar som är konsistenta. 
 På den andra raden, skriv ur $t$ tal som specifierar indexen i sorterad ordning sådan att den 
 första skylten är den som är längst bort från Göteborg och alla byar i Lund, samt den sista skylten är närmast Göteborg och de mysiga byarna i Lund.
-Eftersom folk i samhället blir förvirrade när saker är $0-indexerade$, vill vi att skyltarna är $1-indexerade$. Alltså är första skylten i input indexerad $1$, och sista skylten med index $N$.
+Eftersom folk i samhället blir förvirrade när saker är $0$-indexerade, vill vi att skyltarna är $1$-indexerade. Alltså är första skylten i input indexerad $1$, och sista skylten med index $N$.
 Ifall det finns fler än ett svar kan ditt program skriva ut ett valfritt alternativ av dessa möjliga svar.
 
 \section*{Poängsättning}
