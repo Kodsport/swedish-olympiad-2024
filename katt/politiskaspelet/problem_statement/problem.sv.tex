@@ -1,18 +1,19 @@
 \problemname{Politiska spelet}
+\noindent
 Landet Gattekatt har en väldigt ovanlig form. Det är nämligen väldigt avlångt, vilket resulterar i att dess $N$ städer
 vardera ockuperar sig ett intervall av landet.
-De är numrerade från $1$ till $N$, från vänster till höger. Varje stad har ett antal katter som invånare. Lustigt nog är
+Städerna är numrerade från $1$ till $N$, från vänster till höger. Varje stad har ett antal katter som invånare. Lustigt nog är
 antalet katter alltid lika med $2^k$ för något heltal $k$ (det finns väldigt många katter i Gattekatt).
-För att förstärka landet inför en potentiell råttinvasion vill regeringen att så många städer som möjligt ska gå tillsammans.
+För att förbereda landet inför en potentiell råttinvasion vill regeringen att så många städer som möjligt ska gå tillsammans.
 Tyvärr är städerna väldigt kräsna kring vem de kan tänka sig att samarbeta med. För att två städer $a$ och $b$ ska gå ihop krävs följande:
 \begin{itemize}
-  \item Städerna $a$ och $b$ ligger bredvid varandra. Mer formellt måste antingen $a+1=b$ eller $b+1=a$ stämma.
-  \item Antalet katter i stad $a$ och $b$ är exakt samma. Detta beror på att antalet katter i staden är direkt korrelerat med
+  \item Städerna $a$ och $b$ ligger bredvid varandra. 
+  \item Antalet katter i stad $a$ och $b$ är exakt samma. Detta beror på att antalet katter i staden är direkt korrelerat med stadens
   politiskt inflytande, och en stad kan inte tänka sig samarbeta med en annan stad som de anser har mindre politiskt inflytande.
 \end{itemize}
 
-När två städer $a$ och $b$ ($a < b$), som vardera har $k$ stycken katter går samman, ersätts de av en enda stad, vars kattbefolkning är $2k$.
-Den nya staden kan sedan eventuellt gå samman med stad $a-1$ och $b+1$.
+När två städer $a$ och $b$ som ligger bredvid varandra, som vardera har $2^k$ stycken katter går samman, sammansätts de till en enda stad, vars kattbefolkning är $2^{k+1}$.
+Den nya staden kan sedan eventuellt gå samman med staden som var till vänster om $a$ eller höger om $b$.
 
 Topp-politiker från Gattekatt vill nu ha din hjälp att beräkna det minsta antalet städer som kan finnas kvar i slutet om man
 slår ihop städer i en optimal ordning. 
@@ -25,7 +26,7 @@ Den andra raden i indatan innehåller $N$ heltal $k_1,k_2,\dots,k_N$ ($1 \leq k_
 Varje $k_i$ innebär att stad $i$ har $2^{k_i}$ stycken katter i sig. 
 
 \section*{Utdata}
-Skriv ut ett heltal: minsta antalet städer som kan finnas kvar om städerna slås ihop i en optimal ordning.
+Skriv ut ett heltal: minsta antalet städer som kan finnas kvar om städerna sammansätts ihop i en optimal ordning.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
