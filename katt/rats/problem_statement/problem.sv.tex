@@ -31,12 +31,12 @@ Om ingen av dessa brunnar har ett strikt större avstånd till närmsta ljudkäl
 Annars kommer den att gå till den närliggande brunn med högst avstånd till närmsta ljudmaskin.
 Om det finns flera sådana brunnar väljer råttan brunnen med lägst nummer.
 
-Du har fått väldigt många ljudmaskiner, men hinner bara göra $5000$ utplaceringar av maskiner innan 
+Du har fått väldigt många ljudmaskiner, men hinner bara göra $10000$ utplaceringar av maskiner innan 
 råttornas parningssäsong (som skulle få ödesdigra konsekvenser!) börjar.
 
 
 \section*{Interaktion}
-Först skrivs talen $N$ ($2 \leq N \leq 1000$) och $K$ ($1 \leq K < N$) ut på en rad.
+Först skrivs talen $N$ ($2 \leq N \leq 100$) och $K$ ($1 \leq K < N$) ut på en rad.
 Sedan följer en rad med $K$ olika tal $1 \leq r_1 < ... < r_K \leq N$, som beskriver numren på de brunnar där det från början finns råttor.
 Därefter skrivs ytterligare en rad med $K$ olika tal $1 \leq t_1 < ... < t_K \leq N$, som beskriver numren på de brunnar där du har placerat fällor.
 
@@ -55,6 +55,10 @@ I C++ kan detta göras med exempelvis \texttt{cout << flush;}
 eller \texttt{fflush(stdout);},
 i Python med \texttt{stdout.flush()}
 och i Java med \texttt{System.out.flush();}.
+Grafen är är inte nödvändigtvis slumpmässigt genererad. 
+Det är dock garanterat att noder är numrerade uniformt slumpmässigt, 
+och att råttor startar på och fällor är utplacerade på uniformt slumpmässigt utvalda noder. 
+Domaren är inte adaptiv, vilket betyder att det är bestämt på förhand hur grafen ser ut.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -66,8 +70,9 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   Grupp & Poängvärde & Gränser \\ \hline \hline
   $1$   & $5$        & $N = 2$ \\ \hline
   $2$   & $5$        & $N \leq 3$ \\ \hline
-  $3$   & $20$        & $K = 1$ \\ \hline
-  $4$   & $15$        & Det går ett rör mellan brunn $i$ och brunn $i + 1$ för alla $i = 1, ..., N-1$. \\ \hline
-  $5$   & $17$        & $N \leq 50$ \\ \hline
-  $6$   & $38$        & Inga ytterliga begränsningar. \\ \hline
+  $3$   & $9$        & $N \leq 10$ \\ \hline
+  $4$   & $20$        & $K = 1$ \\ \hline
+  $5$   & $15$        & Från varje brunn går det högst två rör till andra brunnar. \\ \hline
+  $6$   & $17$        & $N \leq 50$ \\ \hline
+  $7$   & $29$        & Inga ytterliga begränsningar. \\ \hline
 \end{tabular}

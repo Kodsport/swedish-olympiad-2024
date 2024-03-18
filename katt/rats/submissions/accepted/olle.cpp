@@ -12,7 +12,7 @@ vector<bool> finished;
 int query_count = 0;
 unsigned seed;
 
-
+bool DEBUG = false;
 ofstream myfile;
 
 
@@ -24,15 +24,15 @@ void query(vector<int> arr) {
     for (auto x : arr) cout << x + 1 << " ";
     cout << endl;
     
-    myfile << " < " << arr.size() << " ";
-    for (auto x : arr) myfile << x + 1 << " ";
-    myfile << endl;
+    if (DEBUG) myfile << " < " << arr.size() << " ";
+    for (auto x : arr) if (DEBUG) myfile << x + 1 << " ";
+    if (DEBUG) myfile << endl;
 
     rep(i,0,k) cin >> rats[i];
 
-    myfile << " > ";
-    rep(i,0,k) myfile << rats[i] << " ";
-    myfile << endl;
+    if (DEBUG) myfile << " > ";
+    rep(i,0,k) if (DEBUG) myfile << rats[i] << " ";
+    if (DEBUG) myfile << endl;
     rep(i,0,k) rats[i]--;
     rats_set.clear();
     rep(i,0,k) rats_set.insert(rats[i]);
@@ -62,10 +62,10 @@ void query(int x) {
 }
 
 void get_all_neighbors(int node) {
-    myfile << "getting neighbors of " << (node + 1) << endl;
+    if (DEBUG) myfile << "getting neighbors of " << (node + 1) << endl;
     assert(rats_set.find(node) != rats_set.end() && (!finished[node]));
 
-    myfile << "current query count: " << query_count << endl;
+    if (DEBUG) myfile << "current query count: " << query_count << endl;
     while (true) {
         auto node_and_nei = [&]() {
             set<int> s = {node};
@@ -83,20 +83,20 @@ void get_all_neighbors(int node) {
 
         set<int> query_now = {node};
         for (auto x : g[node]) if (rats_set.find(x) != rats_set.end()) query_now.insert(x);
-        for (auto K : query_now) myfile << K+1 << " ";
-        myfile << endl;
+        for (auto K : query_now) if (DEBUG) myfile << K+1 << " ";
+        if (DEBUG) myfile << endl;
 
         query_all_except(query_now);
 
         int diff = -1;
         for (auto x : old) if (rats_set.find(x) == rats_set.end()) diff = x;
         if (diff == -1 || g[node].find(diff) != g[node].end()) break;
-        myfile << "found neighbor " << diff + 1 << endl;
+        if (DEBUG) myfile << "found neighbor " << diff + 1 << endl;
         g[node].insert(diff);
     }
 
-    myfile << "current query count: " << query_count << endl;
-    myfile << "finished with node " << (node + 1) << endl;
+    if (DEBUG) myfile << "current query count: " << query_count << endl;
+    if (DEBUG) myfile << "finished with node " << (node + 1) << endl;
     finished[node] = true;
 }
 
@@ -109,8 +109,14 @@ void get_graph() {
     int nodes_left = n;
     
     while (nodes_left) {
-        myfile << "finding new node to examine..." << endl;
+        if (DEBUG) myfile << "finding new node to examine..." << endl;
         int node = get_next_node();
+        if (node == -1) {
+            set<int> Query;
+            rep(i,0,n) if (finished[i]) Query.insert(i);
+            query(Query);
+        }
+
         set<int> next_query;
         set<int> empty;
         vector<set<int>> history_rats = {rats_set};
@@ -132,7 +138,7 @@ void get_graph() {
                     history_rats.pop_back();
                     to = history_rats.back();
                 }
-                myfile << "to: " << (*to.begin()) + 1 << endl;
+                if (DEBUG) myfile << "to: " << (*to.begin()) + 1 << endl;
                 query_all_except(to);
             }
             else {
@@ -141,7 +147,7 @@ void get_graph() {
 
             node = get_next_node();
         }
-        myfile << "found node" << endl;
+        if (DEBUG) myfile << "found node" << endl;
 
         get_all_neighbors(node);
         nodes_left--;
@@ -149,11 +155,11 @@ void get_graph() {
 
     
     // fix leaves
-    myfile << "graph before fix:\n";
+    if (DEBUG) myfile << "graph before fix:\n";
     rep(i,0,n) {
-        myfile << (i+1) << ": ";
-        for (auto k : g[i]) myfile << (k+1) << " ";
-        myfile << endl;
+        if (DEBUG) myfile << (i+1) << ": ";
+        for (auto k : g[i]) if (DEBUG) myfile << (k+1) << " ";
+        if (DEBUG) myfile << endl;
     }
     vector<set<int>> new_g(n);
     rep(i,0,n) for (auto j : g[i]) {
@@ -177,13 +183,13 @@ void get_graph() {
         g[b].erase(a);
     }
 
-    myfile << "decided graph in " << query_count << " queries\n";
+    if (DEBUG) myfile << "decided graph in " << query_count << " queries\n";
 
-    myfile << "graph:\n";
+    if (DEBUG) myfile << "graph:\n";
     rep(i,0,n) {
-        myfile << (i+1) << ": ";
-        for (auto k : g[i]) myfile << (k+1) << " ";
-        myfile << endl;
+        if (DEBUG) myfile << (i+1) << ": ";
+        for (auto k : g[i]) if (DEBUG) myfile << (k+1) << " ";
+        if (DEBUG) myfile << endl;
     }
 }
 
@@ -245,7 +251,7 @@ set<int> get_rats(set<int> & nodes, set<int> current_rats, set<int> & query, set
 } 
 
 vector<set<int>> get_queries(set<int> nodes, set<int> current_rats, set<int> constant_queries) {
-    myfile << "calling get_queries" << endl;
+    if (DEBUG) myfile << "calling get_queries" << endl;
     vector<set<int>> queries;
     vector<int> nodes_list;
     for (auto x : nodes) {
@@ -274,7 +280,7 @@ vector<set<int>> get_queries(set<int> nodes, set<int> current_rats, set<int> con
     }
 
     int component_count = components.size();
-    myfile << "component_count: " << component_count << endl;
+    if (DEBUG) myfile << "component_count: " << component_count << endl;
     vector<int> rat_count(component_count,0), target_count(component_count,0);
 
     auto update_rat_count = [&]() {
@@ -286,7 +292,7 @@ vector<set<int>> get_queries(set<int> nodes, set<int> current_rats, set<int> con
                 if (targets_set.find(x) != targets_set.end()) target_count[i]++;
             }
         }
-        rep(i,0,component_count) myfile << "component " << i << " has " << rat_count[i] << " rats and " << target_count[i] << " targets." << endl;
+        rep(i,0,component_count) if (DEBUG) myfile << "component " << i << " has " << rat_count[i] << " rats and " << target_count[i] << " targets." << endl;
     };
     update_rat_count();
 
@@ -344,15 +350,15 @@ vector<set<int>> get_queries(set<int> nodes, set<int> current_rats, set<int> con
                 set<int> component = components[index];
                 int root = index2node[index];
 
-                myfile << "Luring to " << center +1 << " from " << root+1 << endl;
+                if (DEBUG) myfile << "Luring to " << center +1 << " from " << root+1 << endl;
                 for (auto K : component) {
-                    if (current_rats.find(K) != current_rats.end()) myfile << "[";
-                    myfile << K+1 ;
+                    if (current_rats.find(K) != current_rats.end()) if (DEBUG) myfile << "[";
+                    if (DEBUG) myfile << K+1 ;
                     if (current_rats.find(K) != current_rats.end()) myfile<< "]";
-                    myfile << " ";
+                    if (DEBUG) myfile << " ";
 
                 }
-                myfile << "!" << endl;
+                if (DEBUG) myfile << "!" << endl;
 
                 map<int, int> came_from;
                 for (auto node : component) came_from[node] = -1;
@@ -414,17 +420,17 @@ vector<set<int>> get_queries(set<int> nodes, set<int> current_rats, set<int> con
                 for (auto comp : components) {
                     set<int> partial_rats;
                     for (auto x : current_rats) if (comp.find(x) != comp.end()) partial_rats.insert(x);
-                    myfile << "getting component with element " << (*comp.begin())+1 << " and size " << comp.size() << endl;
+                    if (DEBUG) myfile << "getting component with element " << (*comp.begin())+1 << " and size " << comp.size() << endl;
                     vector<set<int>> comp_queries = get_queries(comp, partial_rats, constant_queries);
                     all_comp_queries.pb(comp_queries);
-                    myfile << "got component with element " << (*comp.begin())+1 << " and size " << comp.size() << endl;
+                    if (DEBUG) myfile << "got component with element " << (*comp.begin())+1 << " and size " << comp.size() << endl;
 
                     
                     m = max(m, (int)comp_queries.size());
                 }
-                myfile << "m = " << m << endl;
-                for (auto x : all_comp_queries) myfile << x.size() << " ";
-                myfile << " sizes " << endl;
+                if (DEBUG) myfile << "m = " << m << endl;
+                for (auto x : all_comp_queries) if (DEBUG) myfile << x.size() << " ";
+                if (DEBUG) myfile << " sizes " << endl;
 
                 rep(i,0,component_count) {
                     while (all_comp_queries[i].size() < m) all_comp_queries[i].pb(components[i]);
@@ -443,14 +449,14 @@ vector<set<int>> get_queries(set<int> nodes, set<int> current_rats, set<int> con
 
                 rep(i,M,queries.size()) current_rats = get_rats(nodes, current_rats, queries[i], constant_queries);
 
-                myfile << "Finised with component "; for (auto node : nodes) myfile << node+1 << " "; myfile << endl;
-                myfile << "With rats "; for (auto node : current_rats) myfile << node+1 << " "; myfile << endl;
+                if (DEBUG) myfile << "Finised with component "; for (auto node : nodes) if (DEBUG) myfile << node+1 << " "; if (DEBUG) myfile << endl;
+                if (DEBUG) myfile << "With rats "; for (auto node : current_rats) if (DEBUG) myfile << node+1 << " "; if (DEBUG) myfile << endl;
                 return queries;
             }
 
-            myfile << "querying ";
-            for (auto x : Query) myfile << x+1 << " " ;
-            myfile << endl;
+            if (DEBUG) myfile << "querying ";
+            for (auto x : Query) if (DEBUG) myfile << x+1 << " " ;
+            if (DEBUG) myfile << endl;
             queries.pb(Query);
             current_rats = get_rats(nodes, current_rats, Query, constant_queries);
         }
@@ -459,7 +465,7 @@ vector<set<int>> get_queries(set<int> nodes, set<int> current_rats, set<int> con
 }
 
 int main() {
-    myfile.open ("log.txt");
+    if (DEBUG) myfile.open ("log.txt");
 
     seed = 6215;//std::chrono::system_clock::now().time_since_epoch().count();
     cin >> n >> k;
@@ -487,6 +493,6 @@ int main() {
     for (auto Q : queries) query(Q);
 
     cout << "activate!\n";
-    myfile.close();
+    if (DEBUG) myfile.close();
 
 }
