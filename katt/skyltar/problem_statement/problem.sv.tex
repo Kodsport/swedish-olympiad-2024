@@ -1,30 +1,39 @@
 \problemname{Skyltar}
 \noindent
-Dina närmaste vänner har blivit bortskrämda från Göteborg när de fick höra om de otäcka muterade jätteråttorna, 
+Dina närmaste vänner har blivit bortskrämda från Göteborg när de fick höra om de otäcka muterade jätteråttorna i kloakerna,
 och har nu lyckats fly upp till det underbara Stockholm. Under sin flykt tog dina vänner hänsyn till att det märkligt nog fanns 
 väldigt många vägskyltar längs vägen till Stockholm som pekade på olika små byar nere vid Lund. 
 Utöver det verkade siffrorna som var givna på skyltarna lite suspiciösa, då vissa av skyltarna motsäger informationen som finns på andra skyltar.
 
-På varje vägskylt av de alla $N$ vägskyltar som dina vänner tog hänsyn till, står det distanser till alla $M$ byar som finns i Lund. 
-Siffrorna på varje vägskylt representerar avståndet till en stad avrundat till ner till närmaste heltal, då det faktiska avståndet inte nödvändigtvis var ett heltal.
-Eftersom dina goda vänner är pålitliga, kan du anta att de har perfekt fotografiskt minne, vilket innebär att dina vänner minns sifforna som står på skyltarna som de såg. 
+På varje vägskylt av de alla $N$ vägskyltar som dina vänner tog hänsyn till står det distanser till alla $M$ byar som finns i Lund. 
+Siffrorna på varje vägskylt representerar avståndet till en by avrundat till närmaste heltal, då det faktiska avståndet inte nödvändigtvis var ett heltal. 
+Eftersom dina goda vänner är pålitliga kan du anta att de har perfekt fotografiskt minne, vilket innebär att dina vänner minns sifforna som står på skyltarna som de såg. 
 Däremot minns dina vänner inte när eller i vilken ordning som de såg dessa $N$ skyltar.
 
 Du kan anta att Stockholm, Göteborg och de små byarna nere vid Lund ligger allting på en enda rak linje. 
-Du kan dessutom anta att alla städer, byar och skyltar är så små att de kan representeras som en punkt på denna linje.
+Du kan dessutom anta att alla städer, byar och skyltar är så små att de kan representeras som punkter på denna linje.
 Förutom detta, kan du även anta att dina vänner har inte gått förbi någon av dessa $M$ byar.
 Varken byarna eller skyltarna behöver vara på heltalspositioner. 
 
-Givet dessa $N$ skyltar som dina vänner har sett, vad är det största mängden av dessa $N$ skyltar sådan att avståndet givna på skyltarna inte skapar några motsägelser?
+Givet dessa $N$ skyltar som dina vänner har sett, vad är det största mängden av dessa $N$ skyltar sådan att avståndet givna på skyltarna inte skapar några motsägelser? 
 Du kan tillslut även anta att åtminstone $20\%$ av alla skyltar är helt korrekta, och inte skapar någon motsägelse.
 
 \noindent
 \section*{Indata}
-Första raden innehåller 
+Första raden innehåller två heltal $N$ ($1 \leq N \leq 1000$) och $M$ ($1 \leq M \leq 200$) 
+som representerar antalet skyltar dina vänner har sett och antalet byar i Lund respektivt.
+
+De följande $N$ raderna innehåller vardera en rad med $M$ heltal. Det $i$:te raden innehåller heltalen $d_{i,1}, d_{i,2}, \ldots, d_{i,M}$ ($1 \leq d_{i,j} \leq 10^6$). 
+På den $i$:te skylten står det alltså att avståndet från skylt $i$ till by $j$ avrundat nedåt blir $d_{i,j}$.
+
 
 
 \section*{Utdata}
-Skriv ut 
+Skriv först ut på en rad ett heltal $t$, maximala antalet skyltar som är konsistenta. 
+På den andra raden, skriv ur $t$ tal som specifierar indexen i sorterad ordning sådan att den 
+första skylten är den som är längst bort från Göteborg och alla byar i Lund, samt den sista skylten är närmast Göteborg och de mysiga byarna i Lund.
+Eftersom folk i samhället blir förvirrade när saker är $0-indexerade$, vill vi att skyltarna är $1-indexerade$. Alltså är första skylten i input indexerad $1$, och sista skylten med index $N$.
+Ifall det finns fler än ett svar kan ditt program skriva ut ett valfritt alternativ av dessa möjliga svar.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -42,5 +51,17 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 
 
 
-\section*{Explanation of sample 1:}
+\section*{Förklaring av första exempelfallet:}
+Föreställ dig en tallinje på $x$-led.
+Om vi tänker oss att den andra skylten är placerad på position $x = 0$, och den första sklylten på position $x = \frac{1}{2}$, 
+den första byn på position $x = 2\frac{1}{2}$, och den andra byn $x = 3$. 
 
+Det är även möjligt att hitta en konstruktion med skylt nr. 1 och 3.
+
+Det är klart att sklyt nr. 1 och 2 motsäger varandra, vilket innebär att det inte finns en konstruktion där alla 3 skyltar används.
+
+\section*{Kommentar till det andra exempelfallet:}
+Notera att alla skyltar har avrundat ner avståndet till olika tal, trots att alla skyltar pekar på samma by.
+
+\section*{Kommentar till det tredje exempelfallet:}
+Notera att alla par av skyltar leder till en motsägelse; en godtyckligskylt skulle ge rätt svar på detta fall.
