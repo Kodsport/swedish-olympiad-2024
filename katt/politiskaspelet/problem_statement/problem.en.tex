@@ -1,28 +1,70 @@
 \problemname{The Paw-litical Game}
+The country of Gattekatt has a very unusual shape. It is so elongated that its $N$ cities each occupy an interval of the country.
+They are numbered from $1$ to $N$, from left to right. Each city has a number of cats as inhabitants. Interestingly, the number of
+cats is always equal to $2^k$ for some integer $k$ (there are a lot of cats in Gattekatt). To reinforce the country against a
+potential rat invasion, they want as many cities as possible to merge together. Unfortunately, they are very picky about who they
+are willing to cooperate with. For two cities $a$ and $b$ to merge, the following conditions are required:
 
+\begin{itemize}
+  \item The cities $a$ and $b$ are adjacent. More formally, either $a+1=b$ or $b+1=a$.
+  \item The number of cats in city $a$ and city $b$ is exactly the same. This is because the number of cats in the city is
+  directly correlated with political influence, and a city won't consider cooperating with a city it perceives as having less political influence.
+\end{itemize}
 
-\section*{Interaction}
+If two cities $a$ and $b$ ($a < b$) with $k$ cats each merge, they are replaced by a single city whose cat population is $2k$.
+The new city can now potentially merge with city $a-1$ and $b+1$.
 
+Top politicians from Gattekatt now want your help in calculating the minimum number of cities that can remain in the end if
+cities are merged in an optimal order.
 
-\textbf{Make sure to flush the output after each query}, otherwise you can get \textit{Time Limit Exceeded}.
-In C++ this can be done using \texttt{cout << flush;}
-or \texttt{fflush(stdout);}
-in Python with \texttt{stdout.flush()},
-and in Java with \texttt{System.out.flush();}.
+\section*{Input}
+The first line of input contains the integer $N$ ($1 \leq N \leq 10^6$).
 
-\section*{Scoring}
-Your solution will be tested on a number of sample groups.
-To get points in a group your solution must pass all test cases in that group.
+The second line of input contains $N$ integers $k_1, k_2, \dots, k_N$ ($1 \leq k_i \leq 10^9$).
+Each $k_i$ means that city $i$ has $2^{k_i}$ cats as inhabitants. 
+
+\section*{Output}
+Print an integer: the least number of cities that can remain if the cities are combined in an optimal order.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
 
 \noindent
-\begin{tabular}{| l | l | l |}
+\begin{tabular}{| l | l | p{12cm} |}
   \hline
-  Group & Point value & Constraints \\ \hline \hline
-  $1$   & $5$        & $N = 2$ \\ \hline
-  $2$   & $10$        & $N \leq 10$ \\ \hline
-  $3$   & $10$        & $N \leq 250$ \\ \hline
-  $4$   & $16$        & Every room that is not on the lowest floor has two rooms directly below it. \\ \hline
-  $4$   & $13$        & $N \leq 500$ \\ \hline
-  $5$   & $21$        & $N \leq 950$ \\ \hline
-  $6$   & $25$        & $N \leq 1000$ \\ \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$    & $7$       & $N \leq 10, k_i \leq 30$ \\ \hline
+  $2$    & $14$      & $N \leq 200, k_i \leq 30$ \\ \hline
+  $3$    & $15$      & $N \leq 2000, k_i \leq 30$ \\ \hline
+  $4$    & $9$       & $N \leq 2000$ \\ \hline
+  $5$    & $37$      & $k_i \leq 30$ \\ \hline
+  $6$    & $18$      & No additional constraints. \\ \hline
 \end{tabular}
+
+
+\section*{Explanation of sample 1}
+
+First, we compute the population of cats for each city ($2^{k_i}$).
+\begin{verbatim}
+4 4 8 8 8
+\end{verbatim}
+Here, we will show an optimal sequence of cities merging.
+The cities furthest to the right are merged into a single city with 16 cats:
+\begin{verbatim}
+4 4 8 16
+\end{verbatim}
+Afterwards, the 4s are merged into a single city with 8 cats:
+\begin{verbatim}
+8 8 16
+\end{verbatim}
+Afterwards, the 8s are merged into a single city with 16 cats:
+\begin{verbatim}
+16 16
+\end{verbatim}
+Finally, we can merge the 16s into a singly city with 32 cats:
+\begin{verbatim}
+32
+\end{verbatim}
+
+Because there is only a single city left, the answer is 1.
