@@ -1,0 +1,72 @@
+\problemname{KATT och råtta}
+En speciell typ av muterade jätteråttor har tagit över Göteborgs kloaker,
+och stadsledningen har bett dig om hjälp med att lösa problemet.
+
+Kloaken består av $N$ brunnar numrerade från $1$ till $N$, med $N-1$ rör som kopplar samman brunnarna,
+så att det går att färdas mellan varje par av brunnar genom att gå igenom en sekvens av rör.
+För att dra ner på kostnaderna avskedade man alla kloak-utvecklare i Göteborg, 
+och man råkade därigenom lämna kloaksystemet helt odokumenterat.
+Nu finns det alltså ingen som vet mellan vilka par av brunnar det finns rör.
+
+Det finns $K$ stycken jätteråttor, som befinner sig i olika brunnar.
+Eftersom råttorna är så stora och aggresiva kan det aldrig vara två råttor i samma brunn.
+Du har redan placerat ut $K$ specialdesignade råttfällor som du kan aktivera med ett knapptryck i olika brunnar,
+och du vill försöka få råttorna att gå till de brunnar med fällor.
+Men råttorna är väldigt intelligenta, och om inte alla fällor aktiveras samtidigt så kommer de
+att lära sig att använda fällorna emot dig.
+
+För att få råttorna att röra sig har du en stor mängd ljudmaskiner,
+som spelar låtar som är särskilt irriterande för muterade jätteråttor.
+Ljudmaskinerna fungerar genom att du placerar dem i en delmängd av brunnarna,
+och alla råttor kommer sedan springa genom upp till ett rör för att undvika ljudet.
+Mer specifikt kommer varje råtta att få möjligheten att fly,
+och på grund av hur ljudet färdas kommer råttorna att göra detta i ordning av numret på brunnen de befinner sig i just nu.
+Alltså, om det finns råttor i brunn $1$ och $2$ så kommer den i brunn $1$ att försöka fly först.
+När denna råtta flytt färdigt kommer råttan i brunn $2$ att utföra sin flykt.
+Råttorna vill maximera avståndet till närmsta ljudmaskin.
+En råtta kommer överväga att röra sig till alla brunnar, fria från andra råttor, 
+inom ett rörs avstånd från där de befinner sig just nu.
+Om ingen av dessa brunnar har ett strikt större avstånd till närmsta ljudkälla kommer råttan att stanna där den befinner sig nu. 
+Annars kommer den att gå till den närliggande brunn med högst avstånd till närmsta ljudmaskin.
+Om det finns flera sådana brunnar väljer råttan brunnen med lägst nummer.
+
+Du har fått väldigt många ljudmaskiner, men hinner bara göra $5000$ utplaceringar av maskiner innan 
+råttornas parningssäsong (som skulle få ödesdigra konsekvenser!) börjar.
+
+
+\section*{Interaktion}
+Först skrivs talen $N$ ($2 \leq N \leq 1000$) och $K$ ($1 \leq K < N$) ut på en rad.
+Sedan följer en rad med $K$ olika tal $1 \leq r_1 < ... < r_K \leq N$, som beskriver numren på de brunnar där det från början finns råttor.
+Därefter skrivs ytterligare en rad med $K$ olika tal $1 \leq t_1 < ... < t_K \leq N$, som beskriver numren på de brunnar där du har placerat fällor.
+
+När du vill göra en placering av ljudmaskiner ska du först skriva ut ett tal $M$, antalet maskiner du placerar ut. 
+Därefter ska du, på samma rad, skriva talen $1 \leq s_1 < ... < s_M \leq N$,
+de brunnar där du vill placera ljudmaskiner. Ljudmaskiner får placeras i en brunn oavsett om det finns en råtta där eller inte.
+Det kommer då att skrivas ut en rad med $K$ tal, $1 \leq r_1 < ... < r_K \leq N$, 
+de brunnar där det finns råttor efter att alla råttor försökt fly från ljudet.
+
+När du lyckats få alla råttor till brunnar med fällor i ska du skriva ut ``\texttt{activate!}'' på en rad. 
+Ditt program ska sedan avslutas.
+
+
+\textbf{Se till att flusha outputen efter varje query}, annars kan du få \textit{Time Limit Exceeded}.
+I C++ kan detta göras med exempelvis \texttt{cout << flush;}
+eller \texttt{fflush(stdout);},
+i Python med \texttt{stdout.flush()}
+och i Java med \texttt{System.out.flush();}.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline \hline
+  $1$   & $5$        & $N = 2$ \\ \hline
+  $2$   & $5$        & $N \leq 3$ \\ \hline
+  $3$   & $20$        & $K = 1$ \\ \hline
+  $4$   & $15$        & Det går ett rör mellan brunn $i$ och brunn $i + 1$ för alla $i = 1, ..., N-1$. \\ \hline
+  $5$   & $17$        & $N \leq 50$ \\ \hline
+  $6$   & $38$        & Inga ytterliga begränsningar. \\ \hline
+\end{tabular}
