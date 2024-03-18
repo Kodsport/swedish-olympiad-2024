@@ -1,19 +1,20 @@
 \problemname{Politiska spelet}
-Landet Gattekatt har en väldigt ovanlig form. Det är nämligen så avlångt att dess $N$ städer vardera ockuperar ett intervall av landet.
+Landet Gattekatt har en väldigt ovanlig form. Det är nämligen väldigt avlångt, vilket resulterar i att dess $N$ städer
+vardera ockuperar sig ett intervall av landet.
 De är numrerade från $1$ till $N$, från vänster till höger. Varje stad har ett antal katter som invånare. Lustigt nog är
 antalet katter alltid lika med $2^k$ för något heltal $k$ (det finns väldigt många katter i Gattekatt).
-För att förstärka landet inför en potentiell råttinvasion vill de att så många städer som möjligt ska gå tillsammans.
-Tyvärr är de väldigt kräsna med vem de kan tänka sig att samarbeta med. För att två städer $a$ och $b$ ska gå ihop krävs följande:
+För att förstärka landet inför en potentiell råttinvasion vill regeringen att så många städer som möjligt ska gå tillsammans.
+Tyvärr är städerna väldigt kräsna kring vem de kan tänka sig att samarbeta med. För att två städer $a$ och $b$ ska gå ihop krävs följande:
 \begin{itemize}
-  \item Städerna $a$ och $b$ ligger bredvid varandra. Mer formellt stämmer antingen $a+1=$ eller $b+1=a$.
+  \item Städerna $a$ och $b$ ligger bredvid varandra. Mer formellt måste antingen $a+1=b$ eller $b+1=a$ stämma.
   \item Antalet katter i stad $a$ och $b$ är exakt samma. Detta beror på att antalet katter i staden är direkt korrelerat med
-  politiskt inflytande, och en stad kan inte tänka sig samarbeta med en stad som de anser har mindre politiskt inflytande.
+  politiskt inflytande, och en stad kan inte tänka sig samarbeta med en annan stad som de anser har mindre politiskt inflytande.
 \end{itemize}
 
-Om två städer $a$ och $b$ ($a < b$) med $k$ stycken katter vardera går tillsammans så ersätts de av en enda stad, vars kattbefolkning är $2k$.
-Den nya staden kan nu potentiellt gå tillsammans med stad $a-1$ och $b+1$.
+När två städer $a$ och $b$ ($a < b$), som vardera har $k$ stycken katter går samman, ersätts de av en enda stad, vars kattbefolkning är $2k$.
+Den nya staden kan sedan eventuellt gå samman med stad $a-1$ och $b+1$.
 
-Topp-politiker från Gattekatt vill nu ha din hjälp att beräkna minsta antalet städer som kan finnas kvar i slutet om man
+Topp-politiker från Gattekatt vill nu ha din hjälp att beräkna det minsta antalet städer som kan finnas kvar i slutet om man
 slår ihop städer i en optimal ordning. 
 
 
