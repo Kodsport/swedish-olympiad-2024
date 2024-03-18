@@ -17,7 +17,6 @@ group group1 5
 limits maxn=2 maxk=1
 tc g1-1 generate n=2 k=1 seed=1
 tc g1-2 generate n=2 k=1 seed=2
-tc g1-3 generate n=2 k=1 seed=3
 
 group group2 5
 limits maxn=3 maxk=2
@@ -67,8 +66,8 @@ tc g5-3 generate n=100 k=51 line=1 seed=53
 tc g5-4 generate n=100 k=99 line=1 seed=54
 tc g5-5 generate n=100 k=10 line=1 seed=55
 tc g5-6 generate n=100 k=22 line=1 seed=56
-tc g5-7 generate n=100 k=80 line=1 seed=56
-tc g5-8 generate n=100 k=90 line=1 seed=56
+tc g5-7 generate n=100 k=80 line=1 seed=57
+tc g5-8 generate n=100 k=90 line=1 seed=58
 
 group group6 17
 limits maxn=50 maxk=49
