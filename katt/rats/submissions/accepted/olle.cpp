@@ -470,5 +470,5 @@ int main() {
     cout << "activate!\n";
     if (DEBUG) myfile.close();
 
-
+    return 0;
 }

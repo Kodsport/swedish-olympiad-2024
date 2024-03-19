@@ -25,4 +25,5 @@ int main() {
   copy_n(istream_iterator<int>(cin), n, back_inserter(a));
   for (int& x : a) x = 1 << x;
   cout << rec(0, n) << '\n';
+  return 0;
 }

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 n, k = [int(i) for i in input().split()]
 
 assert k == 1

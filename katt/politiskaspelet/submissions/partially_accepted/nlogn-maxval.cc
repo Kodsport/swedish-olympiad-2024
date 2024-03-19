@@ -76,4 +76,5 @@ signed main() {
     partial_sum(a.begin(), a.end(), pa.begin() + 1);
     precompute_can();
     cout << rec(0, n) << '\n';
+    return 0;
 }

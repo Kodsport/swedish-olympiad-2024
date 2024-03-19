@@ -1,21 +1,22 @@
 \problemname{The Paw-litical Game}
-The country of Gattekatt has a very unusual shape. It is so elongated that its $N$ cities each occupy an interval of the country.
-They are numbered from $1$ to $N$, from left to right. Each city has a number of cats as inhabitants. Interestingly, the number of
-cats is always equal to $2^k$ for some integer $k$ (there are a lot of cats in Gattekatt). To reinforce the country against a
-potential rat invasion, they want as many cities as possible to merge together. Unfortunately, they are very picky about who they
-are willing to cooperate with. For two cities $a$ and $b$ to merge, the following conditions are required:
+\noindent
+The country Gattekatt has a very unusual shape. It is extremely elongated, resulting in its $N$ cities each occupying an interval of the country.
+The cities are numbered from $1$ to $N$, from left to right. Each city has a population of cats. Interestingly, the number of 
+cats is always equal to $2^k$ for some integer $k$ (there are a lot of cats in Gattekatt).
+To prepare the country for a potential rat invasion, the government wants as many cities as possible to unite.
+Unfortunately, the cities are very picky about who they are willing to cooperate with. For two cities $a$ and $b$ to unite, the following conditions are required:
 
 \begin{itemize}
-  \item The cities $a$ and $b$ are adjacent. More formally, either $a+1=b$ or $b+1=a$.
+  \item The cities $a$ and $b$ are adjacent. 
   \item The number of cats in city $a$ and city $b$ is exactly the same. This is because the number of cats in the city is
-  directly correlated with political influence, and a city won't consider cooperating with a city it perceives as having less political influence.
+  directly correlated with the city's political influence, and a city won't consider cooperating with a city it perceives as having less political influence.
 \end{itemize}
 
-If two cities $a$ and $b$ ($a < b$) with $k$ cats each merge, they are replaced by a single city whose cat population is $2k$.
-The new city can now potentially merge with city $a-1$ and $b+1$.
+When two adjacent cities $a$ and $b$, each with $2^k$ cats decide to unite, they form a single city with a cat population of $2^{k+1}$.
+The new city can then potentially unite with the city to the left of $a$ or the city to the right of $b$.
 
 Top politicians from Gattekatt now want your help in calculating the minimum number of cities that can remain in the end if
-cities are merged in an optimal order.
+the cities are united in an optimal order.
 
 \section*{Input}
 The first line of input contains the integer $N$ ($1 \leq N \leq 10^6$).
@@ -24,7 +25,7 @@ The second line of input contains $N$ integers $k_1, k_2, \dots, k_N$ ($1 \leq k
 Each $k_i$ means that city $i$ has $2^{k_i}$ cats as inhabitants. 
 
 \section*{Output}
-Print an integer: the least number of cities that can remain if the cities are combined in an optimal order.
+Print an integer: the least number of cities that can remain if the cities are united in an optimal order.
 
 \section*{Points}
 Your solution will be tested on several test case groups.

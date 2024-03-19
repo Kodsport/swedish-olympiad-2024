@@ -146,6 +146,7 @@ int main(int argc, char **argv) {
 
         rats.clear();
         rep(i,0,n) if (occupied[i]) rats.insert(i);
+        assert(rats.size()==k);
         for (auto x : rats) cout << x + 1 << " ";
         cout << endl;
     }
