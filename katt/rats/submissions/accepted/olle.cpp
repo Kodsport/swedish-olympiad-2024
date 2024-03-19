@@ -62,10 +62,8 @@ void query(int x) {
 }
 
 void get_all_neighbors(int node) {
-    if (DEBUG) myfile << "getting neighbors of " << (node + 1) << endl;
     assert(rats_set.find(node) != rats_set.end() && (!finished[node]));
 
-    if (DEBUG) myfile << "current query count: " << query_count << endl;
     while (true) {
         auto node_and_nei = [&]() {
             set<int> s = {node};
@@ -83,20 +81,15 @@ void get_all_neighbors(int node) {
 
         set<int> query_now = {node};
         for (auto x : g[node]) if (rats_set.find(x) != rats_set.end()) query_now.insert(x);
-        for (auto K : query_now) if (DEBUG) myfile << K+1 << " ";
-        if (DEBUG) myfile << endl;
 
         query_all_except(query_now);
 
         int diff = -1;
         for (auto x : old) if (rats_set.find(x) == rats_set.end()) diff = x;
         if (diff == -1 || g[node].find(diff) != g[node].end()) break;
-        if (DEBUG) myfile << "found neighbor " << diff + 1 << endl;
         g[node].insert(diff);
     }
 
-    if (DEBUG) myfile << "current query count: " << query_count << endl;
-    if (DEBUG) myfile << "finished with node " << (node + 1) << endl;
     finished[node] = true;
 }
 
@@ -109,7 +102,6 @@ void get_graph() {
     int nodes_left = n;
     
     while (nodes_left) {
-        if (DEBUG) myfile << "finding new node to examine..." << endl;
         int node = get_next_node();
         if (node == -1) {
             set<int> Query;
@@ -138,7 +130,6 @@ void get_graph() {
                     history_rats.pop_back();
                     to = history_rats.back();
                 }
-                if (DEBUG) myfile << "to: " << (*to.begin()) + 1 << endl;
                 query_all_except(to);
             }
             else {
@@ -147,7 +138,6 @@ void get_graph() {
 
             node = get_next_node();
         }
-        if (DEBUG) myfile << "found node" << endl;
 
         get_all_neighbors(node);
         nodes_left--;
@@ -155,12 +145,6 @@ void get_graph() {
 
     
     // fix leaves
-    if (DEBUG) myfile << "graph before fix:\n";
-    rep(i,0,n) {
-        if (DEBUG) myfile << (i+1) << ": ";
-        for (auto k : g[i]) if (DEBUG) myfile << (k+1) << " ";
-        if (DEBUG) myfile << endl;
-    }
     vector<set<int>> new_g(n);
     rep(i,0,n) for (auto j : g[i]) {
         if (g[j].find(i) != g[j].end()) new_g[i].insert(j);
@@ -181,15 +165,6 @@ void get_graph() {
     for (auto [a, b] : edges_to_remove) {
         g[a].erase(b);
         g[b].erase(a);
-    }
-
-    if (DEBUG) myfile << "decided graph in " << query_count << " queries\n";
-
-    if (DEBUG) myfile << "graph:\n";
-    rep(i,0,n) {
-        if (DEBUG) myfile << (i+1) << ": ";
-        for (auto k : g[i]) if (DEBUG) myfile << (k+1) << " ";
-        if (DEBUG) myfile << endl;
     }
 }
 
@@ -494,5 +469,6 @@ int main() {
 
     cout << "activate!\n";
     if (DEBUG) myfile.close();
+
 
 }

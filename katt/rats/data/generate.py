@@ -32,7 +32,7 @@ elif line == 1:
     permutation = list([i for i in range(1, n+1)])
     random.shuffle(permutation)
     for i in range(n-1):
-        print(permutation[i], permutation[i+1])
+        print(i+1,i+2)#print(permutation[i], permutation[i+1])
 elif star == 1:
     permutation = list([i for i in range(1, n+1)])
     random.shuffle(permutation)

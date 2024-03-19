@@ -12,18 +12,18 @@ Nu finns det alltså ingen kvar som vet mellan vilka par av brunnar det finns r�
 
 Det finns $K$ stycken jätteråttor, som befinner sig i olika brunnar.
 Eftersom råttorna är så stora och aggresiva kan det aldrig vara två råttor i samma brunn.
-Du har redan placerat ut $K$ KATT:er (Kraftfull Aromatisk Träffsäker Torped) i olika brunnar.
+Du har redan placerat ut $K$ stycken KATT:er (Kraftfull Atombaserad Träffsäker Torped) i olika brunnar.
 Dessa kan du aktivera med ett enkelt knapptryck,
-och du vill nu försöka få råttorna att gå till de brunnar med KATT:er.
-Men råttorna är väldigt intelligenta, och om inte alla KATT:er aktiveras samtidigt så kommer de
-att lära sig att använda KATT:erna emot dig.
+och du vill nu försöka få råttorna att gå till de brunnar där det finns KATT:er.
+Men råttorna är väldigt intelligenta, och om inte alla KATT:er aktiveras samtidigt så kommer råttorna
+lära sig att använda KATT:erna emot dig.
 
 För att få råttorna att röra sig har du en stor mängd UGGL:or 
 (Utropande Generator av Galna Ljud),
 som spelar låtar som är särskilt irriterande för muterade jätteråttor.
 Du får, i flera omgångar, välja en delmängd av brunnarna, och placera en UGGL:a i varje brunn i delmängden.
-Alla råttor kommer sedan springa genom upp till ett rör för att undvika ljudet.
-Mer specifikt kommer varje råtta att få möjligheten att fly,
+Alla råttor kommer sedan eventuellt springa ett rör för att undvika ljudet.
+Mer specifikt kommer varje råtta att få möjligheten att fly från UGGL:orna,
 och på grund av fysikens lagar kommer råttorna att göra detta i ordning av numret på brunnen de befinner sig i just nu.
 Alltså, om det finns råttor i brunn $1$ och $2$ så kommer råttan i brunn $1$ att försöka fly först.
 När denna råtta flytt färdigt kommer råttan i brunn $2$ att utföra sin flykt.
@@ -36,7 +36,7 @@ Om det finns flera sådana brunnar väljer råttan brunnen med lägst nummer.
 Avståndet mellan två brunnar är det minsta antalet rör du måste gå igenom för att färdas mellan dem.
 
 Du har fått väldigt många UGGL:or av Göteborgs stad, men du hinner bara göra $20000$ omgångar av utplaceringar av UGGL:or innan 
-råttornas parningssäsong (som skulle få ödesdigra konsekvenser!) börjar.
+råttornas parningssäsong (som skulle få ödesdigra konsekvenser!) börjar. I varje omgång får du placera UGGL:or i flera brunnar.
 
 
 \section*{Interaktion}
@@ -47,11 +47,11 @@ Därefter skrivs ytterligare en rad med $K$ olika tal $1 \leq t_1 < ... < t_K \l
 När du vill göra en placering av UGGL:or ska du först skriva ut ett tal $M$, antalet UGGL:or du placerar ut. 
 Därefter ska du, på samma rad, skriva talen $1 \leq s_1 < ... < s_M \leq N$,
 de brunnar där du vill placera UGGL:or. En UGGL:a får placeras i en brunn oavsett om det finns en råtta där eller inte.
-Det kommer då att skrivas ut en rad med $K$ tal, $1 \leq r_1 < ... < r_K \leq N$, 
+Sedan ska ditt program läsa en rad med $K$ tal, $1 \leq r_1 < ... < r_K \leq N$, 
 de brunnar där det finns råttor efter att alla råttor försökt fly från UGGL:orna.
 
 När du lyckats få alla råttor till brunnar med fällor i ska du skriva ut ``\texttt{activate!}'' på en rad. 
-Ditt program ska sedan avslutas.
+Ditt program ska då avslutas.
 
 
 \textbf{Se till att flusha outputen efter varje query}, annars kan du få \textit{Time Limit Exceeded}.
@@ -60,9 +60,8 @@ eller \texttt{fflush(stdout);},
 i Python med \texttt{stdout.flush()}
 och i Java med \texttt{System.out.flush();}.
 Kloaken är är inte nödvändigtvis slumpmässigt genererad. 
-Det är dock garanterat att brunnar är numrerade uniformt slumpmässigt, 
-och att råttor startar på och fällor är utplacerade på uniformt slumpmässigt utvalda brunnar. 
-Domaren är inte adaptiv, vilket betyder att det är bestämt på förhand hur grafen ser ut.
+Det är dock garanterat att råttor startar på, och KATT:er är utplacerade på, uniformt slumpmässigt utvalda brunnar. 
+Domaren är inte adaptiv, vilket betyder att det är bestämt på förhand hur kloaken ser ut.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -76,7 +75,50 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   $2$   & $5$        & $N \leq 3$ \\ \hline
   $3$   & $9$        & $N \leq 10$ \\ \hline
   $4$   & $20$        & $K = 1$ \\ \hline
-  $5$   & $15$        & Från varje brunn går det högst två rör till andra brunnar. \\ \hline
+  $5$   & $15$        & Det går ett rör mellan brunn $i$ och brunn $i+1$ för alla $1 \leq i < N$. \\ \hline
   $6$   & $17$        & $N \leq 50$ \\ \hline
   $7$   & $29$        & Inga ytterliga begränsningar. \\ \hline
 \end{tabular}
+
+
+\section*{Förklaring av exempelfall 2}
+
+\begin{centering}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{rats_graph before.png}
+    \caption{Kloakens utseende i exempelfall 2. Observera att ditt program inte vet vart rören går.}
+  \end{figure}
+\end{centering}
+
+\begin{centering}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{rats_graph step1.png}
+    \caption{När du placerar UGGL:or i brunnar $4$ och $5$ kommer båda dessa råttor att bli mycket störda. Råttan i brunn $4$ får chans att fly först, eftersom $4 < 5$, och den flyr till brunn $3$. När råttan i brunn $5$ sedan försöker fly finns det ingen ledig brunn att välja.}
+  \end{figure}
+\end{centering}
+
+\begin{centering}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{rats_graph step2.png}
+    \caption{När du placerar en ensam UGGL:a i brunn $5$ flyr först råttan i brunn $3$ till brunn $2$, och råttan i brunn $5$ flyr sedan till brunn $3$.}
+  \end{figure}
+\end{centering}
+
+\begin{centering}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{rats_graph step3.png}
+    \caption{När du ännu en gång placerar en ensam UGGL:a i brunn $5$ flyr först råttan i brunn $2$ till brunn $1$, och råttan i brunn $3$ flyr sedan till brunn $2$.}
+  \end{figure}
+\end{centering}
+
+\begin{centering}
+  \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{rats_graph step4 activate.png}
+    \caption{Nu är alla råttor i brunnar med KATT:er, och du kan aktivera KATT:erna.}
+  \end{figure}
+\end{centering}

@@ -24,7 +24,11 @@
 #
 # where input.txt is a file that contains e.g.
 #
-# TODO
+# 3 1
+# 1 2
+# 2 3
+# 1
+# 3
 #
 # This input corresponds to sample case 1.
 # If --silent is passed, the communication output will not be printed.
@@ -175,8 +179,8 @@ def main():
         
         proc.stdin.write(rs.encode("utf8"))
         proc.stdin.flush()
-
-        print("<",rs, end="")
+        if not silent:
+            print("<",rs, end="")
         
 
 if __name__ == "__main__":

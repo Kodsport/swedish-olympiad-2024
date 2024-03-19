@@ -12,6 +12,7 @@ compile generate.py
 samplegroup
 limits maxn=5 maxk=2
 sample 1
+sample 2
 
 group group1 5
 limits maxn=2 maxk=1
@@ -29,6 +30,7 @@ tc g2-4 generate n=3 k=2 seed=14
 
 group group3 9
 limits maxn=10 maxk=9
+tc 2
 tc g3-1 generate n=10 k=1 seed=21
 tc g3-2 generate n=10 k=1 seed=22
 tc g3-3 generate n=10 k=9 seed=23
