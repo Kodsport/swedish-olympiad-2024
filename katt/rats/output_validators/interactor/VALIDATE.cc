@@ -16,7 +16,7 @@ auto Start = chrono::high_resolution_clock::now();
 void resettimer() { Start = chrono::high_resolution_clock::now(); }
 int elapsedmillis() { return chrono::duration_cast<chrono::milliseconds>(chrono::high_resolution_clock::now() - Start).count(); }
 
-const int MAX_QUERY = 20000;
+const int MAX_QUERY = 25000;
 int query_count = 0;
 int n, k;
 set<int> rats;

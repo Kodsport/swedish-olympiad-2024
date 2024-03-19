@@ -111,7 +111,7 @@ def main():
         print("<",rs, end="")
         print("<",ts, end="")
 
-    MAX_QUERIES = 20000
+    MAX_QUERIES = 25000
     queries = 0
 
     while True:

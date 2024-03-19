@@ -70,8 +70,9 @@ tc g5-5 generate n=100 k=10 line=1 seed=55
 tc g5-6 generate n=100 k=22 line=1 seed=56
 tc g5-7 generate n=100 k=80 line=1 seed=57
 tc g5-8 generate n=100 k=90 line=1 seed=58
+tc g5-9 generate n=100 k=2 line=1 seed=59
 
-group group6 17
+group group6 21
 limits maxn=50 maxk=49
 include_group group1
 include_group group2
@@ -85,9 +86,12 @@ tc g6-7 generate n=50 k=49 seed=27
 tc g6-8 generate n=50 k=10 line=1 seed=28
 tc g6-9 generate n=50 k=49 line=1 seed=29
 tc g6-10 generate n=50 k=15 star=1 seed=30
-tc g6-11 generate n=50 k=49 star=1 seed=31
+tc g6-11 generate n=50 k=2 star=1 seed=32
+tc g6-12 generate n=50 k=4 star=1 seed=33
+tc g6-13 generate n=50 k=25 star=1 seed=33
+tc g6-14 generate n=50 k=20 star=1 seed=33
 
-group group7 29
+group group7 25
 limits maxn=100 maxk=99
 include_group group1
 include_group group2
@@ -107,4 +111,7 @@ tc g7-10 generate n=100 k=80 star=1 seed=41
 tc g7-11 generate n=100 k=10 star=1 seed=42
 tc g7-12 generate n=100 k=20 star=1 seed=43
 tc g7-13 generate n=100 k=40 star=1 seed=44
+tc g7-14 generate n=100 k=5 star=1 seed=45
+tc g7-15 generate n=100 k=99 star=1 seed=46
+tc g7-16 generate n=100 k=50 star=1 seed=47
 
