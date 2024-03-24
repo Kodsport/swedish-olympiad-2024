@@ -67,7 +67,9 @@ int main(int argc, char **argv) {
 	int judgeAns = check(judge_ans, judge_error);
 	int authorAns = check(author_out, wrong_answer);
 	
-	if (authorAns>judgeAns) judge_error("Contestant found better solution than judge");
+
+	// We assume the judge is 100% correct. (which it is)
+	if (authorAns>judgeAns) wrong_answer("Contestant found better solution than judge"); //judge_error("Contestant found better solution than judge");
 	if (authorAns<judgeAns) wrong_answer("Contestant found suboptimal solution");
 
 	accept();
