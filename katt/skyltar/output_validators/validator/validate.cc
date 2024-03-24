@@ -27,6 +27,36 @@ bool valid(vi &answer, vvi &signs, int size, int m){
 	return true;
 }
 
+bool valid_normalized(vi &answer, vvi &signs, int n, int m){
+
+	// Efter att vi har normaliserad måste alla värden vara mellan 0 och 1.
+
+	vvi normalized;
+
+	rep(i,0,n){
+		vi curr;
+		rep(j,0,m){
+			curr.push_back(signs[answer[i]-1][j] - signs[answer[0]-1][j]);
+		}
+		normalized.push_back(curr);
+	}
+
+	rep(i,0,n){
+		int minimum = normalized[i][0];
+		rep(j,0,m){
+			minimum = min(minimum, normalized[i][j]);
+		}
+
+		rep(j,0,m){
+			normalized[i][j] -= minimum;
+			if (normalized[i][j] < 0 || normalized[i][j] > 1) return false;
+		}
+
+		
+	}
+	return true;
+}
+
 int main(int argc, char **argv) {
 	init_io(argc, argv);
 	
@@ -60,6 +90,7 @@ int main(int argc, char **argv) {
 		if(sol >> trailing) feedback("Trailing output");
 
 		if (!valid(nums, signs, ans, m)) feedback("Invalid solution");
+		if (!valid_normalized(nums, signs, ans, m)) feedback("Invalid solution");
 
 		return ans;
 	};
@@ -69,7 +100,7 @@ int main(int argc, char **argv) {
 	
 
 	// We assume the judge is 100% correct. (which it is)
-	if (authorAns>judgeAns) wrong_answer("Contestant found better solution than judge"); //judge_error("Contestant found better solution than judge");
+	if (authorAns>judgeAns) judge_error("Contestant found better solution than judge"); // wrong_answer("Contestant found better solution than judge"); //
 	if (authorAns<judgeAns) wrong_answer("Contestant found suboptimal solution");
 
 	accept();
