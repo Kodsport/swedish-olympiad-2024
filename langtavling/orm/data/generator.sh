@@ -13,6 +13,13 @@ group group1 15
 limits maxN=10
 tc 1
 tc 2
+tc_manual ../manual/p1.in
+tc_manual ../manual/p2.in
+tc_manual ../manual/p4.in
+tc_manual ../manual/p5.in
+tc_manual ../manual/p6.in
+tc_manual ../manual/p7.in
+tc_manual ../manual/p8.in
 tc_manual ../manual/waz0.in
 tc_manual ../manual/waz1.in
 tc_manual ../manual/waz2.in
