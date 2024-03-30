@@ -6,7 +6,7 @@ use_solution cheat.cpp
 
 # Generate answers to sample cases
 samplegroup
-limits maxn=10
+limits maxN=10
 sample 1
 
 group group1 6
