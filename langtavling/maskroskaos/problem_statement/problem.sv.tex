@@ -1,0 +1,41 @@
+\problemname{Interactive problem}
+\noindent
+
+Innan Gösta dog av ålderdom kom vetenskapsmän på hur man kan göra människor odödliga. Hur detta gick till lämnas som en
+kluring till läsaren. Efter $N$ år har gösta äntligen fylla sin åker med maskrosor (se \textit{Maskrosor}). Intressant nog
+verkar de nya maskrosorna varje år vara smått annorlunda från tidigare år. De är så annorlunda att det finns $N$ olika sorters
+maskrosor. Efter en del möda har Gösta lyckats plocka exakt $2$ stycken maskrosor av varje sort. Precis när han skulle börja
+analysera de, så råkar han snubbla och blanda ihop alla maskrosorna. Katastrof!
+
+Eftersom maskrosorna inte förändrats särskilt mycket visuellt kommer han behöva använda sin pollen-analys-maskin (PAM). 
+Denna fungerar genom att låta alla maskrosor i den blomma, och kan sedan analysera pollenet i den för att räkna antalet
+unika sorters maskrosor som finns i den. Detta beror på att mängden pollen kan variera väldigt mycket från maskros till maskros,
+vilket leder till att den inte skilja på om det finns en eller två av samma sorts maskros i den. 
+
+\section*{Indata}
+Den första raden innehåller heltalet $N$ ($1 \leq N \leq 43000$), antalet år som Gösta plockade maskrosor från.
+
+Därefter följer tre rader som vardera beskriver en rad av rutnätet. Den $i$:te raden innehåller heltalen
+$c_1, c_2, \dots, c_N$ ($0 \leq c_j \leq c_N$), avståndet mellan svansen och ormens kroppssegment på rad $i$ och kolumn $j$.
+Om $c_j$ är $0$ betyder det att Olle glömde vad $c_j$ är. Alla $c_j$ som inte är $0$ är parvis unika. Det är även garanterat att det
+finns minst en giltig lösning.
+
+\section*{Utdata}
+Skriv ut $3$ rader med $N$ heltal vardera, som beskriver en giltig vinnande orm. Varje heltal mellan $1$ och $N \cdot 3$
+måste förekomma exakt en gång. För varje $i$ mellan $1$ och $N \cdot 3 - 1$ måste segmentet med tal $i$ ligga ovanför, nedanför,
+till vänster eller höger relativt segmentet med tal $i+1$.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $15$         & $N \leq 10$  \\ \hline
+  $2$    & $25$         & $N \leq 40$ \\ \hline
+  $3$    & $30$         & $N \leq 300$ \\ \hline
+  $4$    & $30$         & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
+
