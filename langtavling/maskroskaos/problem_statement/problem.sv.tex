@@ -103,3 +103,42 @@ Om ditt program är rätt skriver den ut "Accepted. Queries: $q$", där $q$ är 
 
 Om ditt program är inkorrekt skriver den ut "WA. $e$", där $e$ är felet ditt program gjorde. Om ditt program har flera
 fel kommer den skriva ut det första felet du gör.
+
+\section*{Exempel-interaktion}
+
+Betrakta följande indata till domaren:
+\begin{verbatim}
+3
+1 5
+2 4
+3 6
+\end{verbatim}
+
+En giltig interaktion som löser problem kan se ut som följande:
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      Call & Return \\
+      \hline
+      Solve(3) & (none) \\
+      \hline
+      Query(1) & 1 \\
+      \hline
+      Query(2) & 2 \\
+      \hline
+      Query(5) & 2 \\
+      \hline
+      Query(1) & 2 \\
+      \hline
+      Answer(1, 5) & (none) \\
+      \hline
+      Answer(2, 4) & (none) \\
+      \hline
+      Answer(3, 6) & (none) \\
+      \hline
+  \end{tabular}
+\end{table}
+
+
