@@ -32,32 +32,34 @@ Your solution to the problem must be written in C++. It should include the file 
 You shall \textbf{not} create a main-function. Instead, you shall implement the function\\
 
 \begin{itemize}
-  \item void Solve(int $N$)\\
+  \item \texttt{void Solve(int $N$)}\\
   This function is called once for each testcase, and serves as the main function of your program.
   \begin{itemize}
     \item The parameter $N$ ($1 \leq N \leq 43000$) is the number of kinds of species that Gösta has collected.
   \end{itemize}
   Your program can use the following functions to solve the problem.
   \begin{itemize}
-    \item int Query(int $x$)\\
+    \item \texttt{int Query(int $x$)}\\
     Where $x$ ($1 \leq X \leq 2N$) is the index of one the $2N$ dandelions. If $x$ is not present in the machine, it is inserted.
     If $x$ is already present in the machine, it is removed. The return value is the number of unique species of dandelions present
     in the machine after $x$ has been inserted or removed.
     If you call this function more than $10^6$ or call it with an $x$ that does not satisfy $1 \leq x \leq 2N$,
     you get \textbf{Wrong Answer}.
-    \item int Answer(int a, int b)\\
+    \item \texttt{int Answer(int a, int b)}\\
     When you call this function, you claim that the dandelions with index $a$ and $b$ are of the same species.
     If you do any of the following, you will get \textbf{Wrong Answer}.
     \begin{itemize}
-      \item If Answer is called with the same dandelion more than once. For example, the call Answer(1,2) followed by
-      Answer(1,3) will give you \textbf{Wrong Answer} because $1$ is present in both.
+      \item If \texttt{Answer} is called with the same dandelion more than once. For example, the call \texttt{Answer(1,2)}
+      followed by \texttt{Answer(1,3)} will give you \textbf{Wrong Answer} because $1$ is present in both.
       \item $1 \leq a,b \leq 2N$ is not satisfied.
       \item The dandelions with index $a$ and $b$ are not of the same species.
-      \item When you return from solve, you have not called Answer exactly $N$ times. 
+      \item When you return from \texttt{solve}, you have not called \texttt{Answer} exactly $N$ times. 
     \end{itemize}
   \end{itemize}
 \end{itemize}
 
+\textbf{Notera:} the functions \texttt{Query} and \texttt{Answer} should be called from the function \texttt{Solve}.
+(Se example code in \texttt{maskroskaos.cpp})
 
 \section*{Scoring}
 Your solution will be tested on a set of test groups, each worth a number of points. 
@@ -107,8 +109,8 @@ The sample judge will read input in the following format:
 \end{itemize}
 
 \section*{Output format of sample judge}
-If your program is solved the test case, the judge will write "Accepted. Queries: $q$", where $q$ is the number
-of times your program called Query.
+If your program solved the test case, the judge will write "Accepted. Queries: $q$", where $q$ is the number
+of times your program called \texttt{Query}.
 
 If your program incorrect, it will write "WA. $e$", where $e$ is the mistake your program made. If your program has
 multiple errors, it will only write the first error it made.
