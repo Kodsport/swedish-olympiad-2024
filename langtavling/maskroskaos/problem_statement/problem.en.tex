@@ -12,16 +12,16 @@ begin analyzing them, he accidentally stumbles and mixes all the dandelions toge
 Since the dandelions are very visually similar, he will need to use his pollen analysis machine. It works by
 allowing all the dandelions in it to bloom, and then it can analyze the pollen. It can then determine the
 number of unique species of dandelions present. Unfortunately, it cannot dintinguish whether there is one or two
-of a particular species, as the amount of pollen can vary greatly from dandelion to dandelion. He has numbered
+of a particular species, as the amount of pollen can vary greatly from one dandelion to another. He has numbered
 all his dandelions from $1$ to $2N$.
 
-There are two ways in which he can use the machine:
+There are two ways in which you can use the machine:
 \begin{itemize}
   \item Insert a dandelion into the machine.
   \item Remove a dandelion from the machine (that is already inside of it).
 \end{itemize}
 
-After he inserts or removes a dandelion from the machine, he immediately finds out the number of unique species
+After you insert or remove a dandelion from the machine, you immediately find out the number of unique species
 of dandelions present in it. Gösta now wants your help to use the machine to find which pairs of dandelions
 are of the same species. Since he is immortal, he is not in a hurry, but still wants to finish within a
 "reasonable" time. Therefore, he can accept that you use the machine at most one million ($10^6$) times.
@@ -29,7 +29,7 @@ are of the same species. Since he is immortal, he is not in a hurry, but still w
 
 \section*{Implementation}
 Your solution to the problem must be written in C++. It should include the file \textbf{maskroskaos.h}. 
-You shall \textbf{not} create a main-function. Instead, you shall implement the function\\
+You shall \textbf{not} create a main function. Instead, you shall implement the function\\
 
 \begin{itemize}
   \item \texttt{void Solve(int $N$)}\\
@@ -53,12 +53,12 @@ You shall \textbf{not} create a main-function. Instead, you shall implement the 
       followed by \texttt{Answer(1,3)} will give you \textbf{Wrong Answer} because $1$ is present in both.
       \item $1 \leq a,b \leq 2N$ is not satisfied.
       \item The dandelions with index $a$ and $b$ are not of the same species.
-      \item When you return from \texttt{solve}, you have not called \texttt{Answer} exactly $N$ times. 
+      \item You return from \texttt{solve} without having called \texttt{Answer} exactly $N$ times. 
     \end{itemize}
   \end{itemize}
 \end{itemize}
 
-\textbf{Notera:} the functions \texttt{Query} and \texttt{Answer} should be called from the function \texttt{Solve}.
+\textbf{Note:} the functions \texttt{Query} and \texttt{Answer} should be called from the function \texttt{Solve}.
 (Se example code in \texttt{maskroskaos.cpp})
 
 \section*{Scoring}
@@ -71,7 +71,7 @@ To get the points for a test group you need to solve all test cases in the test 
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
   $1$    & $6$         & $N \leq 100$  \\ \hline
-  $2$    & $25$        & $N \leq 15000$. For each pair $a$, $b$ where $a$ and $b$ are of the same species, it holds that
+  $2$    & $25$        & $N \leq 15000$, for each pair $a$, $b$ where $a$ and $b$ are of the same species, it holds that
   $1 \leq a \leq N$ and $N+1 \leq b \leq 2N$. \\ \hline
   $3$    & $9$         & $N \leq 15000$ \\ \hline
   $4$    & $30$        & $N \leq 38000$ \\ \hline
@@ -132,7 +132,7 @@ A valid interaction that solves the problem can be as follows:
   \centering
   \begin{tabular}{|c|c|}
       \hline
-      Call & Return \\
+      \textbf{Call} & \textbf{Return} \\
       \hline
       Solve(3) & (none) \\
       \hline

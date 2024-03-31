@@ -14,13 +14,13 @@ antalet unika arter maskrosor som finns i den. Den kan tyvärr inte avgöra om d
 eftersom mängden pollen kan variera väldigt mycket från maskros till maskros. Han har numrerat alla sina maskrosor
 från $1$ till $2N$. 
 
-För att använda maskinen kan du göra två saker:
+Det finns två sätt som du kan använda maskinen på:
 \begin{itemize}
   \item Lägga in en maskros i maskinen.
   \item Ta ut en maskros ur maskinen (som redan finns i den).
 \end{itemize}
 
-Efter att han lägger in eller tar ut en maskros ur maskinen får han direkt reda på antalet unika arter maskrosor
+Efter att du lägger in eller tar ut en maskros ur maskinen får du direkt reda på antalet unika arter maskrosor
 som finns i den.
 Gösta vill nu ha din hjälp att använda maskinen för att hitta vilka par av maskrosor som är av samma art.
 Eftersom han är odödlig har han inte bråttom, men vill ändå bli färdig inom "rimlig" tid. Därför kan han acceptera
@@ -40,11 +40,11 @@ Du ska \textbf{inte} skapa en main-funktion. Istället ska du implementera funkt
   \begin{itemize}
     \item \texttt{int Query(int x)}\\
     Där $x$ ($1 \leq X \leq 2N$) är indexet av en de $2N$ maskrosorna. Om $x$ inte finns i maskinen läggs den in. Om $x$ redan finns
-    i maskinen tas den ut. Dess returvärde är antalet unika arter av maskrosor i den efter att $x$ lagts in eller tagits ut.
+    i maskinen tas den ut. Dess returvärde är antalet unika arter av maskrosor i maskinen efter att $x$ lagts in eller tagits ut.
     Om du anropar denna funktion mer än $10^6$ gånger eller anger ett $x$ som inte tillfredställer $1 \leq x \leq 2N$
     får du \textbf{Wrong Answer}.
     \item \texttt{int Answer(int a, int b)}\\
-    När du anropar denna funktionen hävdar du att maskrosorna med index $a$ och $b$ är av samma art. Om du gör något av följande händer
+    När du anropar denna funktionen hävdar du att maskrosorna med index $a$ och $b$ är av samma art. Om du gör något av följande
     får du \textbf{Wrong Answer}.
     \begin{itemize}
       \item Om \texttt{Answer} anropas med samma maskros mer än en gång. Exempelvis kommer anropet \texttt{Answer(1,2)} följt av
@@ -67,7 +67,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   \hline
   \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
   $1$    & $6$         & $N \leq 100$  \\ \hline
-  $2$    & $25$        & $N \leq 15000$. För varje par $a$, $b$ där $a$ och $b$ är av samma art gäller det att
+  $2$    & $25$        & $N \leq 15000$, för varje par $a$, $b$ där $a$ och $b$ är av samma art gäller det att
   $1 \leq a \leq N$ och $N+1 \leq b \leq 2N$. \\ \hline
   $3$    & $9$         & $N \leq 15000$ \\ \hline
   $4$    & $30$        & $N \leq 38000$ \\ \hline
@@ -101,7 +101,7 @@ Exempeldomaren läser indata på följande format:
   index $a$ och $b$ är av samma art. 
 \end{itemize}
 
-\section*{Udataformat för exempeldomaren}
+\section*{Utdataformat för exempeldomaren}
 Om ditt program klarade testfallet skriver den ut "Accepted. Queries: $q$", där $q$ är antalet gånger ditt program anropade \texttt{Query}.
 
 Om ditt program är inkorrekt skriver den ut "WA. $e$", där $e$ är felet ditt program gjorde. Om ditt program har flera
