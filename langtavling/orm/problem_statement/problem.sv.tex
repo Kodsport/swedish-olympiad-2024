@@ -10,8 +10,8 @@ föreställa sig att ormens kropp förflyttat sig en ruta. Under spelets gång k
 Om ormens huvud åker på ett äpple så försvinner äpplet, men segmentet längst bort från huvudet försvinner inte. Med andra ord
 ökar ormens längd med $1$.
 
-Om ormen fyller upp hela rutnätet har man vunnit spelet, eftersom man inte längre kan göra ormen längre. När Olle vill skryta för
-sina vänner att han äntligen vunnit Orm, så tror de honom inte. För att övertyga sina kompisar tänker Olle rita upp hur hans Orm
+Om ormen fyller upp hela rutnätet har man vunnit spelet, eftersom man inte längre kan öka ormens längd. När Olle vill skryta för
+sina vänner att han äntligen vunnit Orm, så tror de honom inte. För att övertyga sina kompisar tänker Olle rita upp hur hans orm
 såg ut när han vann. Tyvärr kommer han inte ihåg exakt hur den såg ut. Han kommer dock ihåg hur långt vissa rutor befann sig från
 svansen (segmentet längst bort från huvudet). Givet en del av dessa avstånd, kan du hitta hur Olles orm såg ut?
 
@@ -19,7 +19,7 @@ svansen (segmentet längst bort från huvudet). Givet en del av dessa avstånd, 
   \begin{figure}[h]
       \centering
       \includegraphics[width=0.8\textwidth]{snake.png}
-      \caption{Bilden visar ett möjligt sätt som ormen kan se ut i exempelfall 1.}
+      \caption{Bilden hur ormen ser ut i exempelfall 1. För detta rutnätet är det den enda giltiga ormen.}
   \end{figure}
 \end{centering}
 
@@ -34,7 +34,8 @@ finns minst en giltig lösning.
 \section*{Utdata}
 Skriv ut $3$ rader med $N$ heltal vardera, som beskriver en giltig vinnande orm. Varje heltal mellan $1$ och $N \cdot 3$
 måste förekomma exakt en gång. För varje $i$ mellan $1$ och $N \cdot 3 - 1$ måste segmentet med tal $i$ ligga ovanför, nedanför,
-till vänster eller höger relativt segmentet med tal $i+1$.
+till vänster eller höger relativt segmentet med tal $i+1$. Om det finns flera giltiga ormar kan du skriva ut
+vilken giltig orm som helst.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.

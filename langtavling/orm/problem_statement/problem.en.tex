@@ -3,15 +3,15 @@
 Yesterday, little Olle won the famous game \textit{Snake} for the first time. 
 In Snake, there is a $3 \times N$ grid. The player controls a snake consisting of several segments. 
 Initially, the snake consists of a single segment, which we call its head. 
-Every second, the head can move up, down, right, or left. If the head collides with another segment, the game is lost. 
+Every second, the head can move up, down, left, or right. If the head collides with another segment, the game is lost. 
 After the head moves, the snake loses the segment furthest from the head (the oldest segment belonging to the snake). 
 In other words, one can imagine the snake's body moving one square. During the game, apples will appear on certain squares. 
-If the snake's head lands on an apple, the apple disappears, but the segment furthest from the head does not disappear. 
+If the snake's head enters a square with an apple, the apple disappears, but the segment furthest from the head does not disappear. 
 In other words, the snake's length increases by $1$.
 
 If the snake fills up the entire grid, the game is won because the snake cannot grow any longer. 
 When Olle wants to brag to his friends that he finally won Snake, they don't believe him. 
-To convince his friends, Olle plans to draw how his Snake looked when he won. 
+To convince his friends, Olle plans to draw how his snake looked when he won. 
 Unfortunately, he doesn't remember exactly how it looked. However, he remembers how far certain squares were from the tail (the segment furthest from the head). 
 Given some of these distances, can you find out how Olle's snake looked?
 
@@ -19,7 +19,7 @@ Given some of these distances, can you find out how Olle's snake looked?
   \begin{figure}[h]
       \centering
       \includegraphics[width=0.8\textwidth]{snake.png}
-      \caption{The picture shows one possible way the snake could look like in sample 1.}
+      \caption{The picture the snake looks like in sample 1. For this grid, this is the only valid snake.}
   \end{figure}
 \end{centering}
 
@@ -36,10 +36,11 @@ All $c_j$ that are not $0$ are pairwise unique. It is also guaranteed that there
 
 \section*{Output}
 \noindent
-Print $3$ lines with $N$ integers each, describing a valid winning snake. 
+Print $3$ lines with $N$ integers each, describing a valid winning snake.
 Each integer between $1$ and $N \cdot 3$ must occur exactly once. 
 For each $i$ between $1$ and $N \cdot 3 - 1$, the segment with number $i$ must be above, 
 below, to the left, or to the right relative to the segment with number $i+1$.
+If there are multiple valid snakes, you can print any valid snake.
 
 \section*{Scoring}
 Your solution will be tested on a set of test groups, each worth a number of points. 
