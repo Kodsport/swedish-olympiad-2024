@@ -2,7 +2,7 @@
 #include <vector>
 #include<algorithm>
 #include<cmath>
-#include "interactive.h"
+#include "maskroskaos.h"
 using namespace std;
 
 int used[110000];
