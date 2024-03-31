@@ -43,19 +43,19 @@ Du ska \textbf{inte} skapa en main-funtkion. Istället ska du implementera funkt
     i maskinen tas $x$ ut. Dess returvärde är antalet unika arter av maskrosor i den efter att $x$ lagts in eller tagits ut.
     Om du anropar denna funktion mer än $10^6$ gånger eller anger ett $x$ som inte tillfredställer $1 \leq x \leq 2N$
     får du \textbf{Wrong Answer}.
-    \item \texttt{int answer(int a, int b)}\\
+    \item \texttt{int Answer(int a, int b)}\\
     När du anropar denna funktionen hävdar du att maskrosorna med index $a$ och $b$ är av samma art. Om du gör något av följande händer
     får du \textbf{Wrong Answer}.
     \begin{itemize}
-      \item Om \texttt{answer} anropas med samma par av maskrosor mer än en gång.
+      \item Om \texttt{Answer} anropas med samma par av maskrosor mer än en gång.
       \item $1 \leq a,b \leq 2 \cdot N$ inte tillfredställs.
       \item Maskrosorna med index $a$ och $b$ är av olika art.
-      \item Returnerar från \texttt{Solve} och du har inte anropat \texttt{answer} exakt $N$ gånger. 
+      \item Returnerar från \texttt{Solve} och du har inte anropat \texttt{Answer} exakt $N$ gånger. 
     \end{itemize}
   \end{itemize}
 \end{itemize}
 
-\textbf{Notera:} funktionerna \texttt{Query} och \texttt{answer} ska kallas på i funktionen \texttt{Solve}. (Se exempelkoden i \texttt{maskroskaos.cpp})
+\textbf{Notera:} funktionerna \texttt{Query} och \texttt{Answer} ska kallas på i funktionen \texttt{Solve}. (Se exempelkoden i \texttt{maskroskaos.cpp})
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
