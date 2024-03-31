@@ -1,18 +1,18 @@
 \problemname{Long Bus Trip}
 \noindent
-The travelling pillow round the neck, headphones on, and the music turned up to the highest volume.
-Now everyone is ready for the long bus journey down to the wonderful "Sunset Valley"!
+The travelling pillow is round the neck, headphones are on, and the music is turned up to the highest volume.
+Now everyone is ready for the long bus journey down to the wonderful ``Sunset Valley''!
 
 But oh no! Everyone on the bus seems to have forgotten to bring water,
 and they will become extremely thirsty during the long bus journey.
 But luckily, you own the bus company,
 and you have installed a water tank that all passengers and the driver can drink from.
 
-The bus starts moving at second $0$, and arrives at "Sunset Valley" at second $X$.
+The bus starts moving at second $0$, and arrives at Sunset Valley at second $X$.
 During the journey, there are $N$ water stations where the bus's water tank can be filled.
 The bus will be at the $i$-th water station $(1 \leq i \leq N)$ at second $S_i$.
 
-Initially, there is no water in the water tank, but there is also a water station where the bus starts.
+Initially, there is no water in the water tank. Fortunately, there is at least a water station where the bus starts.
 The cost to fill the water tank is $W$ SEK per liter, regardless of which station the water is filled from.
 We also assume that the time to fill the water tank is negligible.
 
@@ -23,16 +23,16 @@ Thus, passenger $j$ will need 1 liter of water at times $D_j + k\cdot T$ $(k = 0
 Note that $T$ will be the same for all passengers.
 
 If the water tank is empty when a passenger needs water, the passenger will demand to get off the bus.
-If the passenger leaves before reaching "Sunset Valley", you must refund their bus ticket,
+If the passenger leaves before reaching Sunset Valley, you must refund their bus ticket,
 which costs $C_j$ SEK.
 
 The driver also needs to drink water and requires it at seconds $k\cdot T$ $(k = 0,1,2,\ldots)$.
-If the water tank is empty when the driver wants water, the bus will stop running, and no one will be able to go to "Sunset Valley".
+If the water tank is empty when the driver wants water, the bus will stop running, and no one will be able to go to Sunset Valley.
 
 No two passengers will need water at the same time. When the bus arrives at a water station, neither passengers nor the driver will need water.
 
 By determining how much water is filled in the water tank, we want to minimize the sum of the costs from water and refunds, 
-while still being able to drive to "Sunset Valley". Can you calculate the minimum amount of money you can spend and still be able to go there?
+while still being able to drive to Sunset Valley. Can you calculate the minimum amount of money you can spend and still be able to go there?
 
 
 \section*{Input}
@@ -51,7 +51,7 @@ representing that the $j$th passenger will first require water at second $D_j$, 
 
 \section*{Output}
 \noindent
-Print an integer: the minimum cost to be able to drive the bus to "Sunset Valley".
+Print an integer: the minimum cost to be able to drive the bus to Sunset Valley.
 
 \section*{Scoring}
 Your solution will be tested on a set of test groups, each worth a number of points. 
@@ -86,4 +86,4 @@ If we fill the water tank with 7 liters of water before we start driving, and th
 
 A total of 11 liters of water were bought, costing 88 SEK. Only passengers 2 and 3 left and demanded a refund, costing 15 SEK. We pay a total of 103 SEK.
 
-It is impossible to get to "Sunset Valley" for less than 103 SEK.
+It is impossible to get to Sunset Valley for less than 103 SEK.

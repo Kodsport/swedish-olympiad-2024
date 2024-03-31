@@ -5,16 +5,16 @@ Nu är alla redo inför den långa bussresan ner till den underbara ``Sunset Val
 
 Men oj! Alla på bussen verkar ha glömt att ta med sig vatten, 
 och kommer att bli extremt törstiga under den långa bussresan.
-Men som tur är, är det du som äger i bussföretaget, 
+Men som tur är, så är det du som äger bussföretaget, 
 och du har installerat en vattentunna som alla passangerare och chaffören kan dricka vatten ifrån.
 
-Bussen börjar att åka vid sekund $0$, och är framme vid ``Sunset Valley'' vid sekund $X$.
+Bussen börjar att åka vid sekund $0$, och är framme vid Sunset Valley vid sekund $X$.
 Under resan finns det $N$ vattenstationer där man kan fylla bussens vattentunna med vatten. 
 Bussen kommer att vara vid den $i$:te vattenstationen $(1 \leq i \leq N)$ vid sekund $S_i$.
 
-Från början finns inget vatten i vattentunnan, men det finns även en vattenstation där bussen börjar åka ifrån.
-Kostnaden att fylla på vatten i vattentunnan är $W$ kr per liter, oavsett från vilken position man fyller på vatten.
-Vi antar även att vi kan tiden att fylla på vattentunnan är så liten att det försummas.
+Från början finns inget vatten i vattentunnan. Som tur är finns åtminstone en vattenstation där bussen börjar åka ifrån.
+Kostnaden att fylla på vatten i vattentunnan är $W$ kr per liter, oavsett från vilken station man fyller på vatten från.
+Vi antar även att tiden det tar att fylla på vattentunnan är försumbar.
 
 Från början sitter alla $M$ passagerare på bussen. Passagerarna är indexerade från $1$ till $M$.
 Den $j$:te passageraren $(1 \leq j \leq M)$ behöver $1$ liter vatten vid sekund $D_j$. 
@@ -22,20 +22,20 @@ Om passageraren har druckit vatten, kommer den att behöva dricka vatten igen om
 Alltså kommer passagerare $j$ behöva 1 liter vatten vid tiderna $D_j + k\cdot T$ $(k = 0,1,2,\ldots)$.
 Notera att $T$ kommer vara samma för alla passagerare.
 
-Om vattentunnan inte har vatten när en passagerare behöver vatten, kommer passageraren att kräva att gå av bussen.
-Om passageraren lämnar innan att den har kommit fram till ``Sunset Valley'', så måste du återbetala deras bussbiljett,
+Om vattentunnan inte har vatten när en passagerare behöver vatten, så kommer passageraren att kräva att få gå av bussen.
+Om passageraren lämnar innan att den har kommit fram till Sunset Valley, så måste du återbetala deras bussbiljett
 som kostar $C_j$ kr.
 
 Chaffören behöver också dricka vatten, och kräver att få dricka vatten vid sekunderna $k\cdot T$ $(k = 0,1,2,\ldots)$. 
-Om vattentunnan inte har vatten när Chaffören vill ha vatten, då slutar bussen köra, och ingen kommer kunna åka till ``Sunset Valley''.
+Om vattentunnan inte har vatten när Chaffören vill ha vatten så slutar bussen köra och ingen kommer kunna åka till Sunset Valley.
 
-Inga två passagerare kommer behöva vatten samtidigt. När bussen är framme vid en vattenstation, kommer varken passagerare eller chaffören behöva vatten.
+Inga två passagerare kommer behöva vatten samtidigt. När bussen är framme vid en vattenstation, så kommer varken passagerare eller chaffören behöva vatten.
 
-Genom att bestämma hur mycket vatten som fylls på i vattentunnan, vill vi minimera summan av kostnadenerna från
-vatter och återbetalningen, och samtidigt kunna köra till ``Sunset Valley''. Kan du beräkna hur mycket pengar som du kan spendera som minst och ändå kunna åka till ?
+Genom att bestämma hur mycket vatten som fylls på i vattentunnan, vill vi minimera summan av kostnadenerna för
+vatten och återbetalningar, och samtidigt kunna köra till Sunset Valley. Kan du beräkna hur mycket pengar som du
+kan spendera som minst och ändå slutföra resan till Sunset Valley?
 
-%Alla passagerare är så taggade att få åka till ``Sunset Valley'', och ingen vill gå av vid någon annan station. 
-
+%Alla passagerare är så taggade att få åka till Sunset Valley, och ingen vill gå av vid någon annan station. 
 
 
 
@@ -49,10 +49,11 @@ Därefter följer $N$ rader, där den $i$:te ($1 \leq i \leq N$) raden innehåll
 vara framme vid den $i$:te vattenstationen. 
 
 De kommande $M$ raderna innehåller heltalen $D_j$ och $C_j$ ($1 \leq D_j \leq T-1$, $1 \leq C_i \leq 10^9$), vilket representerar
-att den $j$:te passageraren kommer för första gången kräva vatten vid sekund $D_j$, och kostnaden att återbetala till den $j$:te passageraren är $C_j$.
+att den $j$:te passageraren kommer för första gången kräva vatten vid sekund $D_j$, och kostnaden att återbetala
+$j$:te passagerarens biljett är $C_j$.
 
 \section*{Utdata}
-Skriv ut ett heltal: den minsta kostanden för att kunna köra bilen till ``Sunset Valley''.
+Skriv ut ett heltal: den minsta kostanden för att kunna köra buss till Sunset Valley.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -85,5 +86,5 @@ Om vi fyller på 7 liter av vatten i vattentunnan innan vi börjar åka, och sed
 Totalt köptes 11 liter vatten, vilket kostar 88 kr. Endast passagerarna 2 och 3 lämnade och krävde återbetalning, vilket kostar 15 kr.
 Vi betalar totalt 103 kr.
 
-Det är omöjligt att kunna ta sig till ``Sunset Valley'' kostar mindre än 103 kr. 
+Det är omöjligt att kunna ta sig till Sunset Valley för mindre än 103 kr. 
 
