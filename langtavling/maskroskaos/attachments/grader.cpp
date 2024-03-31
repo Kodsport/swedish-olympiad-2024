@@ -6,7 +6,7 @@ using namespace std;
 const int MAX_N = 43000;
 const int MAX_QUERIES = 1000000;
 
-// Namespace makes it so that your program can't see these variables
+// Namespace makes it so that your program can't see these variables and functions
 namespace
 {
 
