@@ -11,7 +11,7 @@ namespace
 {
 
 void WrongAnswer(string why) {
-  cout << "WA. " << why;
+  cout << "WA. " << why << endl;
   exit(0);
 }
 
@@ -78,6 +78,6 @@ int main()
 		WrongAnswer("Did not answer exactly n times");
 	}
 
-	cout << "Accepted. Queries: " << num_queries;
+	cout << "Accepted. Queries: " << num_queries << endl;
 	return 0;
 }

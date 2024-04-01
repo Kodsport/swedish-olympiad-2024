@@ -6,7 +6,8 @@ Nu är alla redo inför den långa bussresan ner till den underbara ``Sunset Val
 Men oj! Alla på bussen verkar ha glömt att ta med sig vatten, 
 och kommer att bli extremt törstiga under den långa bussresan.
 Men som tur är, så är det du som äger bussföretaget, 
-och du har installerat en vattentunna som alla passangerare och chaffören kan dricka vatten ifrån.
+och du har installerat en vattentunna som alla passangerare och chauffören kan dricka vatten ifrån.
+Tack vare tekniska framsteg kan vattentunnan hålla oändligt mycket vatten.
 
 Bussen börjar att åka vid sekund $0$, och är framme vid Sunset Valley vid sekund $X$.
 Under resan finns det $N$ vattenstationer där man kan fylla bussens vattentunna med vatten. 
@@ -26,10 +27,10 @@ Om vattentunnan inte har vatten när en passagerare behöver vatten, så kommer 
 Om passageraren lämnar innan att den har kommit fram till Sunset Valley, så måste du återbetala deras bussbiljett
 som kostar $C_j$ kr.
 
-Chaffören behöver också dricka vatten, och kräver att få dricka vatten vid sekunderna $k\cdot T$ $(k = 0,1,2,\ldots)$. 
-Om vattentunnan inte har vatten när Chaffören vill ha vatten så slutar bussen köra och ingen kommer kunna åka till Sunset Valley.
+Chauffören behöver också dricka vatten, och kräver att få dricka vatten vid sekunderna $k\cdot T$ $(k = 0,1,2,\ldots)$. 
+Om vattentunnan inte har vatten när chauffören vill ha vatten så slutar bussen köra och ingen kommer kunna åka till Sunset Valley.
 
-Inga två passagerare kommer behöva vatten samtidigt. När bussen är framme vid en vattenstation, så kommer varken passagerare eller chaffören behöva vatten.
+Inga två passagerare kommer behöva vatten samtidigt. När bussen är framme vid en vattenstation, så kommer varken passagerare eller chauffören behöva vatten.
 
 Genom att bestämma hur mycket vatten som fylls på i vattentunnan, vill vi minimera summan av kostnadenerna för
 vatten och återbetalningar, och samtidigt kunna köra till Sunset Valley. Kan du beräkna hur mycket pengar som du
@@ -43,7 +44,7 @@ kan spendera som minst och ändå slutföra resan till Sunset Valley?
 \section*{Indata}
 Den första raden innehåller heltalen $X$, $N$, $M$, $W$ och $T$ ($1 \leq T \leq X \leq 10^{12}, 1 \leq N,M \leq 2\cdot 10^5, 1 \leq W \leq 10^6$). 
 Dessa innebär att bussen kommer att vara framme vid destinationen vid sekund $X$, att det finns $N$ vattenstationer, $M$ passagerare i bussen, kostnaden för vatten är $W$ kr per liter, 
-och tidsintervallet för alla passagerare och chaffören att kräva vatten kommer att vara $T$ sekunder.
+och tidsintervallet för alla passagerare och chauffören att kräva vatten kommer att vara $T$ sekunder.
 
 Därefter följer $N$ rader, där den $i$:te ($1 \leq i \leq N$) raden innehåller ett heltal $S_i$ $(1 \leq S_i \leq X-1)$, sekunden som bussen kommer att
 vara framme vid den $i$:te vattenstationen. 
@@ -74,11 +75,11 @@ Om vi fyller på 7 liter av vatten i vattentunnan innan vi börjar åka, och sed
 
 \begin{itemize}
   \item Bussen börjar åka och har 7 liter vatten.
-  \item Chaffören, passagerare 1,2,3,4 dricker 1 liter vatten var vid sekunderna 0,1,2,4 respektive 6. Nu har bussen endast 2 liter vatten kvar.
-  \item Chaffören och passageraren 1 dricker 1 liter vatten var vid sekunderna 7 och 8. Nu finns det 0 liter vatten kvar.
+  \item Chauffören, passagerare 1,2,3,4 dricker 1 liter vatten var vid sekunderna 0,1,2,4 respektive 6. Nu har bussen endast 2 liter vatten kvar.
+  \item Chauffören och passageraren 1 dricker 1 liter vatten var vid sekunderna 7 och 8. Nu finns det 0 liter vatten kvar.
   \item Vid sekund 9 vill passagerare 2 dricka vatten, men det finns inget vatten kvar. Därför lämnar passagerare 2.
   \item Vid sekund 10 fylls vattentunnan med 4 liter vatten, eftersom vi är vid den första vattenstationen. Nu finns 4 liter vatten i vattentunnan.
-  \item Passagerarna 3, 4, chaffören och passagerare 1 dricker 1 liter var vid sekunderna 11, 13, 14, 15. Nu finns 0 liter vatten kvar.
+  \item Passagerarna 3, 4, chauffören och passagerare 1 dricker 1 liter var vid sekunderna 11, 13, 14, 15. Nu finns 0 liter vatten kvar.
   \item Vid sekund 18 vill passagerare 3 ha vatten, men det finns inget. Därför lämnar passagerare 3.
   \item Vid sekund 19 är bussen framme vid destinationen.
 \end{itemize}
