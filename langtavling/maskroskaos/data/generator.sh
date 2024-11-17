@@ -4,14 +4,9 @@
 ulimit -s unlimited
 use_solution cheat.cpp
 
-# Generate answers to sample cases
-samplegroup
-limits maxN=10
-sample 1
 
 group group1 6
 limits maxN=100
-tc 1
 tc_manual ../manual/01-01.txt
 tc_manual ../manual/01-02.txt
 tc_manual ../manual/01-03.txt

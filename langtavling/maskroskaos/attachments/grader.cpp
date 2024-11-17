@@ -6,12 +6,12 @@ using namespace std;
 const int MAX_N = 43000;
 const int MAX_QUERIES = 1000000;
 
-// Namespace makes it so that your program can't see these variables
+// Namespace makes it so that your program can't see these variables and functions
 namespace
 {
 
 void WrongAnswer(string why) {
-  cout << "WA. " << why;
+  cout << "WA. " << why << endl;
   exit(0);
 }
 
@@ -78,6 +78,6 @@ int main()
 		WrongAnswer("Did not answer exactly n times");
 	}
 
-	cout << "Accepted. Queries: " << num_queries;
+	cout << "Accepted. Queries: " << num_queries << endl;
 	return 0;
 }

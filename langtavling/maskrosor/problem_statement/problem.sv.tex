@@ -8,7 +8,7 @@ som säljer maskrosläsk. För att göra detta kommer han självklart behöva en
 intill varandra. Mer exakt, om man delar upp ängen i rutor av storlek $1 \times 1$ meter, så kan det växa
 som mest en maskrosa innanför varje.
 
-Just nu växer det maskrosor på $N$ stycken celler. Gösta vill att hans äng ska ha en maskrosa i varje ruta. 
+Just nu växer det maskrosor i $N$ stycken rutor. Gösta vill att hans äng ska ha en maskrosa i varje ruta. 
 En gång om året blommar maskrosorna, och han kan då använda en stor fläkt för att blåsa antingen från väst,
 öst, norr eller syd. Varje blommande maskrosas frön kommer då att röra sig en ruta i riktningen av vinden.
 Om rutan den landar på är tom kommer det växa en maskrosa på den nästa år. Om det redan finns en maskrosa
@@ -21,7 +21,7 @@ Den första raden innehåller heltalen $R$ och $C$ ($1 \leq R,C \leq 10^9$), ant
 Därefter följer en rad med heltalet $N$ ($1 \leq N \leq 300$), antalet maskrosor i ängen just nu.
 
 De kommande $N$ radera innehåller heltalen $r_i$ och $c_i$ ($1 \leq r_i \leq R$, $1 \leq c_i \leq C$), vilket betyder
-att det till en början växer en maskros i cellen ($r_i, c_i$). I början växer aldrig två maskrosor på samma ruta.
+att det till en början växer en maskros i rutan ($r_i, c_i$). I början växer aldrig två maskrosor på samma ruta.
 
 \section*{Utdata}
 Skriv ut ett heltal: det minsta antalet år för att fylla hela ängen med maskrosor om vindriktningarna väljs optimalt.
@@ -50,7 +50,7 @@ Till en början finns maskrosor på följande rutor:
       \includegraphics[width=0.8\textwidth]{t0.png}
   \end{figure}
 \end{centering}
-Om vi blåser vind från söder sprids maskrosorna till västerut:
+Om vi blåser vind från söder sprids maskrosorna västerut:
 \begin{centering}
   \begin{figure}[h]
       \centering

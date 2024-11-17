@@ -1,26 +1,65 @@
 \problemname{Dandelion Chaos}
 \noindent
 
-TODO
+Before Gösta died of old age, scientists discovered how to make people immortal. How this was achieved
+is left as an exercise for the reader. Gösta has a meadow of dandelions. After a long wait, it is finally
+fully grown, and he can now create dandelion soda with the dandelions (see \textit{Dandelions}). Interestingly,
+not all dandelions are exactly the same: he has discovered that there are $N$ different species of dandelions
+in his meadow. Naturally, he now wants to know if certain dandelion species create tastier soda than others.
+After some effort, Gösta has managed to pick exactly $2$ specimens of each species. Just as he was about to
+begin analyzing them, he accidentally stumbles and mixes all the dandelions together. Disaster!
+
+Since the dandelions are very visually similar, he will need to use his pollen analysis machine. It works by
+allowing all the dandelions in it to bloom, and then it can analyze the pollen. It can then determine the
+number of unique species of dandelions present. Unfortunately, it cannot dintinguish whether there is one or two
+of a particular species, as the amount of pollen can vary greatly from one dandelion to another. He has numbered
+all his dandelions from $1$ to $2N$.
+
+There are two ways in which you can use the machine:
+\begin{itemize}
+  \item Insert a dandelion into the machine.
+  \item Remove a dandelion from the machine (that is already inside of it).
+\end{itemize}
+
+After you insert or remove a dandelion from the machine, you immediately find out the number of unique species
+of dandelions present in it. Gösta now wants your help to use the machine to find which pairs of dandelions
+are of the same species. Since he is immortal, he is not in a hurry, but still wants to finish within a
+"reasonable" time. Therefore, he can accept that you use the machine at most one million ($10^6$) times.
 
 
+\section*{Implementation}
+Your solution to the problem must be written in C++. It should include the file \textbf{maskroskaos.h}. 
+You shall \textbf{not} create a main function. Instead, you shall implement the function\\
 
-\section*{Input}
-\noindent
-The first line contains two integers $N$ and $M$ ($1 \leq N \leq 1000$, $1 \leq M \leq 200$), 
-representing the number of signs your friends have seen and the number of villages in Lund, respectively.
+\begin{itemize}
+  \item \texttt{void Solve(int $N$)}\\
+  This function is called once for each testcase, and serves as the main function of your program.
+  \begin{itemize}
+    \item The parameter $N$ ($1 \leq N \leq 43000$) is the number of kinds of species that Gösta has collected.
+  \end{itemize}
+  Your program can use the following functions to solve the problem.
+  \begin{itemize}
+    \item \texttt{int Query(int $x$)}\\
+    Where $x$ ($1 \leq X \leq 2N$) is the index of one the $2N$ dandelions. If $x$ is not present in the machine, it is inserted.
+    If $x$ is already present in the machine, it is removed. The return value is the number of unique species of dandelions present
+    in the machine after $x$ has been inserted or removed.
+    If you call this function more than $10^6$ or call it with an $x$ that does not satisfy $1 \leq x \leq 2N$,
+    you get \textbf{Wrong Answer}.
+    \item \texttt{int Answer(int a, int b)}\\
+    When you call this function, you claim that the dandelions with index $a$ and $b$ are of the same species.
+    If you do any of the following, you will get \textbf{Wrong Answer}.
+    \begin{itemize}
+      \item If \texttt{Answer} is called with the same dandelion more than once. For example, the call \texttt{Answer(1,2)}
+      followed by \texttt{Answer(1,3)} will give you \textbf{Wrong Answer} because $1$ is present in both.
+      \item $1 \leq a,b \leq 2N$ is not satisfied.
+      \item The dandelions with index $a$ and $b$ are not of the same species.
+      \item You return from \texttt{solve} without having called \texttt{Answer} exactly $N$ times. 
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
 
-The following $N$ lines of input each contain $M$ integers. The $i$-th line contains the integers $d_{i,1}, d_{i,2}, \ldots, d_{i,M}$ ($1 \leq d_{i,j} \leq 10^6$). 
-So, on the $i$-th sign, it indicates that the distance from sign $i$ to village $j$ rounded down is $d_{i,j}$ for all $1 \leq j \leq M$.
-
-\section*{Output}
-\noindent
-First, output on a single line an integer $t$, the maximum number of consistent signs.
-On the second line, output $t$ integers specifying the indices in sorted order such that the first sign is the farthest from Gothenburg and all villages in Lund, 
-and the last sign is the closest to Gothenburg and the all villages in Lund.
-Since people in the society get confused when things are $0$-indexed, we want the signs to be $1$-indexed. 
-So, the first sign in the input is indexed as $1$, and the last sign with index $N$.
-If there are multiple valid solutions, your program can output any of these possible solutions.
+\textbf{Note:} the functions \texttt{Query} and \texttt{Answer} should be called from the function \texttt{Solve}.
+(Se example code in \texttt{maskroskaos.cpp})
 
 \section*{Scoring}
 Your solution will be tested on a set of test groups, each worth a number of points. 
@@ -31,27 +70,87 @@ To get the points for a test group you need to solve all test cases in the test 
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
-  $1$    & $21$         & $N \leq 15, M \leq 50$.  \\ \hline
-  $2$    & $31$         & $N \leq 100, M \leq 50$ \\ \hline
-  $3$    & $18$         & $N \leq 500, M \leq 50$ \\ \hline
-  $4$    & $30$         & No additional constraints. \\ \hline
+  $1$    & $6$         & $N \leq 100$  \\ \hline
+  $2$    & $25$        & $N \leq 15000$, for each pair $a$, $b$ where $a$ and $b$ are of the same species, it holds that
+  $1 \leq a \leq N$ and $N+1 \leq b \leq 2N$. \\ \hline
+  $3$    & $9$         & $N \leq 15000$ \\ \hline
+  $4$    & $30$        & $N \leq 38000$ \\ \hline
+  $5$    & $5$         & $N \leq 39000$ \\ \hline
+  $6$    & $5$         & $N \leq 40000$ \\ \hline
+  $7$    & $5$         & $N \leq 41000$ \\ \hline
+  $8$    & $5$         & $N \leq 42000$ \\ \hline
+  $9$    & $10$        & $N \leq 43000$ \\ \hline
+
 \end{tabular}
 
 
+\section*{Testing your solution}
+To facilitate testing of your program, we provide a sample program and a sample judge. These can be downloaded from
+the attachments at the bottom of the page.
 
-\section*{Explanation of sample 1:}
-Imagine a number line on the $x$-axis.
-The second sign can be placed at position $x = 1$, 
-and the first sign at position $x = 1\frac{1}{2}$, 
-the first village at position $x = 3\frac{1}{2}$, 
-and the second village at $x = 4$.
+To test the program, you can execute the following command:
+\begin{itemize}
+  \item g++ -o grader grader.cpp maskroskaos.cpp
+\end{itemize}
 
-It's also possible to find a construction with signs number 1 and 3.
+This will create the file "grader", which you can then run to test the program. Note that this sample judge differs
+from the judge used for the task. However, it is guaranteed that the real judge is \textbf{not} adaptive. This means
+that the answer is determined before your program is run, and it cannot change it during runtime. Your program must
+\textbf{not} read from or write to standard input/output (i.e. reading or writing to the terminal). Doing so
+will likely cause confusing errors.
 
-It's clear that signs 1 and 2 contradict each other, which means that there's no construction where all 3 signs are used.
 
-\section*{Comment on sample 2:}
-Note that all signs round down the distance to different numbers, even though all signs point to the same village.
+\section*{Input format of sample judge}
+The sample judge will read input in the following format:
+\begin{itemize}
+  \item One line with with the integer $N$.
+  \item $N$ lines that each contain the integers $a$ and $b$ ($1 \leq a,b \leq 2N$). This means that the dandelions with
+  index $a$ and $b$ are of the same species. 
+\end{itemize}
 
-\section*{Comment on sample 3:}
-Note that all pairs of signs lead to a contradiction; any arbitrary sign would be a correct answer in this case.
+\section*{Output format of sample judge}
+If your program solved the test case, the judge will write "Accepted. Queries: $q$", where $q$ is the number
+of times your program called \texttt{Query}.
+
+If your program incorrect, it will write "WA. $e$", where $e$ is the mistake your program made. If your program has
+multiple errors, it will only write the first error it made.
+
+
+\section*{Example interaction}
+
+Consider the following input to the judge:
+\begin{verbatim}
+3
+1 5
+2 4
+3 6
+\end{verbatim}
+
+A valid interaction that solves the problem can be as follows:
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|c|c|}
+      \hline
+      \textbf{Call} & \textbf{Return} \\
+      \hline
+      Solve(3) & (none) \\
+      \hline
+      Query(1) & 1 \\
+      \hline
+      Query(2) & 2 \\
+      \hline
+      Query(5) & 2 \\
+      \hline
+      Query(1) & 2 \\
+      \hline
+      Answer(1, 5) & (none) \\
+      \hline
+      Answer(2, 4) & (none) \\
+      \hline
+      Answer(3, 6) & (none) \\
+      \hline
+  \end{tabular}
+\end{table}
+
+
