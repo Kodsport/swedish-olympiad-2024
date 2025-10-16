@@ -2,42 +2,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-#define int ll
-const int inf = int(1e18);
+using ll = long long;
+using vi = vector<ll>;
+using vvi = vector<vi>;
+using p2 = pair<ll, ll>;
+const ll inf = 1e18;
 
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef pair<int, int> p2;
+#define rep(i,n) for (ll i = 0; i < (n); i++)
+#define repp(i,a,n) for (ll i = (a); i < (n); i++)
+#define repe(i, arr) for (auto& i : arr)
+#define all(x) begin(x),end(x)
+#define sz(x) ((ll)(x).size())
 
-#define rep(i, high) for (int i = 0; i < high; i++)
-#define repp(i, low, high) for (int i = low; i < high; i++)
-#define repe(i, container) for (auto& i : container)
-#define per(i, high) for (int i = high-1; i >= 0; i--)
-
-#if _MSC_VER > 0
-#define deb __debugbreak();
-#define assert(x) debassert(x)
-#define popcount(x) __popcnt(x)
-#define clz(x) _lzcnt_u32(x)
-#else
-#define clz(x) __builtin_clz(x)
-#define deb ;
-#define popcount(x) __builtin_popcountll(x)
-#endif
-
-inline void fast() { ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL); }
-
-#ifdef _DEBUG
-#define debassert(expr) if(!(expr)) deb;
-#else
-#define debassert(expr) ;
-#endif
-
-#define all(a) a.begin(),a.end()
-#define rall(a) a.rbegin(),a.rend()
-#define setcontains(set, x) (set.find(x) != set.end())
-#define sz(container) ((int)container.size())
 vector<p2> dirs = { {0,1},{0,-1},{1,0},{-1,0} };
 
 vvi nodeindex;
@@ -167,9 +143,9 @@ bool walkto(int u, int p, int t, vvi& treeadj, vi& color, vi& nodes)
 
 
 
-signed main()
+int main()
 {
-	fast();
+	cin.tie(0)->sync_with_stdio(0);
 
 	int n, m;
 	cin >> n >> m;
@@ -179,7 +155,7 @@ signed main()
 	cin >> retstart;
 	vector<string> grid(n);
 	rep(i, n) cin >> grid[i];
-	nodeindex.resize(n, vector<int>(m));
+	nodeindex.resize(n, vi(m));
 	int ind = 0;
 	vector<p2> position;
 	rep(i, n) rep(j, m)
