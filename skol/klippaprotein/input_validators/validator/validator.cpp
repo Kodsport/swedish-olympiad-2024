@@ -1,8 +1,6 @@
 #include "validator.h"
 
-
 using namespace std;
-
 
 void run() {
 	string s = Line();
