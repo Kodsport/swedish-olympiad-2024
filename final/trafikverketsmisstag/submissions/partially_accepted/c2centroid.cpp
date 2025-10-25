@@ -1,43 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-#define int ll
-const int inf = int(1e18);
+using ll = long long;
+using vi = vector<ll>;
+using vvi = vector<vi>;
+using p2 = pair<ll, ll>;
+const ll inf = 1e18;
 
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef pair<int, int> p2;
-
-#define rep(i, high) for (int i = 0; i < high; i++)
-#define repp(i, low, high) for (int i = low; i < high; i++)
-#define repe(i, container) for (auto& i : container)
-#define per(i, high) for (int i = high-1; i >= 0; i--)
-
-#if _MSC_VER > 0
-#define deb __debugbreak;
-#define assert(x) debassert(x)
-#define popcount(x) __popcnt(x)
-#define clz(x) _lzcnt_u32(x)
-#else
-#define clz(x) __builtin_clz(x)
-#define deb ;
-#define popcount(x) __builtin_popcountll(x)
-#endif
-
-inline void fast() { ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL); }
-
-#ifdef _DEBUG
-#define debassert(expr) if(!(expr)) deb;
-#else
-#define debassert(expr) ;
-#endif
-
-#define all(a) a.begin(),a.end()
-#define rall(a) a.rbegin(),a.rend()
-#define setcontains(set, x) (set.find(x) != set.end())
-#define sz(container) ((int)container.size())
-
+#define rep(i,n) for (ll i = 0; i < (n); i++)
+#define repp(i,a,n) for (ll i = (a); i < (n); i++)
+#define repe(i, arr) for (auto& i : arr)
+#define all(x) begin(x),end(x)
+#define sz(x) ((ll)(x).size())
 
 template<class T>
 struct RMQ {
@@ -51,14 +25,15 @@ struct RMQ {
 	}
 	T query(int a, int b) {
 		assert(a < b); // or return inf if a == b
-		int dep = 31 - clz(b - a);
+		int dep = 31 - __builtin_clz(b - a);
 		return min(jmp[dep][a], jmp[dep][b - (1 << dep)]);
 	}
 };
 
 struct LCA {
 	int T = 0;
-	vi time, path, ret;
+	vi time, path;
+	vector<int> ret;
 	RMQ<int> rmq;
 
 	LCA(vector<vi>& C) : time(sz(C)), rmq((dfs(C, 0, -1), ret)) {}
@@ -136,7 +111,7 @@ int dfs2(int u, int p, vvi& edges)
 		largest[u] = max(largest[u], s);
 		subtree[u] += s;
 	}
-	largest[u] = max(largest[u], sz(edges) - subtree[u]);
+	largest[u] = max(largest[u], (int)sz(edges) - subtree[u]);
 	return subtree[u];
 }
 int depth[maxn];
@@ -151,9 +126,9 @@ struct squirrel
 	int start, goal, index;
 };
 
-signed main()
+int main()
 {
-	fast();
+	cin.tie(0)->sync_with_stdio(0);
 
 	int n, s;
 	cin >> n >> s;

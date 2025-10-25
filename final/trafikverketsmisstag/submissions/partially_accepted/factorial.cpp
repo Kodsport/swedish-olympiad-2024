@@ -1,38 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-#define int ll
-const int inf = int(1e18);
+using ll = long long;
+using vi = vector<ll>;
+using vvi = vector<vi>;
+using p2 = pair<ll, ll>;
+const ll inf = 1e18;
 
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef pair<int, int> p2;
-
-#define rep(i, high) for (int i = 0; i < high; i++)
-#define repp(i, low, high) for (int i = low; i < high; i++)
-#define repe(i, container) for (auto& i : container)
-#define per(i, high) for (int i = high-1; i >= 0; i--)
-
-#if _MSC_VER > 0
-#define assert(x) debassert(x)
-#define popcount(x) __popcnt(x)
-#else
-#define popcount(x) __builtin_popcountll(x)
-#endif
-
-inline void fast() { ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL); }
-
-#ifdef _DEBUG
-#define debif(expr) if(expr) deb;
-#else
-#define debassert(expr) ;
-#endif
-
-#define all(a) a.begin(),a.end()
-#define rall(a) a.rbegin(),a.rend()
-#define setcontains(set, x) (set.find(x) != set.end())
-#define sz(container) ((int)container.size())
+#define rep(i,n) for (ll i = 0; i < (n); i++)
+#define repp(i,a,n) for (ll i = (a); i < (n); i++)
+#define repe(i, arr) for (auto& i : arr)
+#define all(x) begin(x),end(x)
+#define sz(x) ((ll)(x).size())
 
 bool path(int u, int p, int t, vvi& edges, vi& blocked)
 {
@@ -42,9 +21,9 @@ bool path(int u, int p, int t, vvi& edges, vi& blocked)
 	return 0;
 }
 
-signed main()
+int main()
 {
-	fast();
+	cin.tie(0)->sync_with_stdio(0);
 
 	int n, s;
 	cin >> n >> s;
