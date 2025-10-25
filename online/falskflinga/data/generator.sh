@@ -1,6 +1,6 @@
 #!/bin/bash
 REQUIRE_SAMPLE_REUSE=0
-. ../../testdata_tools/gen.sh
+. ../../../testdata_tools/gen.sh
 
 use_solution olle.py
 

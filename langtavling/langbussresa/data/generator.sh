@@ -1,5 +1,5 @@
 #!/bin/bash
-. ../../testdata_tools/gen.sh
+. ../../../testdata_tools/gen.sh
 
 ulimit -s unlimited
 use_solution bussresa.cpp
