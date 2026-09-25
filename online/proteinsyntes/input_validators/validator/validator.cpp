@@ -5,6 +5,9 @@ void run() {
 	Endl();
 	string s = Line();
 	assert(s.size()==n);
+	for (char c : s) {
+		assert(c >= 'a' && c <= 'z');
+	}
 	int m = Int(1, Arg("maxm", int(1e6)));
 	Endl();
 
